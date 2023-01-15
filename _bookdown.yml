@@ -1,0 +1,12 @@
+book_filename: "guide2023"
+#new_session: true
+before_chapter_script: _common.R
+delete_merged_file: true
+language:
+  label:
+    toc: "Table des matières"
+    fig: "FIGURE "
+    tab: "TABLEAU "
+  ui:
+    chapter_name: ""
+rmd_files: ["index.Rmd", "rmd/04-citations.Rmd"]
