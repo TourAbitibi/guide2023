@@ -5,19 +5,25 @@ librarian::shelf(
   knitr,
   rmarkdown,
   tidyverse,
+  ggtext,
   lubridate,
   mapview,
-  raster,
-  rgdal,
-  rosm,
-  sf,
-  tmap,
+  readxl,
+  formattable,
+  kableExtra,
+  #raster,
+  #rgdal,
+  #rosm,
+  #sf,
+  #tmap,
+  #RColorBrewer,
 )
 
+#------------------------------------------------------------------------------#
 
+# Liste des couleurs
 
-
-# Couleurs
-
-bleuTour <- "#00414F"
-jauneTour <- "#eac11d"
+couleurs <- list(
+                  bleuTour = "#00414F",
+                  jauneTour = "#eac11d"
+                )

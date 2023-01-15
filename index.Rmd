@@ -5,6 +5,7 @@ institute: "Tour de l'Abitibi"
 date: "`r Sys.Date()`"
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
+toc-title: "Table des Matières"
 documentclass: book
 papersize: letter
 fontsize: 12pt
@@ -14,7 +15,10 @@ description: |
     Guide technique du Tour de l'Abitibi 2023, une étape de la Coupe des Nations de l'UCI.
     Présentation de la programmation, des parcours et des réglements pour l'épreuve. 
 suppress-bibliography: yes
-
+params:
+  annee: 2023
+  ville: "Amos"
+  langue: "FR"
 ---
 
 # About
@@ -22,6 +26,8 @@ suppress-bibliography: yes
 ```{r call_Libs_Vars, include=FALSE}
 # Appel des librairies et variables partagées
 source("code/_LibsVars.r")
+
+lang <- params$langue
 ```
 
 
@@ -33,7 +39,6 @@ This is a _sample_ book written in **Markdown**. You can use anything that Pando
 | -------------- | --------- | -------------- | ----- |
 | Bruno Gauthier | Énergir <br>Énergir   | Cons Principal |       |
 | Jerry          |           |                |       |
-| Brigitte       |           |                |       |
 
 Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
 

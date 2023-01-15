@@ -17,3 +17,11 @@ description étape
 
 
 ## Description détaillée
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, quiet=TRUE}
+
+source("code/ref_a_travailler/_import_itineraire.R")
+
+tableau_Descrip_Etape(1)
+
+```
