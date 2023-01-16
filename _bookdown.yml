@@ -1,5 +1,4 @@
 book_filename: "guide2023"
-#new_session: true
 before_chapter_script: _common.R
 delete_merged_file: true
 language:
@@ -10,3 +9,4 @@ language:
   ui:
     chapter_name: ""
 rmd_files: ["index.Rmd", "rmd/04-citations.Rmd"]
+# new_session: true

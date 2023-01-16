@@ -22,6 +22,6 @@ description étape
 
 source("code/ref_a_travailler/_import_itineraire.R")
 
-tableau_Descrip_Etape(1)
+tableau_Descrip_Etape(1, "FR")
 
 ```

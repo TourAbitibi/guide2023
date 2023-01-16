@@ -1,0 +1,9 @@
+<!-- Insérer ici le mot *EN FRANÇAIS* du Maire de la Ville hôtesse.  -->
+
+
+
+<img src="img/signatures/sign.png" height="50"/>
+
+Sébastien D'Astous   
+Maire d'Amos   
+Ville hôte du Tour de l'Abitibi 2022
