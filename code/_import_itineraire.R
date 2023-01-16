@@ -71,7 +71,7 @@ calcul_iti_etape <- function(Etape, lang = "FR"){
 }
 # Création tableau description détaillée 
 
-tableau_Descrip_Etape <- function(Etape, lang = "FR"){
+tableau_Descrip_Etape <- function(Etape = 1, lang = "FR"){
 
   descr_iti <- calcul_iti_etape(Etape, lang)
   
