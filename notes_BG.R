@@ -1,0 +1,24 @@
+# Notes Bruno - divers
+
+source("code/_LibsVars.R")
+
+df_test <- tribble(
+  ~a, ~b, ~c,
+  1, 2, 3,
+  4, 5, 6,
+  7, 8, 9,
+  10,11,12,
+  13,14,15,
+  16,17,18,
+  19,20,21
+)
+
+## Case_when
+df_test %>% 
+mutate(
+  chiffre = case_when(a == 1 ~ "un",
+                  a == 4 ~ "quatre",
+                  a== 6  ~ "six",
+                  TRUE ~ NA_character_)
+)
+
