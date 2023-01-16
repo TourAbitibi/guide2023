@@ -136,7 +136,7 @@ tableau_Descrip_Etape <- function(Etape, lang = "FR"){
 
 # tableau_Descrip_Etape(2, "FR") 
 
-
+# -[ ] unicode de flèches et info ne fonctionnent pas sous mac actuellement
 # -[x] Comment passer des commandes html (comme breakline) ? kbl(escape = F)
 # - [x] Comment passer un emoji/ flèche dans le tableau ?? html code, voir fichier excel
 # - [x] Possible de sauvegarder le tableau en tiff, png,.. pour faciliter import dans un rapport pdf ?
