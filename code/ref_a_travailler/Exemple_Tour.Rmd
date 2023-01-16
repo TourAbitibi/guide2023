@@ -1,0 +1,148 @@
+---
+title: "Guide technique 2022"
+subtitle: "Une manche de la Coupe des Nations Junior"
+author: "Tour de l'Abitibi"
+date: "11 au 17 juillet 2022"
+output: 
+  pagedreport::paged_windmill:
+    front_img: "https://i.pinimg.com/564x/ef/75/5b/ef755b9dbfd816488773c33be1b2f6cc.jpg"
+    logo: "img/logo/Tour_Logo.png"
+    img_to_dark: TRUE
+    logo_to_white: FALSE
+    toc: TRUE
+knit: pagedown::chrome_print
+toc-title: "Table des Matières"
+main-color: "#00424F"
+params:
+  annee: 2022
+  ville: "Amos"
+  langue: "FR"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+
+
+library(kableExtra)
+library(tidyverse)
+library(pagedreport)
+library(here)
+library(readxl) 
+library(formattable)
+
+#setwd("C:/Users/Bruno/Dropbox/TourAbitibi/2022 Amos/Guide/R")
+#here::i_am("_import_itineraire.R")
+
+```
+
+# Le mot du Maire pour `r params$annee` {.chapter}
+
+`r readr::read_file("rmd/02_mots/mot_maire_FR.txt")`
+
+\pagebreak
+
+## Second level {.chapter}
+
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+\pagebreak
+
+### Itinéraire - Étape 1
+
+
+```{r echo=FALSE}
+Etape <- 1
+
+calcul_iti_etape(Etape) %>% 
+  kbl(col.names = NULL) %>%
+  kable_minimal("striped",full_width = T, font_size = 12) %>%
+  add_header_above(c("restant" , "fait" , "parcours" ,
+                     iti_etape$Details$Descr_km[Etape],
+                     paste(speed$kmh_rapide[Etape], " km/h"),
+                     paste(speed$kmh_moy[Etape], " km/h"),
+                     paste(speed$kmh_lent[Etape], " km/h") )) %>% 
+  add_header_above(c( "KM"  = 2, "Info", iti_etape$Details$Descr_Villes[Etape]  , "Vitesse" = 3 ))
+```
+
+
+
+\pagebreak
+
+
+### Un peu plus de texte
+
+
+
+Finally, be sure to remove this message! This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+
+Finally, be sure to remove this message! This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+
+Finally, be sure to remove this message! This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+
+## Second level {.page-break-before}
+
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message! This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message!This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+## Second level {.chapter}
+
+Finally, be sure to remove this message!
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message!
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+# And now part 2 {.chapter}
+
+This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+
+## Second level {-}
+
+This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
+
+Finally, be sure to remove this message!
+
