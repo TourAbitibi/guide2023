@@ -12,13 +12,19 @@ librarian::shelf(
   formattable,
   kableExtra,
   magick,
-  webshot
-  #raster,
-  #rgdal,
-  #rosm,
-  #sf,
-  #tmap,
-  #RColorBrewer,
+  webshot,
+  hrbrthemes,
+  glue,
+  raster,
+  rgdal,
+  elevatr,
+  rosm,
+  sf,
+  mapview,
+  units,
+  tmap,
+  RColorBrewer,
+  scales,
 )
 
 #------------------------------------------------------------------------------#

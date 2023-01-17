@@ -1,5 +1,5 @@
 ###
-# 
+# Lecture du ficher excel "itinéraire" pour création des tableau de description
 ###
 
 source("code/_LibsVars.R")
@@ -134,9 +134,9 @@ tableau_Descrip_Etape <- function(Etape = 1, lang = "FR"){
 
 # Pour test : 
 
-# tableau_Descrip_Etape(2, "FR") 
+# tableau_Descrip_Etape(1, "FR") 
 
-# -[ ] unicode de flèches et info ne fonctionnent pas sous mac actuellement
+# -[x] unicode de flèches et info ne fonctionnent pas sous mac actuellement 
 # -[x] Comment passer des commandes html (comme breakline) ? kbl(escape = F)
 # - [x] Comment passer un emoji/ flèche dans le tableau ?? html code, voir fichier excel
 # - [x] Possible de sauvegarder le tableau en tiff, png,.. pour faciliter import dans un rapport pdf ?

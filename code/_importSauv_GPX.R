@@ -1,0 +1,50 @@
+################################################################################
+# Importer les fichiers GPX en input
+# Sauvegarder vers un shapefile en output
+################################################################################
+
+source("code/_LibsVars.R")
+
+
+path <- "gpx/input/"
+list_parcours <- c("parcours1", "parcours2", "parcours3", "parcours4", "parcours5", "parcours6", "parcours7")
+
+# Lire les fichiers GPX correspondant aux parcours du Tour dans le fichier input
+gpx_files <- sort(list.files(path = path,
+                             pattern = "^Tour.*gpx$"))
+
+names(gpx_files) <- list_parcours
+
+# Import des GPX
+parcours1 <- st_read(paste0(path,gpx_files[1]), layer = "tracks")
+parcours2 <- st_read(paste0(path,gpx_files[2]), layer = "tracks")
+parcours3 <- st_read(paste0(path,gpx_files[3]), layer = "tracks")
+parcours4 <- st_read(paste0(path,gpx_files[4]), layer = "tracks")
+parcours5 <- st_read(paste0(path,gpx_files[5]), layer = "tracks")
+parcours6 <- st_read(paste0(path,gpx_files[6]), layer = "tracks")
+parcours7 <- st_read(paste0(path,gpx_files[7]), layer = "tracks")
+
+# manque les données Points sans abonnement premium - à suivre
+## points <- st_read("d:/Tour2022_1.gpx", layer = couche[1])
+
+# Correction manuelle (pas accès au gpx sur ridewithgps pour l'instant)
+parcours4$name <- "Tour 2022 - Étape 4 - Malartic"
+
+# Aggrégation de tous les parcours d'étape
+parcours <- rbind(parcours1[,1], 
+                  parcours2[,1],
+                  parcours3[,1],
+                  parcours4[,1],
+                  parcours5[,1],
+                  parcours6[,1],
+                  parcours7[,1],
+                  deparse.level = 0
+)
+
+# Correction CRS
+parcours <- st_transform(parcours, crs = 32198)
+
+
+# Sauvegarde
+
+st_write(parcours,"gpx/output/parcours.shp")

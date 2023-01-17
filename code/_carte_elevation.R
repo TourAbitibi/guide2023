@@ -1,134 +1,87 @@
-
-
-# Test Tour Abitibi
+# Tour Abitibi
 
 ## Préparer cartes et élévations
 
 
 # -[ ] Vérifier comment calculer le pourcentage de pente pour passer comme couleur à la ligne du graphique d'élévation
 
-library(elevatr)
-library(here)
-library(mapview)
-library(sf)
-library(raster)
-library(rgdal)
-library(units)
-
-library(ggplot2)
-library(hrbrthemes)
+source("code/_LibsVars.R")
 
 
-##############
-
-path <- "gpx/input/"
-
-gpx_files <- list.files(path = path,
-                        pattern = "^Tour.*gpx$")
-
-# Import des GPX
-
-couche <- st_layers(paste0(path,gpx_files[1]))$name
-
-parcours1 <- st_read(paste0(path,gpx_files[1]), layer = "tracks")
-parcours2 <- st_read(paste0(path,gpx_files[2]), layer = "tracks")
-parcours3 <- st_read(paste0(path,gpx_files[3]), layer = "tracks")
-parcours4 <- st_read(paste0(path,gpx_files[4]), layer = "tracks")
-parcours5 <- st_read(paste0(path,gpx_files[5]), layer = "tracks")
-parcours6 <- st_read(paste0(path,gpx_files[6]), layer = "tracks")
-parcours7 <- st_read(paste0(path,gpx_files[7]), layer = "tracks")
-
-# manque les données Points sans abonnement premium
-# points <- st_read("d:/Tour2022_1.gpx", layer = couche[1])
+# Si besoin de mettre à jour à partir de nouveaux .gpx
+#   source("code/_carte_elevation.R")
 
 
-# Aggrégation de tous les parcours d'étape
-parcours <- rbind(parcours1[,1], 
-                  parcours2[,1],
-                  parcours3[,1],
-                  parcours4[,1],
-                  parcours5[,1],
-                  parcours6[,1],
-                  parcours7[,1],
-                  deparse.level = 0
-                  )
 
-# Correction manuelle (pas accès au gpx sur ridewithgps pour l'instant)
-parcours[4,]$name <- "Tour 2022 - Étape 4 - Malartic"
+# Lecture du shapefile enregistré contenant les parcours 
+parcours <- st_read("gpx/output/parcours.shp")
 
-# Distance de la 1ere étape
-set_units(st_length(parcours[1,]), km) ## attention aux tours de circuits qui ne sont pas dans le gpx.. 
 
-# Correction CRS
-parcours <- st_transform(parcours, crs = 32198)
 
+################################################################################
+################################################################################
+
+
+#Distance de la 1ere étape
+# set_units(st_length(parcours[1,]), km) ## attention aux tours de circuits qui ne sont pas dans le gpx.. 
+
+
+# Visualisation
 mapview(parcours, lwd = 2,
         color = palette.colors(n=7, palette="ggplot2"),
         layer.name = "Étape")
 
 
-# Elevation incluant tous les parcours
-
-elv_parcours <- get_elev_raster(parcours, z=12)
-
-# Correction manuelle - élévation négatives -- à z=13 seulement ?
-# elv_parcours[getValues(elv_parcours) < 0] <- 300
-
-
-# Visualisation
-mapview(parcours, lwd =2,
-        layer.name = "Étapes",
-        color = palette.colors(n=7, palette="ggplot2"))+ #hcl.colors(7, palette = "Spectral"))+ 
-mapview(elv_parcours, 
-        layer.name = "Elevation",
-        col.region = hcl.colors(50, palette = "Earth"))
- 
-
-
-# Vérifier les crs
-st_crs(elv_parcours) == st_crs(parcours)
-
-
 # EXTRAIRE LES CELLULES D’ÉLÉVATION LE LONG DU PARCOURS
 
-  ## En faire une fonction qui retourne le dist_df
+  ## -[ ] En faire une fonction qui sauvegarde le dist_df 
+  ## en passant àa travers toutes les étapes
 
 etape <-1
-dist_neutre <- 10
+dist_neutre <- 5
+dist_total <- 136.7  # incluant le neutralisé
+dist_circuit <- 5.4
 
-
+# Extraire les points d'élévation
 topo_elv <- extract(elv_parcours, st_as_sf(parcours[etape,]), along= TRUE, cellnumbers = TRUE)
 
-dim(topo_elv[[1]])
-
-colnames(topo_elv[[1]]) <- c("cellule_id", "elevation")
-head(topo_elv[[1]])
-
-# Obtenir le profil topo
-
-df_pts <- as.data.frame(xyFromCell(elv_parcours, topo_elv[[1]][, 1]))
-head(df_pts)
-
-# transformer en sf
-topo_pts <- st_as_sf(df_pts,
-                     coords = c("x", "y"),
-                     crs = st_crs(parcours) 
-)
-
+# Obtenir le profil topo en df
+topo_pts <- as.data.frame(xyFromCell(elv_parcours, topo_elv[[1]][, 1])) %>% 
+  st_as_sf(coords = c("x", "y"),
+           crs = st_crs(parcours))
+  
+# Obtenir la distance entre les points et la distance cumulée
 dist_pts <- st_distance(topo_pts[-1, ], topo_pts[-nrow(topo_pts),],
                         by_element = TRUE)
+dist_parcourue <- as.numeric(set_units(cumsum(dist_pts), km))
 
-dist_parcourue <- cumsum(dist_pts)
-
+# besoin de rescaler entre 0 et max de l'étape (avant d'enlever le neutralisé) 
+# (erreur induite dans l'extraction à coup de 10m..)
+dist_parcourue_corr <- rescale(dist_parcourue, to = c(0, dist_total))
 
 # Transformer en df
+dist_df <- data.frame(dist = (dist_parcourue_corr - dist_neutre), elev = topo_elv[[1]][, 2][-1])
+
+## Si circuit ou pas circuit : 
+dist_df_final <- if (dist_circuit ==0) { subset(dist_df, dist_df$dist >= (max(dist_df$dist) - 3))
+  }else {
+    subset(dist_df, dist_df$dist >= (max(dist_df$dist) - dist_circuit))
+  }
+# dernier tour de circuit
 
 
+# Sauvegarde des fichiers en .csv
 
-dist_df <- data.frame(dist = as.numeric(dist_parcourue/1000) - dist_neutre, elev = topo_elv[[1]][, 2][-1])
-
+write_csv(dist_df, "elevParcours/elev_parcours1.csv")
+write_csv(dist_df_final, "elevParcours/elevFinal_parcours1.csv")
 
 ################################################################################
+
+# Partie graphiques
+
+dist_df <-read_csv("elevParcours/elev_parcours1.csv", 
+                   show_col_types = FALSE)
+
 
 # Plot
 plot(dist_df, 
@@ -145,10 +98,10 @@ plot(dist_df,
 dist_df_3km <- subset(dist_df, dist_df$dist >= (max(dist_df$dist) - 3))
 
 
-plot(dist_df_3km, 
-     main = "Profil topographique du parcours (3 derniers km)", 
+plot(dist_df_final, 
+     main = "Profil topographique du parcours (derniers km)", 
      xlab = "Distance (en km)", 
-     ylab = "Altitude (en mètre)", 
+     ylab = "Élévation (en mètre)", 
      type = "l", # pour utiliser une ligne
      lwd = 2 # augmente le trait de la ligne 
 ) 
@@ -156,16 +109,15 @@ plot(dist_df_3km,
 
 
 
-### Test ggplot
+### Avec ggplot
 
-
-
-ggplot(dist_df_3km, aes(x= dist, y = elev))+
-  geom_line(color="#69b3a2", size=2)+
-  ggtitle("Profil topographique du parcours (3 derniers km)")+
+ggplot(dist_df, aes(x= dist, y = elev))+
+  geom_line(color=couleurs$bleuTour, lwd=0.8)+
+  ggtitle("Profil topographique du parcours")+
   xlab("Distance (km)")+
   ylab("Élévation (m)")+
-  theme_ipsum()#+
+  theme_ipsum()+
+  geom_vline(xintercept = 57.8, col = couleurs$vertMaillot, lwd = 1.5, alpha =0.4)
   #geom_vline(xintercept = 103, col = "red", lwd = 0.75, lty = 2)
 
                    
