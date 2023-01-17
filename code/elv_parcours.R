@@ -1,7 +1,6 @@
 #########################################################################################
 # Créer le raster avec les données d'élévation et sauvegarder vers .tif                 #
 # Opérations manuelle à faire seulement si les parcours sortent de la région habituelle #
-# ou première fois sur un système                                                       #
 #########################################################################################
 
 source("code/_LibsVars.R")
