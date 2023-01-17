@@ -8,8 +8,6 @@ source("code/_LibsVars.R")
 
 
 path <- "gpx/input/"
-list_parcours <- c("parcours1", "parcours2", "parcours3", "parcours4", "parcours5", "parcours6", "parcours7")
-list_parcours <- ordered(list_parcours, levels = list_parcours)
 
 
 # Lire les fichiers GPX correspondant aux parcours du Tour dans le fichier input
