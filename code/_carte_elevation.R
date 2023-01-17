@@ -15,6 +15,7 @@ source("code/_LibsVars.R")
 
 # Lecture du shapefile enregistré contenant les parcours 
 parcours <- st_read("gpx/output/parcours.shp")
+elv_parcours <- raster("rasterElevation/elv_parcours.tif")
 
 
 
