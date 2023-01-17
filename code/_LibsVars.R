@@ -1,3 +1,10 @@
+################################################################################
+# Importer les librairies
+# Variables fixes communes à tous les fichiers
+################################################################################
+
+
+
 # Librairies
 
 librarian::shelf(
