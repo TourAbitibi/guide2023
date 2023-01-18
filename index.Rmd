@@ -27,6 +27,12 @@ params:
 # Appel des librairies et variables partagées
 source("code/_LibsVars.r")
 
+# Pour avoir accès aux données du fichier excel Itineraires.xlsx
+source("code/_import_itineraire.R")
+
+# Pour accès aux tracés
+parcours <- st_read("gpx/output/parcours.shp")
+
 lang <- params$langue
 ```
 

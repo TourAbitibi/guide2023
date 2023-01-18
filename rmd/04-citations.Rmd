@@ -1,17 +1,66 @@
 # (PART) Étapes {-}
 
-# Étape 1 : Rouyn-Noranda - Amos
+# Étape 1 : `r iti_etape$Details$Descr_Villes[1]`
 
-## Commanditaire
+```{r, echo=FALSE}
+Etape <-1
 
-Commanditaire d'étape
+heureDep <- glue("{iti_etape$Details$Heure_dep[Etape]} : {iti_etape$Details$min_dep[Etape]} ")
+
+heureArr <- calcul_iti_etape(Etape, lang = lang) %>% select(heure_arr_moy) %>% tail(1) %>% as.character()
+```
+
+
+## `r iti_etape$Details$Jour[Etape]` (`r iti_etape$Details$Date[Etape]`) {-}
+
+ **`r iti_etape$Details$KM_Total[Etape]` km**
+
+
+Le commanditaire d'étape est `r iti_etape$Details$Commanditaire[Etape]`. 
 
 ## Sommaire
 
-description étape
+- `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
+- Sans circuit d'arrivée
+
+----------------------------------------------------
+                                              Heure
+----------------- ----------------------------------
+Départ                                  `r heureDep`
+
+Arrivée finale                         `r heureArr`
+----------------------------------------------------
 
 ## Parcours
 
+
+```{r echo=FALSE}
+# opts_chunk$set(tidy = FALSE, comment = NA,
+#                fig.align = "center",
+#                fig.width = 7.5, fig.height = 7.5,
+#                fig.retina = 2, cache = FALSE,
+#                class.output = "codeout")
+```
+
+
+```{r, echo = FALSE, eval = TRUE, warning = FALSE, fig.align = "center", fig.width = 7.5, fig.height = 7.5}
+
+map <- mapview(parcours[Etape,],
+        layer.name = "Parcours",
+        color = couleurs$bleuTour,
+        map.types = "OpenStreetMap",
+        legend = FALSE)
+
+map@map
+
+# - [ ] Problème, carte trop large, je n'arrive pas à la restreindre dans bs4_book
+
+```
+
+
+<br/>
+
+[Liens vers **Ride with GPS**](`r iti_etape$Details$Liens[Etape]`)
 
 ## Élévation
 
@@ -20,8 +69,9 @@ description étape
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, quiet=TRUE}
 
-source("code/_import_itineraire.R")
 
-tableau_Descrip_Etape(1, "FR")
+tableau_Descrip_Etape(Etape, "FR")
 
 ```
+
+
