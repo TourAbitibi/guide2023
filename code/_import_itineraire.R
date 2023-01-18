@@ -14,7 +14,7 @@ read_itinerairexlsx <- function(filename, tibble = FALSE) {
 }
 
 
-# Importer les itinéraires
+# Importer les itinéraires et détails du fichier Excel
 iti_etape <- read_itinerairexlsx("excel/Itineraires.xlsx")
 
 
@@ -60,11 +60,11 @@ calcul_iti_etape <- function(Etape, lang = "FR"){
                                 ifelse(round((min_tot_lent + min_dep) %% 60,0)<10,
                                        paste0("0", round((min_tot_lent + min_dep) %% 60,0)),
                                        round((min_tot_lent + min_dep) %% 60,0)), sep=":")  ) %>% 
-    select(-km_fait_reel,-min_tot_rapide,-min_tot_moy,-min_tot_lent) %>% 
+    dplyr::select( -km_fait_reel,-min_tot_rapide,-min_tot_moy,-min_tot_lent) %>% 
     merge(x=., y = iti_etape$Lexique, by = "Symbol", all.x = TRUE ) %>% 
     arrange(KM_fait) %>% 
-    {if (lang == "FR") select(.,-Details_ANG, -Info_ANG ) %>% rename(Details = Details_FR, Info = Info_FR) 
-      else select(.,-Details_FR, -Info_FR)  %>% rename(Details = Details_ANG, Info = Info_ANG) }
+    {if (lang == "FR") dplyr::select (.,-Details_ANG, -Info_ANG ) %>% rename(Details = Details_FR, Info = Info_FR) 
+      else dplyr::select (.,-Details_FR, -Info_FR)  %>% rename(Details = Details_ANG, Info = Info_ANG) }
     
   return(df)
 
@@ -94,11 +94,11 @@ tableau_Descrip_Etape <- function(Etape = 1, lang = "FR"){
     column_spec(2, bold = T) %>%
     
     # Conditions de rangées
-    row_spec(which(descr_iti$Symbol == "MAIRE",), bold = F, color = couleurs$blueSprintMaire ) %>% # , background = ""
-    row_spec(which(descr_iti$Symbol == "SPRINT",), bold = F, color = couleurs$orangeMaillot ) %>%
-    row_spec(which(descr_iti$Symbol == "GPM",), bold = F, color = couleurs$vertMaillot ) %>%
-    row_spec(which(descr_iti$Symbol == "DANGER",), bold = F, color = couleurs$rougeDanger ) %>%
-    row_spec(which(descr_iti$Symbol == "FIN",), bold = T, color = couleurs$brunMaillot) %>%
+    row_spec(which(descr_iti$Symbol == "Mayor",), bold = F, color = couleurs$blueSprintMaire ) %>% # , background = ""
+    row_spec(which(descr_iti$Symbol == "Sprint",), bold = F, color = couleurs$orangeMaillot ) %>%
+    row_spec(which(descr_iti$Symbol == "Climb",), bold = F, color = couleurs$vertMaillot ) %>%
+    row_spec(which(descr_iti$Symbol == "Danger",), bold = F, color = couleurs$rougeDanger ) %>%
+    row_spec(which(descr_iti$Symbol == "Finish",), bold = T, color = couleurs$brunMaillot) %>%
     
     # Header tableau
     add_header_above(  c({if (lang=="FR") "restant" else "to go"}, 
@@ -134,7 +134,7 @@ tableau_Descrip_Etape <- function(Etape = 1, lang = "FR"){
 
 # Pour test : 
 
-# tableau_Descrip_Etape(1, "FR") 
+tableau_Descrip_Etape(2, "FR") 
 
 # -[x] unicode de flèches et info ne fonctionnent pas sous mac actuellement 
 # -[x] Comment passer des commandes html (comme breakline) ? kbl(escape = F)
