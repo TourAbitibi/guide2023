@@ -39,6 +39,8 @@ librarian::shelf(
 # Gestion des conflits
 conflict_prefer("select", "dplyr")
 
+# remotes::install_github("r-spatial/mapview")
+
 #------------------------------------------------------------------------------#
 
 # Liste des couleurs
