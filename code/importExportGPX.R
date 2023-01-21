@@ -2,13 +2,15 @@
 # Importer les fichiers GPX en input
 # Sauvegarder vers un shapefile en output
 # Opérations manuelle à faire seulement si nouveaux .gpx au dossier
+#
+# Input :fichiers gpx de chacune des étapes : "gpx/input/Tour20**_*.gpx"
+# Output : Shapefile contenant tous les parcours : "gpx/output/parcours.shp" 
+#
 ################################################################################
 
 source("code/_LibsVars.R")
 
-
 path <- "gpx/input/"
-
 
 # Lire les fichiers GPX correspondant aux parcours du Tour dans le fichier input
 gpx_files <- sort(list.files(path = path,

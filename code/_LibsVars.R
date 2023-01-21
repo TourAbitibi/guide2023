@@ -3,8 +3,6 @@
 # Variables fixes communes à tous les fichiers
 ################################################################################
 
-
-
 # Librairies
 
 librarian::shelf(
@@ -38,6 +36,7 @@ librarian::shelf(
 
 # Gestion des conflits
 conflict_prefer("select", "dplyr")
+conflict_prefer("filter", "dplyr")
 
 # remotes::install_github("r-spatial/mapview")
 

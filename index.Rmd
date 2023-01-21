@@ -18,7 +18,7 @@ suppress-bibliography: yes
 params:
   annee: 2023
   ville: "Amos"
-  langue: "FR"
+  langue: "EN"  # FR ou EN
 ---
 
 # About
@@ -33,7 +33,14 @@ source("code/_import_itineraire.R")
 # Pour accès aux tracés
 parcours <- st_read("gpx/output/parcours.shp")
 
+# Langue
 lang <- params$langue
+
+# Locale
+## https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/locales
+{if (lang == "FR") Sys.setlocale("LC_TIME", locale = "fr_CA.UTF-8") 
+  else Sys.setlocale("LC_TIME", locale = "en_US.UTF-8") }
+
 ```
 
 

@@ -1,6 +1,10 @@
 #########################################################################################
 # Créer le raster avec les données d'élévation et sauvegarder vers .tif                 #
-# Opérations manuelle à faire seulement si les parcours sortent de la région habituelle #
+# Opération manuelle à faire seulement si les parcours sortent de la région habituelle  #
+#                                                                                       #
+# Input : Shapefile contenant les gpx des parcours - "gpx/output/parcours.shp"          #
+# Output : le Raster de la région complète "rasterElevation/elv_parcours.tif"           #
+#                                                                                       #
 #########################################################################################
 
 source("code/_LibsVars.R")

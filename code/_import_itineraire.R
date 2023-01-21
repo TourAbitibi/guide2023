@@ -1,6 +1,12 @@
-###
-# Lecture du ficher excel "itinéraire" pour création des tableau de description
-###
+################################################################################
+# Lecture du ficher excel "itinéraire" ,
+# Calcul des heures d'arrivée moyenne,
+# Création des tableau de description détaillé des étapes
+#
+# Input : fichier Excel "excel/Itineraires.xlsx"
+# Output : functoins pour 
+#
+################################################################################
 
 source("code/_LibsVars.R")
 
@@ -8,9 +14,20 @@ source("code/_LibsVars.R")
 read_itinerairexlsx <- function(filename, tibble = FALSE) {
     sheets <- readxl::excel_sheets(filename)
     x <- lapply(sheets, function(X) readxl::read_excel(filename, sheet = X))
-    if(!tibble) x <- lapply(x, as.data.frame)
+    if(!tibble) x <- lapply(x, as_tibble)  # as.data.frame
     names(x) <- sheets
-    x
+    
+    # Transformer les dates et calcul heures arrivées
+    x$Details <- x$Details %>% 
+      mutate(Date = as_datetime(x$Details$Date),
+             dttm_depart = Date + hours(Heure_dep) + minutes(min_dep),
+             time_depart = format(dttm_depart, format = "%H:%M"),
+             dttm_arrivee = dttm_depart + 
+                            dhours(KM_Total/Vit_moy),
+             time_arrivee = format(dttm_arrivee, format = "%H:%M")
+             )
+    
+    return(x)
 }
 
 
@@ -18,49 +35,38 @@ read_itinerairexlsx <- function(filename, tibble = FALSE) {
 iti_etape <- read_itinerairexlsx("excel/Itineraires.xlsx")
 
 
-# Calcul des vitesses des étapes en km/h et km/min
-speed <- data.frame( kmh_rapide = iti_etape$Details$Vit_rapide,
-                     kmh_moy = iti_etape$Details$Vit_moy,
-                     kmh_lent = iti_etape$Details$Vit_lent,
-                     
-                     # Transforme en km/min
-                     km_min_rapide = iti_etape$Details$Vit_rapide / 60,
-                     km_min_moy = iti_etape$Details$Vit_moy / 60,
-                     km_min_lent = iti_etape$Details$Vit_lent / 60  )
-
-
-  
 # Calculs des temps de passage par étape
 
 calcul_iti_etape <- function(Etape, lang = "FR"){
 
+  # Description complète de l'étape
   orig_name <-paste0("iti_etape$Etape_", Etape, sep="")
   df_orig <- eval(parse(text=orig_name))
   
-  heure_dep <- iti_etape$Details$Heure_dep[Etape]
-  min_dep <- iti_etape$Details$min_dep[Etape]
-
+  #heure_dep <- iti_etape$Details$Heure_dep[Etape]
+  #min_dep <- iti_etape$Details$min_dep[Etape]
+  
+  # df `Détails` pour l'étape
+  details <- iti_etape$Details[Etape,]
   
   df <- df_orig %>% 
-    mutate(KM_fait = round(KM_reel - iti_etape$Details$KM_Neut[Etape], 1),
+    mutate(KM_fait = round(KM_reel - details$KM_Neutres, 1),
            KM_a_faire = round(max(KM_fait)-KM_fait, 1),
            km_fait_reel = KM_reel - KM_a_faire,
-           min_tot_rapide = KM_reel / speed$km_min_rapide[1],
-           min_tot_moy = KM_reel / speed$km_min_moy[1],
-           min_tot_lent = KM_reel / speed$km_min_lent[1],
-           heure_arr_rapide = paste(floor((min_tot_rapide + min_dep)/60) + heure_dep,
-                                 ifelse(round((min_tot_rapide + min_dep) %% 60,0)<10,
-                                        paste0("0", round((min_tot_rapide + min_dep) %% 60,0)),
-                                        round((min_tot_rapide + min_dep) %% 60,0)), sep=":"),
-           heure_arr_moy = paste(floor((min_tot_moy + min_dep)/60) + heure_dep,
-                                ifelse(round((min_tot_moy + min_dep) %% 60,0)<10,
-                                       paste0("0", round((min_tot_moy + min_dep) %% 60,0)),
-                                       round((min_tot_moy + min_dep) %% 60,0)), sep=":"),
-           heure_arr_lent = paste(floor((min_tot_lent + min_dep)/60) + heure_dep,
-                                ifelse(round((min_tot_lent + min_dep) %% 60,0)<10,
-                                       paste0("0", round((min_tot_lent + min_dep) %% 60,0)),
-                                       round((min_tot_lent + min_dep) %% 60,0)), sep=":")  ) %>% 
-    dplyr::select( -km_fait_reel,-min_tot_rapide,-min_tot_moy,-min_tot_lent) %>% 
+           
+           dur_h_rapide = dhours(KM_reel /details$Vit_rapide) ,
+           dur_h_moy = dhours(df_orig$KM_reel /details$Vit_moy),
+           dur_h_lent = dhours(df_orig$KM_reel /details$Vit_lent),
+           
+           time_arr_rapide = details$dttm_depart + dur_h_rapide ,
+           time_arr_moy = details$dttm_depart + dur_h_moy,
+           time_arr_lent = details$dttm_depart + dur_h_lent,
+           
+           time_arr_rapide = format(time_arr_rapide, format= "%H:%M" ),
+           time_arr_moy = format(time_arr_moy, format= "%H:%M" ),
+           time_arr_lent = format(time_arr_lent, format= "%H:%M" )) %>% 
+    
+    dplyr::select( -km_fait_reel) %>% 
     merge(x=., y = iti_etape$Lexique, by = "Symbol", all.x = TRUE ) %>% 
     arrange(KM_fait) %>% 
     {if (lang == "FR") dplyr::select (.,-Details_ANG, -Info_ANG ) %>% rename(Details = Details_FR, Info = Info_FR) 
@@ -69,6 +75,7 @@ calcul_iti_etape <- function(Etape, lang = "FR"){
   return(df)
 
 }
+
 # Création tableau description détaillée 
 
 tableau_Descrip_Etape <- function(Etape = 1, lang = "FR"){
@@ -80,13 +87,13 @@ tableau_Descrip_Etape <- function(Etape = 1, lang = "FR"){
            KM_fait,
            Emoji,
            Details,
-           heure_arr_rapide,
-           heure_arr_moy,
-           heure_arr_lent) %>% 
+           time_arr_rapide,
+           time_arr_moy,
+           time_arr_lent) %>% 
     kbl(col.names = NULL,
-        escape = F, 
-        align = c(rep('c', times = 7))) %>% # permet de passer les <br/>
-    kable_minimal("striped",
+        escape = F, # permet de passer les <br/>
+        align = c(rep('c', times = 7))) %>% 
+    kable_styling("striped",      # kable_minimal
                   full_width = T, 
                   font_size = 16) %>%
     
@@ -105,9 +112,9 @@ tableau_Descrip_Etape <- function(Etape = 1, lang = "FR"){
                          {if (lang=="FR") "fait" else "done"},
                          {if (lang=="FR") "parcours" else "info"}, 
                          iti_etape$Details$Descr_km[Etape],
-                         speed$kmh_rapide[Etape],
-                         speed$kmh_moy[Etape],
-                         speed$kmh_lent[Etape])) %>% 
+                         iti_etape$Details$Vit_rapide[Etape],
+                         iti_etape$Details$Vit_moy[Etape],
+                         iti_etape$Details$Vit_lent[Etape])) %>% 
     add_header_above(c( "km"  = 2, 
                         {if(lang=="FR") "Info" else "Course"}, 
                         iti_etape$Details$Descr_Villes[Etape], 
@@ -134,7 +141,7 @@ tableau_Descrip_Etape <- function(Etape = 1, lang = "FR"){
 
 # Pour test : 
 
-tableau_Descrip_Etape(2, "FR") 
+# tableau_Descrip_Etape(1, "FR") 
 
 # -[x] unicode de flèches et info ne fonctionnent pas sous mac actuellement 
 # -[x] Comment passer des commandes html (comme breakline) ? kbl(escape = F)

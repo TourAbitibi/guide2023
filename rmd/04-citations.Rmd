@@ -5,13 +5,17 @@
 ```{r, echo=FALSE}
 Etape <-1
 
-heureDep <- glue("{iti_etape$Details$Heure_dep[Etape]} : {iti_etape$Details$min_dep[Etape]} ")
 
-heureArr <- calcul_iti_etape(Etape, lang = lang) %>% select(heure_arr_moy) %>% tail(1) %>% as.character()
+heureDep <- iti_etape$Details$time_depart[Etape]
+
+heureArr <- iti_etape$Details$time_arrivee[Etape]
+
+date_format <- format(iti_etape$Details$Date[Etape], format = "%A, %d %B %Y", locale = locale("fr"))
+
 ```
 
 
-## `r iti_etape$Details$Jour[Etape]` (`r iti_etape$Details$Date[Etape]`) {-}
+## `r date_format` {-}
 
  **`r iti_etape$Details$KM_Total[Etape]` km**
 
@@ -70,7 +74,7 @@ map@map
 ```{r echo=FALSE, message=FALSE, warning=FALSE, quiet=TRUE}
 
 
-tableau_Descrip_Etape(Etape, "FR")
+tableau_Descrip_Etape(Etape, lang)
 
 ```
 
