@@ -6,6 +6,7 @@ excel/~$*
 #####
 # ne pas sync git_book/_boook pendant la péfiode test
 git_book/_book
+git_book/guide2023_files/
 #####
 
 ################################################################################

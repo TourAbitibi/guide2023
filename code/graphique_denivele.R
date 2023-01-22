@@ -7,11 +7,6 @@
 #                                                                                       #
 #########################################################################################
 
-# Tour Abitibi
-
-## Préparer graphiques dénivelé des parcours
-
-
 # -[ ] Vérifier comment calculer le pourcentage de pente pour passer comme couleur à la ligne du graphique d'élévation
 
 here::i_am("guide2023.Rproj")
@@ -38,69 +33,40 @@ dist_df <-read_csv(here("elevParcours/elev_parcours.csv"),
 ################################################################################
 ################################################################################
 
-# Essais..
-
-#Distance de la 1ere étape
-# set_units(st_length(parcours[1,]), km) ## attention aux tours de circuits qui ne sont pas dans le gpx.. 
-
-# ggplot, mettre ligne
-#geom_vline(xintercept = 57.8, col = couleurs$vertMaillot, lwd = 1.5, alpha =0.4)
-#geom_vline(xintercept = 103, col = "red", lwd = 0.75, lty = 2)
-
-
 # Visualisation
 # mapview(parcours, lwd = 2,
 #         color = palette.colors(n=7, palette="ggplot2"),
 #         layer.name = "Étape")
-################################################################################
-
-# Fonctions filtrant les derniers 3 km ou distance de circuit d'arrivée
-filtrerDistanceFinale <- function(dist_df, num_etape){
-  
-  ## Si circuit, faire un df de la longueur du circuit,
-  ## Sinon, faire un df des 3 derniers km : 
-  
-  if (iti_etape$Details$KM_par_tours[num_etape] == 0){km_a_enlever = 3} 
-    else {km_a_enlever = iti_etape$Details$KM_par_tours[num_etape]}
-  
-  dist_df %>% 
-    filter(etape == num_etape) %>% 
-    filter(dist >= (max(dist) - km_a_enlever)) %>% 
-    
-    return()
-  
-}
 
 ################################################################################
 
 # Fonction pour trouver élévation y pour une valeur x données
 
-elv_f_x <- function(df = dist_df, num_etape = 1, x ){
+elv_f_x <- function(df, num_etape, x_km ){
   
  df %>% 
     filter (etape == num_etape) %>% 
     select(-etape) %>% 
-    mutate (dist_arr = round(dist, digits = 1)) %>% 
+    mutate (dist = round(dist, digits = 1)) %>% 
     group_by(dist) %>% 
     summarise(elev = mean(elev, na.rm= TRUE),
               .groups = "drop") %>% 
-    filter(dist == round(x, digits = 1)) %>% 
+    filter(dist == round(x_km, digits = 1)) %>% 
     pull(elev) %>% 
     
     return()
   
 }
 
-
 ################################################################################
 
 # Fonction pour obtenir les points d'intérêts et leurs élévation
 
-elv_poi <- function(df = dist_df, num_etape = 1){
+elv_poi <- function(df, num_etape){
 
   poi <- calcul_iti_etape(num_etape, "FR") %>% 
     select (KM_fait, Symbol) %>% 
-    filter(Symbol %in% c("Green", "Climb", "Sprint", "Mayor", "Finish"))
+    filter(Symbol %in% df_POI$values)
   
   
   map(.x = 1:nrow(poi), ~elv_f_x(df, num_etape, x = poi$KM_fait[.x])) %>% 
@@ -111,36 +77,103 @@ elv_poi <- function(df = dist_df, num_etape = 1){
     return()
 }
 
-
 ################################################################################
 
-# - [ ] Français et Anglais
-# - [ ] Symbole possible sur KOM, Sprint, $, ... 
-#   - [ ] Automatiquement avec loop
+# - [x] Français et Anglais
+# - [x] Symbole possible sur KOM, Sprint, $, ... 
+# - [x] Légende en bas du graphique complet seulement
+# - [x] Utilisation des couleurs pour chaque type de POI, tel que tableau
+# - [x] Graphique pour derniers 3 / 5.4 km
 
 
 
-num_etape = 1
+graph_elev_complet <-  function(df, num_etape, iti_etape , language){
+  
+  # Points d'intérêts
+  poi_etape <- elv_poi(df, num_etape) %>%
+    rename(dist = KM_fait) %>% 
+    as_tibble()
+  
+  # Élévation regroupée par chaque 0.1km
+  data_graph_base <- df %>% 
+    filter(etape == num_etape) %>% 
+    mutate (dist = round(dist, digits = 1)) %>% 
+    group_by(dist) %>% 
+    summarise(elev = mean(elev, na.rm= TRUE),
+              .groups = "drop")
 
+  graph <- ggplot(NULL, aes(x= dist, y = elev))+
+    geom_line(data = data_graph_base, color=couleurs$bleuTour, linewidth=0.8, show.legend = FALSE)+
+    {if (language == "FR") {ggtitle(glue("Étape {num_etape} - Profil topographique"),
+                                subtitle = glue("{iti_etape$Details$Descr_Villes[num_etape]} ({iti_etape$Details$Descr_km[num_etape]})"))} else {ggtitle(glue("Stage {num_etape} - Topographic profil"),
+                   subtitle = glue("{iti_etape$Details$Descr_Villes[num_etape]} ({iti_etape$Details$Descr_km[num_etape]})"))}}+
+      xlab("Distance (km)")+
+      ylab("Elevation (m)")+
+      scale_x_continuous(n.breaks = 10)+
+      theme_ipsum()+
+    geom_point(data = poi_etape, 
+               aes(color = Symbol),
+               size = 4,
+               alpha = 0.9)+
+    theme(legend.position="bottom",
+          legend.title = element_blank())+
+    scale_color_manual( labels = {if (language == "FR") df_POI$label_fr else df_POI$label_en},
+                        breaks = df_POI$values,
+                        values = df_POI$color)
+  
+  return(graph)
+}           
 
-poi_etape <- elv_poi(dist_df, num_etape) %>% as_tibble()
+# Test
+## graph_elev_complet(dist_df, 2, "FR")
 
-### Avec ggplot
-graph_base <- dist_df %>% 
-  filter(etape == num_etape) %>% 
-  # filtrerDistanceFinale(1) %>% 
-  ggplot(aes(x= dist, y = elev))+
-    geom_line(color=couleurs$bleuTour, linewidth=0.8)+
-    ggtitle("Profil topographique du parcours")+
+################################################################################
+################################################################################
+
+graph_elev_arrivee <-  function(df , num_etape , iti_etape, language , km_finaux){
+  
+  # Points d'intérêts
+  poi_etape <- elv_poi(df, num_etape) %>%
+    rename(dist = KM_fait) %>% 
+    filter(dist >= (max(dist)- km_finaux)) %>% 
+    as_tibble()
+  
+  # Élévation regroupée par chaque 0.1km
+  data_graph_base <- df %>% 
+    filter(etape == num_etape) %>% 
+    mutate (dist = round(dist, digits = 1)) %>% 
+    group_by(dist) %>% 
+    summarise(elev = mean(elev, na.rm= TRUE),
+              .groups = "drop") %>% 
+    filter(dist >= (max(dist)- km_finaux))
+  
+  
+  graph <- ggplot(NULL, aes(x= dist, y = elev))+
+    geom_line(data = data_graph_base, color=couleurs$bleuTour, linewidth=0.8, show.legend = FALSE)+
+    {if (language == "FR") {ggtitle(glue("Étape {num_etape} - Profil topographique - {km_finaux} derniers km"),
+                                subtitle = glue("{iti_etape$Details$Descr_Villes[num_etape]} ({iti_etape$Details$Descr_km[num_etape]})"))} else {ggtitle(glue("Stage {num_etape} - Topographic profil - Last {km_finaux} km"),
+                                                                                                                                                         subtitle = glue("{iti_etape$Details$Descr_Villes[num_etape]} ({iti_etape$Details$Descr_km[num_etape]})"))}}+
     xlab("Distance (km)")+
-    ylab("Élévation (m)")+
+    ylab("Elevation (m)")+
     scale_x_continuous(n.breaks = 10)+
-    theme_ipsum()
-    
+    theme_ipsum()+
+    geom_point(data = poi_etape, 
+               aes(color = Symbol),
+               size = 4,
+               alpha = 0.9,
+               show.legend = FALSE)+
+    theme(legend.position="bottom",
+          legend.title = element_blank())+
+    scale_color_manual( labels = {if (language == "FR") df_POI$label_fr else df_POI$label_en},
+                        breaks = df_POI$values,
+                        values = df_POI$color)
+  
+  return(graph)
+  
+}   
 
-graph_base_points <- graph_base+
-  geom_point(aes(x= poi_etape %>% filter(Symbol == "Green") %>% pull(KM_fait),
-                 y= poi_etape %>% filter(Symbol == "Green") %>% pull(elev)),
-             )
-                   
+# Test
+## graph_elev_arrivee(dist_df, 2, "FR",  5.4)
+
+# ggsave(here("graph1.png"), width =8, height = 4, dpi= 300, bg= "white")              
                

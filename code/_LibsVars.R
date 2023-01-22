@@ -35,8 +35,8 @@ librarian::shelf(
 )
 
 # Gestion des conflits
-conflict_prefer("select", "dplyr")
-conflict_prefer("filter", "dplyr")
+conflict_prefer("select", "dplyr", quiet = TRUE)
+conflict_prefer("filter", "dplyr", quiet = TRUE)
 
 # remotes::install_github("r-spatial/mapview")
 
@@ -50,8 +50,9 @@ couleurs <- list(
                   brunMaillot = "#8B4513", # à valider
                   orangeMaillot = "#EE9A00", # à valider
                   vertMaillot = "#66CD00", # à valider
-                  blueSprintMaire = "darkblue",
-                  rougeDanger = "#D7261E"
+                  blueSprintMaire = "#00008B",
+                  rougeDanger = "#D7261E",
+                  depart = "#006400"
                 )
 
 #------------------------------------------------------------------------------#
@@ -63,3 +64,14 @@ list_parcours <- ordered(list_parcours, levels = list_parcours)
 
 list_etapes <- c("Etape1", "Etape2", "Etape3", "Etape4", "Etape5", "Etape6", "Etape7")
 list_etapes <- ordered(list_etapes, levels = list_etapes)
+
+df_POI <- tribble(
+  ~label_fr, ~label_en, ~values, ~color,
+  "Départ", "Start", "Green", couleurs$depart,
+  "GPM", "KOM", "Climb", couleurs$vertMaillot,
+  "Sprint Bonif", "Bonif Sprint", "Sprint", couleurs$orangeMaillot,
+  "Sprint Maire", "Mayor Spritn", "Mayor", couleurs$blueSprintMaire,
+  "Arrivée", "Finish", "Finish", couleurs$brunMaillot
+) %>% 
+  mutate(values = ordered(values, levels = values))
+

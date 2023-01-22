@@ -41,7 +41,7 @@ iti_etape <- read_itinerairexlsx(here("excel","Itineraires.xlsx"))
 
 # Calculs des temps de passage par étape
 
-calcul_iti_etape <- function(Etape, lang = "FR"){
+calcul_iti_etape <- function(Etape, language = "FR"){
 
   # Description complète de l'étape
   orig_name <-paste0("iti_etape$Etape_", Etape, sep="")
@@ -73,7 +73,7 @@ calcul_iti_etape <- function(Etape, lang = "FR"){
     dplyr::select( -km_fait_reel) %>% 
     merge(x=., y = iti_etape$Lexique, by = "Symbol", all.x = TRUE ) %>% 
     arrange(KM_fait) %>% 
-    {if (lang == "FR") dplyr::select (.,-Details_ANG, -Info_ANG ) %>% rename(Details = Details_FR, Info = Info_FR) 
+    {if (language == "FR") dplyr::select (.,-Details_ANG, -Info_ANG ) %>% rename(Details = Details_FR, Info = Info_FR) 
       else dplyr::select (.,-Details_FR, -Info_FR)  %>% rename(Details = Details_ANG, Info = Info_ANG) }
     
   return(df)
@@ -82,9 +82,9 @@ calcul_iti_etape <- function(Etape, lang = "FR"){
 
 # Création tableau description détaillée 
 
-tableau_Descrip_Etape <- function(Etape = 1, lang = "FR"){
+tableau_Descrip_Etape <- function(Etape = 1, language = "FR"){
 
-  descr_iti <- calcul_iti_etape(Etape, lang)
+  descr_iti <- calcul_iti_etape(Etape, language)
   
   descr_iti %>% 
     select(KM_a_faire,
@@ -112,18 +112,18 @@ tableau_Descrip_Etape <- function(Etape = 1, lang = "FR"){
     row_spec(which(descr_iti$Symbol == "Finish",), bold = T, color = couleurs$brunMaillot) %>%
     
     # Header tableau
-    add_header_above(  c({if (lang=="FR") "restant" else "to go"}, 
-                         {if (lang=="FR") "fait" else "done"},
-                         {if (lang=="FR") "parcours" else "info"}, 
+    add_header_above(  c({if (language=="FR") "restant" else "to go"}, 
+                         {if (language=="FR") "fait" else "done"},
+                         {if (language=="FR") "parcours" else "info"}, 
                          iti_etape$Details$Descr_km[Etape],
                          iti_etape$Details$Vit_rapide[Etape],
                          iti_etape$Details$Vit_moy[Etape],
                          iti_etape$Details$Vit_lent[Etape])) %>% 
     add_header_above(c( "km"  = 2, 
-                        {if(lang=="FR") "Info" else "Course"}, 
+                        {if(language=="FR") "Info" else "Course"}, 
                         iti_etape$Details$Descr_Villes[Etape], 
                         "km/h" = 3 )) %>% 
-    {if (lang == "FR")
+    {if (language == "FR")
     footnote(.,general  = c("Sprint bonification : 3-2-1 sec & 6-4-2 pts",
                          "Arrivée finale : 10-6-4 sec & 30-24-20-16-12-10-8-6-4-2 pts",
                          "GPM : 5-3-2 points"
