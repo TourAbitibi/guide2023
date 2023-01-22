@@ -4,7 +4,9 @@
 # Création des tableau de description détaillé des étapes
 #
 # Input : fichier Excel "excel/Itineraires.xlsx"
-# Output : functions pour 
+# Output : 
+#  - fonctions pour créer tableau
+#  - df `iti_etape` contenant tous les détails du fichier Excel
 #
 ################################################################################
 

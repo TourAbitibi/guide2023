@@ -33,6 +33,8 @@ elv_parcours <- raster(here("rasterElevation/elv_parcours.tif"))
 # Calcul du nombre d'étape   ## -[ ] À VALIDER LORSQU'IL Y AURA DES POINTS EN PLUS DES LIGNES
 n_etape <- nrow(parcours)
 
+
+################################################################################
 # Fonction pour extraire les élévations d'une étape
 extractionElevation <- function(etape =1 ){
 
@@ -65,9 +67,13 @@ extractionElevation <- function(etape =1 ){
   return(elv_df_etape)
 
 }
+################################################################################
+
 
 # Extraction de l'élévation sur tous les parcours
 elv_df <-map_dfr(.x= 1:n_etape, ~extractionElevation(.x))
 
-# Sauvegarde des fichiers en .csv
+################################################################################
+
+# Sauvegarde du fichier en .csv
 write_csv(elv_df, here("elevParcours/elev_parcours.csv"))

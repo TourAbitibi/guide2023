@@ -1,3 +1,12 @@
+#########################################################################################
+# Créer le raster avec les données d'élévation et sauvegarder vers .tif                 #
+# Opération manuelle à faire seulement si les parcours sortent de la région habituelle  #
+#                                                                                       #
+# Input : Shapefile contenant les gpx des parcours - "gpx/output/parcours.shp"          #
+# Output : le Raster de la région complète "rasterElevation/elv_parcours.tif"           #
+#                                                                                       #
+#########################################################################################
+
 # Tour Abitibi
 
 ## Préparer graphiques dénivelé des parcours
@@ -23,7 +32,7 @@ elv_parcours <- raster(here("rasterElevation/elv_parcours.tif"))
 
 # Lecture des données d'élévations enregistrées
 dist_df <-read_csv(here("elevParcours/elev_parcours.csv"), 
-                   col_types = list(readr::col_integer(), col_double(), col_integer()),
+                   col_types = list(col_integer(), col_double(), col_integer()),
                    show_col_types = FALSE)
 
 ################################################################################
