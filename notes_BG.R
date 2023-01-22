@@ -22,6 +22,16 @@ mutate(
                   TRUE ~ NA_character_)
 )
 
+
+# Utilisation full.names dans list.files pour avoir le path complet à passer. 
+list.files(path = "gpx/input",
+                pattern = "^Tour.*gpx$",
+                full.names = TRUE)
+
+# fonctions read_
+## col_types = cols(.default = col_character()) #ou autre type
+## col_select = c(ID, YEAR, MONTH, starts_with("VALUE"))
+
 ################################################################################
 
 # Gestion des dates
