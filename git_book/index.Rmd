@@ -1,0 +1,72 @@
+--- 
+title: "Tour de l'Abitibi 2023 - Guide Technique"
+author: "Bruno Gauthier"
+institute: "Tour de l'Abitibi"
+date: "Dernière mise à jour : `r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+toc-title: "Table des Matières"
+papersize: letter
+fontsize: 12pt
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+    Guide technique du Tour de l'Abitibi 2023, une étape de la Coupe des Nations de l'UCI.
+    Présentation de la programmation, des parcours et des réglements pour l'épreuve. 
+suppress-bibliography: yes
+params:
+  annee: 2023
+  ville: "Amos"
+  langue: "FR"  # FR ou EN
+#link-citations: yes
+#github-repo: rstudio/bookdown-demo
+---
+
+# Présentation
+
+```{r here, include=FALSE}
+# Gestion avec here
+here::i_am("guide2023.Rproj")
+```
+
+```{r call_Libs_Vars, include=FALSE}
+# Appel des librairies et variables partagées
+source(here::here("code","_LibsVars.R"))
+
+# Pour avoir accès aux données du fichier excel Itineraires.xlsx
+source(here("code","_import_itineraire.R"))
+
+# Pour accès aux tracés
+parcours <- st_read(here("gpx","output","parcours.shp"))
+
+# Langue
+lang <- params$langue
+
+# Locale
+## https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/locales
+{if (lang == "FR") Sys.setlocale("LC_TIME", locale = "fr_CA.UTF-8") 
+  else Sys.setlocale("LC_TIME", locale = "en_US.UTF-8") }
+
+opts_chunk$set( tidy = FALSE, comment = NA,
+                fig.align = "center",
+                fig.width = 7.5, fig.height = 7.5,
+                fig.retina = 2, cache = FALSE,
+                class.output = "codeout",
+                warning = FALSE,
+                message = FALSE,
+                quiet=TRUE)
+
+```
+
+
+Bonjour et bienvenue au **Tour de l'Abitibi `r params$annee`** !
+
+Voici un aperçu de l'édition de cette année.
+
+```{r map_globale, echo = FALSE, eval = TRUE}
+# Visualisation
+mapview(parcours, lwd = 2,
+        color = palette.colors(n=7, palette="ggplot2"),
+        layer.name = "Étape")
+```
+

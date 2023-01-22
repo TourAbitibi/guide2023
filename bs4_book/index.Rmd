@@ -21,17 +21,24 @@ params:
   langue: "EN"  # FR ou EN
 ---
 
+<!--  Document périmé, voir git_book -->
+
 # About
+
+```{r here, include=FALSE}
+# Gestion avec here
+here::i_am("guide2023.Rproj")
+```
 
 ```{r call_Libs_Vars, include=FALSE}
 # Appel des librairies et variables partagées
-source("code/_LibsVars.r")
+source(here::here("code","_LibsVars.R"))
 
 # Pour avoir accès aux données du fichier excel Itineraires.xlsx
-source("code/_import_itineraire.R")
+source(here("code","_import_itineraire.R"))
 
 # Pour accès aux tracés
-parcours <- st_read("gpx/output/parcours.shp")
+parcours <- st_read(here("gpx/output/parcours.shp"))
 
 # Langue
 lang <- params$langue

@@ -1,5 +1,4 @@
 book_filename: "guide2023"
-before_chapter_script: _common.R
 delete_merged_file: true
 language:
   label:
@@ -8,5 +7,9 @@ language:
     tab: "TABLEAU "
   ui:
     chapter_name: ""
-rmd_files: ["index.Rmd", "rmd/04-citations.Rmd"]
-# new_session: true
+rmd_files: ["index.Rmd", "../rmd/Etape1.Rmd", "../rmd/Etape2.Rmd"]
+
+#delete_merged_file: true
+#language:
+#  ui:
+#    chapter_name: ""
