@@ -11,3 +11,4 @@ Préparation du guide technique du [Tour de l'Abitibi](https://tourabitibi.com/)
 - Maximiser les automatisations
 - Travailler à partir des fichiers bruts (.gpx)
 - Pérenniser les opérations
+

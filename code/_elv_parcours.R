@@ -7,10 +7,13 @@
 #                                                                                       #
 #########################################################################################
 
-source("code/_LibsVars.R")
+here::i_am("guide2023.Rproj")
+
+source(here::here("code","_LibsVars.R"))
+
 
 # Shapefile incluant tous les parcours
-parcours <- st_read("gpx/output/parcours.shp")
+parcours <- st_read(here("gpx/output/parcours.shp"))
 
 # Télécharger les élévations dans la zone couvrant les tracés
 # Attention : long à télécharger
@@ -24,16 +27,16 @@ length(elv_parcours[getValues(elv_parcours) < 0]) == 0
 # Sauvegarde du raster vers un fichier .tif
 # Attention : longue opération
 elv_parcours %>% 
-  writeRaster("rasterElevation/elv_parcours.tif",
+  writeRaster(here("rasterElevation/elv_parcours.tif"),
               overwrite=TRUE)
 
 # Lecture du fichier enregistré
-elv_parcours <- raster("rasterElevation/elv_parcours.tif")
+# elv_parcours <- raster(here("rasterElevation/elv_parcours.tif"))
 
 # Visualisation du profil d'élévation
-elev_map <- mapview(elv_parcours, 
-        layer.name = "Elevation",
-        col.region = hcl.colors(50, palette = "Earth"),
-        maxpixels = 1e6)
-
-elev_map@map
+# elev_map <- mapview(elv_parcours, 
+#         layer.name = "Elevation",
+#         col.region = hcl.colors(50, palette = "Earth"),
+#         maxpixels = 1e6)
+# 
+# elev_map@map

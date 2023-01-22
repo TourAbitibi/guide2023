@@ -30,9 +30,9 @@ librarian::shelf(
   tmap,
   RColorBrewer,
   scales,
-  conflicted
+  conflicted,
+  here
 )
-
 
 # Gestion des conflits
 conflict_prefer("select", "dplyr")

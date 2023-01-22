@@ -8,7 +8,9 @@
 #
 ################################################################################
 
-source("code/_LibsVars.R")
+here::i_am("guide2023.Rproj")
+
+source(here::here("code","/_LibsVars.R"))
 
 # Fonction pour importer les feuilles du fichier excel de travail
 read_itinerairexlsx <- function(filename, tibble = FALSE) {
@@ -32,7 +34,7 @@ read_itinerairexlsx <- function(filename, tibble = FALSE) {
 
 
 # Importer les itinéraires et détails du fichier Excel
-iti_etape <- read_itinerairexlsx("excel/Itineraires.xlsx")
+iti_etape <- read_itinerairexlsx(here("excel","Itineraires.xlsx"))
 
 
 # Calculs des temps de passage par étape

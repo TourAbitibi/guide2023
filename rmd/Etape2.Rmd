@@ -1,0 +1,73 @@
+<!-- Besoin de changer le # de la ville du titre et la variable Etape  -->
+
+# Étape 2 : `r iti_etape$Details$Descr_Villes[2]`
+
+```{r, echo=FALSE}
+Etape <-2
+
+
+heureDep <- iti_etape$Details$time_depart[Etape]
+
+heureArr <- iti_etape$Details$time_arrivee[Etape]
+
+date_format <- 
+  {if (lang == "FR") format(iti_etape$Details$Date[Etape], format = "%A, %d %B %Y", locale = locale("fr")) else format(iti_etape$Details$Date[Etape], format = "%A, %B %dth %Y", locale = locale("en"))}
+
+```
+
+
+**`r date_format`** 
+
+ **`r iti_etape$Details$KM_Total[Etape]` km**
+
+
+Le commanditaire d'étape est **`r iti_etape$Details$Commanditaire[Etape]`**. 
+
+## Sommaire
+
+- `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
+- `r iti_etape$Details$Nb_tours[Etape]` tours de circuits de `r iti_etape$Details$KM_par_tours[Etape]` km
+
+----------------------------------------------------
+                                              Heure
+----------------- ----------------------------------
+Départ                                  `r heureDep`
+
+Arrivée finale                         `r heureArr`
+----------------------------------------------------
+
+## Parcours
+
+```{r, echo = FALSE, eval = TRUE}
+
+map <- mapview(parcours[Etape,],
+        layer.name = "Parcours",
+        color = couleurs$bleuTour,
+        map.types = "OpenStreetMap",
+        legend = FALSE)
+
+map@map
+
+# - [ ] Problème, carte trop large, je n'arrive pas à la restreindre dans bs4_book
+
+```
+
+
+<br/>
+
+<a href="`r iti_etape$Details$Liens[Etape]`" target="blank">Lien vers <strong>Ride with GPS</strong></a>
+
+## Élévation
+
+Graphique à venir.
+
+## Description détaillée
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, quiet=TRUE}
+
+
+tableau_Descrip_Etape(Etape, lang)
+
+```
+
+

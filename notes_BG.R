@@ -26,3 +26,10 @@ mutate(
 
 # Gestion des dates
 ## https://www.stat.berkeley.edu/~s133/dates.html 
+
+
+## Pour construire le site web
+
+## bookdown::render_book("bs4_book")
+## bookdown::render_book("git_book")
+

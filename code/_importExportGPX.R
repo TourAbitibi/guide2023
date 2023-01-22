@@ -8,9 +8,11 @@
 #
 ################################################################################
 
-source("code/_LibsVars.R")
+here::i_am("guide2023.Rproj")
 
-path <- "gpx/input/"
+source(here::here("code","/_LibsVars.R"))
+
+path <- here("gpx","input")
 
 # Lire les fichiers GPX correspondant aux parcours du Tour dans le fichier input
 gpx_files <- sort(list.files(path = path,
@@ -47,7 +49,8 @@ parcours <- rbind(parcours1[,1],
 # Correction CRS
 parcours <- st_transform(parcours, crs = 32198)
 
-
 # Sauvegarde
 
-st_write(parcours,"gpx/output/parcours.shp")
+st_write(parcours,
+         here("gpx/output/parcours.shp"),
+         append=FALSE) # pour écrire par dessus
