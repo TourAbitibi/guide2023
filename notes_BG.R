@@ -39,7 +39,7 @@ mutate(
 # git checkout issue_X
 
 ## a valider
-# git commit -m ' xxxxx closing #1'
+# git commit -m ' xxxxx closes #1'
 # git checkout main
 # git merge issue_x
 # git status
