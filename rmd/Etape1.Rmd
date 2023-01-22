@@ -45,6 +45,7 @@ map <- mapview(parcours[Etape,],
         layer.name = "Parcours",
         color = couleurs$bleuTour,
         map.types = "OpenStreetMap",
+        lwd = 3,
         legend = FALSE)
 
 map@map
@@ -61,7 +62,13 @@ map@map
 
 ## Élévation
 
-Graphique à venir.
+```{r elev_comp_1, eval=TRUE, echo=FALSE, fig.width=9, fig.height=9}
+graph_elev_complet(df = dist_df, num_etape = Etape, iti_etape = iti_etape, language = lang)
+```
+
+```{r elev_final_1, eval=TRUE, echo=FALSE, fig.width=9, fig.height=9}
+graph_elev_arrivee(df = dist_df, num_etape = Etape, iti_etape = iti_etape, language = lang, km_finaux =  3)
+```
 
 ## Description détaillée
 

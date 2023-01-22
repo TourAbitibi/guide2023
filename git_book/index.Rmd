@@ -6,8 +6,8 @@ date: "Dernière mise à jour : `r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 toc-title: "Table des Matières"
-papersize: letter
-fontsize: 12pt
+#papersize: letter
+#fontsize: 12pt
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
@@ -33,8 +33,11 @@ here::i_am("guide2023.Rproj")
 # Appel des librairies et variables partagées
 source(here::here("code","_LibsVars.R"))
 
-# Pour avoir accès aux données du fichier excel Itineraires.xlsx
+# Pour accès aux données du fichier excel Itineraires.xlsx
 source(here("code","_import_itineraire.R"))
+
+# Pour accès au graphique d'élévation
+source(here("code","graphique_denivele.R"))
 
 # Pour accès aux tracés
 parcours <- st_read(here("gpx","output","parcours.shp"))
