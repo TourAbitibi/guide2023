@@ -12,7 +12,7 @@ here::i_am("guide2023.Rproj")
 
 source(here::here("code","/_LibsVars.R"))
 
-path <- here("gpx","input")
+path <- here("gpx","input/")
 
 # Lire les fichiers GPX correspondant aux parcours du Tour dans le fichier input
 gpx_files <- sort(list.files(path = path,
