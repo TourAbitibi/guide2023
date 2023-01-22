@@ -39,7 +39,7 @@ mutate(
 # git checkout issue_X
 
 ## a valider
-# git commit -m ' xxxxx closes #1'
+# git commit -m ' xxxxx closes #1'  (https://stackoverflow.com/questions/60027222/github-how-can-i-close-the-two-issues-with-commit-message)
 # git checkout main
 # git merge issue_x
 # git status
