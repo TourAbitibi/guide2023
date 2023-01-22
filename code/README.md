@@ -45,8 +45,7 @@ Input :
 - "elevParcours/elev_parcours.csv"
 
 Output : 
-
-- [ ] à faire : fonctions qui créent le graphique d'élévation totale et le dernier 3 km ou dernier tour, en Fr en En.
+- Fonctions pour création d'un graphique d'élévation complet ou détails km finaux.
 
 
 
