@@ -4,7 +4,7 @@
 # Création des tableau de description détaillé des étapes
 #
 # Input : fichier Excel "excel/Itineraires.xlsx"
-# Output : functoins pour 
+# Output : functions pour 
 #
 ################################################################################
 
