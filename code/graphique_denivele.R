@@ -43,6 +43,10 @@ dist_df <-read_csv(here("elevParcours/elev_parcours.csv"),
 #Distance de la 1ere étape
 # set_units(st_length(parcours[1,]), km) ## attention aux tours de circuits qui ne sont pas dans le gpx.. 
 
+# ggplot, mettre ligne
+#geom_vline(xintercept = 57.8, col = couleurs$vertMaillot, lwd = 1.5, alpha =0.4)
+#geom_vline(xintercept = 103, col = "red", lwd = 0.75, lty = 2)
+
 
 # Visualisation
 # mapview(parcours, lwd = 2,
@@ -59,13 +63,54 @@ filtrerDistanceFinale <- function(dist_df, num_etape){
   if (iti_etape$Details$KM_par_tours[num_etape] == 0){km_a_enlever = 3} 
     else {km_a_enlever = iti_etape$Details$KM_par_tours[num_etape]}
   
-  df <-  dist_df %>% 
+  dist_df %>% 
     filter(etape == num_etape) %>% 
-    filter(dist >= (max(dist) - km_a_enlever))
-
-  return(df)
+    filter(dist >= (max(dist) - km_a_enlever)) %>% 
+    
+    return()
   
 }
+
+################################################################################
+
+# Fonction pour trouver élévation y pour une valeur x données
+
+elv_f_x <- function(df = dist_df, num_etape = 1, x ){
+  
+ df %>% 
+    filter (etape == num_etape) %>% 
+    select(-etape) %>% 
+    mutate (dist_arr = round(dist, digits = 1)) %>% 
+    group_by(dist) %>% 
+    summarise(elev = mean(elev, na.rm= TRUE),
+              .groups = "drop") %>% 
+    filter(dist == round(x, digits = 1)) %>% 
+    pull(elev) %>% 
+    
+    return()
+  
+}
+
+
+################################################################################
+
+# Fonction pour obtenir les points d'intérêts et leurs élévation
+
+elv_poi <- function(df = dist_df, num_etape = 1){
+
+  poi <- calcul_iti_etape(num_etape, "FR") %>% 
+    select (KM_fait, Symbol) %>% 
+    filter(Symbol %in% c("Green", "Climb", "Sprint", "Mayor", "Finish"))
+  
+  
+  map(.x = 1:nrow(poi), ~elv_f_x(df, num_etape, x = poi$KM_fait[.x])) %>% 
+    lapply(data.frame) %>% 
+    bind_rows() %>% 
+    cbind(poi,.) %>% 
+    rename(elev = X..i..) %>% 
+    return()
+}
+
 
 ################################################################################
 
@@ -74,9 +119,15 @@ filtrerDistanceFinale <- function(dist_df, num_etape){
 #   - [ ] Automatiquement avec loop
 
 
+
+num_etape = 1
+
+
+poi_etape <- elv_poi(dist_df, num_etape) %>% as_tibble()
+
 ### Avec ggplot
-dist_df %>% 
-  filter(etape == 1) %>% 
+graph_base <- dist_df %>% 
+  filter(etape == num_etape) %>% 
   # filtrerDistanceFinale(1) %>% 
   ggplot(aes(x= dist, y = elev))+
     geom_line(color=couleurs$bleuTour, linewidth=0.8)+
@@ -86,9 +137,10 @@ dist_df %>%
     scale_x_continuous(n.breaks = 10)+
     theme_ipsum()
     
-  
-    #geom_vline(xintercept = 57.8, col = couleurs$vertMaillot, lwd = 1.5, alpha =0.4)
-    #geom_vline(xintercept = 103, col = "red", lwd = 0.75, lty = 2)
 
+graph_base_points <- graph_base+
+  geom_point(aes(x= poi_etape %>% filter(Symbol == "Green") %>% pull(KM_fait),
+                 y= poi_etape %>% filter(Symbol == "Green") %>% pull(elev)),
+             )
                    
                

@@ -33,3 +33,15 @@ mutate(
 ## bookdown::render_book("bs4_book")
 ## bookdown::render_book("git_book")
 
+################################################################################
+
+# git branch issue_X
+# git checkout issue_X
+
+## a valider
+# git commit -m ' xxxxx closing #1'
+# git checkout main
+# git merge issue_x
+# git status
+# git push
+#
