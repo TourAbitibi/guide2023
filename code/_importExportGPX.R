@@ -36,6 +36,7 @@ parcours7 <- st_read(gpx_files[7], layer = "tracks")
 ## points <- st_read("d:/Tour2022_1.gpx", layer = couche[1])
 
 # Correction manuelle (pas accès au gpx sur ridewithgps pour l'instant)
+parcours3$name <- "Tour 2022 - Étape 3 - CLMI"
 parcours4$name <- "Tour 2022 - Étape 4 - Malartic"
 
 # Aggrégation de tous les parcours d'étape
