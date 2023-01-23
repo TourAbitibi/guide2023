@@ -14,7 +14,12 @@ source(here::here("code","/_LibsVars.R"))
 
 source(here("code","_import_itineraire.R"))
 
+# df des détails
 details <- iti_etape$Details %>% rename(etape = Etape)
+
+################################################################################
+
+# Import des GPX
 
 path <- here("gpx","input")
 
@@ -75,11 +80,11 @@ parcours$name[4] <- "Tour 2022 - Étape 4 - Malartic"
 parcours <- parcours %>% 
   mutate(etape = str_replace(name, "^Tour \\d+ .* Étape (\\d).*", "\\1") %>% as.double()) %>% 
   left_join(y=details, by = "etape") %>% 
-  select(etape, name, Date, time_depart, time_arrivee, Descr_km, KM_Total, KM_Neutres, 
+  select(etape, name, Jour, Date, time_depart, time_arrivee, Descr_km, KM_Total, KM_Neutres, 
           Nb_tours, KM_par_tours) %>% 
   rename_all(tolower) %>% 
-  rename (heure_dep = time_depart,
-          heure_arr = time_arrivee)
+  rename (h_dep = time_depart,
+          h_arr = time_arrivee)
 
 # fin nouvelle façon
 
