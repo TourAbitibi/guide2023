@@ -68,7 +68,7 @@ parcours$name[4] <- "Tour 2022 - Étape 4 - Malartic"
 
 
 # Sortir le numéro de l'étape à partir du nom
-parcours %>% 
+parcours <- parcours %>% 
   mutate(etape = str_replace(name, "^Tour \\d+ .* Étape (\\d).*", "\\1"))
 
 # fin nouvelle façon
