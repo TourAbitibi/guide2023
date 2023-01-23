@@ -68,7 +68,10 @@ Voici un aperçu de l'édition de cette année.
 
 ```{r map_globale, echo = FALSE, eval = TRUE}
 # Visualisation
-mapview(parcours, lwd = 2.5,
+mapview(parcours, 
+        lwd = 2.5,
+        alpha = 0.7,
+        z = "name",
         color = palette.colors(n=7, palette="ggplot2"),
         layer.name = "Étape")
 ```

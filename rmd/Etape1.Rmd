@@ -44,6 +44,7 @@ Arrivée finale                         `r heureArr`
 map <- mapview(parcours[Etape,],
         layer.name = "Parcours",
         color = couleurs$bleuTour,
+        alpha = 0.7,
         map.types = "OpenStreetMap",
         lwd = 3,
         legend = FALSE)
