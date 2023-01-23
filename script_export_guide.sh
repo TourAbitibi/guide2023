@@ -10,10 +10,13 @@ Rscript render_book.R &&
 
 echo ~~"Copie vers le NAS pour affichage web"~~ &&
 
-# -[ ] Si le dossier existe, éléminier le dossier existent, les éliminer avec de copier
+# -[ ] Si le dossier existe, 
 
 
-# -[ ] Recréation du dossier guide
+#  -[x] éliminer son contenu avant de copier
+#  rm -rf /Volumes/web/guide/*
+
+
 
 ## Commande pour copier le contenu du book vers NAS.
 `cp -R  /Users/brunogauthier/Documents/guide2023/git_book/_book/* /Volumes/web/guide`
@@ -21,3 +24,7 @@ echo ~~"Copie vers le NAS pour affichage web"~~ &&
 
 
 # - [ ] Effacer guide2023_files si existe encore dans 'git_book'
+
+echo ~~"Fin de la copie"~~
+
+# -[ ] effacer le fichier temporaire qui ne s'efface pas tout le temps dans git_book : guide2023_files..
