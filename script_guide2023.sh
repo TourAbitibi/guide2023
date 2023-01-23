@@ -1,5 +1,9 @@
 #!/bin/usr/env bash
 
+## Script d'ouverture du dossier 
+## à partir du mac de Bruno
+
+
 cd ~/Documents/guide2023/ &&
 
 echo ~~fetch~~ &&
