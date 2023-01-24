@@ -16,6 +16,7 @@ description: |
 suppress-bibliography: yes
 params:
   annee: 2023
+  dates_compl: "11 au 16 juillet 2023"
   ville: "Amos"
   langue: "FR"  # FR ou EN
 #link-citations: yes

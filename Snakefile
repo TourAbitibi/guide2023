@@ -10,7 +10,7 @@ rule Z_targets:
         "git_book/_book/index.html",
         "/Volumes/web/guide/FR/index.html",
 
-        "git_book/index.Rmd", "rmd/Etape1.Rmd", "rmd/Etape2.Rmd",
+        "git_book/index.Rmd", "rmd/Etape1.Rmd", "rmd/Etape2.Rmd", "rmd/Reglements.Rmd",
 
         "elevParcours/elev_parcours.csv",
 
@@ -86,9 +86,12 @@ rule R4_render_book:
         "gpx/output/parcours.shp",
         "elevParcours/elev_parcours.csv",
         "script/render_book.R",
+        "git_book/_bookdown.yml", 
+        "git_book/_output.yml",
         "git_book/index.Rmd",
         "rmd/Etape1.Rmd",
-        "rmd/Etape2.Rmd"
+        "rmd/Etape2.Rmd",
+        "rmd/Reglements.Rmd"
     output:
         "git_book/_book/index.html"
     params:
