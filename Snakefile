@@ -1,6 +1,9 @@
 # Commande pour sortir le dag
 # snakemake --dag | dot -Tpng > dag.png
 #
+# Pour forcer seulement la création du livre : (tag -R pour 1 rule, -F pour tout)
+# snakemake -c1 -R R4_render_book
+#
 
 rule Z_targets:
     input:
