@@ -5,7 +5,7 @@
 
 # Librairies
 
-librarian::shelf(
+librarian::shelf(quiet = TRUE,
   bookdown,
   knitr,
   rmarkdown,

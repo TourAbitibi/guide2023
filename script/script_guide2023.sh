@@ -1,4 +1,4 @@
-#!/bin/usr/env bash
+#!/bin/usr/env sh
 
 ## Script d'ouverture du dossier 
 ## à partir du mac de Bruno

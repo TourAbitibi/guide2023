@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript --vanilla
+
 ################################################################################
 # Lecture du ficher excel "itinéraire" ,
 # Calcul des heures d'arrivée moyenne,

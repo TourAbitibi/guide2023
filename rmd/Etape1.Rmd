@@ -52,7 +52,7 @@ map <- mapview(parcours[Etape,],
 map@map
 
 # - [ ] Problème, carte trop large, je n'arrive pas à la restreindre dans bs4_book
-
+#
 ```
 
 

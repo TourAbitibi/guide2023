@@ -42,3 +42,5 @@ vignettes/*.pdf
 #DS Store
 .DS_Store
 
+# Snakemake temporary directory file
+.snakemake

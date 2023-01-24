@@ -55,3 +55,13 @@ list.files(path = "gpx/input",
 # git status
 # git push
 #
+
+################################################################################
+
+# Snakemake
+
+# Forcer le wrokflow complet :
+# snakemake -c1 -F
+
+# Forcer 1 seule rule:
+# snakemake -c1 -R nom_rule

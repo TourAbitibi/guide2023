@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript --vanilla
+
 ################################################################################
 # Importer les fichiers GPX en input
 # Sauvegarder vers un shapefile en output
@@ -28,42 +30,6 @@ gpx_files <- sort(list.files(path = path,
                              pattern = "^Tour.*gpx$",
                              full.names = TRUE))
 
-names(gpx_files) <- list_parcours
-
-############################
-
-# # Import des GPX
-# parcours1 <- st_read(gpx_files[1], layer = "tracks")
-# parcours2 <- st_read(gpx_files[2], layer = "tracks")
-# parcours3 <- st_read(gpx_files[3], layer = "tracks")
-# parcours4 <- st_read(gpx_files[4], layer = "tracks")
-# parcours5 <- st_read(gpx_files[5], layer = "tracks")
-# parcours6 <- st_read(gpx_files[6], layer = "tracks")
-# parcours7 <- st_read(gpx_files[7], layer = "tracks")
-# 
-# # manque les données Points sans abonnement premium - à suivre
-# ## points <- st_read("d:/Tour2022_1.gpx", layer = couche[1])
-# 
-# # Correction manuelle (pas accès au gpx sur ridewithgps pour l'instant)
-# parcours3$name <- "Tour 2022 - Étape 3 - CLMI"
-# parcours4$name <- "Tour 2022 - Étape 4 - Malartic"
-# 
-# # Aggrégation de tous les parcours d'étape
-# parcours <- rbind(parcours1[,1], 
-#                   parcours2[,1],
-#                   parcours3[,1],
-#                   parcours4[,1],
-#                   parcours5[,1],
-#                   parcours6[,1],
-#                   parcours7[,1],
-#                   deparse.level = 0
-# )
-
-
-###########################
-
-# Nouvelle façon  avec map
-
 # Import et concaténation des GPX
 parcours <- map_dfr(1:length(gpx_files), ~st_read(gpx_files[.x], layer = "tracks")) %>% 
   select(name)
@@ -86,15 +52,38 @@ parcours <- parcours %>%
   rename (h_dep = time_depart,
           h_arr = time_arrivee)
 
-# fin nouvelle façon
-
-###########################
 
 # Correction CRS
 parcours <- st_transform(parcours, crs = 32198)
 
 
 # Sauvegarde
-st_write(parcours,
+sauvegarde_requise <- function(){
+  st_write(parcours,
          here("gpx/output/parcours.shp"),
          append=FALSE) # pour écrire par dessus
+  
+  print("Sauvegarde de `parcours.shp` faite!")
+}
+
+################################################################################
+
+# Vérifier si les fichiers ont changés avant de faire la sauvegarde
+# car création de longues opérations dans le Snakefile
+# (création .tif, .csv aux prochaines étapes)
+
+## Vérifier si le parcours.shp existe
+
+parcours_en_memoire = NULL # assignation initiale
+
+if (file.exists(here("gpx","output","parcours.shp"))) { parcours_en_memoire = st_read(here("gpx/output/parcours.shp"))}     
+
+## Vérifier si les 2 parcours sont exactement les mêmes.
+meme_parcours <- all(parcours == parcours_en_memoire)
+
+a_sauvegarder <- ifelse(!is.na(meme_parcours) & meme_parcours, FALSE, TRUE)
+
+## Sauvegarder seulement si a changé
+ifelse(a_sauvegarder,  sauvegarde_requise(),
+       "Pas besoin d'écrire `parcours.shp` à nouveau : aucun changmenet")
+       
