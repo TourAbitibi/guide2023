@@ -2,14 +2,12 @@
 
 Article 1 – Organisation
 
-:   L’épreuve du Tour de l’Abitibi est une épreuve junior par étapes organisée par Le Tour cycliste de l’Abitibi inc. (1122, 8e Rue - Suite 201, Val-d'Or (Québec) J9P 3N6) sous les règlements et la sanction de l’[Union Cycliste Internationale](https://uci.org) (UCI). 
+:   L’épreuve du Tour de l’Abitibi est une épreuve junior par étapes organisée par Le Tour cycliste de l’Abitibi inc. (1122, 8e Rue - Suite 201, Val-d'Or (Québec) J9P 3N6) sous les règlements et la sanction de <a href="https://uci.org" target="blank">l'Union Cycliste Internationale</a> (UCI). 
 
-    Le Tour de l’Abitibi est également sanctionné par la [Fédération Québécoise des Sports Cyclistes](https://fqsc.net/) (FQSC) et [Cyclisme Canada Cycling](https://cyclingcanada.ca/) (CC). 
+    Le Tour de l’Abitibi est également sanctionné par la <a href="https://fqsc.net/" target="blank">Fédération Québécoise des Sports Cyclistes</a> (FQSC) et <a href="https://fcyclingcanada.ca/" target="blank">Cyclisme Canada</a> (CC). 
 
     L’épreuve est disputée sous le règlement UCI et seule l’échelle des sanctions UCI s’appliquera. Elle se dispute du `r params$dates_compl`.
 
-
-<!-- [ ] Mettre liens web en html pour avoir redirection target=blank  -->
 
 
 Article 2 – Type d’épreuve
@@ -19,7 +17,7 @@ Article 2 – Type d’épreuve
     Les dérogations suivantes ont été accordées par l’UCI à l’organisation du Tour de l’Abitibi :  
     
     * L’épreuve du Tour de l’Abitibi a la possibilité d’accueillir des équipes régionales ou des clubs composés uniquement de coureurs juniors mais ne marquant pas de points UCI (article 2.14.036). De plus, leur maillot devra respecter les articles 1.3.045 à 1.3.047 du Règlement UCI;    
-    * L’épreuve du Tour de l’Abitibi compte deux (2) demi-étapes la même journée (article 2.6.010);
+    * L’épreuve du Tour de l’Abitibi compte deux (2) demi-étapes la même journée (article 2.6.010).
    
    
     
@@ -31,5 +29,251 @@ Article 3 – Participation
     
     Conformément au nouveau règlement UCI (x.x.xxx) adopté pour 2023, il n'y a plus de développement maximum autorisé pour les hommes juniors. 
     
+
+```{r include=FALSE}
+dim_debut <- format(iti_etape$Details$Date[1]- ddays(2) ,format = "%d %B", locale = locale("fr"))
+lun <- format(iti_etape$Details$Date[1]- ddays(1) ,format = "%d %B", locale = locale("fr"))
+mar <- format(iti_etape$Details$Date[1], format = "%d %B", locale = locale("fr"))
+mer <- format(iti_etape$Details$Date[2], format = "%d %B", locale = locale("fr"))
+dim_fin <- format(iti_etape$Details$Date[7] ,format = "%d %B %Y", locale = locale("fr"))
+
+```
+
+
+Article 4 – Permanence
+
+:   La permanence de l’épreuve opère du dimanche `r dim_debut` au dimanche `r dim_fin` à l’école secondaire La Calypso, au 800 1re Rue E, Amos, QC J9T 2H8. Les heures d’ouverture sont établies en fonction de l’horaire des courses, mais un gardien de sécurité est présent 24 heures sur 24.
+
+    La rencontre initiale entre l’organisation du Tour et les responsables d’équipes se fait à la permanence le dimanche `r dim_debut` de 12h00 à 23h00 et le lundi `r lun` de 8h00 à 16h30.
+    
+    La vérification des licences par le Collège des commissaires et la remise des dossards et plaques de cadre aura lieu le lundi `r lun` entre 14h et 15h30.
+    
+    La réunion obligatoire des directeurs sportifs organisée suivant l’article 1.2.087 du règlement UCI, en présence des membres du Collège des commissaires, est fixée à 10h00 le mardi `r mar`.
+
+
+Article 5 – Ordre de la caravane
+
+:   L’ordre de la caravane pour l’étape 1 sera déterminé selon l’article 2.14.046 du règlement UCI. 
+
+    L’ordre de la caravane pour les étapes subséquentes sera déterminé en fonction du coureur de l’équipe le mieux placé au classement général individuel.
+    
+
+Article 6 – Ordre de départ pour le contre-la-montre
+
+:   L’ordre de départ est l’ordre inverse du classement général au temps après l’étape #2. Toutefois le collège des commissaires peut modifier cet ordre afin d’éviter que deux coureurs d’une même équipe se suivent (2.6.023). 
+
+    Les départs se donneront à intervalle d’une (1) minute, à l’exception des 10 derniers coureurs qui partiront avec un intervalle de deux (2) minutes.
+
+    Les vélos doivent être présentés et en quarantaine pour vérification au moins 15 minutes avant le départ du coureur. Les vélos spécifiques au contre-la-montre sont autorisés pour le contre-la-montre individuel s’ils respectent la règlementation de l’UCI.
+    
+    Une vérification optionnelle de vélos sera offerte par les commissaires le mercredi `r mer` à 10h30.
+    
+    
+Article 7 – Radio-Tour
+
+:   Les informations courses sont émises sur la fréquence 01 – Radio-Tour sur le radio fourni par l’organisation.
+
+
+Article 8 – Assistance technique neutre
+
+:   Le service d’assistance technique neutre est assuré par l’organisation du Tour cycliste de l’Abitibi (à l’exception de l’étape 3 – CLMI). Le service est assuré au moyen de 2 véhicules automobiles et 1 moto identifiés à cet effet. 
+
+    Toutes les roues arrière du dépannage neutre seront équipées de cassettes 11 vitesses. Pour les équipes ayant des besoins particuliers (par exemple, frein à disque), veuillez nous avertir à la réunion des directeurs sportifs.
+
+
+Article 9 – Délais d’arrivée
+
+:   Il sera accordé un délai d’arrivée établi sur le temps réel du vainqueur augmenté de 20 % pour toutes les étapes, à l’exception du contre-la-montre individuel qui ne comporte pas de délai d’arrivée.
+
+
+Article 10 – Arrivée en circuit (Étape 2)
+
+:   Dans une étape sur route finissant sur un circuit, les coureurs arrivant à l’entrée du circuit en même temps qu’un peloton ou que la caravane passe sur le circuit seront arrêtés temporairement par un commissaire et pourront repartir lorsque le circuit sera libre, de manière à ne pas interférer avec les autres groupes. La perte de temps sera créditée de leur temps final. Tout coureur arrêté temporairement à l’entrée du circuit doit ensuite compléter tous les tours prescrits.
+
+    Si à l’entrée du circuit, il est déterminé par le commissaire que le coureur ne pourra arriver dans le délai d’arrivée prescrit, le commissaire pourra arrêter ce dernier et il ne pourra reprendre le départ à la prochaine étape.
+
+
+Article 11 – Circuits urbains (Étape 7)
+
+:   Lors de l’étape 7, un coureur doublé par le peloton avant son 5e passage sur la ligne d’arrivée du circuit urbain sera retiré de la course par les commissaires et recevra un résultat « hors-délai ». 
+
+    Un coureur doublé par le peloton après son 5e passage sur la ligne d’arrivée sera retiré de la course par les commissaires et sera crédité d’un temps calculé basé sur sa vitesse moyenne pour la distance qu’il aura parcourue, après s’être présenté à la table des commissaires à la ligne d’arrivée.
+    
+    Tout coureur abandonnant en cours de circuit lors de l’étape 7 obtiendra un résultat d’abandon.
+    
+
+Article 12 – Bonifications en temps
+
+:   Des bonifications seront attribuées aux trois (3) premiers coureurs de l’étape excepté pour le contre-la-montre individuel :
+
+    * Course sur route (avec/sans circuit) : 10, 6, 4 secondes, sauf étape 4 (demi-étape) : 6, 4, 2 secondes.
+    
+    Des bonifications seront attribuées aux trois (3) premiers coureurs de chacun des sprints intermédiaires avec bonification :
+    
+    * Sprint bonification: 3, 2, 1 secondes.
+
+
+
+Article 13 – Classements
+
+:   Les classements suivants sont établis. La course fait l’objet de cinq (5) classements généraux différents:
+
+
+    * Classement général individuel au temps (Maillot brun) 2.6.014; 2.6.015; 2.6.019
+    * Classement général individuel aux points (Maillot orange) 2.6.017
+    * Classement général individuel de la montagne (Maillot à pois) 2.6.017
+    * Classement général individuel de la relève au temps (Maillot bleu) pour les juniors de 1re année;
+    * Classement général par équipe au temps 2.6.016.
+    
+    Si un coureur est en tête de plusieurs classements, l’ordre de priorité des maillots distinctifs est le suivant :
+ 
+    1.  Maillot brun;
+    2.	Maillot orange;
+    3.	Maillot à pois;
+    4.	Maillot bleu;
+    5.	Champion du monde;
+    6.	Champion continental;
+    7.	Champion national;
+    8.	Équipe nationale;
+    9.	Équipe régionale.
+
+
+Article 13.1 - Classement général individuel au temps
+
+:   Un classement général individuel au temps est établi par l’addition des temps enregistrés dans chacune des étapes en tenant compte des bonifications et pénalités – article 2.6.014 de l’UCI.
+
+    En cas d’égalité de temps, les fractions de seconde enregistrées lors de l’étape du contre-la-montre individuel seront réincorporées dans le temps total pour départager les coureurs ex æquo. (article 2.6.015 du règlement UCI).
+    
+    En cas de nouvelle égalité, les coureurs seront départagés par l’addition des places obtenues à chaque étape; en cas de nouvelle égalité, le classement de la dernière étape sera pris en compte. (article 2.6.015 du règlement UCI).
+    
+
+Article 13.2 - Classement général individuel aux points
+
+:   Il s’obtient par l’addition des points attribués à la fin des étapes et ceux des sprints intermédiaires.
+
+    En cas d’égalité dans une étape, les coureurs bénéficient tous du nombre de points attribués à leur rang.
+
+    En cas d’égalité au classement général individuel aux points, il est fait application des critères suivants, jusqu’à ce qu’il y ait départage (2.6.017) :
+    
+    1.  Nombre de victoires d’étapes
+    2.  Nombre de victoires dans les sprints intermédiaires
+    3.  Classement général individuel au temps.
+    
+    Points aux dix (10) premiers coureurs d’une étape et aux trois (3) premiers coureurs des sprints intermédiaires :
+    
+    *  10 premiers d’une étape sur route : 30 – 24 – 20 – 16 – 12 – 10 – 8 – 6 – 4 – 2
+    *  C.L.M. individuel : 15 – 12 – 10 – 8 – 6 – 5 – 4 – 3 – 2 – 1
+    *  Sprints intermédiaires : 6 – 4 – 2
+
+
+Article 13.3 - Classement général individuel de la montagne (GPM) 
+
+:   Il s’obtient par l’addition de points attribués au prix de la montagne (sprint de côte) soit 5-3-2 points, sauf à l’étape 5 où les points sont doublés à l’arrivée (arrivée au sommet), soit 10-6-4 points.
+
+    En cas d’égalité au classement final, il est fait application des critères suivants, jusqu’à ce qu’il y ait départage :
+    
+    1. Nombre de premières places dans les arrivées au sommet (étape 5);
+    2. Nombre de premières places dans les sprints de côte;
+    3. Classement général individuel au temps.
+
+Article 13.4 - Classement général individuel de la relève
+
+:   Le classement général individuel de la relève est basé sur le classement général individuel au temps, mais ne concerne que les coureurs juniors de 1re année nés en `r params$annee - 17`.
+
+
+
+Article 13.5 - Classement général par équipe au temps
+
+:   Le classement par équipes du jour s’établit par l’addition des trois (3) meilleurs temps individuels de chaque équipe. 
+
+    En cas d’égalité, les équipes sont départagées par l’addition des places obtenues par leurs trois meilleurs temps de l’étape. En cas de nouvelle égalité, les équipes sont départagées par la place de leur meilleur coureur au classement de l’étape. (Article 2.6.016 du règlement UCI)
+
+
+    Le classement général par équipes s’établit par l’addition des trois meilleurs temps individuels de chaque équipe dans toutes les étapes courues. En cas d’égalité, il est fait application des critères suivants, jusqu’à ce qu’il y ait départage :
+    
+    1. Nombre de premières places dans le classement par équipes du jour;
+    2. Nombre de deuxièmes places dans le classement par équipes du jour; etc.
+    
+    S’il y a toujours égalité, les équipes sont départagées par la place de leur meilleur coureur au classement général individuel.
+
+    Toute équipe réduite à moins de trois coureurs est éliminée du classement général par équipes.
+
+
+Article 14 - Réclamation
+
+:   Seul le directeur technique d’une équipe pourra déposer une demande de vérification des résultats; celle-ci devra être présentée au juge à l’arrivée. Une demande de vérification doit être faite dans les délais suivants :
+
+    * Au sujet des classements : au plus tard une (1) heure avant le départ de l’étape suivante;
+    * Au sujet du classement général final : au plus tard trente (30) minutes après l’affichage des résultats.
+
+Article 15 – Bourses
+
+:   Les prix suivants sont attribués. 
+
+    *Tableaux à produire* 
+  
+Article 16 - Prix spéciaux
+
+:   Les gagnants des prix spéciaux sont choisis par l’ensemble des directeurs techniques et par les commissaires par le biais d’un questionnaire
+
+    * Trophée du meilleur junior abitibien[^abitibien]
+    * Trophée de la révélation – Relevation Trophy
+    * Trophée du plus courageux – Most Courageous Trophy
+    * Trophée du plus gentilhomme – Most Gentlemanly Conduct Trophy
+    * Trophée du plus combatif – Most Combative Trophy
+    * Trophée du meilleur esprit d’équipe – Best Team Spirit Trophy
+    * Trophée du meilleur mécanicien - Best Mechanic Trophy
+    * Trophée du directeur sportif par excellence – Best Team Manager Trophy
+    * Trophée du plus utile à son équipe – MVP of each team Trophy
+
+
+[^abitibien]: Coureur abitibien d’origine ou habitant en Abitibi, selon le classement général individuel au temps
+
+
+Article 17 – Antidopage
+
+:   Le règlement antidopage de l’UCI s’applique intégralement à la présente épreuve, le cas échéant, la législation antidopage locale qui serait d’application outre le règlement antidopage de l’UCI. 
+
+    Les coureurs sont responsables de vérifier la liste des participants sélectionnés pour contrôle antidopage chaque jour. 
+
+    Le fait de ne pas se présenter aux tests lorsque requis sera considéré comme une violation des règles antidopage. 
+
+
+
+Article 18 – Protocole et récompenses
+
+:   Conformément à l’article 1.2.112 du règlement UCI, les coureurs suivants doivent se présenter quotidiennement au protocole au maximum 10 minutes après l’arrivée en tenue de compétition :
+
+    * Les 3 premiers de l’étape.
+    * Les leaders des classements suivants : 
+    
+        * Classement individuel au temps (maillot brun), 
+        * classement général aux points (maillot orange), 
+        * leader de première année (maillot bleu) et 
+        * leader au classement de la montagne (maillot à pois).
+
+
+Article 19 – Pénalités
+
+:   Le barème de pénalités de l’UCI est applicable intégralement.
+
+    De plus, si une voiture d’équipe effectue un dépassement interdit en zone urbaine pour remonter la caravane ou fait usage de conduite dangereuse, l’organisation pourra exiger que cette voiture d’équipe soit placée au dernier rang de la caravane, immédiatement ou pour la ou les prochaines étapes, à la discrétion de l’organisation. 
+    
+    Si une deuxième infraction devait se produire ou en cas d’infraction grave, la voiture d’équipe pourrait être exclue complètement de la caravane.
+
+
+Article 20 – Services d’urgences
+
+:   Étant donné le caractère urbain de certaines épreuves et de l’importance accordée par l’organisation à la sécurité du public, la priorité sera accordée aux services d’urgence en cas d’incident et tous devront s’y conformer.
+
+
+Article 21 – Respect de l’environnement et de l’image du cyclisme
+
+:   Il est interdit aux coureurs de jeter déchets ou bidons sans précautions le long du parcours en dehors des zones de déchets mises en place par l’organisateur (article 2.2.025). 
+
+    Les emballages et déchets doivent être conservés par le coureur ou remis à la voiture d’équipe. Les bidons peuvent être laissés en bord de chaussée si des spectateurs sont présents. 
+    
+    Le non-respect de cet article peut entrainer des sanctions (2.12.004, 2.12.005, 2.12.007) ou une exclusion, tel que prévu à l’article 2.2.010.
+
 
 
