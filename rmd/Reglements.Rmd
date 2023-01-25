@@ -27,7 +27,7 @@ Article 3 – Participation
 
     Conformément à l’article 2.14.039 du règlement UCI, le nombre de coureurs par équipe est de minimum quatre (4) et de maximum six (6) coureurs.
     
-    Conformément au nouveau règlement UCI (x.x.xxx) adopté pour 2023, il n'y a plus de développement maximum autorisé pour les hommes juniors. 
+    > Conformément au nouveau règlement UCI (x.x.xxx) adopté pour 2023, il n'y a plus de développement maximum pour les hommes juniors (braquets). 
     
 
 ```{r include=FALSE}
@@ -78,7 +78,7 @@ Article 8 – Assistance technique neutre
 
 :   Le service d’assistance technique neutre est assuré par l’organisation du Tour cycliste de l’Abitibi (à l’exception de l’étape 3 – CLMI). Le service est assuré au moyen de 2 véhicules automobiles et 1 moto identifiés à cet effet. 
 
-    Toutes les roues arrière du dépannage neutre seront équipées de cassettes 11 vitesses. Pour les équipes ayant des besoins particuliers (par exemple, frein à disque), veuillez nous avertir à la réunion des directeurs sportifs.
+    Toutes les roues arrière du dépannage neutre seront équipées de cassettes 11 vitesses. Pour les équipes ayant des besoins particuliers (par exemple, freins à disque), veuillez nous avertir à la réunion des directeurs sportifs.
 
 
 Article 9 – Délais d’arrivée
