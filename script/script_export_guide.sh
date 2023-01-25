@@ -27,9 +27,9 @@ echo "~~ Fin de la copie vers le NAS ~~ \n"
 echo "~~ Ménage du dossier temporaire ~~\n"
 
 # Effacer guide2023_files si existe encore dans 'git_book'
-if ls $path/ | grep guide2023_files 1> /dev/null 2>&1;
-then
-  rm -rf $path/guide2023_files
-fi
+#if ls $path/ | grep guide2023_files 1> /dev/null 2>&1;
+#then
+rm -rf $path/guide2023_files
+#fi
 
 echo Guide disponible au : https://home.brunogauthier.net/guide/$lang 
