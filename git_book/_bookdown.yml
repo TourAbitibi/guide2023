@@ -7,7 +7,13 @@ language:
     tab: "TABLEAU "
   ui:
     chapter_name: ""
-rmd_files: ["index.Rmd", "../rmd/Etape1.Rmd", "../rmd/Etape2.Rmd", "../rmd/Reglements.Rmd"]
+rmd_files: 
+  - "index.Rmd"
+  - "../rmd/Etape1.Rmd"
+  - "../rmd/Etape2.Rmd"
+  - "../rmd/Reglements.Rmd"
+  - "../rmd/Regl_sejour.Rmd"
+  
 
 #delete_merged_file: true
 #language:

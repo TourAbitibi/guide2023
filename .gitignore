@@ -10,6 +10,7 @@ git_book/_book
 git_book/guide2023_files/
 #####
 
+dag.png
 ################################################################################
 # History files
 .Rhistory

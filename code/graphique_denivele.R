@@ -9,6 +9,8 @@
 
 # -[ ] Vérifier comment calculer le pourcentage de pente pour passer comme couleur à la ligne du graphique d'élévation
 
+    # Fonction : lag ou lead(elv, n=1 row derrière ou devant)
+
 here::i_am("guide2023.Rproj")
 
 source(here::here("code","/_LibsVars.R"))
