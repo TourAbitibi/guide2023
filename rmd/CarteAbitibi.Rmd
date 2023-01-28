@@ -1,18 +1,18 @@
 
-```{r title_en, eval=(lang != "FR"), results='asis'}
+```{r title_en, eval=(lang != "FR"), results='asis', echo= FALSE}
 
 glue("# General map of Abitibi-Témiscamingue")
 
 ```
 
 
-```{r titre_fr, eval=(lang == "FR"), results='asis' }
+```{r titre_fr, eval=(lang == "FR"), results='asis', echo= FALSE }
 
 glue("# Carte générale de l'Abitibi-Témiscamingue")
 
 ```
 
-```{r carte_generale_abitibi, fig.align = 'center', out.width = "100%", fig.cap = "Source : https://www.observat.qc.ca/documents/atlas-galerie/1-carte-abitibi-temiscamingue-d-villes-villages-region-08-at-mrc-hr.jpg"}
+```{r echo = FALSE, fig.align = 'center', out.width = "100%", fig.cap = "Source - [L'Atlas de l'Abitibi-Témiscamingue](https://www.observat.qc.ca/atlas)"}
 
 knitr::include_graphics("https://www.observat.qc.ca/documents/atlas-galerie/1-carte-abitibi-temiscamingue-d-villes-villages-region-08-at-mrc-hr.jpg")
 ```
