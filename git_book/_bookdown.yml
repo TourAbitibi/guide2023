@@ -13,6 +13,7 @@ rmd_files:
   - "../rmd/Etape2.Rmd"
   - "../rmd/Reglements.Rmd"
   - "../rmd/Regl_sejour.Rmd"
+  - "../rmd/CarteAbitibi.Rmd"
   
 
 #delete_merged_file: true

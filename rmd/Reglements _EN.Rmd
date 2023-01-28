@@ -1,0 +1,295 @@
+# Specific rules
+
+Article 1 – Organization
+
+:   The Tour de l’Abitibi is a junior stage road race organized by Le Tour Cycliste de l’Abitibi Inc. (1122, 8e Rue - Suite 201, Val-d'Or (Québec) J9P 3N6) under the rules and regulations of hte <a href="https://uci.org" target="blank">Union Cycliste Internationale</a> (UCI). 
+
+    The Tour de l’Abitibi is also sanctioned by the  <a href="https://fqsc.net/" target="blank">Fédération Québécoise des Sports Cyclistes</a> (FQSC) and <a href="https://fcyclingcanada.ca/" target="blank">Cycling Canada</a>(CC). 
+
+    The event is regulated by the UCI rulebook and only the UCI scale of penalties will apply. The competition takes place from `r params$dates_compl`.
+
+
+
+Article 2 – Race type
+
+
+:  This race is open to athletes from the junior men’s category. It is an official UCI World Junior competition. In order to be considered as a junior athlete, one must have been born in `r params$annee - 18` ou `r params$annee - 17`. The competition is registered as a 2.NCupJ category and UCI points will be awarded following article 2.14.040.    
+   
+   The following waivers were granted to the organisation of the Tour de l’Abitibi by the UCI :
+
+    - The Tour de L’Abitibi allows the participation of regional and club teams only composed of junior riders but will not score any UCI points (article 2.14.036). In addition, club teams jerseys must respect articles 1.3.045 to 1.3.047 of the UCI rules.
+    - The Tour de l’Abitibi race features two (2) half-stages on the same day (article 2.6.010);
+
+    
+Article 3 – Participation
+ 
+:   As per article 2 here above, the race is open to the following teams: National teams, regional and club teams and mixed teams. 
+
+    As indicated in article 2.14.039 of the UCI rules and regulations, the number of riders per team is a minimum of four (4) and a maximum of six (6).
+
+    > According to the new UCI regulation (x.x.xxx) adopted in 2023, there is no longer a maximum development for junior men (gear ratio).
+
+    
+
+
+
+```{r include=FALSE}
+dim_debut <- format(iti_etape$Details$Date[1]- ddays(2) ,format = "%d %B", locale = locale("en"))
+lun <- format(iti_etape$Details$Date[1]- ddays(1) ,format = "%d %B", locale = locale("en"))
+mar <- format(iti_etape$Details$Date[1], format = "%d %B", locale = locale("en"))
+mer <- format(iti_etape$Details$Date[2], format = "%d %B", locale = locale("en"))
+dim_fin <- format(iti_etape$Details$Date[7] ,format = "%d %B %Y", locale = locale("en"))
+
+```
+
+Article 4 – Permanence
+
+:   The race headquarters are at the La Calypso high school, from Sunday `r dim_debut` to sunday `r dim_fin`, located at 800 1re Rue E, Amos, QC J9T 2H8. Opening hours are established in function of the race schedule, but there is a security guard on duty 24 hours a day.
+
+    Initial meeting between the Tour’s organisation and the team manager must be done at the headquarters on Sunday `r dim_debut`, between 12:00 PM and 11:00 PM and Monday `r lun`, between 8:00 AM and 4:30 PM.
+    
+    Licence checks by the Commissaires’ Panel, identification numbers and frame plates delivery will be done on Monday `r lun` between 2:00 PM and 3:30 PM.
+    
+    Under the UCI rules and regulations article 1.2.087, the mandatory sports directors’ meeting with the Commissaires’ Panel is on Tuesday `r mar` at 10:00 AM.
+
+
+Article 5 – Caravan order
+
+:   The order of the caravan for Stage 1 will be determined in accordance with UCI rule 2.14.046. 
+
+    The order of the caravan for subsequent stages will be according to each team's best placed rider in the individual general classification.
+
+    
+
+Article 6 – Starting order for the time trial
+
+:   The starting order of the individual time trial is the reverse order of the individual general classification after stage 2. Commissaires can modify the order to avoid two successive riders from the same team (2.6.023). 
+
+    Every rider will start with a one (1) minute gap, except for the last 10 riders which will start with two (2) minutes gap.
+
+    Bikes must be presented and quarantined for bike check at least 15 minutes before the rider's start. Time-trial bikes are allowed for the Individual time trial if they respect the UCI regulations.
+
+    An optional bike check will be offered by the commissaires on Wednesday `r mer` at 10:30 AM.
+
+    
+    
+Article 7 – Radio-Tour
+
+:   All race information will be broadcasted on channel 01 – Radio-Tour on the radio provided by the organization. 
+
+
+Article 8 – Neutral technical assistance
+
+:   The neutral technical assistance is under the Tour cycliste de l’Abitibi’s responsibility (with the exception of stage 3 – ITT). There will be three properly identified vehicles during each race (2 cars and 1 motorbike). 
+
+    All rear wheels carried by the neutral technical assistance team will be equipped with 11-speed cassettes. For the teams with specials needs (for example, disk brakes), please contact us at the DS meeting.
+
+
+Article 9 – Time cut
+
+:   The time cuts are set as follows:
+
+    - The time cut is determined by adding 20% to the winner’s time for all stages, with an exception for the individual time trial, for which there is no time cut.
+
+
+
+Article 10 – Circuit finish (Stage 2)
+
+:  For road stages finishing with a circuit finish, the riders arriving at the circuit entry at the same time that the main peloton or the caravan is coming on the circuit will be temporarily stopped by the official to make sure there will be no interference with the other groups. The time loss will be credited to their finish time. 
+
+    Every rider temporarily stopped at the circuit’s entrance must then **complete all the prescribed number of laps**.
+
+    If it is determined by the official at the entry of the circuit that the rider will not be able to reach the finish line within the time cut, the official will have the right to stop the rider’s race and he will not be allowed to start the next stage.
+
+
+Article 11 – Urban circuits (Stage 7)
+
+:   During stage 7, a rider lapped by the peloton before his 5th passage on the finish line of the urban circuit will be pulled out of the race by the commissaires with a “hors-délai” result.   
+
+    A rider lapped by the peloton after his 5th passage on the finish line will be pulled out of the race by the commissaires and will be credited with a prorated time based on the rider's average speed for the distance they have covered, once he reports to the finish line after being pulled out. 
+
+    Riders that abandon during the circuits of stage 7 will get a **DNF** result. 
+
+
+Article 12 – Time bonuses
+
+:   Bonuses will be attributed to the first three (3) of each stage except for ITT:
+
+    * Road race (with/without circuit): 10, 6, 4 seconds, except stage 4 (half-stage): 6, 4, 2 seconds.
+
+    Bonuses will be attributed to the first three (3) of bonus intermediate sprint:
+    
+    * Bonus sprint : 3, 2, 1 second.
+
+
+Article 13 – Classification
+
+:   The following classifications will be attributed. The race is divided into five (5) different classifications:
+
+    - General Individual Time Classification (brown jersey); 2.6.014; 2.6.015; 2.6.019
+    - General Individual Points Classification (orange jersey); 2.6.017
+    - General climber’s Classification (polka dot jersey). 2.6.017
+    - General Time Classification for First Year Juniors (blue jersey);
+    - General Team Classification by Time; 2.6.016
+
+    If a rider is leading more than one classification, the order of priority of the distinctive jerseys shall be as follows:
+
+    1.  Brown jersey;
+    2.  Orange jersey;
+    3.  Polka dot jersey;
+    4.  Blue jersey;
+    5.  World champion;
+    6.  Continental champion;
+    7.  National champion;
+    8.  National team;
+    9.  Regional team. 
+
+
+
+Article 13.1 - General Individual Time Classification
+
+:   An individual time classification is set by adding the registered time from each stage including time bonuses and penalties –UCI’s article 2.6.014.
+
+    If the event of a tie, the fractions of seconds registered during the individual time trial race will be added to the total time. (UCI’s article 2.6.015)
+
+    In case of a further tie, the placings obtained in each stage shall be added, and as a last resort, the classification of the last stage will be used. (UCI’s article 2.6.015)
+
+    
+
+Article 13.2 - General Individual Points Classification
+
+:   This ranking is determined by adding the points at the end of each stage and in the intermediate sprints. 
+
+    In the event of a tie, the riders will be awarded the amount of points attributed to their ranking.
+
+    In the event of a tie in the general individual classification by points, the following criteria will be applied until the riders are separated : (2.6.017) :
+    
+    1. Number of stage wins
+    2. Number of wins in the intermediate sprints
+    3. General individual time classification
+
+    Points are awarded to the first ten (10) riders of a stage and the first three (3) riders of intermediate sprints:
+
+    - Top 10 riders of a road stage : 30 – 24 – 20 – 16 – 12 – 10 – 8 – 6 – 4 – 2
+    - Individual time trial : 15 – 12 – 10 – 8 – 6 – 5 – 4 – 3 – 2 – 1
+    - Intermediate sprints : 6 – 4 – 2
+
+
+
+Article 13.3 - General climber’s classification (KOM) 
+
+:   It is determined by the addition of the points attributed at each KOM (hill sprint): 5-3-2 points, with the exception of stage 5 (mountain finish) where the points are doubled (10-6-4 points).
+
+    In the case of a tie, the following criteria will be applied until a tie breaker is reached:
+
+    1. Number of first places in the mountain finish (stage 5);
+    2. Number of first places in the hill sprints;
+    3. Overall individual time classification.
+
+
+Article 13.4 - General Time Classification for First Year Juniors
+
+:   This classification is based on general individual time classification, but only involves first year juniors (17 years of age) born in `r params$annee - 17`.
+
+
+
+Article 13.5 - General Team Classification by Time
+
+:   The team classification for the day shall be calculated on the basis of the sum of the three (3) best individual times from each team. 
+
+    In the event of a tie, the teams shall be separated by the sum of the places acquired by their three best times on the stage. If the teams are still tied, they shall be separated by the placing of their best rider on the stage classification. (UCI Article 2.6.016)
+
+    The team general classification shall be calculated on the basis of the sum of the three best individual times from each team in each stage ridden. In the event of a draw, the following criteria shall be applied in order until the teams are separated:
+
+    1. Number of first places in the daily team classifications;
+    2. Number of second places in the daily team classifications; etc.
+
+    If there is still a draw, the teams shall be separated by the placing of their best rider in the general individual classification.
+
+    Any team reduced to fewer than three riders shall be eliminated from the general team classification.
+
+
+Article 14 - Protest of results
+
+:   Only the team’s manager may file a protest of the results. A protest must be transmitted to the finish line judges. 
+
+    This request must be made within the following delay:
+    
+    - For placing: one hour before the start of the following stage, at the latest;
+    - For overall final classification, thirty (30) minutes after the posting of the results.
+
+
+
+Article 15 – Prizes
+
+:   The following prizes will be awarded:
+
+    *Tableaux à produire* 
+  
+
+Article 16 - Prix spéciaux
+
+:   Les gagnants des prix spéciaux sont choisis par l’ensemble des directeurs techniques et par les commissaires par le biais d’un questionnaire
+
+    * Best Abitibian Trophy[^abitibien]
+    * Relevation Trophy
+    * Most Courageous Trophy
+    * Most Gentlemanly Conduct Trophy
+    * Most Combative Trophy
+    * Best Team Spirit Trophy
+    * Best Mechanic Trophy
+    * Best Team Manager Trophy
+    * MVP of each team Trophy
+
+
+
+[^abitibien]: Rider from or living in Abitibi, according to general time classification
+
+
+Article 17 – Antidoping 
+
+:   The UCI anti-doping rules and regulations apply during this competition, where applicable, the local anti-doping legislation which will be applicable in addition to the UCI's anti-doping regulations. 
+
+    Riders are responsible to check the list riders selected for anti-doping tests each day. 
+
+    Failure to present when requested results in a violation to the anti-doping rules. 
+ 
+
+
+Article 18 – Protocole et récompenses
+
+:   In compliance with the UCI rules and regulations article 1.2.112, the following riders must report daily for the protocol in competition attire a maximum of 10 minutes after the finish:
+
+    * The first three (3) of the stage
+    * Leaders of the following ranking: 
+
+        * Individual time classification (brown jersey),
+        * overall points classification (orange jersey), 
+        * best young rider (blue jersey) and 
+        * best climber (polka dot jersey).
+
+
+
+Article 19 – Pénalities
+
+:   The UCI rules and regulations concerning penalties will apply.
+
+    In addition, if a team car overtakes other cars of the caravan in an urban zone where overtaking is forbidden or uses dangerous driving techniques, the organising committee will send the car to the back of the caravan immediately or for the next stages. 
+
+    If a second offence is detected or in the case of an serious infringement, the team car could be excluded completely of the caravan.
+
+
+
+Article 20 – Emergency Services
+
+:   According to the urban character of some of the stages and the importance accorded by the organization to the public’s security, priority will be granted to the Emergency Services in case of an accident, and everyone is expected to obey.
+
+
+Article 21 – Protection of the environment and of cycling’s reputation
+
+:   Riders are forbidden to carelessly dispose of trash or bottles along the course outside of the litter zones provided by the organiser (article 2.2.025). 
+
+    Wrappers and trash must be kept by the rider or handed to the team car. Bottles may be disposed on the side of the road if spectators are present. 
+
+    Non-compliance with this article may incur penalties (2.12.004, 2.12.005, 2.12.007) or even exclusion from the race (2.2.010).
+    

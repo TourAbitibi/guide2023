@@ -88,7 +88,9 @@ Article 9 – Délais d’arrivée
 
 Article 10 – Arrivée en circuit (Étape 2)
 
-:   Dans une étape sur route finissant sur un circuit, les coureurs arrivant à l’entrée du circuit en même temps qu’un peloton ou que la caravane passe sur le circuit seront arrêtés temporairement par un commissaire et pourront repartir lorsque le circuit sera libre, de manière à ne pas interférer avec les autres groupes. La perte de temps sera créditée de leur temps final. Tout coureur arrêté temporairement à l’entrée du circuit doit ensuite compléter tous les tours prescrits.
+:   Dans une étape sur route finissant sur un circuit, les coureurs arrivant à l’entrée du circuit en même temps qu’un peloton ou que la caravane passe sur le circuit seront arrêtés temporairement par un commissaire et pourront repartir lorsque le circuit sera libre, de manière à ne pas interférer avec les autres groupes. La perte de temps sera créditée de leur temps final. 
+
+    Tout coureur arrêté temporairement à l’entrée du circuit doit ensuite **compléter tous les tours prescrits**.
 
     Si à l’entrée du circuit, il est déterminé par le commissaire que le coureur ne pourra arriver dans le délai d’arrivée prescrit, le commissaire pourra arrêter ce dernier et il ne pourra reprendre le départ à la prochaine étape.
 
@@ -99,7 +101,7 @@ Article 11 – Circuits urbains (Étape 7)
 
     Un coureur doublé par le peloton après son 5e passage sur la ligne d’arrivée sera retiré de la course par les commissaires et sera crédité d’un temps calculé basé sur sa vitesse moyenne pour la distance qu’il aura parcourue, après s’être présenté à la table des commissaires à la ligne d’arrivée.
     
-    Tout coureur abandonnant en cours de circuit lors de l’étape 7 obtiendra un résultat d’abandon.
+    Tout coureur abandonnant en cours de circuit lors de l’étape 7 obtiendra un résultat d’**abandon**.
     
 
 Article 12 – Bonifications en temps
@@ -201,7 +203,9 @@ Article 13.5 - Classement général par équipe au temps
 
 Article 14 - Réclamation
 
-:   Seul le directeur technique d’une équipe pourra déposer une demande de vérification des résultats; celle-ci devra être présentée au juge à l’arrivée. Une demande de vérification doit être faite dans les délais suivants :
+:   Seul le directeur technique d’une équipe pourra déposer une demande de vérification des résultats; celle-ci devra être présentée au juge à l’arrivée. 
+
+    Une demande de vérification doit être faite dans les délais suivants :
 
     * Au sujet des classements : au plus tard une (1) heure avant le départ de l’étape suivante;
     * Au sujet du classement général final : au plus tard trente (30) minutes après l’affichage des résultats.
