@@ -13,9 +13,9 @@ rmd_files:
 #  - "../rmd/CO.Rmd"
 #  - "../rmd/Etape1.Rmd"
 #  - "../rmd/Etape2.Rmd"
-# - "../rmd/Reglements.Rmd"
+  - "../rmd/Reglements.Rmd"
   - "../rmd/Regl_sejour.Rmd"
-  - "../rmd/Locaux.Rmd"
+# - "../rmd/Locaux.Rmd"
 #  - "../rmd/CarteAbitibi.Rmd"
   
 

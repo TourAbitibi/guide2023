@@ -203,19 +203,264 @@ Article 13.5 - Classement général par équipe au temps
 
 Article 14 - Réclamation
 
-:   Seul le directeur technique d’une équipe pourra déposer une demande de vérification des résultats; celle-ci devra être présentée au juge à l’arrivée. 
+:   Seul le directeur sportif d’une équipe pourra déposer une demande de vérification des résultats; celle-ci devra être présentée au juge à l’arrivée. 
 
     Une demande de vérification doit être faite dans les délais suivants :
 
     * Au sujet des classements : au plus tard une (1) heure avant le départ de l’étape suivante;
     * Au sujet du classement général final : au plus tard trente (30) minutes après l’affichage des résultats.
 
+
+
+
 Article 15 – Bourses
 
-:   Les prix suivants sont attribués. 
+:     Les prix suivants sont attribués. Tous les montants sont en dollars canadiens.        
 
-    *Tableaux à produire* 
-  
+    
+```{r , echo=FALSE}
+
+df<- read_excel(here("excel", "prix.xlsx"), 
+           sheet = "Etape") %>% 
+  select(Postion = pos,
+         Montant = montant) 
+
+df %>% 
+  mutate(Montant = currency(Montant, digits = 0)) %>% 
+  kbl(
+      escape = F, # permet de passer les <br/>
+      align = c("c","c"),
+      ) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T) %>% 
+    row_spec(which(df$Postion == "Total"), 
+             bold = T, 
+             color = couleurs$blueTour,
+             font_size = "larger") %>% 
+  add_header_above(c("Classement individuel d'étapes" =2),
+                   font_size = "x-large",
+                   background = couleurs$jauneTour)
+    
+
+```
+
+<br/>
+
+```{r , echo=FALSE}
+
+df<- read_excel(here("excel", "prix.xlsx"), 
+           sheet = "DemiEtape") %>% 
+  select(Postion = pos,
+         Montant = montant) 
+
+df %>% 
+  mutate(Montant = currency(Montant, digits = 0)) %>% 
+  kbl(
+      escape = F, # permet de passer les <br/>
+      align = c("c","c"),
+      ) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T) %>% 
+    row_spec(which(df$Postion == "Total"), 
+             bold = T, 
+             color = couleurs$blueTour,
+             font_size = "larger") %>% 
+  add_header_above(c("Classement individuel des demi-étapes" =2),
+                   font_size = "x-large",
+                   background = couleurs$jauneTour)
+    
+
+```
+
+
+<br/>
+    
+```{r , echo=FALSE}
+
+df<- read_excel(here("excel", "prix.xlsx"), 
+           sheet = "GenTemps") %>% 
+  select(Postion = pos,
+         Montant = montant) 
+
+df %>% 
+  mutate(Montant = currency(Montant, digits = 0)) %>% 
+  kbl(
+      escape = F, # permet de passer les <br/>
+      align = c("c","c"),
+      ) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T) %>% 
+    row_spec(which(df$Postion == "Total"), 
+             bold = T, 
+             color = couleurs$blueTour,
+             font_size = "larger") %>% 
+  add_header_above(c("Classement général individuel au temps" =2),
+                   font_size = "x-large",
+                   background = couleurs$brunMaillot,
+                   color = "white")
+    
+
+```
+
+<br/>
+ 
+    
+```{r , echo=FALSE}
+
+df<- read_excel(here("excel", "prix.xlsx"), 
+           sheet = "GenPoints") %>% 
+  select(Postion = pos,
+         Montant = montant) 
+
+df %>% 
+  mutate(Montant = currency(Montant, digits = 0)) %>% 
+  kbl(
+      escape = F, # permet de passer les <br/>
+      align = c("c","c"),
+      ) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T) %>% 
+    row_spec(which(df$Postion == "Total"), 
+             bold = T, 
+             color = couleurs$blueTour,
+             font_size = "larger") %>% 
+  add_header_above(c("Classement général individuel au points" =2),
+                   font_size = "x-large",
+                   background = couleurs$orangeMaillot)
+    
+
+```
+
+<br/>
+    
+```{r , echo=FALSE}
+
+df<- read_excel(here("excel", "prix.xlsx"), 
+           sheet = "GenKOM") %>% 
+  select(Postion = pos,
+         Montant = montant) 
+
+df %>% 
+  mutate(Montant = currency(Montant, digits = 0)) %>% 
+  kbl(
+      escape = F, # permet de passer les <br/>
+      align = c("c","c"),
+      ) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T) %>% 
+    row_spec(which(df$Postion == "Total"), 
+             bold = T, 
+             color = couleurs$blueTour,
+             font_size = "larger") %>% 
+  add_header_above(c("Classement général individuel de la montagne" =2),
+                   font_size = "x-large",
+                   background = couleurs$vertMaillot)
+    
+
+```
+
+<br/>
+    
+```{r , echo=FALSE}
+
+df<- read_excel(here("excel", "prix.xlsx"), 
+           sheet = "GenJeune") %>% 
+  select(Postion = pos,
+         Montant = montant) 
+
+df %>% 
+  mutate(Montant = currency(Montant, digits = 0)) %>% 
+  kbl(
+      escape = F, # permet de passer les <br/>
+      align = c("c","c"),
+      ) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T) %>% 
+    row_spec(which(df$Postion == "Total"), 
+             bold = T, 
+             color = couleurs$blueTour,
+             font_size = "larger") %>% 
+  add_header_above(c("Classement général individuel du meilleur jeune au temps" =2),
+                   font_size = "x-large",
+                   background = couleurs$blueSprintMaire,
+                   color= "white")
+    
+
+```
+
+<br/>
+    
+```{r , echo=FALSE}
+
+df<- read_excel(here("excel", "prix.xlsx"), 
+           sheet = "GenEquipe") %>% 
+  select(Postion = pos,
+         Montant = montant) 
+
+df %>% 
+  mutate(Montant = currency(Montant, digits = 0)) %>% 
+  kbl(
+      escape = F, # permet de passer les <br/>
+      align = c("c","c"),
+      ) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T) %>% 
+    row_spec(which(df$Postion == "Total"), 
+             bold = T, 
+             color = couleurs$blueTour,
+             font_size = "larger") %>% 
+  add_header_above(c("Challenge des équipes" =2),
+                   font_size = "x-large",
+                   background = couleurs$bleuTour,
+                   color = couleurs$jauneTour)
+    
+
+```
+
+<br/>
+    
+```{r , echo=FALSE}
+
+df<- read_excel(here("excel", "prix.xlsx"), 
+           sheet = "Abitibien") %>% 
+  select(Postion = pos,
+         Montant = montant) 
+
+df %>% 
+  mutate(Montant = currency(Montant, digits = 0)) %>% 
+  kbl(
+      escape = F, # permet de passer les <br/>
+      align = c("c","c"),
+      ) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T) %>% 
+    row_spec(which(df$Postion == "Total"), 
+             bold = T, 
+             color = couleurs$blueTour,
+             font_size = "larger") %>% 
+  add_header_above(c("Meilleur Abitibien" =2),
+                   font_size = "x-large",
+                   background = couleurs$jauneTour,
+                   color = couleurs$bleuTour)
+    
+
+```
+
+<br/>
+
+```{r, echo=FALSE}
+
+bourse_totale <- read_excel(here("excel", "prix.xlsx"), 
+           sheet = "Total") %>% 
+  filter(Type == "GrandTotal") %>% pull(Total) %>% currency(digits = 0)
+
+```
+
+Le total général des prix distribués à l’occasion de l’épreuve est de **`r bourse_totale` CAD**.
+
+
+<br/>
+
 Article 16 - Prix spéciaux
 
 :   Les gagnants des prix spéciaux sont choisis par l’ensemble des directeurs techniques et par les commissaires par le biais d’un questionnaire
