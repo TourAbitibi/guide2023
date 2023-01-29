@@ -4,10 +4,11 @@
 # Fichiers temporaire de excel quand ouvert
 excel/~$*
 #####
-# ne pas sync git_book/_boook pendant la péfiode test
+# ne pas sync git_book/_book pendant la péfiode test
 git_book/guide2023.Rmd
 git_book/_book
-git_book/guide2023_files/
+git_book/guide2023_files
+git_book/img
 #####
 
 dag.png

@@ -46,6 +46,9 @@ parcours <- st_read(here("gpx","output","parcours.shp"))
 # Langue
 lang <- params$langue
 
+# Edition  (52e en 2022)
+edition <-params$annee - 2022 + 52
+
 # Locale
 ## https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/locales
 {if (lang == "FR") Sys.setlocale("LC_TIME", locale = "fr_CA.UTF-8") 

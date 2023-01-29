@@ -1,0 +1,77 @@
+
+<!-- CO : document biligue  -->
+
+```{r CO_title_en, eval=(lang != "FR"), results='asis', echo= FALSE}
+glue("# Organizing committee")
+```
+
+```{r CO_titre_fr, eval=(lang == "FR"), results='asis', echo= FALSE }
+glue("# Comité organisateur")
+```
+
+
+```{r CO_membres_en, eval=(lang != "FR"), results='asis', echo= FALSE}
+glue("### Organizing committee members {-}", .open = "[")
+```
+
+```{r CO_membres_fr, eval=(lang == "FR"), results='asis', echo= FALSE }
+glue("### Membres du comité organisateur {-}", .open = "[")
+```
+
+```{r CO_tableau, echo=FALSE}
+
+staff_xlsx <- here("excel", "staff.xlsx")
+
+read_excel(staff_xlsx, sheet = "CO") %>% 
+  select(role = ifelse(lang=="FR", "role_fr", "role_en"),
+         noms,
+         cell) %>% 
+  kbl(col.names = NULL,
+      escape = F, # permet de passer les <br/>
+      align = c(rep('c', times = 3)),
+      ) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T) 
+
+```
+
+
+
+```{r CO_support_en, eval=(lang != "FR"), results='asis', echo= FALSE}
+glue("### Support team {.unnumbered}", .open = "[")
+```
+
+```{r CO_support_fr, eval=(lang == "FR"), results='asis', echo= FALSE }
+glue("### Équipe de soutien {.unnumbered}", .open = "[")
+```
+
+```{r CO_soutien_tableau, echo=FALSE}
+
+read_excel(staff_xlsx, sheet = "SOUTIEN") %>% 
+  select(role = ifelse(lang=="FR", "role_fr", "role_en"),
+         noms) %>% 
+  kbl(col.names = NULL,
+      escape = F, # permet de passer les <br/>
+      align = c(rep('c', times = 2)),
+      ) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T) 
+
+```
+
+
+### Commissaires {-}
+
+```{r CO_commissaires_tableau, echo=FALSE}
+
+read_excel(staff_xlsx, sheet = "COMM") %>% 
+  select(role = ifelse(lang=="FR", "role_fr", "role_en"),
+         noms) %>% 
+  kbl(col.names = NULL,
+      escape = F, # permet de passer les <br/>
+      align = c(rep('c', times = 2)),
+      ) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T) 
+
+```

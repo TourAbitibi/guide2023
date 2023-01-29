@@ -20,7 +20,12 @@ fi
 
 ## Commande pour copier le contenu du book vers NAS
 echo "~~ Copie vers le NAS pour affichage web ~~ \n" &&
-cp -R  $path/_book/* /Volumes/web/guide/$lang
+
+mkdir -p /Volumes/web/guide/$lang &&cp -R  $path/_book/* /Volumes/web/guide/$lang
+
+## Copier les images
+
+mkdir -p /Volumes/web/guide/img && cp -R  $path/img/* /Volumes/web/guide/img
 
 echo "~~ Fin de la copie vers le NAS ~~ \n"
 

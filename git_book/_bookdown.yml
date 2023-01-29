@@ -9,11 +9,13 @@ language:
     chapter_name: ""
 rmd_files: 
   - "index.Rmd"
-  - "../rmd/Etape1.Rmd"
-  - "../rmd/Etape2.Rmd"
+  - "../rmd/MotsBienvenue.Rmd"
+  - "../rmd/CO.Rmd"
+#  - "../rmd/Etape1.Rmd"
+#  - "../rmd/Etape2.Rmd"
   - "../rmd/Reglements.Rmd"
   - "../rmd/Regl_sejour.Rmd"
-  - "../rmd/CarteAbitibi.Rmd"
+#  - "../rmd/CarteAbitibi.Rmd"
   
 
 #delete_merged_file: true

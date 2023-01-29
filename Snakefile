@@ -10,17 +10,36 @@ rule Z_targets:
         "git_book/_book/index.html",
         "/Volumes/web/guide/FR/index.html",
 
-        "git_book/index.Rmd", "rmd/Etape1.Rmd", "rmd/Etape2.Rmd", "rmd/Reglements.Rmd", "rmd/CarteAbitibi.Rmd",
+
+        "git_book/index.Rmd",
+        "rmd/MotsBienvenue.Rmd",
+        "rmd/CO.Rmd",
+        "rmd/Etape1.Rmd", 
+        "rmd/Etape2.Rmd", 
+        "rmd/Reglements.Rmd", 
+        "rmd/CarteAbitibi.Rmd",
         "rmd/Regl_sejour.Rmd",
+
 
         "elevParcours/elev_parcours.csv",
 
+
         "excel/Itineraires.xlsx",
+        "excel/staff.xlsx",
+        
 
-        "gpx/input/Tour2022_1.gpx", "gpx/input/Tour2022_2.gpx", "gpx/input/Tour2022_3.gpx", "gpx/input/Tour2022_4.gpx",
-        "gpx/input/Tour2022_5.gpx", "gpx/input/Tour2022_6.gpx", "gpx/input/Tour2022_7.gpx",
+        "gpx/input/Tour2022_1.gpx", 
+        "gpx/input/Tour2022_2.gpx", 
+        "gpx/input/Tour2022_3.gpx", 
+        "gpx/input/Tour2022_4.gpx",
+        "gpx/input/Tour2022_5.gpx", 
+        "gpx/input/Tour2022_6.gpx", 
+        "gpx/input/Tour2022_7.gpx",
 
-        "gpx/output/parcours.shp", "gpx/output/parcours.dbf", "gpx/output/parcours.prj", "gpx/output/parcours.shx",
+
+        "gpx/output/parcours.shp", "gpx/output/parcours.dbf", 
+        "gpx/output/parcours.prj", "gpx/output/parcours.shx",
+
 
         "rasterElevation/elv_parcours.tif"
 
@@ -86,10 +105,14 @@ rule R4_render_book:
     input:
         "gpx/output/parcours.shp",
         "elevParcours/elev_parcours.csv",
+        "excel/staff.xlsx",
+        "excel/Itineraires.xlsx",
         "script/render_book.R",
         "git_book/_bookdown.yml",
         "git_book/_output.yml",
         "git_book/index.Rmd",
+        "rmd/MotsBienvenue.Rmd",
+        "rmd/CO.Rmd",
         "rmd/Etape1.Rmd",
         "rmd/Etape2.Rmd",
         "rmd/Reglements.Rmd",
