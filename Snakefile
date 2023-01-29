@@ -19,6 +19,7 @@ rule Z_targets:
         "rmd/Reglements.Rmd", 
         "rmd/CarteAbitibi.Rmd",
         "rmd/Regl_sejour.Rmd",
+        "rmd/Locaux.Rmd",
 
 
         "elevParcours/elev_parcours.csv",
@@ -117,6 +118,7 @@ rule R4_render_book:
         "rmd/Etape2.Rmd",
         "rmd/Reglements.Rmd",
         "rmd/Regl_sejour.Rmd",
+        "rmd/Locaux.Rmd",
         "rmd/CarteAbitibi.Rmd"
     output:
         "git_book/_book/index.html"
