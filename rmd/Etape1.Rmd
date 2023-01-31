@@ -51,8 +51,6 @@ map <- mapview(parcours[Etape,],
 
 map@map
 
-# - [ ] Problème, carte trop large, je n'arrive pas à la restreindre dans bs4_book
-#
 ```
 
 
@@ -60,6 +58,29 @@ map@map
 
 
 <a href="`r iti_etape$Details$Liens[Etape]`" target="blank">Lien vers <strong>Ride with GPS</strong></a>
+
+<br/>
+
+### Détail du départ
+
+Placeholder en attendant d'avoir l'image de la carte détaillée. 
+
+Création des cartes vers un fichier dans un processus à part (issue_4) et intégration du graphique ici lors de la création du guide.
+
+```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
+
+knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png")))
+
+```
+
+### Détail de l'arrivée
+
+```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
+
+knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png")))
+
+```
+
 
 ## Élévation
 
