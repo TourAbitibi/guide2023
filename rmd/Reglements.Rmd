@@ -324,7 +324,7 @@ df %>%
              bold = T, 
              color = couleurs$blueTour,
              font_size = "larger") %>% 
-  add_header_above(c("Classement général individuel au points" =2),
+  add_header_above(c("Classement général individuel aux points" =2),
                    font_size = "x-large",
                    background = couleurs$orangeMaillot)
     
@@ -352,7 +352,7 @@ df %>%
              bold = T, 
              color = couleurs$blueTour,
              font_size = "larger") %>% 
-  add_header_above(c("Classement général individuel de la montagne" =2),
+  add_header_above(c("Classement général individuel de la montagne (GPM)" =2),
                    font_size = "x-large",
                    background = couleurs$vertMaillot)
     
@@ -380,7 +380,7 @@ df %>%
              bold = T, 
              color = couleurs$blueTour,
              font_size = "larger") %>% 
-  add_header_above(c("Classement général individuel du meilleur jeune au temps" =2),
+  add_header_above(c("Classement général individuel de la relève" =2),
                    font_size = "x-large",
                    background = couleurs$blueSprintMaire,
                    color= "white")
@@ -409,7 +409,7 @@ df %>%
              bold = T, 
              color = couleurs$blueTour,
              font_size = "larger") %>% 
-  add_header_above(c("Challenge des équipes" =2),
+  add_header_above(c("Classement général par équipe au temps" =2),
                    font_size = "x-large",
                    background = couleurs$bleuTour,
                    color = couleurs$jauneTour)

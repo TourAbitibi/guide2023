@@ -300,7 +300,7 @@ df %>%
              bold = T, 
              color = couleurs$blueTour,
              font_size = "larger") %>% 
-  add_header_above(c("Individual General Time Classification" =2),
+  add_header_above(c("General Individual Time Classification" =2),
                    font_size = "x-large",
                    background = couleurs$brunMaillot,
                    color = "white")
@@ -358,7 +358,7 @@ df %>%
              bold = T, 
              color = couleurs$blueTour,
              font_size = "larger") %>% 
-  add_header_above(c("General King of the Mountains Classification" =2),
+  add_header_above(c("General climber’s classification (KOM)" =2),
                    font_size = "x-large",
                    background = couleurs$vertMaillot)
     
@@ -386,7 +386,7 @@ df %>%
              bold = T, 
              color = couleurs$blueTour,
              font_size = "larger") %>% 
-  add_header_above(c("Individual General Time Classification - First year junior" =2),
+  add_header_above(c("General Time Classification for First Year Juniors" =2),
                    font_size = "x-large",
                    background = couleurs$blueSprintMaire,
                    color= "white")
@@ -415,7 +415,7 @@ df %>%
              bold = T, 
              color = couleurs$blueTour,
              font_size = "larger") %>% 
-  add_header_above(c("Team challenge" =2),
+  add_header_above(c("General Team Classification by Time" =2),
                    font_size = "x-large",
                    background = couleurs$bleuTour,
                    color = couleurs$jauneTour)
