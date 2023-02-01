@@ -34,6 +34,9 @@ here::i_am("guide2023.Rproj")
 # Appel des librairies et variables partagées
 source(here::here("code","_LibsVars.R"))
 
+# Dates
+source(here("code", "_Dates.R"))
+
 # Pour accès aux données du fichier excel Itineraires.xlsx
 source(here("code","_import_itineraire.R"))
 
@@ -68,7 +71,9 @@ opts_chunk$set( tidy = FALSE, comment = NA,
 
 Bonjour et bienvenue au **Tour de l'Abitibi `r params$annee`** !
 
-Voici un aperçu de l'édition de cette année.
+Voici un aperçu de la `r edition`e édition du Tour de l'Abitibi qui ce tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)`.
+
+<br/>
 
 ```{r map_globale, echo = FALSE, eval = TRUE}
 # Visualisation

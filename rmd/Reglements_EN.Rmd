@@ -29,28 +29,16 @@ Article 3 – Participation
 
     > According to the new UCI regulation (x.x.xxx) adopted in 2023, there is no longer a maximum development for junior men (gear ratio).
 
-    
-
-
-
-```{r include=FALSE}
-dim_debut <- format(iti_etape$Details$Date[1]- ddays(2) ,format = "%d %B", locale = locale("en"))
-lun <- format(iti_etape$Details$Date[1]- ddays(1) ,format = "%d %B", locale = locale("en"))
-mar <- format(iti_etape$Details$Date[1], format = "%d %B", locale = locale("en"))
-mer <- format(iti_etape$Details$Date[2], format = "%d %B", locale = locale("en"))
-dim_fin <- format(iti_etape$Details$Date[7] ,format = "%d %B %Y", locale = locale("en"))
-
-```
 
 Article 4 – Permanence
 
-:   The race headquarters are at the La Calypso high school, from Sunday `r dim_debut` to sunday `r dim_fin`, located at 800 1re Rue E, Amos, QC J9T 2H8. Opening hours are established in function of the race schedule, but there is a security guard on duty 24 hours a day.
+:   The race headquarters are at the La Calypso high school, from Sunday `r dates_EN %>% filter(code=="Dim_Av") %>% pull(jour_mois)` to Sunday `r dates_EN %>% filter(code=="Dim") %>% pull(jour_mois_an)`, located at 800 1re Rue E, Amos, QC J9T 2H8. Opening hours are established in function of the race schedule, but there is a security guard on duty 24 hours a day.
 
-    Initial meeting between the Tour’s organisation and the team manager must be done at the headquarters on Sunday `r dim_debut`, between 12:00 PM and 11:00 PM and Monday `r lun`, between 8:00 AM and 4:30 PM.
+    Initial meeting between the Tour’s organisation and the team manager must be done at the headquarters on Sunday `r dates_EN %>% filter(code=="Dim_Av") %>% pull(jour_mois)`, between 12:00 PM and 11:00 PM and Monday `r dates_EN %>% filter(code=="Lun_Av") %>% pull(jour_mois)`, between 8:00 AM and 4:30 PM.
     
-    Licence checks by the Commissaires’ Panel, identification numbers and frame plates delivery will be done on Monday `r lun` between 2:00 PM and 3:30 PM.
+    Licence checks by the Commissaires’ Panel, identification numbers and frame plates delivery will be done on Monday `r dates_EN %>% filter(code=="Lun_Av") %>% pull(jour_mois)` between 2:00 PM and 3:30 PM.
     
-    Under the UCI rules and regulations article 1.2.087, the mandatory sports directors’ meeting with the Commissaires’ Panel is on Tuesday `r mar` at 10:00 AM.
+    Under the UCI rules and regulations article 1.2.087, the mandatory sports directors’ meeting with the Commissaires’ Panel is on Tuesday `r dates_EN %>% filter(code=="Mar") %>% pull(jour_mois_an)` at 10:00 AM.
 
 
 Article 5 – Caravan order
@@ -69,7 +57,7 @@ Article 6 – Starting order for the time trial
 
     Bikes must be presented and quarantined for bike check at least 15 minutes before the rider's start. Time-trial bikes are allowed for the Individual time trial if they respect the UCI regulations.
 
-    An optional bike check will be offered by the commissaires on Wednesday `r mer` at 10:30 AM.
+    An optional bike check will be offered by the commissaires on Wednesday `r dates_EN %>% filter(code=="Mer") %>% pull(jour_mois)` at 10:30 AM.
 
     
     

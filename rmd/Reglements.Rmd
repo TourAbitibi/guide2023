@@ -30,25 +30,15 @@ Article 3 – Participation
     > Conformément au nouveau règlement UCI (x.x.xxx) adopté pour 2023, il n'y a plus de développement maximum pour les hommes juniors (braquets). 
     
 
-```{r include=FALSE}
-dim_debut <- format(iti_etape$Details$Date[1]- ddays(2) ,format = "%d %B", locale = locale("fr"))
-lun <- format(iti_etape$Details$Date[1]- ddays(1) ,format = "%d %B", locale = locale("fr"))
-mar <- format(iti_etape$Details$Date[1], format = "%d %B", locale = locale("fr"))
-mer <- format(iti_etape$Details$Date[2], format = "%d %B", locale = locale("fr"))
-dim_fin <- format(iti_etape$Details$Date[7] ,format = "%d %B %Y", locale = locale("fr"))
-
-```
-
-
 Article 4 – Permanence
 
-:   La permanence de l’épreuve opère du dimanche `r dim_debut` au dimanche `r dim_fin` à l’école secondaire La Calypso, au 800 1re Rue E, Amos, QC J9T 2H8. Les heures d’ouverture sont établies en fonction de l’horaire des courses, mais un gardien de sécurité est présent 24 heures sur 24.
+:   La permanence de l’épreuve opère du dimanche `r dates_FR %>% filter(code=="Dim_Av") %>% pull(jour_mois)` au dimanche `r dates_FR %>% filter(code=="Dim") %>% pull(jour_mois_an)` à l’école secondaire La Calypso, au 800 1re Rue E, Amos, QC J9T 2H8. Les heures d’ouverture sont établies en fonction de l’horaire des courses, mais un gardien de sécurité est présent 24 heures sur 24.
 
-    La rencontre initiale entre l’organisation du Tour et les responsables d’équipes se fait à la permanence le dimanche `r dim_debut` de 12h00 à 23h00 et le lundi `r lun` de 8h00 à 16h30.
+    La rencontre initiale entre l’organisation du Tour et les responsables d’équipes se fait à la permanence le dimanche `r dates_FR %>% filter(code=="Dim_Av") %>% pull(jour_mois)` de 12h00 à 23h00 et le lundi `r dates_FR %>% filter(code=="Lun_Av") %>% pull(jour_mois)` de 8h00 à 16h30.
     
-    La vérification des licences par le Collège des commissaires et la remise des dossards et plaques de cadre aura lieu le lundi `r lun` entre 14h et 15h30.
+    La vérification des licences par le Collège des commissaires et la remise des dossards et plaques de cadre aura lieu le lundi `r dates_FR %>% filter(code=="Lun_Av") %>% pull(jour_mois)` entre 14h et 15h30.
     
-    La réunion obligatoire des directeurs sportifs organisée suivant l’article 1.2.087 du règlement UCI, en présence des membres du Collège des commissaires, est fixée à 10h00 le mardi `r mar`.
+    La réunion obligatoire des directeurs sportifs organisée suivant l’article 1.2.087 du règlement UCI, en présence des membres du Collège des commissaires, est fixée à 10h00 le mardi `r dates_FR %>% filter(code=="Mar") %>% pull(jour_mois_an)`.
 
 
 Article 5 – Ordre de la caravane
@@ -66,7 +56,7 @@ Article 6 – Ordre de départ pour le contre-la-montre
 
     Les vélos doivent être présentés et en quarantaine pour vérification au moins 15 minutes avant le départ du coureur. Les vélos spécifiques au contre-la-montre sont autorisés pour le contre-la-montre individuel s’ils respectent la règlementation de l’UCI.
     
-    Une vérification optionnelle de vélos sera offerte par les commissaires le mercredi `r mer` à 10h30.
+    Une vérification optionnelle de vélos sera offerte par les commissaires le mercredi `r dates_FR %>% filter(code=="Mer") %>% pull(jour_mois_an)` à 10h30.
     
     
 Article 7 – Radio-Tour

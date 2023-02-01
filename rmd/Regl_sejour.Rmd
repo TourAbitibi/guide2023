@@ -2,7 +2,7 @@
 
 - Portez la carte d’accréditation **en tout temps** à l’intérieur de la Centrale. Il est interdit de circuler sans celle-ci.
 - Aux repas, présentez votre carte d’accréditation, respectez les quantités permises et rapportez les cabarets après utilisation.
-- Respectez le couvre-feu à 23h et l’heure de départ le lundi `r format(iti_etape$Details$Date[7]+ ddays(1) ,format = "%d %B", locale = locale("fr"))` à midi, à moins d’une entente spéciale avec l’administration.
+- Respectez le couvre-feu à 23h et l’heure de départ le lundi `r dates_FR %>% filter(code=="Lun_Ap") %>% pull(jsem_jour_mois)`  à midi, à moins d’une entente spéciale avec l’administration.
 - Réparez et nettoyez les vélos aux endroits prévus à l’extérieur et n’entreposez pas de produits inflammables à l’intérieur.
 - Dans les classes, posez les vélos sur les plastiques prévus à cet effet.
 - Ne circulez pas sur les vélos à l’intérieur de la centrale administrative.
