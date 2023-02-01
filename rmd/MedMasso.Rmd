@@ -1,0 +1,69 @@
+---
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- MedMasso.Rmd -->
+
+
+# Soins médicaux
+
+Chaque coureur étranger doit avoir une assurance médicale. 
+
+**Pas d'assurances, pas de courses !**
+
+Advenant des blessures graves nécessitant une hospitalisation ou une opération, l’assurance devra défrayer les coûts supplémentaires reliés aux frais administratifs et médicaux. Un responsable de l’équipe pourrait avoir à payer les frais à l’hôpital en attendant le remboursement de l’assurance.
+
+
+
+### Horaire de la clinique médicale {-}
+
+
+```{r horraire_med_FR, echo=FALSE}
+
+med_xlsx <- here("excel", "med_masso.xlsx")
+
+df <- read_excel(med_xlsx, sheet = "MEDICAL") 
+
+left_join(x= df, y= dates_FR, by= "code") %>% 
+  select(Date = jsem_jour_mois,
+         "Heures d'ouverture" = heures) %>%   
+  kbl(escape = F, # permet de passer les <br/>
+      align = c("l","c")) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = TRUE) 
+```
+
+En dehors de ces heures, les cyclistes peuvent s’adresser à l’accueil et ceux-ci communiqueront avec l’équipe du médical. 
+
+L’équipe médicale sera présente à la ligne de départ 1h avant le début de chaque étape et au fil d’arrivée les 30 minutes suivant la fin de l’étape.
+
+
+
+<br/>
+
+### Horaire de la clinique de massothérapie {-}
+
+Afin de bénéficier de soins de massothérapie, veuillez-vous inscrire au local à l'avance. 
+
+**Frais** : Session de 20 min - payable en argent sur place
+
+```{r horraire_masso_FR, echo=FALSE}
+
+df <- read_excel(med_xlsx, sheet = "MASSO") 
+
+left_join(x= df, y= dates_FR, by= "code") %>% 
+  select(Date = jsem_jour_mois,
+         "Heures d'ouverture" = heures) %>%   
+  kbl(escape = F, # permet de passer les <br/>
+      align = c("l","c")) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = TRUE) 
+```
+
+
+### Horaire du salon VIP {-}
+
+Tous les entraîneurs, mécaniciens, massothérapeutes, bénévoles et commanditaires de 18 ans et plus sont invités au *salon VIP*.
+
+Du dimanche `r dates_FR %>% filter(code=="Dim_Av") %>% pull(jour_mois)` au dimanche `r dates_FR %>% filter(code=="Dim") %>% pull(jour_mois)`, de 21h à 3h. 

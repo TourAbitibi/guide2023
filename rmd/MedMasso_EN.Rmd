@@ -1,0 +1,72 @@
+---
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- MedMasso_EN.Rmd  -->
+
+
+
+# Medical assistance"
+
+
+Every foreign rider must have medical insurance.  
+
+**No insurance, no racing !**
+
+In case of serious injury which requires hospitalization or an operation, the insurance must cover all administrative and medical charges. A team manager may have to pay the fees directly at the hospital pending the reimbursement by the insurance.
+
+
+### Medical clinic schedule {-}
+
+
+
+```{r horraire_med_EN, echo=FALSE}
+
+med_xlsx <- here("excel", "med_masso.xlsx")
+
+df <- read_excel(med_xlsx, sheet = "MEDICAL") 
+
+left_join(x= df, y= dates_EN, by= "code") %>% 
+  select(Date = jsem_jour_mois,
+         "Heures d'ouverture" = heures) %>%   
+  kbl(escape = F, # permet de passer les <br/>
+      align = c("l","c")) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = TRUE) 
+```
+
+
+Outside these hours, cyclists should contact the reception desk to communicate with the medical team.
+
+The medical team will be present at the starting line 1h before each race and at the finish line 30 minutes after the arrival.
+
+<br/>
+
+### Massage clinic schedule {-}
+
+In order to benefit from massage therapy, please register at the local in advance.
+
+**Fees** : 20 mins session - payable in cash on site 
+
+```{r horraire_med_EN, echo=FALSE}
+
+med_xlsx <- here("excel", "med_masso.xlsx")
+
+df <- read_excel(med_xlsx, sheet = "MASSO") 
+
+left_join(x= df, y= dates_EN, by= "code") %>% 
+  select(Date = jsem_jour_mois,
+         "Heures d'ouverture" = hours) %>%   
+  kbl(escape = F, # permet de passer les <br/>
+      align = c("l","c")) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = TRUE) 
+```
+
+### VIP schedule {-}
+
+All 18 years old or older coaches, mechanics, therapists, volunteers and sponsors are invited to the *salon VIP*.
+
+From sunday `r dates_EN %>% filter(code=="Dim_Av") %>% pull(jour_mois)` to sunday `r dates_EN %>% filter(code=="Dim") %>% pull(jour_mois)`, 9PM to 3AM.
+
