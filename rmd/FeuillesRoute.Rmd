@@ -29,9 +29,12 @@ graphFeuilleRoute <- function(df){
              background = couleurs$jauneTour, 
              font_size = 20) %>% 
     row_spec(which(df$param == "repas",), bold = F, 
-             color = couleurs$blueSprintMair,
+             color = couleurs$blueSprintMaire,
              background = couleurs$bluePale) %>% 
-    row_spec(which(df$param == "navette",), bold = T)
+    row_spec(which(df$param == "navette",), bold = T) %>% 
+    row_spec(which(df$param == "arrivee",), bold = T, 
+             color = couleurs$bleuTour)
+    
     
 }
 ```
@@ -62,6 +65,66 @@ read_excel(feuilleroute_xlsx, sheet = "LUN_AV") %>%
 ```{r feuille_route_mar_FR, echo=FALSE}
 
 read_excel(feuilleroute_xlsx, sheet = "MAR") %>% 
+  graphFeuilleRoute()
+```
+
+<br/>
+
+## `r dates_FR %>% filter(code=="Mer") %>% pull(jsem_jour_mois_an)` {-}
+
+```{r feuille_route_mer_FR, echo=FALSE}
+
+read_excel(feuilleroute_xlsx, sheet = "MER") %>% 
+  graphFeuilleRoute()
+```
+
+<br/>
+
+## `r dates_FR %>% filter(code=="Jeu") %>% pull(jsem_jour_mois_an)` {-}
+
+```{r feuille_route_jeu_FR, echo=FALSE}
+
+read_excel(feuilleroute_xlsx, sheet = "JEU") %>% 
+  graphFeuilleRoute()
+```
+
+<br/>
+
+## `r dates_FR %>% filter(code=="Ven") %>% pull(jsem_jour_mois_an)` {-}
+
+```{r feuille_route_ven_FR, echo=FALSE}
+
+read_excel(feuilleroute_xlsx, sheet = "VEN") %>% 
+  graphFeuilleRoute()
+```
+
+<br/>
+
+## `r dates_FR %>% filter(code=="Sam") %>% pull(jsem_jour_mois_an)` {-}
+
+```{r feuille_route_sam_FR, echo=FALSE}
+
+read_excel(feuilleroute_xlsx, sheet = "SAM") %>% 
+  graphFeuilleRoute()
+```
+
+<br/>
+
+## `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)` {-}
+
+```{r feuille_route_dim_FR, echo=FALSE}
+
+read_excel(feuilleroute_xlsx, sheet = "DIM") %>% 
+  graphFeuilleRoute()
+```
+
+<br/>
+
+## `r dates_FR %>% filter(code=="Lun_Ap") %>% pull(jsem_jour_mois_an)` {-}
+
+```{r feuille_route_lun_ap_FR, echo=FALSE}
+
+read_excel(feuilleroute_xlsx, sheet = "LUN_AP") %>% 
   graphFeuilleRoute()
 ```
 
