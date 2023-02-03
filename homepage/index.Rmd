@@ -1,0 +1,27 @@
+---
+title: "Tour de l'Abitibi 2023"
+image: "https://tourabitibi.com/wp-content/uploads/2022/04/favicon-tour-abitibi-velo-course-route-cyclisme.jpg"
+links:
+  - label: Facebook
+    url: "https://www.facebook.com/tourdelabitibi/"
+  - label: Twitter
+    url: "https://twitter.com/TourAbitibi/"
+  - label: Instagram
+    url: "https://www.instagram.com/tourabitibi/"
+output:
+  postcards::jolla
+---
+
+<br/>
+
+[Guide Technique - Version Française](FR/)
+
+<br/>
+
+[Technical Guide - English Version](EN/)
+
+<br/>
+
+[Documentation de l'organisateur](ORG/)
+
+<br/>

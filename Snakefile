@@ -9,6 +9,8 @@ rule Z_targets:
     input:
         "git_book/_book/index.html",
         "/Volumes/web/guide/FR/index.html",
+        "homepage/index.html",
+        "homepage/index.Rmd",
 
         "git_book/index.Rmd",
         "rmd/MotsBienvenue.Rmd",
@@ -152,4 +154,16 @@ rule R5_export_book_nas:
     shell:
         """
         sh {input.script} {params.guide_path} {params.lang}
+        """
+
+
+rule R6_render_homepage_export_nas:
+    input:
+        "homepage/index.Rmd"
+    output:
+        "homepage/index.html"
+    shell:
+        """
+        Rscript -e "rmarkdown::render('{input}')"
+        cp -R {output} /Volumes/web/guide
         """
