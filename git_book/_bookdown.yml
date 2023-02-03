@@ -11,6 +11,7 @@ rmd_files:
   - "index.Rmd"
   # - "../rmd/MotsBienvenue.Rmd"
   #  - "../rmd/CO.Rmd"
+  - "../rmd/FeuillesRoute.Rmd"
   #  - "../rmd/Etape1.Rmd"
   #  - "../rmd/Etape2.Rmd"
   - "../rmd/Reglements.Rmd"

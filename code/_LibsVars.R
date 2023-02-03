@@ -49,11 +49,16 @@ couleurs <- list(
                   jauneTour = "#eac11d",
                   brunMaillot = "#8B4513", # à valider
                   orangeMaillot = "#EE9A00", # à valider
+                  orangePale = "#ffcf78",
                   vertMaillot = "#66CD00", # à valider
                   blueSprintMaire = "#00008B",
+                  bluePale = "#d9d9ff",
                   rougeDanger = "#D7261E",
                   depart = "#006400"
                 )
+
+# Bon site de références pour couleurs complémentaires :
+#  https://www.colorhexa.com/
 
 #------------------------------------------------------------------------------#
 

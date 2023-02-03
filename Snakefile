@@ -15,6 +15,7 @@ rule Z_targets:
         "git_book/index.Rmd",
         "rmd/MotsBienvenue.Rmd",
         "rmd/CO.Rmd",
+        "rmd/FeuillesRoute.Rmd",
         "rmd/Etape1.Rmd",
         "rmd/Etape2.Rmd",
         "rmd/Reglements.Rmd",
@@ -27,6 +28,7 @@ rule Z_targets:
         "elevParcours/elev_parcours.csv",
 
         "excel/Itineraires.xlsx",
+        "excel/feuilleroute.xlsx",
         "excel/staff.xlsx",
         "excel/repas.xlsx",
         "excel/locaux.xlsx",
@@ -112,6 +114,7 @@ rule R4_render_book:
 
         "excel/staff.xlsx",
         "excel/Itineraires.xlsx",
+        "excel/feuilleroute.xlsx",
         "excel/repas.xlsx",
         "excel/locaux.xlsx",
         "excel/prix.xlsx",
@@ -124,6 +127,7 @@ rule R4_render_book:
         "git_book/index.Rmd",
         "rmd/MotsBienvenue.Rmd",
         "rmd/CO.Rmd",
+        "rmd/FeuillesRoute.Rmd",
         "rmd/Etape1.Rmd",
         "rmd/Etape2.Rmd",
         "rmd/Reglements.Rmd",
@@ -135,12 +139,12 @@ rule R4_render_book:
     output:
         "git_book/_book/index.html"
     params:
-        script = "script/render_book.R",
         guide_path = "git_book"
     shell:
         """
-        {params.script} --path {params.guide_path} 
+        Rscript -e "bookdown::render_book('{params.guide_path}')"
         """
+
 
 rule R5_export_book_nas:
     input:
