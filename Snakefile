@@ -11,6 +11,8 @@ rule Z_targets:
         "/Volumes/web/guide/FR/index.html",
         "homepage/index.html",
         "homepage/index.Rmd",
+        "resume_prog/prog.Rmd",
+        "resume_prog/prog.html",
 
         "git_book/index.Rmd",
         "rmd/MotsBienvenue.Rmd",
@@ -163,11 +165,29 @@ rule R5_export_book_nas:
 
 rule R6_render_homepage_export_nas:
     input:
-        "homepage/index.Rmd"
+        "homepage/index.Rmd",
     output:
         "homepage/index.html"
     shell:
         """
         Rscript -e "rmarkdown::render('{input}')"
+        echo "\n  ~~ Copie vers NAS ~~ \n"
         cp -R {output} /Volumes/web/guide
+        """
+
+rule R7_render_prog_export_nas:
+    input:
+        "excel/Itineraires.xlsx",
+        "gpx/output/parcours.shp",
+        "resume_prog/prog.Rmd"
+    output:
+        "resume_prog/prog.html"
+    params:
+        "resume_prog/prog.Rmd"
+    shell:
+        """
+        Rscript -e "rmarkdown::render('{params}')"
+        echo "\n  ~~ Copie vers NAS ~~ \n"
+        cp -R {output} /Volumes/web/guide/prog/index.html
+        cp -R resume_prog/prog_files /Volumes/web/guide/prog/
         """
