@@ -51,6 +51,11 @@ list.files(path = "gpx/input",
 ### Faire modifications
 
 # git commit -m ' xxxxx closes #1'  (https://stackoverflow.com/questions/60027222/github-how-can-i-close-the-two-issues-with-commit-message)
+#
+# Opt : envoi vers github (origin) : git push --set-upstream origin issue_2
+#
+# Opt : merge local sur main
+#
 # git checkout main
 # git merge issue_x
 # git status
