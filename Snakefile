@@ -207,6 +207,9 @@ rule R6_render_prog_prelim:
         """
 
 
+# à modifier : je peux simplement copier le contenu du fichier web
+# 2e script vers une copie du dossier web à l'extérieur : 2e repo public qui ne contiendrait que le site web ?
+
 rule R_NAS_copy:
     input:
         "homepage/index.html",
@@ -235,5 +238,5 @@ rule R_NAS_copy:
 
         # Transfert git_book vers NAS - Francais
         sh {params.script_export_gitbook} git_book FR
-        
+
         """
