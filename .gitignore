@@ -1,20 +1,22 @@
 # rasterElevation trop gros pour être sauvegarder, à générer localement
 # elv_parcours.tif
 
-# Fichiers temporaire de excel quand ouvert
+# Fichiers temporaire de Excel quand ouvert
 excel/~$*
 #####
-# ne pas sync git_book/_book pendant la péfiode test
+
+# Ne pas sync git_book/_book directement, prise en charge via le fichier web qui lui est exporte vers github
 git_book/guide2023.Rmd
 git_book/_book
 git_book/guide2023_files
 git_book/img
-#####
 
 resume_prog/prog_files
 resume_prog/prog.html
 
+# Image du processu Snakemake, pas requis de synchronisé
 dag.png
+
 ################################################################################
 # History files
 .Rhistory
@@ -46,6 +48,5 @@ vignettes/*.pdf
 .Renviron
 #DS Store
 .DS_Store
-
 # Snakemake temporary directory file
 .snakemake
