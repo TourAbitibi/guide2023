@@ -13,6 +13,9 @@ rule Z_targets:
         "homepage/index.Rmd",
         "resume_prog/prog.Rmd",
         "resume_prog/prog.html",
+        "web/index.html",
+        "web/prog/index.html",
+        "web/FR/index.html",
 
         "git_book/index.Rmd",
         "rmd/MotsBienvenue.Rmd",
@@ -139,55 +142,98 @@ rule R4_render_book:
         "rmd/Locaux.Rmd",
         "rmd/CarteAbitibi.Rmd"
     output:
-        "git_book/_book/index.html"
-    params:
-        guide_path = "git_book"
-    shell:
-        """
-        Rscript -e "bookdown::render_book('{params.guide_path}')"
-        """
-
-
-rule R5_export_book_nas:
-    input:
-        script = "script/script_export_guide.sh",
-        index = "git_book/_book/index.html"
-    output:
-        "/Volumes/web/guide/FR/index.html"
+        "git_book/_book/index.html",
+        "web/FR/index.html"
     params:
         guide_path = "git_book",
         lang = "FR"
     shell:
         """
-        sh {input.script} {params.guide_path} {params.lang}
+        Rscript -e "bookdown::render_book('{params.guide_path}')"
+
+        # Si les fichiers existent dans le dossier web
+        if ls web/{params.lang}/* 1> /dev/null 2>&1; 
+        then
+            echo "~~ fichiers existants à effacer dans le dossier web ~~ \n" &
+            rm -rf web/{params.lang}
+        fi
+
+        # Créer les fichiers
+        mkdir -p web/{params.lang} web/img
+
+        # Copier les données html
+        cp -R {params.guide_path}/_book/* web/{params.lang}
+
+        # Copier les images
+        cp -R {params.guide_path}/img/* web/img
+
+        echo "\nGuide disponible au : /Users/brunogauthier/Documents/guide2023/web/{params.lang}/index.html\n"
         """
 
 
-rule R6_render_homepage_export_nas:
+rule R5_render_homepage:
     input:
         "homepage/index.Rmd",
     output:
+        "homepage/index.html",
+        "web/index.html"
+    params:
         "homepage/index.html"
     shell:
         """
         Rscript -e "rmarkdown::render('{input}')"
-        echo "\n  ~~ Copie vers NAS ~~ \n"
-        cp -R {output} /Volumes/web/guide
+        echo "\n  ~~ Copie vers dossier web local ~~ \n"
+        mkdir -p web
+        cp -R {params} web
         """
 
-rule R7_render_prog_export_nas:
+rule R6_render_prog_prelim:
     input:
         "excel/Itineraires.xlsx",
         "gpx/output/parcours.shp",
         "resume_prog/prog.Rmd"
     output:
-        "resume_prog/prog.html"
+        local = "resume_prog/prog.html",
+        web = "web/prog/index.html"
     params:
         "resume_prog/prog.Rmd"
     shell:
         """
         Rscript -e "rmarkdown::render('{params}')"
+        echo "\n  ~~ Copie vers dossier web local ~~ \n"
+        mkdir -p web/prog
+        cp -R {output.local} {output.web}
+        cp -R resume_prog/prog_files web/prog/
+        """
+
+
+rule R_NAS_copy:
+    input:
+        "homepage/index.html",
+        "resume_prog/prog.html",
+        "git_book/_book/index.html"
+    output:
+        "/Volumes/web/guide/index.html",
+        "/Volumes/web/guide/prog/index.html",
+        "/Volumes/web/guide/FR/index.html"
+    params:
+        home_page = "homepage/index.html",
+        prog_prelim = "resume_prog/prog.html",
+        prog_prelim_files = "resume_prog/prog_files",
+        script_export_gitbook = "script/script_export_guide.sh"
+    shell:
+        """
         echo "\n  ~~ Copie vers NAS ~~ \n"
-        cp -R {output} /Volumes/web/guide/prog/index.html
-        cp -R resume_prog/prog_files /Volumes/web/guide/prog/
+
+        # Transfert page d'accueil temporaire
+        mkdir -p /Volumes/web/guide /Volumes/web/guide/prog/
+        cp -R {params.home_page} /Volumes/web/guide
+
+        # Transfert programmation préliminaire
+        cp -R {params.prog_prelim} /Volumes/web/guide/prog/index.html
+        cp -R {params.prog_prelim_files} /Volumes/web/guide/prog/
+
+        # Transfert git_book vers NAS - Francais
+        sh {params.script_export_gitbook} git_book FR
+        
         """
