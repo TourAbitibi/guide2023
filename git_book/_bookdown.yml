@@ -9,18 +9,17 @@ language:
     chapter_name: ""
 rmd_files:
   - "index.Rmd"
-  # - "../rmd/MotsBienvenue.Rmd"
-  #  - "../rmd/CO.Rmd"
+  - "../rmd/MotsBienvenue.Rmd"
+  - "../rmd/CO.Rmd"
   - "../rmd/FeuillesRoute.Rmd"
-  #  - "../rmd/Etape1.Rmd"
-  #  - "../rmd/Etape2.Rmd"
+  - "../rmd/Etape1.Rmd"
+  - "../rmd/Etape2.Rmd"
   - "../rmd/Reglements.Rmd"
   - "../rmd/Regl_sejour.Rmd"
   - "../rmd/Repas.Rmd"
   - "../rmd/MedMasso.Rmd"
-# - "../rmd/Locaux.Rmd"
-#  - "../rmd/CarteAbitibi.Rmd"
-
+  - "../rmd/Locaux.Rmd"
+  - "../rmd/CarteAbitibi.Rmd"
 #delete_merged_file: true
 #language:
 #  ui:
