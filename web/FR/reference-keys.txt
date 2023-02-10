@@ -1,6 +1,7 @@
-fig:unnamed-chunk-34
+fig:unnamed-chunk-36
 présentation
 mots-de-bienvenue
+programmation
 comité-organisateur
 feuilles-de-route-quotidiennes
 étape-1-rouyn-noranda---amos

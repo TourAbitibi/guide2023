@@ -19,6 +19,7 @@ rule Z_targets:
 
         "git_book/index.Rmd",
         "rmd/MotsBienvenue.Rmd",
+        "rmd/Programmation.Rmd",
         "rmd/CO.Rmd",
         "rmd/FeuillesRoute.Rmd",
         "rmd/Etape1.Rmd",
@@ -131,6 +132,7 @@ rule R4_render_book:
 
         "git_book/index.Rmd",
         "rmd/MotsBienvenue.Rmd",
+        "rmd/Programmation.Rmd",
         "rmd/CO.Rmd",
         "rmd/FeuillesRoute.Rmd",
         "rmd/Etape1.Rmd",
@@ -165,7 +167,8 @@ rule R4_render_book:
         cp -R {params.guide_path}/_book/* web/{params.lang}
 
         # Copier les images
-        cp -R {params.guide_path}/img/* web/img
+        #cp -R {params.guide_path}/img/* web/img
+        cp -R img/* web/img
 
         echo "\nGuide disponible au : /Users/brunogauthier/Documents/guide2023/web/{params.lang}/index.html\n"
         """

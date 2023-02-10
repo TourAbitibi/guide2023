@@ -63,7 +63,7 @@ data <- iti_etape$Details %>%
          Distance_en_circuit, 
          Distance_totale,
          Liens, 
-         heure_dep = Départ,
+         heure_dep = Depart,
          heure_arr_finale = time_arrivee
          ) %>% 
   # Correction si heure est mal formatée - par exemple : 14:0  

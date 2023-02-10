@@ -25,7 +25,7 @@ mkdir -p /Volumes/web/guide/$lang &&cp -R  $path/_book/* /Volumes/web/guide/$lan
 
 ## Copier les images
 
-mkdir -p /Volumes/web/guide/img && cp -R  $path/img/* /Volumes/web/guide/img
+mkdir -p /Volumes/web/guide/img && cp -R  img/* /Volumes/web/guide/img
 
 echo "~~ Fin de la copie vers le NAS ~~ \n"
 
