@@ -17,6 +17,9 @@ resume_prog/prog.html
 # Image du processu Snakemake, pas requis de synchronisé
 dag.png
 
+# fichier tif trop gros
+ rasterElevation/elv_parcours.tif
+
 ################################################################################
 # History files
 .Rhistory
