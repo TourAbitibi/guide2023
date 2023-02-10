@@ -40,7 +40,7 @@ parcours <- map_dfr(1:length(gpx_files), ~st_read(gpx_files[.x], layer = "tracks
 # Correction manuelle (pas accès au gpx sur ridewithgps pour l'instant pour correction)
 parcours$name[3] <- "Tour 2022 - Étape 3 - CLMI"
 parcours$name[4] <- "Tour 2022 - Étape 4 - Malartic"
-
+parcours$name[7] <- "Tour 2022 - Étape 7 - La Sarre"
 
 # Sortir le numéro de l'étape à partir du nom
 parcours <- parcours %>% 
