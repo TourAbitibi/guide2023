@@ -125,7 +125,20 @@ Arrivée finale      `r data$heure_arr_finale[etape]`
 
 <br/>
 
-`r glue('<iframe src="{data$Liens[etape]}" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>')`
+```{r}
+
+# Création d'un lien de type iframe
+
+## Derniers chiffres de "https://ridewithgps.com/routes/123456789"
+id_RWG <- str_extract(data$Liens[etape], "\\d*$")  
+
+lien <- glue('<iframe src="https://ridewithgps.com/embeds?type=route&id={id_RWG}&metricUnits=true&sampleGraph=true" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>')
+
+```
+
+
+
+`r lien`
 
 <br/>
 
@@ -152,7 +165,19 @@ Arrivée finale      `r data$heure_arr_finale[etape]`
 
 <br/>
 
-`r glue('<iframe src="{data$Liens[etape]}" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>')`
+```{r}
+
+# Création d'un lien de type iframe
+
+## Derniers chiffres de "https://ridewithgps.com/routes/123456789"
+id_RWG <- str_extract(data$Liens[etape], "\\d*$")  
+
+lien <- glue('<iframe src="https://ridewithgps.com/embeds?type=route&id={id_RWG}&metricUnits=true&sampleGraph=true" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>')
+
+```
+
+
+`r lien`
 
 <br/>
 
@@ -171,7 +196,18 @@ Dernières arrivées avant midi.
 
 <br/>
 
-`r glue('<iframe src="{data$Liens[etape]}" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>')`
+```{r}
+
+# Création d'un lien de type iframe
+
+## Derniers chiffres de "https://ridewithgps.com/routes/123456789"
+id_RWG <- str_extract(data$Liens[etape], "\\d*$")  
+
+lien <- glue('<iframe src="https://ridewithgps.com/embeds?type=route&id={id_RWG}&metricUnits=true&sampleGraph=true" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>')
+
+```
+
+`r lien`
 
 <br/>
 
@@ -198,7 +234,18 @@ Arrivée finale      `r data$heure_arr_finale[etape]`
 
 <br/>
 
-`r glue('<iframe src="{data$Liens[etape]}" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>')`
+```{r}
+
+# Création d'un lien de type iframe
+
+## Derniers chiffres de "https://ridewithgps.com/routes/123456789"
+id_RWG <- str_extract(data$Liens[etape], "\\d*$")  
+
+lien <- glue('<iframe src="https://ridewithgps.com/embeds?type=route&id={id_RWG}&metricUnits=true&sampleGraph=true" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>')
+
+```
+
+`r lien`
 
 <br/>
 
@@ -225,7 +272,18 @@ Arrivée finale      `r data$heure_arr_finale[etape]`
 
 <br/>
 
-`r glue('<iframe src="{data$Liens[etape]}" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>')`
+```{r}
+
+# Création d'un lien de type iframe
+
+## Derniers chiffres de "https://ridewithgps.com/routes/123456789"
+id_RWG <- str_extract(data$Liens[etape], "\\d*$")  
+
+lien <- glue('<iframe src="https://ridewithgps.com/embeds?type=route&id={id_RWG}&metricUnits=true&sampleGraph=true" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>')
+
+```
+
+`r lien`
 
 <br/>
 
@@ -252,7 +310,18 @@ Arrivée finale      `r data$heure_arr_finale[etape]`
 
 <br/>
 
-`r glue('<iframe src="{data$Liens[etape]}" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>')`
+```{r}
+
+# Création d'un lien de type iframe
+
+## Derniers chiffres de "https://ridewithgps.com/routes/123456789"
+id_RWG <- str_extract(data$Liens[etape], "\\d*$")  
+
+lien <- glue('<iframe src="https://ridewithgps.com/embeds?type=route&id={id_RWG}&metricUnits=true&sampleGraph=true" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>')
+
+```
+
+`r lien`
 
 <br/>
 
@@ -280,7 +349,18 @@ Arrivée finale      `r data$heure_arr_finale[etape]`
 
 <br/>
 
-`r glue('<iframe src="{data$Liens[etape]}" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>')`
+```{r}
+
+# Création d'un lien de type iframe
+
+## Derniers chiffres de "https://ridewithgps.com/routes/123456789"
+id_RWG <- str_extract(data$Liens[etape], "\\d*$")  
+
+lien <- glue('<iframe src="https://ridewithgps.com/embeds?type=route&id={id_RWG}&metricUnits=true&sampleGraph=true" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>')
+
+```
+
+`r lien`
 
 <br/>
 <br/>
