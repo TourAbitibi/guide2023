@@ -27,7 +27,7 @@ path <- here("gpx","input")
 
 # Lire les fichiers GPX correspondant aux parcours du Tour dans le fichier input
 gpx_files <- sort(list.files(path = path,
-                             pattern = "^Tour.*gpx$",
+                             pattern = "^Course.*gpx$",
                              full.names = TRUE))
 
 # Import et concaténation des GPX
@@ -38,9 +38,9 @@ parcours <- map_dfr(1:length(gpx_files), ~st_read(gpx_files[.x], layer = "tracks
 ## points <- st_read("d:/Tour2022_1.gpx", layer = couche[1])
 
 # Correction manuelle (pas accès au gpx sur ridewithgps pour l'instant pour correction)
-parcours$name[3] <- "Tour 2022 - Étape 3 - CLMI"
-parcours$name[4] <- "Tour 2022 - Étape 4 - Malartic"
-parcours$name[7] <- "Tour 2022 - Étape 7 - La Sarre"
+parcours$name <- c("Étape 1 - Rouyn-Noranda", "Étape 2 - Val-d'Or", "Étape 3 - CLMI",
+                   "Étape 4 - Malartic", "Étape 5 - Senneterre",  "Étape 6 - Boucle Preissac",
+                    "Étape 7 - La Sarre")
 
 # Sortir le numéro de l'étape à partir du nom
 parcours <- parcours %>% 

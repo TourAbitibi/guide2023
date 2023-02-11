@@ -5,9 +5,10 @@
 Fichiers `.gpx` nécessaires à la création des parcours.
 
 Le nom du gpx enregistré doit être : 
-- `Tour2022_1.gpx`
+- `Course_1.gpx` pour les gpx de la course (KOM, sprint,...)
+- `Sign_1.gpx` pour les gpx avec la signalisation (terre-plein, virages, ...)
 
-Le `name` des étapes vient du nom d'enregistrement sur [Ride with GPS](https://ridewithgps.com). Le format de l'enregirtrement sur le site doit être tel que: 
+Le `name` des étapes vient du nom d'enregistrement sur [Ride with GPS](https://ridewithgps.com). Le format de l'enregistrement sur le site doit être tel que: 
 - `Tour 2022 - Étape 1 - Ville-Ville`
 
 ## output

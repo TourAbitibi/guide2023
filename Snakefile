@@ -41,13 +41,13 @@ rule Z_targets:
         "excel/med_masso.xlsx",
         "excel/prix.xlsx",
 
-        "gpx/input/Tour2022_1.gpx",
-        "gpx/input/Tour2022_2.gpx",
-        "gpx/input/Tour2022_3.gpx",
-        "gpx/input/Tour2022_4.gpx",
-        "gpx/input/Tour2022_5.gpx",
-        "gpx/input/Tour2022_6.gpx",
-        "gpx/input/Tour2022_7.gpx",
+        "gpx/input/Course_1.gpx",
+        "gpx/input/Course_2.gpx",
+        "gpx/input/Course_3.gpx",
+        "gpx/input/Course_4.gpx",
+        "gpx/input/Course_5.gpx",
+        "gpx/input/Course_6.gpx",
+        "gpx/input/Course_7.gpx",
 
         "gpx/output/parcours.shp", "gpx/output/parcours.dbf",
         "gpx/output/parcours.prj", "gpx/output/parcours.shx",
@@ -65,8 +65,8 @@ rule Z_targets:
 rule R1_importExportGPX:
     input:
         "code/_importExportGPX.R", "excel/Itineraires.xlsx",
-        "gpx/input/Tour2022_1.gpx", "gpx/input/Tour2022_2.gpx", "gpx/input/Tour2022_3.gpx", "gpx/input/Tour2022_4.gpx",
-        "gpx/input/Tour2022_5.gpx", "gpx/input/Tour2022_6.gpx", "gpx/input/Tour2022_7.gpx"
+        "gpx/input/Course_1.gpx", "gpx/input/Course_2.gpx", "gpx/input/Course_3.gpx", "gpx/input/Course_4.gpx",
+        "gpx/input/Course_5.gpx", "gpx/input/Course_6.gpx", "gpx/input/Course_7.gpx"
     output:
         "gpx/output/parcours.shp", "gpx/output/parcours.dbf", "gpx/output/parcours.prj", "gpx/output/parcours.shx"
     params:
