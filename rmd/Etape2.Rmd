@@ -2,23 +2,38 @@
 
 # Étape 2 : `r iti_etape$Details$Descr_Villes[2]`
 
+
+
 ```{r, echo=FALSE}
 Etape <-2
 
 
 heureDep <- iti_etape$Details$time_depart[Etape]
 
+heureCircuit <- iti_etape$Details$HeureEntreeVille[Etape]
+
 heureArr <- iti_etape$Details$time_arrivee[Etape]
 
 ```
 
+```{r, echo=FALSE, results='asis'}
+
+glue('<table border=1>
+    <tr>
+        <td><strong/>Présenté par</strong></td>
+        <td><img src="../img/logo/comm_{Etape}.png" width="350" style="float:right"></td>
+    </tr>
+</table>')
+```
+
+<br/>
 
 **`r dates_FR %>% filter(code=="Mer") %>% pull(jsem_jour_mois_an)`** 
 
  **`r iti_etape$Details$KM_Total[Etape]` km**
 
 
-Le commanditaire d'étape est **`r iti_etape$Details$Commanditaire[Etape]`**. 
+ 
 
 ## Sommaire
 
@@ -29,6 +44,8 @@ Le commanditaire d'étape est **`r iti_etape$Details$Commanditaire[Etape]`**.
                                               Heure
 ----------------- ----------------------------------
 Départ                                  `r heureDep`
+
+Arrivée au circuit                      `r heureCircuit`
 
 Arrivée finale                         `r heureArr`
 ----------------------------------------------------

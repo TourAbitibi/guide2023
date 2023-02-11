@@ -13,6 +13,17 @@ heureArr <- iti_etape$Details$time_arrivee[Etape]
 
 ```
 
+```{r, echo=FALSE, results='asis'}
+
+glue('<table border=1>
+    <tr>
+        <td><strong/>Présenté par</strong></td>
+        <td><img src="../img/logo/comm_{Etape}.png" width="350" style="float:right"></td>
+    </tr>
+</table>')
+```
+
+<br/>
 
 **`r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)`** 
 
