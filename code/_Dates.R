@@ -23,7 +23,7 @@ Mardi_etape1<- read_excel(here("excel", "Itineraires.xlsx"), sheet = "Details") 
   slice(1) %>%  pull(Date) 
 
 
-# df dates en françcais
+# df dates en français
 
 dates_FR <- tibble(
   code = c("Dim_Av", "Lun_Av", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim", "Lun_Ap"),
@@ -32,7 +32,13 @@ dates_FR <- tibble(
   jour_mois_an = map(.x = -2:6  , ~ format(Mardi_etape1 + ddays(.x) ,format = "%d %B %Y")) %>% unlist(), 
   jsem_jour_mois = map(.x = -2:6  , ~ format(Mardi_etape1 + ddays(.x) ,format = "%A, %d %B")) %>% unlist(),
   jsem_jour_mois_an = map(.x = -2:6  , ~ format(Mardi_etape1 + ddays(.x) ,format = "%A, %d %B %Y")) %>% unlist()
-)
+) %>% 
+  mutate(
+    jour_mois = str_replace(jour_mois, "^0", ""),
+    jour_mois_an = str_replace(jour_mois_an, "^0", ""),
+    jsem_jour_mois = str_replace(jsem_jour_mois, ", 0", ", "),
+    jsem_jour_mois_an = str_replace(jsem_jour_mois_an, ", 0", ", ")
+  )
 
 
 # Partie anglaise
@@ -46,7 +52,13 @@ dates_EN <- tibble(
   jour_mois_an = map(.x = -2:6  , ~ format(Mardi_etape1 + ddays(.x) ,format = "%B %dth, %Y")) %>% unlist(),
   jsem_jour_mois = map(.x = -2:6  , ~ format(Mardi_etape1 + ddays(.x) ,format = "%A, %B %dth")) %>% unlist(),
   jsem_jour_mois_an = map(.x = -2:6  , ~ format(Mardi_etape1 + ddays(.x) ,format = "%A, %B %dth, %Y")) %>% unlist()
-)
+)%>% 
+  mutate(
+    jour_mois = str_replace(jour_mois, ", 0", ", "),
+    jour_mois_an = str_replace(jour_mois_an, " 0", ", "),
+    jsem_jour_mois = str_replace(jsem_jour_mois, " 0", ", "),
+    jsem_jour_mois_an = str_replace(jsem_jour_mois_an, " 0", ", ")
+  )
 
 # Retour au local Français
 Sys.setlocale("LC_TIME", locale = "fr_CA.UTF-8")
