@@ -64,10 +64,12 @@ data <- iti_etape$Details %>%
          Distance_totale,
          Liens, 
          heure_dep = Depart,
+         heure_arr_circuit = HeureEntreeVille, 
          heure_arr_finale = time_arrivee
          ) %>% 
   # Correction si heure est mal formatée - par exemple : 14:0  
   mutate(heure_dep = str_replace(heure_dep, "(\\d):0$", "\\1:00"),
+         heure_arr_circuit = str_replace(heure_arr_circuit, "(\\d):0$", "\\1:00"),
          heure_arr_finale = str_replace(heure_arr_finale, "(\\d):0$", "\\1:00") )
 
 
@@ -161,6 +163,8 @@ etape = 2
                                               Heure
 ----------------- ----------------------------------
 Départ                     `r data$heure_dep[etape]`
+
+Arrivée en circuit    `r data$heure_arr_circuit[etape]`
 
 Arrivée finale      `r data$heure_arr_finale[etape]`
 ----------------------------------------------------
@@ -289,6 +293,8 @@ etape = 7
                                               Heure
 ----------------- ----------------------------------
 Départ                     `r data$heure_dep[etape]`
+
+Arrivée en circuit    `r data$heure_arr_circuit[etape]`
 
 Arrivée finale      `r data$heure_arr_finale[etape]`
 ----------------------------------------------------

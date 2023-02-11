@@ -9,14 +9,15 @@ editor_options:
 
 df <- iti_etape$Details
 
+dates_prog <- str_replace(dates_FR$jsem_jour_mois, ", ", "<br>")
+
 ```
 
 
 ###  Tour de l'Abitibi `r params$annee` - `r edition`e édition {-}
 
+
 ```{r echo=FALSE, results='asis'}
-
-
 
 glue('<table>
     <tr>
@@ -34,11 +35,11 @@ glue('<table>
         <td></td>
     </tr>
     <tr>
-        <td>{dates_FR %>% filter(code=="Lun_Av") %>% pull(jsem_jour_mois)}</td>
+        <td>{dates_prog[2]}</td>
         <td><img src="../img/logo/comm_0.png" width="100"></td>
         <td>Présentation des équipes<br/>Challenge Sprint Abitibi<br/></td>
-        <td>17h30<br/><br/>18h30<br/>Amos, Cathédrale</td>
-        <td>18h<br/><br/>20h<br/>Amos, Cathédrale</td>
+        <td>**17h30**<br/><br/>**18h30**<br/>Amos, Cathédrale</td>
+        <td>**18h**<br/><br/>**20h**<br/>Amos, Cathédrale</td>
     </tr>
     <tr>
         <td></td>
@@ -48,11 +49,11 @@ glue('<table>
         <td></td>
     </tr>
     <tr>
-        <td>{dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois)}<br/><br/><strong>Étape 1</strong></td>
+        <td>{dates_prog[3]}<br/><br/><strong>Étape 1</strong></td>
         <td><img src="../img/logo/comm_1.png" width="100"></td>
         <td><strong>Route</strong><br/>{df$VilleDep[1]} - {df$VilleArr[1]}<br/>{df$Via[1]}<br/>Distance : {df$Descr_km[1]}<br/>({df$KM_Neutres[1]} km neutralisés au départ)</td>
-        <td>{df$Depart[1]}<br/>{df$VilleDep[1]}, {df$LieuDepFR[1]}</td>
-        <td>{df$HeureArrivee[1]}<br/>{df$VilleArr[1]}, {df$LieuArrFR[1]}</td>
+        <td>**{df$Depart[1]}**<br/>{df$VilleDep[1]}, {df$LieuDepFR[1]}</td>
+        <td>**{df$HeureArrivee[1]}**<br/>{df$VilleArr[1]}, {df$LieuArrFR[1]}</td>
     </tr>
     <tr>
         <td></td>
@@ -62,11 +63,11 @@ glue('<table>
         <td></td>
     </tr>
     <tr>
-        <td>{dates_FR %>% filter(code=="Mer") %>% pull(jsem_jour_mois)}<br/><br/><strong>Étape 2</strong></td>
-        <td><img src="../img/logo/comm_2.png" width="100"></td>
+        <td>{dates_prog[4]}<br/><br/><strong>Étape 2</strong></td>
+        <td><img src="../img/logo/comm_2.png" width="200"></td>
         <td><strong>Route</strong><br/>{df$VilleDep[2]} - {df$VilleArr[2]}<br/>{df$Via[2]}<br/>Distance : {df$Descr_km[2]}<br/>({df$KM_Neutres[2]} km neutralisés au départ)</td>
-        <td>{df$Depart[2]}<br/>{df$VilleDep[2]}, {df$LieuDepFR[2]}</td>
-        <td>{df$HeureEntreeVille[2]} : Entrée en ville<br/>{df$HeureArrivee[2]} : Arrivée finale<br/>{df$VilleArr[2]}, {df$LieuArrFR[2]}</td>
+        <td>**{df$Depart[2]}**<br/>{df$VilleDep[2]}, {df$LieuDepFR[2]}</td>
+        <td>Entrée en ville : <br/>**{df$HeureEntreeVille[2]}** <br/>Arrivée finale : <br/>**{df$HeureArrivee[2]}**<br/>{df$VilleArr[2]}, {df$LieuArrFR[2]}</td>
     </tr>
     <tr>
         <td></td>
@@ -76,11 +77,11 @@ glue('<table>
         <td></td>
     </tr>
     <tr>
-        <td>{dates_FR %>% filter(code=="Jeu") %>% pull(jsem_jour_mois)} (AM)<br/><br/><strong>Étape 3 (demi-étape)</strong></td>
+        <td>{dates_prog[5]} (AM)<br/><br/><strong>Étape 3 (demi-étape)</strong></td>
         <td><img src="../img/logo/comm_3.png" width="100"></td>
-        <td><strong>Contre-la-montre Individuel</strong><br/>{df$VilleDep[3]} - {df$Via[3]} - {df$VilleArr[3]}<br/>Distance : {df$Descr_km[3]}</td>
-        <td>Premier départ : {df$Depart[3]}<br/>Dernier départ : {df$DerDep[3]}<br/>{df$VilleDep[3]}, {df$LieuDepFR[3]}</td>
-        <td>Première arrivée : {df$HeureArrivee[2]}<br/>Dernière arrivée : {df$DerArr[3]}<br/>{df$VilleArr[3]}, {df$LieuArrFR[3]}</td>
+        <td><strong>Contre-la-montre Individuel</strong><br/>{df$VilleDep[3]} - {df$Via[3]} - {df$VilleArr[3]}<br/>Distance : {df$Descr_km[3]}</td>
+        <td>Premier départ : **{df$Depart[3]}**<br/>Dernier départ : **{df$DerDep[3]}**<br/>{df$VilleDep[3]}, {df$LieuDepFR[3]}</td>
+        <td>Première arrivée : **{df$HeureArrivee[3]}**<br/>Dernière arrivée : **{df$DerArr[3]}**<br/>{df$VilleArr[3]}, {df$LieuArrFR[3]}</td>
     </tr>
     <tr>
         <td></td>
@@ -90,11 +91,11 @@ glue('<table>
         <td></td>
     </tr>
     <tr>
-        <td>{dates_FR %>% filter(code=="Jeu") %>% pull(jsem_jour_mois)}<br/><br/><strong>Étape 4 (demi-étape)</strong></td>
+        <td>{dates_prog[5]} (PM)<br/><br/><strong>Étape 4 (demi-étape)</strong></td>
         <td><img src="../img/logo/comm_4.png" width="100"></td>
         <td><strong>Route</strong><br/>{df$VilleDep[4]} - {df$Via[4]} - {df$VilleArr[4]}<br/>Distance : {df$Descr_km[4]}<br/>({df$KM_Neutres[4]} km neutralisés au départ)</td>
-        <td>{df$Depart[4]}<br/>{df$VilleDep[4]}, {df$LieuDepFR[4]}</td>
-        <td>{df$HeureArrivee[4]}<br/>{df$VilleArr[4]}, {df$LieuArrFR[4]}</td>
+        <td>**{df$Depart[4]}**<br/>{df$VilleDep[4]}, {df$LieuDepFR[4]}</td>
+        <td>**{df$HeureArrivee[4]}**<br/>{df$VilleArr[4]}, {df$LieuArrFR[4]}</td>
     </tr>
     <tr>
         <td></td>
@@ -104,11 +105,11 @@ glue('<table>
         <td></td>
     </tr>
     <tr>
-        <td>{dates_FR %>% filter(code=="Ven") %>% pull(jsem_jour_mois)}<br/><br/>Étape 5</td>
+        <td>{dates_prog[6]}<br/><br/><strong>Étape 5</strong></td>
         <td><img src="../img/logo/comm_5.png" width="100"></td>
-        <td><strong>Route</strong><br/>Boucle Senneterre - Val-d’Or - Senneterre<br/>Distance : 140 km<br/>(5 km neutralisés au départ)</td>
-        <td>14h00 <br/>Senneterre<br/>Hôtel de ville</td>
-        <td>17h03 : Entrée en ville<br/>Senneterre<br/>Mont Bell</td>
+        <td><strong>Route</strong><br/>{df$VilleDep[5]} &#8634; {df$VilleArr[5]}<br/> {df$Via[5]}<br/>Distance : {df$Descr_km[5]}<br/>({df$KM_Neutres[5]} km neutralisés au départ)</td>
+        <td>**{df$Depart[5]}**<br/>{df$VilleDep[5]},<br/>{df$LieuDepFR[5]}</td>
+        <td>**{df$HeureArrivee[5]}**<br/>{df$VilleArr[5]},<br/>{df$LieuArrFR[5]}</td>
     </tr>
     <tr>
         <td></td>
@@ -118,11 +119,11 @@ glue('<table>
         <td></td>
     </tr>
     <tr>
-        <td>{dates_FR %>% filter(code=="Sam") %>% pull(jsem_jour_mois)}<br/><br/>Étape 6</td>
-        <td><img src="../img/logo/comm_6.png" width="100"></td>
-        <td><strong>Route</strong><br/>Amos – Preissac - Amos<br/>(sens horaire)<br/>Distance : 115,9 km <br/>(3 km neutralisés au départ)</td>
-        <td>16h30<br/>Amos <br/>Parc de la Cathédrale</td>
-        <td>19h05 : Arrivée finale<br/>Amos<br/>Parc de la Cathédrale</td>
+        <td>{dates_prog[7]}<br/><br/><strong>Étape 6</strong></td>
+        <td><img src="../img/logo/comm_6.png" width="200"></td>
+        <td><strong>Route</strong><br/>{df$VilleDep[6]} &#8635; {df$VilleArr[6]}<br/>{df$Via[6]}<br/>Distance : {df$Descr_km[6]}<br/>({df$KM_Neutres[6]} km neutralisés au départ)</td>
+        <td>**{df$Depart[6]}**<br/>{df$VilleDep[6]},<br/>{df$LieuDepFR[6]}</td>
+        <td>**{df$HeureArrivee[6]}**<br/>{df$VilleArr[6]},<br/>{df$LieuArrFR[6]}</td>
     </tr>
     <tr>
         <td></td>
@@ -132,13 +133,15 @@ glue('<table>
         <td></td>
     </tr>
     <tr>
-        <td>{dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois)}<br/><br/>Etape 7</td>
+        <td>{dates_prog[8]}<br/><br/><strong>Étape 7</strong></td>
         <td><img src="../img/logo/comm_7.png" width="100"></td>
-        <td><strong>Route</strong><br/>Amos<br/>Distance : 108 km (10 x 10,8km)</td>
-        <td>14h30<br/>Amos<br/>Parc de la Cathédrale</td>
-        <td>16h50 : Arrivée finale<br/>Amos<br/>Parc de la Cathédrale</td>
+        <td><strong>Route</strong><br/>{df$VilleDep[7]} - {df$VilleArr[7]}<br/>{df$Via[7]}<br/>Distance : {df$Descr_km[7]}<br/>({df$KM_Neutres[7]} km neutralisés au départ)</td>
+        <td>**{df$Depart[7]}**<br/>{df$VilleDep[7]}, {df$LieuDepFR[7]}</td>
+        <td>Entrée en ville : <br/>**{df$HeureEntreeVille[7]}** <br/>Arrivée finale : <br/>**{df$HeureArrivee[7]}**<br/>{df$VilleArr[7]}, {df$LieuArrFR[7]}</td>
     </tr>
 </table>') 
 
 
 ```
+
+**Distance totale :** `r sum(df$Distance_totale)` km
