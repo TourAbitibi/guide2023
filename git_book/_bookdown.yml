@@ -16,6 +16,7 @@ rmd_files:
   - "../rmd/Etape1.Rmd"
   - "../rmd/Etape2.Rmd"
   - "../rmd/Reglements.Rmd"
+  - "../rmd/CirculationCourse.Rmd"
   - "../rmd/Regl_sejour.Rmd"
   - "../rmd/Repas.Rmd"
   - "../rmd/MedMasso.Rmd"

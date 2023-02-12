@@ -92,4 +92,9 @@ list.files(path = "gpx/input",
 
 # convert comm_5.png -fuzz 50%  -transparent White x.png
 
+# Pour enlever le blanc autour seulement
+# convert x.jpeg -fuzz 15% -bordercolor white -border 1 -fill none -draw "alpha 0,0 floodfill" -shave 1x1 x.png
+
 # convert x.tiff -compress lzw y.tif  --> à valider, pour compresser 
+
+

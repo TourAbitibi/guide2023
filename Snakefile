@@ -30,6 +30,7 @@ rule Z_targets:
         "rmd/Locaux.Rmd",
         "rmd/Repas.Rmd",
         "rmd/MedMasso.Rmd",
+        "rmd/CirculationCourse.Rmd",
 
         "elevParcours/elev_parcours.csv",
 
@@ -138,6 +139,7 @@ rule R4_render_book:
         "rmd/Etape1.Rmd",
         "rmd/Etape2.Rmd",
         "rmd/Reglements.Rmd",
+        "rmd/CirculationCourse.Rmd",
         "rmd/Regl_sejour.Rmd",
         "rmd/Repas.Rmd",
         "rmd/MedMasso.Rmd",
