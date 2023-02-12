@@ -71,3 +71,17 @@ list.files(path = "gpx/input",
 
 # Forcer 1 seule rule:
 # snakemake -c1 -R nom_rule
+
+
+
+################################################################################
+# Format de tous les `inline chunk`
+
+# inline_hook <- function(x){
+#   
+#   # Tout mettre les sorties en gras 
+#   # paste0("**",x,"**")
+#   
+# }
+# 
+# knit_hooks$set(inline = inline_hook)
