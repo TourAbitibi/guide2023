@@ -1,9 +1,10 @@
-# rasterElevation trop gros pour être sauvegarder, à générer localement
-# elv_parcours.tif
+# Beaucoup de changement lors de la production des fichier html
+# Pendant le développement, pas de de synchro sur ces outpus
 
-# Fichiers temporaire de Excel quand ouvert
-excel/~$*
-#####
+web/FR
+web/img
+web/prog
+web/index.html
 
 # Ne pas sync git_book/_book directement, prise en charge via le fichier web qui lui est exporte vers github
 git_book/guide2023.Rmd
@@ -17,7 +18,7 @@ resume_prog/prog.html
 # Image du processu Snakemake, pas requis de synchronisé
 dag.png
 
-# fichier tif trop gros
+# fichier tif trop gros et peut être produit localement
  rasterElevation/elv_parcours.tif
 
 ################################################################################
@@ -53,3 +54,5 @@ vignettes/*.pdf
 .DS_Store
 # Snakemake temporary directory file
 .snakemake
+# Fichiers temporaire de Excel quand ouvert
+excel/~$*

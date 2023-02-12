@@ -85,3 +85,11 @@ list.files(path = "gpx/input",
 # }
 # 
 # knit_hooks$set(inline = inline_hook)
+
+################################################################################
+
+# Commande de imagemagick pour rendre le blanc autour du logo transparent
+
+# convert comm_5.png -fuzz 50%  -transparent White x.png
+
+# convert x.tiff -compress lzw y.tif  --> à valider, pour compresser 
