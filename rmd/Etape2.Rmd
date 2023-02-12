@@ -77,9 +77,6 @@ map@map
 
 ### Détail du départ
 
-Placeholder en attendant d'avoir l'image de la carte détaillée. 
-
-Création des cartes vers un fichier dans un processus à part (issue_4) et intégration du graphique ici lors de la création du guide.
 
 ```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
 
