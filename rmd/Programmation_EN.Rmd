@@ -52,8 +52,8 @@ glue('<table>
         <td>{dates_prog[3]}<br/><br/><strong>Stage 1</strong></td>
         <td><img src="../img/logo/comm_1.png" width="100"></td>
         <td><strong>Road race</strong><br/>{df$VilleDep[1]} - {df$VilleArr[1]}<br/>{df$Via[1]}<br/>Distance : {df$Descr_km[1]}<br/>({df$KM_Neutres[1]} km controlled start)</td>
-        <td>**{df$Depart[1]}**<br/>{df$VilleDep[1]}, {df$LieuDepEN[1]}</td>
-        <td>**{df$HeureArrivee[1]}**<br/>{df$VilleArr[1]}, {df$LieuArrEN[1]}</td>
+        <td>**{df$time_depart[1]}**<br/>{df$VilleDep[1]}, {df$LieuDepEN[1]}</td>
+        <td>**{df$time_arrivee[1]}**<br/>{df$VilleArr[1]}, {df$LieuArrEN[1]}</td>
     </tr>
     <tr>
         <td></td>
@@ -66,8 +66,8 @@ glue('<table>
         <td>{dates_prog[4]}<br/><br/><strong>Stage 2</strong></td>
         <td><img src="../img/logo/comm_2.png" width="200"></td>
         <td><strong>Road race</strong><br/>{df$VilleDep[2]} - {df$VilleArr[2]}<br/>{df$Via[2]}<br/>Distance : {df$Descr_km[2]}<br/>({df$KM_Neutres[2]} km controlled start)</td>
-        <td>**{df$Depart[2]}**<br/>{df$VilleDep[2]}, {df$LieuDepEN[2]}</td>
-        <td>Circuit arrival : <br/>**{df$HeureEntreeVille[2]}** <br/>Finish : <br/>**{df$HeureArrivee[2]}**<br/>{df$VilleArr[2]}, {df$LieuArrEN[2]}</td>
+        <td>**{df$time_depart[2]}**<br/>{df$VilleDep[2]}, {df$LieuDepEN[2]}</td>
+        <td>Circuit arrival : <br/>**{df$HeureEntreeVille[2]}** <br/>Finish : <br/>**{df$time_arrivee[2]}**<br/>{df$VilleArr[2]}, {df$LieuArrEN[2]}</td>
     </tr>
     <tr>
         <td></td>
@@ -80,8 +80,8 @@ glue('<table>
         <td>{dates_prog[5]} (AM)<br/><br/><strong>Stage 3 (half-stage)</strong></td>
         <td><img src="../img/logo/comm_3.png" width="100"></td>
         <td><strong>Individual Time Trial</strong><br/>{df$VilleDep[3]} - {df$Via[3]} - {df$VilleArr[3]}<br/>Distance : {df$Descr_km[3]}</td>
-        <td>First start : <br/>**{df$Depart[3]}**<br/>First arrival : <br/>**{df$DerDep[3]}**<br/>{df$VilleDep[3]}, {df$LieuDepEN[3]}</td>
-        <td>Last start : **{df$HeureArrivee[3]}**<br/>Last arrival : **{df$DerArr[3]}**<br/>{df$VilleArr[3]}, {df$LieuArrEN[3]}</td>
+        <td>First start : <br/>**{df$time_depart[3]}**<br/>First arrival : <br/>**{df$DerDep[3]}**<br/>{df$VilleDep[3]}, {df$LieuDepEN[3]}</td>
+        <td>Last start : **{df$time_arrivee[3]}**<br/>Last arrival : **{df$DerArr[3]}**<br/>{df$VilleArr[3]}, {df$LieuArrEN[3]}</td>
     </tr>
     <tr>
         <td></td>
@@ -94,8 +94,8 @@ glue('<table>
         <td>{dates_prog[5]} (PM)<br/><br/><strong>Stage 4 (half-stage)</strong></td>
         <td><img src="../img/logo/comm_4.png" width="100"></td>
         <td><strong>Road race</strong><br/>{df$VilleDep[4]} - {df$Via[4]} - {df$VilleArr[4]}<br/>Distance : {df$Descr_km[4]}<br/>({df$KM_Neutres[4]} km controlled start)</td>
-        <td>**{df$Depart[4]}**<br/>{df$VilleDep[4]}, {df$LieuDepEN[4]}</td>
-        <td>**{df$HeureArrivee[4]}**<br/>{df$VilleArr[4]}, {df$LieuArrEN[4]}</td>
+        <td>**{df$time_depart[4]}**<br/>{df$VilleDep[4]}, {df$LieuDepEN[4]}</td>
+        <td>**{df$time_arrivee[4]}**<br/>{df$VilleArr[4]}, {df$LieuArrEN[4]}</td>
     </tr>
     <tr>
         <td></td>
@@ -108,8 +108,8 @@ glue('<table>
         <td>{dates_prog[6]}<br/><br/><strong>Stage 5</strong></td>
         <td><img src="../img/logo/comm_5.png" width="100"></td>
         <td><strong>Road race</strong><br/>{df$VilleDep[5]} &#8634; {df$VilleArr[5]}<br/> {df$Via[5]}<br/>Distance : {df$Descr_km[5]}<br/>({df$KM_Neutres[5]} km controlled start)</td>
-        <td>**{df$Depart[5]}**<br/>{df$VilleDep[5]},<br/>{df$LieuDepEN[5]}</td>
-        <td>**{df$HeureArrivee[5]}**<br/>{df$VilleArr[5]},<br/>{df$LieuArrEN[5]}</td>
+        <td>**{df$time_depart[5]}**<br/>{df$VilleDep[5]},<br/>{df$LieuDepEN[5]}</td>
+        <td>**{df$time_arrivee[5]}**<br/>{df$VilleArr[5]},<br/>{df$LieuArrEN[5]}</td>
     </tr>
     <tr>
         <td></td>
@@ -122,8 +122,8 @@ glue('<table>
         <td>{dates_prog[7]}<br/><br/><strong>Stage 6</strong></td>
         <td><img src="../img/logo/comm_6.png" width="200"></td>
         <td><strong>Road race</strong><br/>{df$VilleDep[6]} &#8635; {df$VilleArr[6]}<br/>{df$Via[6]}<br/>Distance : {df$Descr_km[6]}<br/>({df$KM_Neutres[6]} km controlled start)</td>
-        <td>**{df$Depart[6]}**<br/>{df$VilleDep[6]},<br/>{df$LieuDepEN[6]}</td>
-        <td>**{df$HeureArrivee[6]}**<br/>{df$VilleArr[6]},<br/>{df$LieuArrEN[6]}</td>
+        <td>**{df$time_depart[6]}**<br/>{df$VilleDep[6]},<br/>{df$LieuDepEN[6]}</td>
+        <td>**{df$time_arrivee[6]}**<br/>{df$VilleArr[6]},<br/>{df$LieuArrEN[6]}</td>
     </tr>
     <tr>
         <td></td>
@@ -136,8 +136,8 @@ glue('<table>
         <td>{dates_prog[8]}<br/><br/><strong>Stage 7</strong></td>
         <td><img src="../img/logo/comm_7.png" width="100"></td>
         <td><strong>Road race</strong><br/>{df$VilleDep[7]} - {df$VilleArr[7]}<br/>{df$Via[7]}<br/>Distance : {df$Descr_km[7]}<br/>({df$KM_Neutres[7]} km controlled start)</td>
-        <td>**{df$Depart[7]}**<br/>{df$VilleDep[7]}, {df$LieuDepEN[7]}</td>
-        <td>Circuit arrival : <br/>**{df$HeureEntreeVille[7]}** <br/>Finish : <br/>**{df$HeureArrivee[7]}**<br/>{df$VilleArr[7]}, {df$LieuArrEN[7]}</td>
+        <td>**{df$time_depart[7]}**<br/>{df$VilleDep[7]}, {df$LieuDepEN[7]}</td>
+        <td>Circuit arrival : <br/>**{df$HeureEntreeVille[7]}** <br/>Finish : <br/>**{df$time_arrivee[7]}**<br/>{df$VilleArr[7]}, {df$LieuArrEN[7]}</td>
     </tr>
 </table>') 
 
