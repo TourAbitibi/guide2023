@@ -44,7 +44,7 @@ parcours$name <- c("Étape 1 - Rouyn-Noranda", "Étape 2 - Val-d'Or", "Étape 3 
 
 # Sortir le numéro de l'étape à partir du nom
 parcours <- parcours %>% 
-  mutate(etape = str_replace(name, "^Tour \\d+ .* Étape (\\d).*", "\\1") %>% as.double()) %>% 
+  mutate(etape = str_replace(name, "Étape (\\d).*", "\\1") %>% as.double()) %>% 
   left_join(y=details, by = "etape") %>% 
   select(etape, name, Jour, Date, time_depart, time_arrivee, Descr_km, KM_Total, KM_Neutres, 
           Nb_tours, KM_par_tours) %>% 
