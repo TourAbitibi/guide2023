@@ -31,7 +31,8 @@ librarian::shelf(quiet = TRUE,
   RColorBrewer,
   scales,
   conflicted,
-  here
+  here,
+  png
 )
 
 # Gestion des conflits

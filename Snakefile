@@ -34,6 +34,9 @@ rule Z_targets:
 
         "elevParcours/elev_parcours.csv",
 
+        "guide_FR_PDF/details/tableau_1.pdf",
+        "guide_EN_PDF/details/tableau_1.pdf",
+
         "excel/Itineraires.xlsx",
         "excel/feuilleroute.xlsx",
         "excel/staff.xlsx",
@@ -211,9 +214,25 @@ rule R6_render_prog_prelim:
         cp -R resume_prog/prog_files web/prog/
         """
 
-
 # à modifier : je peux simplement copier le contenu du fichier web
 # 2e script vers une copie du dossier web à l'extérieur : 2e repo public qui ne contiendrait que le site web ?
+
+# Création des tableaux pdf individuels qui servent à créer les guides papier
+## En pause pendant création
+# rule R7_creationTableauxDetails:
+#     input:
+#         "code/_import_itineraire.R",
+#         "code/_creationTableauxDetails.R",
+#         "excel/Itineraires.xlsx"
+#     output:
+#         "guide_FR_PDF/details/tableau_1.pdf",
+#         "guide_EN_PDF/details/tableau_1.pdf"
+#     params:
+#         script = "code/_creationTableauxDetails.R"
+#     shell:
+#         """ 
+#         {params.script}
+#         """
 
 rule R_NAS_copy:
     input:
