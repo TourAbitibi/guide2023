@@ -50,6 +50,10 @@ creation_3_map <- function(no_etape,
   # Transformer le trajet en points
   etape_points <- st_as_sf(st_cast(st_geometry(etape_line), to = "POINT")) 
   
+  # Points départ et arrivée
+  pt_depart <- etape_points %>% head(n=1)
+  pt_arrivee <- etape_points %>% tail(n=1)
+  
   # Carte complète
   map <- etape_line %>% 
     st_buffer(dist = buff) %>% 
@@ -64,7 +68,16 @@ creation_3_map <- function(no_etape,
                  position=c(pos_h_scale,pos_v_scale)) +
     # ajout d'une rose des vents
     tm_compass(type = "arrow", 
-               position = c(pos_h_arrow, pos_v_arrow)) 
+               position = c(pos_h_arrow, pos_v_arrow)) +
+    # Ajout point de départ (vert) et arrivée (rouge)
+    tm_shape(pt_depart)+
+    tm_symbols(size = 0.8, 
+               shape = 21,
+               col = couleurs$depart)+
+    tm_shape(pt_arrivee)+
+    tm_symbols(size = 0.8, 
+               shape = 23,
+               col = couleurs$rougeDanger)
   
   tmap_save(tm =map, filename = here("img", "cartes", "input", glue('Etape{no_etape}_Full.png')))
   
@@ -77,7 +90,12 @@ creation_3_map <- function(no_etape,
       tm_rgb() +
       tm_shape(etape_line) + 
       tm_lines(col = couleurs$bleuTour, 
-               lwd= 4)
+               lwd= 4)+
+    # Ajout pt départ
+    tm_shape(pt_depart)+
+    tm_symbols(size = 0.8, 
+               shape = 21,
+               col = couleurs$depart)
   
   tmap_save(tm =map, filename = here("img", "cartes", "input", glue('Etape{no_etape}_Dep.png')))
   
@@ -91,7 +109,12 @@ creation_3_map <- function(no_etape,
     tm_rgb() +
     tm_shape(etape_line) + 
     tm_lines(col = couleurs$bleuTour, 
-             lwd= 4)
+             lwd= 4)+
+    # Ajout pt arrivée
+    tm_shape(pt_arrivee)+
+    tm_symbols(size = 0.8, 
+               shape = 23,
+               col = couleurs$rougeDanger)
   
   tmap_save(tm =map, 
             filename = here("img", "cartes", "input", glue('Etape{no_etape}_Arr.png')))
@@ -121,6 +144,7 @@ creation_3_map(no_etape =2,
                buff = 300)
 
 
+# CLMI, voir à la fin du fichier
 
 
 creation_3_map(no_etape =4,
@@ -161,6 +185,88 @@ creation_3_map(no_etape =7,
                pos_v_scale = "bottom",
                buff = 300)
  
+################################################################################
 
 # Besoins particuliers pour le CLMI, à faire manuellement
 
+
+no_etape = 3
+pct_point_debut = 0.03
+pct_point_fin = 0.97
+pos_h_arrow = "left"
+pos_v_arrow = "top"
+pos_h_scale = "left"
+pos_v_scale = "bottom"
+buff = 100
+
+# Filtrer sur l'étape à créer
+etape_line <- parcours_stat %>% filter(etape == no_etape)
+
+# Transformer le trajet en points
+etape_points <- st_as_sf(st_cast(st_geometry(etape_line), to = "POINT")) 
+
+# Points départ et arrivée
+pt_depart <- etape_points %>% head(n=1)
+pt_arrivee <- etape_points %>% tail(n=1)
+
+# Carte complète
+map <- etape_line %>% 
+  st_buffer(dist = buff) %>% 
+  st_bbox() %>% 
+  osm.raster( crop = TRUE) %>% 
+  tm_shape() + tm_rgb() +
+  tm_shape(etape_line) + 
+  tm_lines(col = couleurs$bleuTour, 
+           lwd= 2) +
+  # ajout d'une rose des vents
+  tm_compass(type = "arrow", 
+             position = c(pos_h_arrow, pos_v_arrow)) +
+  # Ajout point de départ (vert) et arrivée (rouge)
+  tm_shape(pt_depart)+
+  tm_symbols(size = 0.8, 
+             shape = 21,
+             col = couleurs$depart)+
+  tm_shape(pt_arrivee)+
+  tm_symbols(size = 0.8, 
+             shape = 23,
+             col = couleurs$rougeDanger)
+
+tmap_save(tm =map, filename = here("img", "cartes", "input", glue('Etape{no_etape}_Full.png')))
+
+# Carte Départ
+map <- st_cast(st_combine(etape_points[ 1: nrow(etape_points)*pct_point_debut , ]), "LINESTRING") %>% 
+  st_buffer(dist = 150) %>% 
+  st_bbox() %>% 
+  osm.raster( crop = TRUE) %>% 
+  tm_shape(.) + 
+  tm_rgb() +
+  tm_shape(etape_line) + 
+  tm_lines(col = couleurs$bleuTour, 
+           lwd= 4)+
+  # Ajout pt départ
+  tm_shape(pt_depart)+
+  tm_symbols(size = 0.8, 
+             shape = 21,
+             col = couleurs$depart)
+
+tmap_save(tm =map, filename = here("img", "cartes", "input", glue('Etape{no_etape}_Dep.png')))
+
+
+# Carte Arrivée
+map <- st_cast(st_combine(etape_points[ (floor(nrow(etape_points))*pct_point_fin) : nrow(etape_points) , ]), "LINESTRING") %>% 
+  st_buffer(dist = 150) %>% 
+  st_bbox() %>% 
+  osm.raster( crop = TRUE) %>% 
+  tm_shape(.) + 
+  tm_rgb() +
+  tm_shape(etape_line) + 
+  tm_lines(col = couleurs$bleuTour, 
+           lwd= 4)+
+  # Ajout pt arrivée
+  tm_shape(pt_arrivee)+
+  tm_symbols(size = 0.8, 
+             shape = 23,
+             col = couleurs$rougeDanger)
+
+tmap_save(tm =map, 
+          filename = here("img", "cartes", "input", glue('Etape{no_etape}_Arr.png')))

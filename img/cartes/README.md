@@ -4,7 +4,7 @@ Cartes de détails pour les départs arrivés
 
 ## input
 
-Cartes brutes, produites par le script R `code/xxx.R`
+Cartes brutes, produites par le script R `code/CartesStatiques.R`
 
 
 ## output
