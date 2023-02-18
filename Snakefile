@@ -35,6 +35,7 @@ rule Z_targets:
         "elevParcours/elev_parcours.csv",
 
         "img/cartes/input/Etape1_Full.png",
+        "img/elev/Etape1_Full_FR.png",
 
         "guide_FR_PDF/details/tableau_1.pdf",
         "guide_EN_PDF/details/tableau_1.pdf",
@@ -122,9 +123,10 @@ rule R4_render_book:
     input:
         "gpx/output/parcours.shp",
 
-        "img/cartes/intput/Etape1_Full.png",
+        # "img/cartes/intput/Etape1_Full.png",
 
         "elevParcours/elev_parcours.csv",
+        "img/elev/Etape1_Full_FR.png",
 
         "excel/staff.xlsx",
         "excel/Itineraires.xlsx",
@@ -224,7 +226,7 @@ rule R6_render_prog_prelim:
 #################################################################################################################
 
 # Création des tableaux pdf individuels qui servent à créer les guides papier
-## En pause pendant création
+# En pause pendant création
 # rule R7_creationTableauxDetails:
 #     input:
 #         "code/_import_itineraire.R",
@@ -236,31 +238,51 @@ rule R6_render_prog_prelim:
 #     params:
 #         script = "code/_creationTableauxDetails.R"
 #     shell:
-#         """ 
+#         """
 #         {params.script}
 #         """
 
 
-# Création des cartes statiques (full, départ, arrivée) et réduction de leur taille
-# En pause pendant création
-rule R8_creationCartesStatiques:
+# # Création des cartes statiques (full, départ, arrivée) et réduction de leur taille
+# # En pause pendant création
+# rule R8_creationCartesStatiques:
+#     input:
+#         "code/_import_itineraire.R",
+#         "code/CartesStatiques.R",
+#         "excel/Itineraires.xlsx",
+#         "gpx/output/parcours.shp"
+
+#     output:
+#         "img/cartes/input/Etape1_Full.png"
+#     params:
+#         script = "code/CartesStatiques.R"
+#     shell:
+#         """
+#         echo "n  ~~ Création des cartes statiques ~~ \n"
+#         {params.script}
+#         echo "\n  ~~ Préparation des images png de taille réduite ~~ \n"
+#         optipng img/cartes/input/* -dir img/cartes/input/ -o1 -clobber -force -silent
+#         echo "\n  ~~ Fin de l'optimisation des cartes png ~~ \n"
+#         """
+
+# # Création des cartes statiques (full, départ, arrivée) et réduction de leur taille
+# # En pause pendant création
+rule R9_creationGraphElevation:
     input:
-        "code/_import_itineraire.R",
-        "code/CartesStatiques.R",
+        "code/graphique_denivele.R",
         "excel/Itineraires.xlsx",
-        "gpx/output/parcours.shp"
+        "gpx/output/parcours.shp",
+        "rasterElevation/elv_parcours.tif",
+        "elevParcours/elev_parcours.csv"
 
     output:
-        "img/cartes/input/Etape1_Full.png"
+        "img/elev/Etape1_Full_FR.png"
     params:
-        script = "code/CartesStatiques.R"
+        script = "code/graphique_denivele.R"
     shell:
-        """ 
-        echo "n  ~~ Création des cartes statiques ~~ \n"
+        """
+        echo "\n   ~~ Création des graphiques d'élévation ~~ \n"
         {params.script}
-        echo "\n  ~~ Préparation des images png de taille réduite ~~ \n"
-        optipng img/cartes/input/* -dir img/cartes/input/ -o1 -clobber -force -silent
-        echo "\n  ~~ Fin de l'optimisation des cartes png ~~ \n"
         """
 
 rule R_NAS_copy:

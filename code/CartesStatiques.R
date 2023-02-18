@@ -8,9 +8,9 @@
 #                                                                                       #
 #########################################################################################
 
-# - [ ] à ajouter à snakefile
-# - [ ] modifier CLMI
-# - [ ] ajouter des points départs / arrivée
+# - [x] à ajouter à snakefile
+# - [x] modifier CLMI
+# - [x] ajouter des points départs / arrivée
 # - [ ] ajout des KOM / Sprint sur carte_full
 
 here::i_am("guide2023.Rproj")

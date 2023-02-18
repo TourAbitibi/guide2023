@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript --vanilla
+
 #########################################################################################
 # Créer le raster avec les données d'élévation et sauvegarder vers .tif                 #
 # Opération manuelle à faire seulement si les parcours sortent de la région habituelle  #
@@ -10,8 +12,6 @@
 # -[ ] Vérifier comment calculer le pourcentage de pente pour passer comme couleur à la ligne du graphique d'élévation
 
     # Fonction : lag ou lead(elv, n=1 row derrière ou devant)
-
-here::i_am("guide2023.Rproj")
 
 source(here::here("code","/_LibsVars.R"))
 
@@ -174,8 +174,28 @@ graph_elev_arrivee <-  function(df , num_etape , iti_etape, language , km_finaux
   
 }   
 
-# Test
-## graph_elev_arrivee(dist_df, 2, "FR",  5.4)
+################################################################################
+# Créations de tous les graphiques en .png                                     #
+################################################################################
 
-# ggsave(here("graph1.png"), width =8, height = 4, dpi= 300, bg= "white")              
+creation_graphs_elev <- function(etape, lang = "FR"){
+  
+  km_tour <- iti_etape$Details$KM_par_tours[etape]
+  
+  km <- if_else(km_tour > 0, km_tour, 3) 
+  
+  graph_elev_complet(dist_df, etape, iti_etape, lang) %>% 
+    ggsave( filename = here("img","elev", glue("Etape{etape}_Full_{lang}.png")), width =8, height = 5, dpi= 300, bg= "white")  
+  
+  graph_elev_arrivee(dist_df, etape, iti_etape ,lang , km) %>% 
+    ggsave( filename = here("img","elev", glue("Etape{etape}_Final_{lang}.png")), width =8, height = 3, dpi= 300, bg= "white")
+
+}
+
+# Création des 7 étapes dans les 2 langues 
+walk(.x = 1:nrow(iti_etape$Details), ~creation_graphs_elev(.x, "FR"))
+walk(.x = 1:nrow(iti_etape$Details), ~creation_graphs_elev(.x, "EN"))
+
+
+
                
