@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript --vanilla
+
 #########################################################################################
 # Créer les cartes "statiques" pour chacune des étapes                                  #
 #                                                                                       #

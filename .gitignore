@@ -58,3 +58,5 @@ vignettes/*.pdf
 excel/~$*
 # Cache pour cartes OpenStreetMap
 rosm.cache
+# Fichiers temporaires Cartes
+img/cartes/input/*.bak

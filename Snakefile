@@ -34,6 +34,8 @@ rule Z_targets:
 
         "elevParcours/elev_parcours.csv",
 
+        "img/cartes/input/Etape1_Full.png",
+
         "guide_FR_PDF/details/tableau_1.pdf",
         "guide_EN_PDF/details/tableau_1.pdf",
 
@@ -119,6 +121,8 @@ rule R3_importExportElevation:
 rule R4_render_book:
     input:
         "gpx/output/parcours.shp",
+
+        "img/cartes/intput/Etape1_Full.png",
 
         "elevParcours/elev_parcours.csv",
 
@@ -217,6 +221,8 @@ rule R6_render_prog_prelim:
 # à modifier : je peux simplement copier le contenu du fichier web
 # 2e script vers une copie du dossier web à l'extérieur : 2e repo public qui ne contiendrait que le site web ?
 
+#################################################################################################################
+
 # Création des tableaux pdf individuels qui servent à créer les guides papier
 ## En pause pendant création
 # rule R7_creationTableauxDetails:
@@ -234,11 +240,35 @@ rule R6_render_prog_prelim:
 #         {params.script}
 #         """
 
+
+# Création des cartes statiques (full, départ, arrivée) et réduction de leur taille
+# En pause pendant création
+rule R8_creationCartesStatiques:
+    input:
+        "code/_import_itineraire.R",
+        "code/CartesStatiques.R",
+        "excel/Itineraires.xlsx",
+        "gpx/output/parcours.shp"
+
+    output:
+        "img/cartes/input/Etape1_Full.png"
+    params:
+        script = "code/CartesStatiques.R"
+    shell:
+        """ 
+        echo "n  ~~ Création des cartes statiques ~~ \n"
+        {params.script}
+        echo "\n  ~~ Préparation des images png de taille réduite ~~ \n"
+        optipng img/cartes/input/* -dir img/cartes/input/ -o1 -clobber -force -silent
+        echo "\n  ~~ Fin de l'optimisation des cartes png ~~ \n"
+        """
+
 rule R_NAS_copy:
     input:
         "homepage/index.html",
         "resume_prog/prog.html",
-        "git_book/_book/index.html"
+        "git_book/_book/index.html",
+        "img/cartes/input/Etape1_Full.png"
     output:
         "/Volumes/web/guide/index.html",
         "/Volumes/web/guide/prog/index.html",
