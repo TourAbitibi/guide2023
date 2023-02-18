@@ -39,6 +39,7 @@ rule Z_targets:
 
         "guide_FR_PDF/details/tableau_1.pdf",
         "guide_EN_PDF/details/tableau_1.pdf",
+        "guide_FR_PDF/guide_FR.pdf",
 
         "excel/Itineraires.xlsx",
         "excel/feuilleroute.xlsx",
@@ -201,6 +202,7 @@ rule R5_render_homepage:
         cp -R {params} web
         """
 
+
 rule R6_render_prog_prelim:
     input:
         "excel/Itineraires.xlsx",
@@ -222,6 +224,7 @@ rule R6_render_prog_prelim:
 
 # à modifier : je peux simplement copier le contenu du fichier web
 # 2e script vers une copie du dossier web à l'extérieur : 2e repo public qui ne contiendrait que le site web ?
+
 
 #################################################################################################################
 
@@ -265,6 +268,7 @@ rule R6_render_prog_prelim:
 #         echo "\n  ~~ Fin de l'optimisation des cartes png ~~ \n"
 #         """
 
+
 # # Création des cartes statiques (full, départ, arrivée) et réduction de leur taille
 # # En pause pendant création
 rule R9_creationGraphElevation:
@@ -284,6 +288,36 @@ rule R9_creationGraphElevation:
         echo "\n   ~~ Création des graphiques d'élévation ~~ \n"
         {params.script}
         """
+
+
+rule R10_render_pdf:
+    input:
+        "img/cartes/input/Etape1_Full.png",
+        "img/elev/Etape1_Full_FR.png",
+        "excel/Itineraires.xlsx",
+        "guide_FR_PDF/details/tableau_1.pdf"
+
+    output:
+        "guide_FR_PDF/guide_FR.pdf"
+    params:
+        PDF_FR = "guide_FR_PDF/guide_FR.Rmd",
+        lang = "FR"
+    shell:
+        """
+        Rscript -e "rmarkdown::render('{params.PDF_FR}')"
+
+        echo "  ~~ Corriger la taille du fichier ~~ "
+        ps2pdf {output} guide_FR_PDF/guide_resized.pdf
+        rm {output}
+        mv guide_FR_PDF/guide_resized.pdf {output}
+
+         echo "  ~~ Copier le pdf vers le serveur ~~ "
+
+        cp -R {output} /Volumes/web/guide/{params.lang}/guide2023.pdf
+
+        echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
+        """
+
 
 rule R_NAS_copy:
     input:
