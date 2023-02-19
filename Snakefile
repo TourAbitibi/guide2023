@@ -6,7 +6,7 @@
 #
 
 # Attention : l'output est effacé lors du démarrage de la règle
-# Par exemele, elv_parcours.tif 
+# Par exemele, elv_parcours.tif
 
 rule Z_targets:
     input:
@@ -226,36 +226,36 @@ rule R6_render_prog_prelim:
 
 # Création des tableaux pdf individuels qui servent à créer les guides papier
 # En pause pendant création
-rule R7_creationTableauxDetails:
-    input:
-        "code/_import_itineraire.R",
-        "code/_creationTableauxDetails.R",
-        "excel/Itineraires.xlsx"
-    output:
-        "guide_FR_PDF/details/tableau_1.pdf",
-        "guide_EN_PDF/details/tableau_1.pdf"
-    params:
-        script = "code/_creationTableauxDetails.R",
-        temp = "guide_FR_PDF/details/temp.pdf",
-        FR_path = "guide_FR_PDF/details/tableau_*.pdf",
-        EN_path = "guide_EN_PDF/details/tableau_*.pdf"
-    shell:
-        """
-        {params.script}
+# rule R7_creationTableauxDetails:
+#     input:
+#         "code/_import_itineraire.R",
+#         "code/_creationTableauxDetails.R",
+#         "excel/Itineraires.xlsx"
+#     output:
+#         "guide_FR_PDF/details/tableau_1.pdf",
+#         "guide_EN_PDF/details/tableau_1.pdf"
+#     params:
+#         script = "code/_creationTableauxDetails.R",
+#         temp = "guide_FR_PDF/details/temp.pdf",
+#         FR_path = "guide_FR_PDF/details/tableau_*.pdf",
+#         EN_path = "guide_EN_PDF/details/tableau_*.pdf"
+#     shell:
+#         """
+#         {params.script}
 
-        echo "\n ~~ Gestion de la taille des pdf ~~\n"
+#         echo "\n ~~ Gestion de la taille des pdf ~~\n"
 
-        for pdfs in {params.FR_path}; do
-            ps2pdf "$pdfs" {params.temp} &&
-            mv {params.temp} "$pdfs"
-        done
+#         for pdfs in {params.FR_path}; do
+#             ps2pdf "$pdfs" {params.temp} &&
+#             mv {params.temp} "$pdfs"
+#         done
 
-        for pdfs in {params.EN_path}; do
-            ps2pdf "$pdfs" {params.temp} &&
-            mv {params.temp} "$pdfs"
-        done
+#         for pdfs in {params.EN_path}; do
+#             ps2pdf "$pdfs" {params.temp} &&
+#             mv {params.temp} "$pdfs"
+#         done
 
-        """
+#         """
 
 
 # # Création des cartes statiques (full, départ, arrivée) et réduction de leur taille
