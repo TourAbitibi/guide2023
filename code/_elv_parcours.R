@@ -21,15 +21,19 @@ parcours <- st_read(here("gpx/output/parcours.shp"))
 # Télécharger les élévations dans la zone couvrant les tracés
 # Attention : long à télécharger
 elv_parcours <- get_elev_raster(parcours,
-                                z=12, 
-                                neg_to_na = TRUE)
+                                z=12,
+                               neg_to_na = TRUE)
 
 
 # Sauvegarde du fichier tif 
-elv_parcours %>% 
+elv_parcours %>%
   writeRaster(here("rasterElevation/elv_parcours.tif"),
-              overwrite=TRUE)
+             overwrite=TRUE)
+
+
 ################################################################################
+
+## --> Pas possible car Snakemake efface l'output avant le rouler.. 
 
 # Vérifier si les fichiers ont changés avant de faire la sauvegarde
 # car création de longues opérations dans le Snakefile

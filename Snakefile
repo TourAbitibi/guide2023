@@ -5,6 +5,9 @@
 # snakemake -c1 -R R4_render_book
 #
 
+# Attention : l'output est effacé lors du démarrage de la règle
+# Par exemele, elv_parcours.tif 
+
 rule Z_targets:
     input:
         "git_book/_book/index.html",
@@ -165,13 +168,6 @@ rule R4_render_book:
         """
         Rscript -e "bookdown::render_book('{params.guide_path}')"
 
-        # Si les fichiers existent dans le dossier web
-        if ls web/{params.lang}/* 1> /dev/null 2>&1; 
-        then
-            echo "~~ fichiers existants à effacer dans le dossier web ~~ \n" &
-            rm -rf web/{params.lang}
-        fi
-
         # Créer les fichiers
         mkdir -p web/{params.lang} web/img
 
@@ -215,9 +211,9 @@ rule R6_render_prog_prelim:
         "resume_prog/prog.Rmd"
     shell:
         """
+        mkdir -p web web/prog 
         Rscript -e "rmarkdown::render('{params}')"
         echo "\n  ~~ Copie vers dossier web local ~~ \n"
-        mkdir -p web/prog
         cp -R {output.local} {output.web}
         cp -R resume_prog/prog_files web/prog/
         """
@@ -304,15 +300,18 @@ rule R10_render_pdf:
         lang = "FR"
     shell:
         """
+        mkdir -p web web/FR
+
         Rscript -e "rmarkdown::render('{params.PDF_FR}')"
 
         echo "  ~~ Corriger la taille du fichier ~~ "
-        ps2pdf {output} guide_FR_PDF/guide_resized.pdf
-        rm {output}
-        mv guide_FR_PDF/guide_resized.pdf {output}
+        ps2pdf {output} guide_FR_PDF/guide_resized.pdf &&
+        rm {output} &&
+        mv guide_FR_PDF/guide_resized.pdf {output} &&
 
          echo "  ~~ Copier le pdf vers le serveur ~~ "
 
+        cp -R {output} web/{params.lang}/guide2023.pdf &&
         cp -R {output} /Volumes/web/guide/{params.lang}/guide2023.pdf
 
         echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
@@ -324,7 +323,8 @@ rule R_NAS_copy:
         "homepage/index.html",
         "resume_prog/prog.html",
         "git_book/_book/index.html",
-        "img/cartes/input/Etape1_Full.png"
+        "img/cartes/input/Etape1_Full.png",
+        "img/elev/Etape1_Full_FR.png"
     output:
         "/Volumes/web/guide/index.html",
         "/Volumes/web/guide/prog/index.html",
