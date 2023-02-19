@@ -50,6 +50,13 @@ opts_chunk$set( warning = FALSE,
 
 ```
 
+# Programmation
+
+```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
+
+knitr::include_graphics(here("guide_FR_PDF", "programmation_manuelle.png"))
+
+```
 
 
 # Étape 1 : `r iti_etape$Details$Descr_Villes[1]`
