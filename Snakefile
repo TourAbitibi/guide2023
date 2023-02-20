@@ -23,6 +23,7 @@ rule Z_targets:
         "git_book/index.Rmd",
         "rmd/MotsBienvenue.Rmd",
         "rmd/Programmation.Rmd",
+        "code/programmation.R",
         "rmd/CO.Rmd",
         "rmd/FeuillesRoute.Rmd",
         "rmd/Etape1.Rmd",
@@ -43,6 +44,8 @@ rule Z_targets:
         "guide_FR_PDF/details/tableau_1.pdf",
         "guide_EN_PDF/details/tableau_1.pdf",
         "guide_FR_PDF/guide_FR.pdf",
+        "guide_FR_PDF/details/prog.pdf",
+        #"guide_EN_PDF/details/prog.png",
 
         "excel/Itineraires.xlsx",
         "excel/feuilleroute.xlsx",
@@ -125,6 +128,8 @@ rule R3_importExportElevation:
 
 rule R4_render_book:
     input:
+        "code/programmation.R",
+
         "gpx/output/parcours.shp",
 
         # "img/cartes/intput/Etape1_Full.png",
@@ -307,7 +312,9 @@ rule R10_render_pdf:
         "img/cartes/input/Etape1_Full.png",
         "img/elev/Etape1_Full_FR.png",
         "excel/Itineraires.xlsx",
-        "guide_FR_PDF/details/tableau_1.pdf"
+        "guide_FR_PDF/details/tableau_1.pdf",
+        "code/programmation.R",
+        "guide_FR_PDF/details/prog.pdf"
 
     output:
         "guide_FR_PDF/guide_FR.pdf"
@@ -332,6 +339,28 @@ rule R10_render_pdf:
 
         echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
         """
+
+
+# Création du tableau de programmation résumé servant aux guides papier
+
+rule R11_creationTableauProgrammationOnePage:
+    input:
+        "code/_import_itineraire.R",
+        "code/programmation.R",
+        "code/_creationProgrammationOnePage.R",
+        "excel/Itineraires.xlsx"
+    output:
+        FR = "guide_FR_PDF/details/prog.pdf" #,
+        #EN = "guide_EN_PDF/details/prog.png"
+    params:
+        script = "code/_creationProgrammationOnePage.R",
+    shell:
+        """
+        {params.script}
+        """
+
+
+#################################################################################################################
 
 
 rule R_NAS_copy:

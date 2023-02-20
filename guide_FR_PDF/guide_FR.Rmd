@@ -25,10 +25,11 @@ source(here::here("code","_LibsVars.R"))
 source(here("code", "_Dates.R"))
 
 # Pour accès aux données du fichier excel Itineraires.xlsx
-source(here("code","_import_itineraire.R"))
+source(here("code","programmation.R"))
 
 # Pour accès au graphique d'élévation
 source(here("code","graphique_denivele.R"))
+
 
 # Pour accès aux tracés
 parcours <- st_read(here("gpx","output","parcours.shp"))
@@ -50,11 +51,13 @@ opts_chunk$set( warning = FALSE,
 
 ```
 
+
+
 # Programmation
 
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
+```{r, out.width="100%" , fig.align='center', echo = FALSE, eval = TRUE}
 
-knitr::include_graphics(here("guide_FR_PDF", "programmation_manuelle.png"))
+knitr::include_graphics(here("guide_FR_PDF", "details",  "prog.pdf"))
 
 ```
 
