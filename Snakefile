@@ -2,7 +2,7 @@
 # snakemake --dag | dot -Tpng > dag.png
 #
 # Pour forcer seulement la création du livre : (tag -R pour 1 rule, -F pour tout)
-# snakemake -c1 -R R4_render_book
+# snakemake -c1 -R R51_render_book
 #
 
 # Attention : l'output est effacé lors du démarrage de la règle
@@ -41,13 +41,6 @@ rule Z_targets:
         "img/cartes/input/Etape1_Full.png",
         "img/elev/Etape1_Full_FR.png",
 
-        "guide_FR_PDF/details/tableau_1.pdf",
-        "guide_EN_PDF/details/tableau_1.pdf",
-        #"guide_FR_PDF/guide_FR.pdf",
-        #"guide_EN_PDF/guide_EN.pdf",
-        "guide_FR_PDF/details/prog.png",
-        "guide_EN_PDF/details/prog.png",
-
         "excel/Itineraires.xlsx",
         "excel/feuilleroute.xlsx",
         "excel/staff.xlsx",
@@ -72,12 +65,20 @@ rule Z_targets:
     output:
         "dag.png"
     shell:
-        "snakemake --dag | dot -Tpng > dag.png"
+        "snakemake -s Snakefile --dag | dot -Tpng > dag.png"
+
 
 
 ##########################################################################################################################
+##########################################################################################################################
+#
+# Préparations des données parcours
+#
+##########################################################################################################################
+##########################################################################################################################
 
-rule R1_importExportGPX:
+
+rule R01_importExportGPX:
     input:
         "code/_importExportGPX.R", "excel/Itineraires.xlsx",
         "gpx/input/Course_1.gpx", "gpx/input/Course_2.gpx", "gpx/input/Course_3.gpx", "gpx/input/Course_4.gpx",
@@ -93,8 +94,7 @@ rule R1_importExportGPX:
 
 
 # Rule partiellement en pause pendant création !!!!
-
-rule R2_elv_parcours:
+rule R02_elv_parcours:
     input:
         "code/_elv_parcours.R"  # ,   ## pose pendant la pédiode de test
         # "gpx/output/parcours.shp"
@@ -111,7 +111,7 @@ rule R2_elv_parcours:
 
 # Rule partiellement en pause pendant création !!!!
 
-rule R3_importExportElevation:
+rule R03_importExportElevation:
     input:
         "code/_importExportElevation.R",
         "rasterElevation/elv_parcours.tif"  # ,   ## pose pendant la pédiode de test
@@ -126,8 +126,69 @@ rule R3_importExportElevation:
         {params.script}
         """
 
+##########################################################################################################################
+##########################################################################################################################
+#
+# Préparations des cartes statiques et profil élévation
+#
+##########################################################################################################################
+##########################################################################################################################
 
-rule R4_render_book:
+# # Création des cartes statiques (full, départ, arrivée) et réduction de leur taille
+# # En pause pendant création
+# rule R11_creationCartesStatiques:
+#     input:
+#         "code/_import_itineraire.R",
+#         "code/CartesStatiques.R",
+#         "excel/Itineraires.xlsx",
+#         "gpx/output/parcours.shp"
+
+#     output:
+#         "img/cartes/input/Etape1_Full.png"
+#     params:
+#         script = "code/CartesStatiques.R"
+#     shell:
+#         """
+#         echo "n  ~~ Création des cartes statiques ~~ \n"
+#         {params.script}
+#         echo "\n  ~~ Préparation des images png de taille réduite ~~ \n"
+#         optipng img/cartes/input/* -dir img/cartes/input/ -o1 -clobber -force -silent
+#         echo "\n  ~~ Fin de l'optimisation des cartes png ~~ \n"
+#         """
+
+
+# # Création des graphiques d'élévation
+# # En pause pendant création
+rule R12_creationGraphElevation:
+    input:
+        "code/graphique_denivele.R",
+        "excel/Itineraires.xlsx",
+        "gpx/output/parcours.shp",
+        "rasterElevation/elv_parcours.tif",
+        "elevParcours/elev_parcours.csv"
+
+    output:
+        "img/elev/Etape1_Full_FR.png"
+    params:
+        script = "code/graphique_denivele.R"
+    shell:
+        """
+        echo "\n   ~~ Création des graphiques d'élévation ~~ \n"
+        {params.script}
+        """
+
+
+
+##########################################################################################################################
+##########################################################################################################################
+#
+# Création des pages
+#
+##########################################################################################################################
+##########################################################################################################################
+
+
+rule R51_render_book:
     input:
         "code/programmation.R",
 
@@ -188,7 +249,7 @@ rule R4_render_book:
         """
 
 
-rule R5_render_homepage:
+rule R52_render_homepage:
     input:
         "homepage/index.Rmd",
     output:
@@ -205,7 +266,7 @@ rule R5_render_homepage:
         """
 
 
-rule R6_render_prog_prelim:
+rule R53_render_prog_prelim:
     input:
         "excel/Itineraires.xlsx",
         "gpx/output/parcours.shp",
@@ -224,183 +285,12 @@ rule R6_render_prog_prelim:
         cp -R resume_prog/prog_files web/prog/
         """
 
-# à modifier : je peux simplement copier le contenu du fichier web
-# 2e script vers une copie du dossier web à l'extérieur : 2e repo public qui ne contiendrait que le site web ?
-
-
-#################################################################################################################
-
-# Création des tableaux pdf individuels qui servent à créer les guides papier
-# En pause pendant création
-# rule R7_creationTableauxDetails:
-#     input:
-#         "code/_import_itineraire.R",
-#         "code/_creationTableauxDetails.R",
-#         "excel/Itineraires.xlsx"
-#     output:
-#         "guide_FR_PDF/details/tableau_1.pdf",
-#         "guide_EN_PDF/details/tableau_1.pdf"
-#     params:
-#         script = "code/_creationTableauxDetails.R",
-#         temp = "guide_FR_PDF/details/temp.pdf",
-#         FR_path = "guide_FR_PDF/details/tableau_*.pdf",
-#         EN_path = "guide_EN_PDF/details/tableau_*.pdf"
-#     shell:
-#         """
-#         {params.script}
-
-#         echo "\n ~~ Gestion de la taille des pdf ~~\n"
-
-#         for pdfs in {params.FR_path}; do
-#             ps2pdf "$pdfs" {params.temp} &&
-#             mv {params.temp} "$pdfs"
-#         done
-
-#         for pdfs in {params.EN_path}; do
-#             ps2pdf "$pdfs" {params.temp} &&
-#             mv {params.temp} "$pdfs"
-#         done
-
-#         """
-
-
-# # Création des cartes statiques (full, départ, arrivée) et réduction de leur taille
-# # En pause pendant création
-# rule R8_creationCartesStatiques:
-#     input:
-#         "code/_import_itineraire.R",
-#         "code/CartesStatiques.R",
-#         "excel/Itineraires.xlsx",
-#         "gpx/output/parcours.shp"
-
-#     output:
-#         "img/cartes/input/Etape1_Full.png"
-#     params:
-#         script = "code/CartesStatiques.R"
-#     shell:
-#         """
-#         echo "n  ~~ Création des cartes statiques ~~ \n"
-#         {params.script}
-#         echo "\n  ~~ Préparation des images png de taille réduite ~~ \n"
-#         optipng img/cartes/input/* -dir img/cartes/input/ -o1 -clobber -force -silent
-#         echo "\n  ~~ Fin de l'optimisation des cartes png ~~ \n"
-#         """
-
-
-# # Création des cartes statiques (full, départ, arrivée) et réduction de leur taille
-# # En pause pendant création
-rule R9_creationGraphElevation:
-    input:
-        "code/graphique_denivele.R",
-        "excel/Itineraires.xlsx",
-        "gpx/output/parcours.shp",
-        "rasterElevation/elv_parcours.tif",
-        "elevParcours/elev_parcours.csv"
-
-    output:
-        "img/elev/Etape1_Full_FR.png"
-    params:
-        script = "code/graphique_denivele.R"
-    shell:
-        """
-        echo "\n   ~~ Création des graphiques d'élévation ~~ \n"
-        {params.script}
-        """
-
-## Création PDF: en pause, car trop long à écrire pendant tests
-
-# rule R10_render_pdf_FR:
-#     input:
-#         "img/cartes/input/Etape1_Full.png",
-#         "img/elev/Etape1_Full_FR.png",
-#         "excel/Itineraires.xlsx",
-#         "guide_FR_PDF/details/tableau_1.pdf",
-#         "code/programmation.R",
-#         "guide_FR_PDF/details/prog.png"
-
-#     output:
-#         "guide_FR_PDF/guide_FR.pdf"
-#     params:
-#         PDF_FR = "guide_FR_PDF/guide_FR.Rmd",
-#         lang = "FR"
-#     shell:
-#         """
-#         mkdir -p web web/FR
-
-#         Rscript -e "rmarkdown::render('{params.PDF_FR}')"
-
-#         echo "  ~~ Corriger la taille du fichier ~~ "
-#         ps2pdf {output} guide_FR_PDF/guide_resized.pdf &&
-#         rm {output} &&
-#         mv guide_FR_PDF/guide_resized.pdf {output} &&
-
-#          echo "  ~~ Copier le pdf vers le serveur ~~ "
-
-#         cp -R {output} web/{params.lang}/guide2023.pdf &&
-#         cp -R {output} /Volumes/web/guide/{params.lang}/guide2023.pdf
-
-#         echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
-#         """
-
-
-# rule R11_render_pdf_EN:
-#     input:
-#         "img/cartes/input/Etape1_Full.png",
-#         "img/elev/Etape1_Full_FR.png",
-#         "excel/Itineraires.xlsx",
-#         "guide_EN_PDF/details/tableau_1.pdf",
-#         "code/programmation.R",
-#         "guide_EN_PDF/details/prog.png"
-
-#     output:
-#         "guide_EN_PDF/guide_EN.pdf"
-#     params:
-#         PDF_EN = "guide_EN_PDF/guide_EN.Rmd",
-#         lang = "EN"
-#     shell:
-#         """
-#         mkdir -p web web/EN
-#         mkdir -p /Volumes/web/guide/{params.lang}
-
-#         Rscript -e "rmarkdown::render('{params.PDF_EN}')"
-
-#         echo "  ~~ Corriger la taille du fichier ~~ "
-#         ps2pdf {output} guide_EN_PDF/guide_resized.pdf &&
-#         rm {output} &&
-#         mv guide_EN_PDF/guide_resized.pdf {output} &&
-
-#          echo "  ~~ Copier le pdf vers le serveur ~~ "
-
-#         cp -R {output} web/{params.lang}/guide2023.pdf &&
-#         cp -R {output} /Volumes/web/guide/{params.lang}/guide2023.pdf
-
-#         echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
-#         """
-
-
-# Création du tableau de programmation résumé servant aux guides papier
-
-rule R12_creationTableauProgrammationOnePage:
-    input:
-        "code/_import_itineraire.R",
-        "code/programmation.R",
-        "code/_creationProgrammationOnePage.R",
-        "excel/Itineraires.xlsx"
-    output:
-        FR = "guide_FR_PDF/details/prog.png",
-        EN = "guide_EN_PDF/details/prog.png"
-    params:
-        script = "code/_creationProgrammationOnePage.R",
-    shell:
-        """
-        {params.script}
-        """
 
 
 #################################################################################################################
 
 
-rule R_NAS_copy:
+rule R99_NAS_copy:
     input:
         "homepage/index.html",
         "resume_prog/prog.html",

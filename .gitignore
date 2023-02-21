@@ -18,6 +18,7 @@ resume_prog/prog.html
 
 # Image du processu Snakemake, pas requis de synchronisé
 dag.png
+dag_PDF.png
 
 # fichier tif trop gros et peut être produit localement
  rasterElevation/elv_parcours.tif
