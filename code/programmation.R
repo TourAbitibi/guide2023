@@ -29,11 +29,8 @@ dates_prog <- str_replace(dates_FR$jsem_jour_mois, ", ", "<br>")
 
 #########################################################################################
 
-# Langue
-lang <- "FR"
 
-# Création du tibble #
-
+# Création du tibble Français #
 
 # Lundi 
 dff <- tibble(
@@ -125,12 +122,9 @@ dff <- tibble(
 
 #########################################################################################
 
-# Langue
-lang <- "EN"
+# Création du tibble Anglais #
 
 dates_prog <- str_replace(dates_EN$jsem_jour_mois, ", ", "<br>")
-
-# Création du tibble #
 
 
 # Lundi 

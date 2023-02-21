@@ -43,8 +43,8 @@ rule Z_targets:
 
         "guide_FR_PDF/details/tableau_1.pdf",
         "guide_EN_PDF/details/tableau_1.pdf",
-        "guide_FR_PDF/guide_FR.pdf",
-        "guide_EN_PDF/guide_EN.pdf",
+        #"guide_FR_PDF/guide_FR.pdf",
+        #"guide_EN_PDF/guide_EN.pdf",
         "guide_FR_PDF/details/prog.png",
         "guide_EN_PDF/details/prog.png",
 
@@ -307,74 +307,75 @@ rule R9_creationGraphElevation:
         {params.script}
         """
 
+## Création PDF: en pause, car trop long à écrire pendant tests
 
-rule R10_render_pdf_FR:
-    input:
-        "img/cartes/input/Etape1_Full.png",
-        "img/elev/Etape1_Full_FR.png",
-        "excel/Itineraires.xlsx",
-        "guide_FR_PDF/details/tableau_1.pdf",
-        "code/programmation.R",
-        "guide_FR_PDF/details/prog.png"
+# rule R10_render_pdf_FR:
+#     input:
+#         "img/cartes/input/Etape1_Full.png",
+#         "img/elev/Etape1_Full_FR.png",
+#         "excel/Itineraires.xlsx",
+#         "guide_FR_PDF/details/tableau_1.pdf",
+#         "code/programmation.R",
+#         "guide_FR_PDF/details/prog.png"
 
-    output:
-        "guide_FR_PDF/guide_FR.pdf"
-    params:
-        PDF_FR = "guide_FR_PDF/guide_FR.Rmd",
-        lang = "FR"
-    shell:
-        """
-        mkdir -p web web/FR
+#     output:
+#         "guide_FR_PDF/guide_FR.pdf"
+#     params:
+#         PDF_FR = "guide_FR_PDF/guide_FR.Rmd",
+#         lang = "FR"
+#     shell:
+#         """
+#         mkdir -p web web/FR
 
-        Rscript -e "rmarkdown::render('{params.PDF_FR}')"
+#         Rscript -e "rmarkdown::render('{params.PDF_FR}')"
 
-        echo "  ~~ Corriger la taille du fichier ~~ "
-        ps2pdf {output} guide_FR_PDF/guide_resized.pdf &&
-        rm {output} &&
-        mv guide_FR_PDF/guide_resized.pdf {output} &&
+#         echo "  ~~ Corriger la taille du fichier ~~ "
+#         ps2pdf {output} guide_FR_PDF/guide_resized.pdf &&
+#         rm {output} &&
+#         mv guide_FR_PDF/guide_resized.pdf {output} &&
 
-         echo "  ~~ Copier le pdf vers le serveur ~~ "
+#          echo "  ~~ Copier le pdf vers le serveur ~~ "
 
-        cp -R {output} web/{params.lang}/guide2023.pdf &&
-        cp -R {output} /Volumes/web/guide/{params.lang}/guide2023.pdf
+#         cp -R {output} web/{params.lang}/guide2023.pdf &&
+#         cp -R {output} /Volumes/web/guide/{params.lang}/guide2023.pdf
 
-        echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
-        """
+#         echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
+#         """
 
 
-rule R11_render_pdf_EN:
-    input:
-        "img/cartes/input/Etape1_Full.png",
-        "img/elev/Etape1_Full_FR.png",
-        "excel/Itineraires.xlsx",
-        "guide_EN_PDF/details/tableau_1.pdf",
-        "code/programmation.R",
-        "guide_EN_PDF/details/prog.png"
+# rule R11_render_pdf_EN:
+#     input:
+#         "img/cartes/input/Etape1_Full.png",
+#         "img/elev/Etape1_Full_FR.png",
+#         "excel/Itineraires.xlsx",
+#         "guide_EN_PDF/details/tableau_1.pdf",
+#         "code/programmation.R",
+#         "guide_EN_PDF/details/prog.png"
 
-    output:
-        "guide_EN_PDF/guide_EN.pdf"
-    params:
-        PDF_EN = "guide_EN_PDF/guide_EN.Rmd",
-        lang = "EN"
-    shell:
-        """
-        mkdir -p web web/EN
-        mkdir -p /Volumes/web/guide/{params.lang}
+#     output:
+#         "guide_EN_PDF/guide_EN.pdf"
+#     params:
+#         PDF_EN = "guide_EN_PDF/guide_EN.Rmd",
+#         lang = "EN"
+#     shell:
+#         """
+#         mkdir -p web web/EN
+#         mkdir -p /Volumes/web/guide/{params.lang}
 
-        Rscript -e "rmarkdown::render('{params.PDF_EN}')"
+#         Rscript -e "rmarkdown::render('{params.PDF_EN}')"
 
-        echo "  ~~ Corriger la taille du fichier ~~ "
-        ps2pdf {output} guide_EN_PDF/guide_resized.pdf &&
-        rm {output} &&
-        mv guide_EN_PDF/guide_resized.pdf {output} &&
+#         echo "  ~~ Corriger la taille du fichier ~~ "
+#         ps2pdf {output} guide_EN_PDF/guide_resized.pdf &&
+#         rm {output} &&
+#         mv guide_EN_PDF/guide_resized.pdf {output} &&
 
-         echo "  ~~ Copier le pdf vers le serveur ~~ "
+#          echo "  ~~ Copier le pdf vers le serveur ~~ "
 
-        cp -R {output} web/{params.lang}/guide2023.pdf &&
-        cp -R {output} /Volumes/web/guide/{params.lang}/guide2023.pdf
+#         cp -R {output} web/{params.lang}/guide2023.pdf &&
+#         cp -R {output} /Volumes/web/guide/{params.lang}/guide2023.pdf
 
-        echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
-        """
+#         echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
+#         """
 
 
 # Création du tableau de programmation résumé servant aux guides papier

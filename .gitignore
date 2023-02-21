@@ -2,6 +2,7 @@
 # Pendant le développement, pas de de synchro sur ces outpus
 
 web/FR
+web/EN
 web/img
 web/prog
 web/index.html
