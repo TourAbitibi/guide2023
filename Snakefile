@@ -172,7 +172,7 @@ rule R4_render_book:
         lang = "FR"
     shell:
         """
-        Rscript -e "lang= '{params.lang}'; bookdown::render_book('{params.guide_path}')"
+        Rscript -e "bookdown::render_book('{params.guide_path}')"
 
         # Créer les fichiers
         mkdir -p web/{params.lang} web/img
