@@ -30,10 +30,6 @@ source(here("code","programmation.R"))
 # Pour accès au graphique d'élévation
 source(here("code","graphique_denivele.R"))
 
-
-# Pour accès aux tracés
-parcours <- st_read(here("gpx","output","parcours.shp"))
-
 # Langue
 lang <- params$langue
 
@@ -51,18 +47,46 @@ opts_chunk$set( warning = FALSE,
 
 ```
 
+\begin{titlepage}
+\begin{center}
 
+\huge{\textbf{Tour de l'Abitibi `r params$annee`}}\\
+
+\vspace*{1.5cm}
+
+\begin{figure}
+  \centering    
+  \includegraphics[width=0.3\linewidth]{../img/logo/TA_LogoCouleur_Fondransparent.png}
+\end{figure}
+
+\vfill
+
+\line(1,0){400}\\[2mm]
+
+\vspace*{0.5cm}
+\huge{\textbf{GUIDE TECHNIQUE}}\\
+\vspace*{1cm}
+\Large{\textbf{53e édition}}\\
+\vspace*{1cm}
+\Large{Du `r params$dates_compl`}\\
+\vspace*{0.5cm}
+\line(1,0){400}\\[2mm]
+
+\vfill
+
+Version :  `r Sys.Date()` \\
+
+\end{center}
+\end{titlepage}
 
 # Programmation
 
-```{r, out.width="100%" , fig.align='center', echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("guide_FR_PDF", "details",  "prog.pdf"))
-
-```
 
 
-# Étape 1 : `r iti_etape$Details$Descr_Villes[1]`
+![](details/prog.png){#id .class width=100% height=100%}
+
+\pagebreak
+
 
 ```{r, echo=FALSE}
 Etape <-1
@@ -74,7 +98,7 @@ heureArr <- iti_etape$Details$time_arrivee[Etape]
 
 ```
 
-
+# Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`
 
 <br/>
 
@@ -157,7 +181,6 @@ knitr::include_graphics(here("guide_FR_PDF", "details",  glue("tableau_{Etape}.p
 
 \pagebreak
 
-# Étape 2 : `r iti_etape$Details$Descr_Villes[2]`
 
 ```{r, echo=FALSE}
 Etape <-2
@@ -169,7 +192,7 @@ heureArr <- iti_etape$Details$time_arrivee[Etape]
 
 ```
 
-
+# Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`
 
 
 
@@ -252,12 +275,8 @@ knitr::include_graphics(here("guide_FR_PDF", "details",  glue("tableau_{Etape}.p
 
 
 
+\pagebreak
 
-
-
-
-
-# Étape 4 : `r iti_etape$Details$Descr_Villes[4]`
 
 ```{r, echo=FALSE}
 Etape <-4
@@ -269,7 +288,7 @@ heureArr <- iti_etape$Details$time_arrivee[Etape]
 
 ```
 
-
+# Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`
 
 <br/>
 
@@ -355,10 +374,6 @@ knitr::include_graphics(here("guide_FR_PDF", "details",  glue("tableau_{Etape}.p
 
 
 
-
-
-# Étape 5 : `r iti_etape$Details$Descr_Villes[5]`
-
 ```{r, echo=FALSE}
 Etape <-5
 
@@ -369,7 +384,7 @@ heureArr <- iti_etape$Details$time_arrivee[Etape]
 
 ```
 
-
+# Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`
 
 <br/>
 
@@ -384,6 +399,7 @@ Le commanditaire d'étape est **`r iti_etape$Details$Commanditaire[Etape]`**.
 
 - `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
 - Sans circuit d'arrivée
+- Ascension finale hors category, doublant les points de GPM
 
 ----------------------------------------------------
                                               Heure
@@ -455,9 +471,6 @@ knitr::include_graphics(here("guide_FR_PDF", "details",  glue("tableau_{Etape}.p
 
 
 
-
-
-# Étape 6 : `r iti_etape$Details$Descr_Villes[6]`
 
 ```{r, echo=FALSE}
 Etape <-6
@@ -469,7 +482,7 @@ heureArr <- iti_etape$Details$time_arrivee[Etape]
 
 ```
 
-
+# Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`
 
 <br/>
 
@@ -553,7 +566,7 @@ knitr::include_graphics(here("guide_FR_PDF", "details",  glue("tableau_{Etape}.p
 \pagebreak
 
 
-# Étape 7 : `r iti_etape$Details$Descr_Villes[7]`
+
 
 ```{r, echo=FALSE}
 Etape <-7
@@ -565,7 +578,7 @@ heureArr <- iti_etape$Details$time_arrivee[Etape]
 
 ```
 
-
+# Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`
 
 <br/>
 
@@ -579,7 +592,7 @@ Le commanditaire d'étape est **`r iti_etape$Details$Commanditaire[Etape]`**.
 ## Sommaire
 
 - `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
-- Sans circuit d'arrivée
+
 
 ----------------------------------------------------
                                               Heure

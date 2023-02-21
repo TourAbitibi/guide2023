@@ -44,8 +44,9 @@ rule Z_targets:
         "guide_FR_PDF/details/tableau_1.pdf",
         "guide_EN_PDF/details/tableau_1.pdf",
         "guide_FR_PDF/guide_FR.pdf",
-        "guide_FR_PDF/details/prog.pdf",
-        #"guide_EN_PDF/details/prog.png",
+        "guide_EN_PDF/guide_EN.pdf",
+        "guide_FR_PDF/details/prog.png",
+        "guide_EN_PDF/details/prog.png",
 
         "excel/Itineraires.xlsx",
         "excel/feuilleroute.xlsx",
@@ -171,7 +172,7 @@ rule R4_render_book:
         lang = "FR"
     shell:
         """
-        Rscript -e "bookdown::render_book('{params.guide_path}')"
+        Rscript -e "lang= '{params.lang}'; bookdown::render_book('{params.guide_path}')"
 
         # Créer les fichiers
         mkdir -p web/{params.lang} web/img
@@ -307,14 +308,14 @@ rule R9_creationGraphElevation:
         """
 
 
-rule R10_render_pdf:
+rule R10_render_pdf_FR:
     input:
         "img/cartes/input/Etape1_Full.png",
         "img/elev/Etape1_Full_FR.png",
         "excel/Itineraires.xlsx",
         "guide_FR_PDF/details/tableau_1.pdf",
         "code/programmation.R",
-        "guide_FR_PDF/details/prog.pdf"
+        "guide_FR_PDF/details/prog.png"
 
     output:
         "guide_FR_PDF/guide_FR.pdf"
@@ -341,17 +342,52 @@ rule R10_render_pdf:
         """
 
 
+rule R11_render_pdf_EN:
+    input:
+        "img/cartes/input/Etape1_Full.png",
+        "img/elev/Etape1_Full_FR.png",
+        "excel/Itineraires.xlsx",
+        "guide_EN_PDF/details/tableau_1.pdf",
+        "code/programmation.R",
+        "guide_EN_PDF/details/prog.png"
+
+    output:
+        "guide_EN_PDF/guide_EN.pdf"
+    params:
+        PDF_EN = "guide_EN_PDF/guide_EN.Rmd",
+        lang = "EN"
+    shell:
+        """
+        mkdir -p web web/EN
+        mkdir -p /Volumes/web/guide/{params.lang}
+
+        Rscript -e "rmarkdown::render('{params.PDF_EN}')"
+
+        echo "  ~~ Corriger la taille du fichier ~~ "
+        ps2pdf {output} guide_EN_PDF/guide_resized.pdf &&
+        rm {output} &&
+        mv guide_EN_PDF/guide_resized.pdf {output} &&
+
+         echo "  ~~ Copier le pdf vers le serveur ~~ "
+
+        cp -R {output} web/{params.lang}/guide2023.pdf &&
+        cp -R {output} /Volumes/web/guide/{params.lang}/guide2023.pdf
+
+        echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
+        """
+
+
 # Création du tableau de programmation résumé servant aux guides papier
 
-rule R11_creationTableauProgrammationOnePage:
+rule R12_creationTableauProgrammationOnePage:
     input:
         "code/_import_itineraire.R",
         "code/programmation.R",
         "code/_creationProgrammationOnePage.R",
         "excel/Itineraires.xlsx"
     output:
-        FR = "guide_FR_PDF/details/prog.pdf" #,
-        #EN = "guide_EN_PDF/details/prog.png"
+        FR = "guide_FR_PDF/details/prog.png",
+        EN = "guide_EN_PDF/details/prog.png"
     params:
         script = "code/_creationProgrammationOnePage.R",
     shell:

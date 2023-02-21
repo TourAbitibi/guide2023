@@ -30,7 +30,7 @@ prog_FR <- dff %>%
   
   kbl( col.names = c("Date",  "Épreuve", "Départ", "Arrivée"),
        escape = F, # permet de passer les <br/>
-       align = c(rep('c', times = 4))) %>% 
+       align = c(rep('l', times = 4))) %>% 
   
   kable_styling("striped",      # kable_minimal
                 full_width = T, 
@@ -40,9 +40,22 @@ prog_FR <- dff %>%
 
 save_kable(prog_FR, here("guide_FR_PDF", "details", "prog.png"))
 
-save_kable(prog_FR, here("guide_FR_PDF", "details", "prog.pdf"))
-
 ################################################################################
 ################################################################################
 
-# Version anglaise à compléter 
+# Tableau Anglais - Format kable 
+
+prog_EN <- dfe %>% 
+  select(-presente) %>% 
+  
+  kbl( col.names = c("Date",  "Event", "Start", "Finish"),
+       escape = F, # permet de passer les <br/>
+       align = c(rep('l', times = 4))) %>% 
+  
+  kable_styling("striped",      # kable_minimal
+                full_width = T, 
+                font_size = 16) 
+
+
+
+save_kable(prog_EN, here("guide_EN_PDF", "details", "prog.png"))
