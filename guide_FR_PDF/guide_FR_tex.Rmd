@@ -103,9 +103,9 @@ opts_chunk$set( warning = FALSE,
 \vspace*{0.5cm}
 \emph{\huge{\textbf{GUIDE TECHNIQUE}}\\}
 \vspace*{1cm}
-\Large{\textbf{`r edition`e édition}}\\
+\Large{\textbf{`r edition`$^e$ édition}}\\
 \vspace*{1cm}
-\Large{\textbf{`r params$dates_compl`}}\\
+\Large{\textbf{Du `r params$dates_compl`}}\\
 \vspace*{0.5cm}
 \line(1,0){350}\\[2mm]
 
@@ -151,8 +151,7 @@ Présentation de l'étape 1
 
 \begin{table}[h]
 \centering
-		\begin{tabular}{m{8cm} c  }
-    		\hline
+		\begin{tabular}{m{6cm} c  }
     		\textbf{} & \textbf{Heure} \\ \hline
     		Départ & `r heureDep`\\ 
     		\*
