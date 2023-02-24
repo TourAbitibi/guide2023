@@ -1,0 +1,220 @@
+---
+output: pdf_document
+latex_engine: pdflatex
+header-includes:
+  \usepackage{helvet}
+  \renewcommand\familydefault{\sfdefault}
+  
+  \usepackage{graphicx}
+
+  \usepackage[french]{babel}
+
+  \usepackage[T1]{fontenc} % lié à 'french'
+  
+  \usepackage{pdfpages}
+  
+
+  \usepackage{array, multirow}
+  \usepackage{tabularx, tabulary, tabu, longtable}
+  \usepackage{makecell}
+
+  \setlength{\tabcolsep}{18pt} %Gap before text Starts
+  \renewcommand{\arraystretch}{1.5} %Cell Height scaling
+  \setlength{\arrayrulewidth}{0.5mm} %Table Border Thickness
+  \arrayrulecolor{black!50} % Table Border Color
+  \newcolumntype{s}{>{\columncolor{blue!20}} c}
+  
+
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead{}
+  \fancyhead[C]{\bfseries\leftmark}
+  \fancyfoot{}
+  \fancyfoot[C]{\thepage}
+
+
+  
+  
+  
+  
+
+params:
+  annee: 2023
+  dates_compl: "11 au 16 juillet 2023"
+  ville: "Amos"
+  langue: "FR"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r call_Libs_Vars, include=FALSE}
+# Appel des librairies et variables partagées
+source(here::here("code","_LibsVars.R"))
+
+# Dates
+source(here("code", "_Dates.R"))
+
+# Pour accès aux données du fichier excel Itineraires.xlsx
+source(here("code","programmation.R"))
+
+# Langue
+lang <- params$langue
+
+# Edition  (52e en 2022)
+edition <-params$annee - 2022 + 52
+
+# Locale
+## https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/locales
+{if (lang == "FR") Sys.setlocale("LC_TIME", locale = "fr_CA.UTF-8") 
+  else Sys.setlocale("LC_TIME", locale = "en_US.UTF-8") }
+
+opts_chunk$set( warning = FALSE,
+                message = FALSE,
+                quiet=TRUE)
+
+```
+ 
+
+
+
+
+
+
+\begin{titlepage}
+
+\begin{center}
+
+\huge{\textbf{Tour de l'Abitibi `r params$annee`}}\\
+
+\vspace*{1.5cm}
+
+
+\begin{figure}[!h]
+  \centering    
+  \includegraphics[width=0.3\linewidth]{../img/logo/TA_LogoCouleur_Fondransparent.png}
+\end{figure}
+
+\vfill
+
+\line(1,0){350}\\[2mm]
+
+\vspace*{0.5cm}
+\emph{\huge{\textbf{GUIDE TECHNIQUE}}\\}
+\vspace*{1cm}
+\Large{\textbf{`r edition`e édition}}\\
+\vspace*{1cm}
+\Large{\textbf{`r params$dates_compl`}}\\
+\vspace*{0.5cm}
+\line(1,0){350}\\[2mm]
+
+\vfill
+
+Version :  `r Sys.Date()` \\
+
+\end{center}
+
+\end{titlepage}
+
+
+
+\vspace*{1cm}
+
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+
+
+
+\thispagestyle{plain}
+\setcounter{page}{1}
+
+\includepdf[scale=0.8,pages=1,pagecommand=\section{Programmation}]{details/prog.png}
+
+\pagebreak
+
+
+```{r include=FALSE}
+Etape <- 1
+
+heureDep <- iti_etape$Details$time_depart[Etape]
+
+heureArr <- iti_etape$Details$time_arrivee[Etape]
+```
+
+\thispagestyle{plain}
+\section{Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`}
+
+Présentation de l'étape 1
+
+\begin{table}[h]
+\centering
+		\begin{tabular}{m{8cm} c  }
+    		\hline
+    		\textbf{} & \textbf{Heure} \\ \hline
+    		Départ & `r heureDep`\\ 
+    		\*
+    		Arrivée & `r heureArr` \\ \hline
+
+	\end{tabular}
+\end{table}
+
+
+
+\subsection{Parcours}
+
+\begin{figure}[!h]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Full.png"))`}
+\end{figure}
+
+\pagebreak
+
+\subsection{Détails du départ}
+
+\begin{figure}[!h]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png"))`}
+\end{figure}
+
+\
+
+\subsection{Détails de l'arrivée}
+
+\begin{figure}[!h]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png"))`}
+\end{figure}
+
+
+\pagebreak
+
+\subsection{Élévation}
+
+\begin{figure}[!h]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "elev", glue("Etape{Etape}_Full_{lang}.png"))`}
+\end{figure}
+
+
+\begin{figure}[!h]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"))`}
+\end{figure}
+
+\pagebreak
+
+\includepdf[scale=.9]{`r here("guide_FR_PDF", "details", glue("tableau_{Etape}.pdf"))`}
+
+\pagebreak
+
+```{r include=FALSE}
+Etape <- 2
+```
+
+\thispagestyle{plain}
+\section{Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`}
+
+Une 2e étape.

@@ -62,3 +62,7 @@ excel/~$*
 rosm.cache
 # Fichiers temporaires Cartes
 img/cartes/input/*.bak
+
+# Fichiers temporaires tex
+guide_FR_PDF/*.log
+guide_EN_PDF/*.log
