@@ -8,23 +8,17 @@ header-includes:
   \usepackage{graphicx}
 
   \usepackage[french]{babel}
-
-  \usepackage[T1]{fontenc} % lié à 'french'
+  \usepackage[T1]{fontenc} 
   
   \usepackage{pdfpages}
   
-
   \usepackage{array, multirow}
   \usepackage{tabularx, tabulary, tabu, longtable}
   \usepackage{makecell}
 
-  \setlength{\tabcolsep}{18pt} %Gap before text Starts
-  \renewcommand{\arraystretch}{1.5} %Cell Height scaling
-  \setlength{\arrayrulewidth}{0.5mm} %Table Border Thickness
-  \arrayrulecolor{black!50} % Table Border Color
-  \newcolumntype{s}{>{\columncolor{blue!20}} c}
+  \setlength{\tabcolsep}{18pt} 
+  \renewcommand{\arraystretch}{2} 
   
-
   \usepackage{fancyhdr}
   \pagestyle{fancy}
   \fancyhead{}
@@ -32,10 +26,8 @@ header-includes:
   \fancyfoot{}
   \fancyfoot[C]{\thepage}
 
-
-  
-  
-  
+  \setlength{\headheight}{13pt}
+  \setlength{\parindent}{0pt}
   
 
 params:
@@ -151,7 +143,7 @@ Présentation de l'étape 1
 
 \begin{table}[h]
 \centering
-		\begin{tabular}{m{6cm} c  }
+		\begin{tabular}{m{6cm} c}
     		\textbf{} & \textbf{Heure} \\ \hline
     		Départ & `r heureDep`\\ 
     		\*
