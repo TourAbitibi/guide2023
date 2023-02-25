@@ -109,6 +109,7 @@ rule R51_render_pdf_FR:
         "img/cartes/input/Etape1_Full.png",
         "img/elev/Etape1_Full_FR.png",
         "excel/Itineraires.xlsx",
+        "guide_FR_PDF/guide_FR.Rmd",
         "guide_FR_PDF/details/tableau_1.pdf",
         "code/programmation.R",
         "guide_FR_PDF/details/prog.png"
@@ -144,6 +145,7 @@ rule R52_render_pdf_EN:
         "img/cartes/input/Etape1_Full.png",
         "img/elev/Etape1_Full_FR.png",
         "excel/Itineraires.xlsx",
+        "guide_EN_PDF/guide_EN.Rmd",
         "guide_EN_PDF/details/tableau_1.pdf",
         "code/programmation.R",
         "guide_EN_PDF/details/prog.png"
@@ -179,6 +181,7 @@ rule R53_render_pdf_tex_FR:
         "img/cartes/input/Etape1_Full.png",
         "img/elev/Etape1_Full_FR.png",
         "excel/Itineraires.xlsx",
+        "guide_FR_PDF/guide_FR_tex.Rmd",
         "guide_FR_PDF/details/tableau_1.pdf",
         "code/programmation.R",
         "guide_FR_PDF/details/prog.png"
