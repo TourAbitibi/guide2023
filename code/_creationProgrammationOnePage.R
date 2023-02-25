@@ -32,13 +32,14 @@ prog_FR <- dff %>%
        escape = F, # permet de passer les <br/>
        align = c(rep('l', times = 4))) %>% 
   
-  kable_styling("striped",      # kable_minimal
+  kable_styling("basic",      # kable_minimal
                 full_width = T, 
                 font_size = 16) 
   
 
 
-save_kable(prog_FR, here("guide_FR_PDF", "details", "prog.png"))
+save_kable(prog_FR, here("guide_FR_PDF", "details", "prog.png"),
+           bs_theme = "spacelab")
 
 ################################################################################
 ################################################################################
@@ -52,10 +53,11 @@ prog_EN <- dfe %>%
        escape = F, # permet de passer les <br/>
        align = c(rep('l', times = 4))) %>% 
   
-  kable_styling("striped",      # kable_minimal
+  kable_styling("basic",      # kable_minimal
                 full_width = T, 
                 font_size = 16) 
 
 
 
-save_kable(prog_EN, here("guide_EN_PDF", "details", "prog.png"))
+save_kable(prog_EN, here("guide_EN_PDF", "details", "prog.png"),
+           bs_theme = "spacelab")
