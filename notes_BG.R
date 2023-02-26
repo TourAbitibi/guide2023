@@ -61,6 +61,8 @@ list.files(path = "gpx/input",
 # git status
 # git push
 #
+# Si problème avec push (stuck après Total,) : git push -u origin main
+#
 
 ################################################################################
 
