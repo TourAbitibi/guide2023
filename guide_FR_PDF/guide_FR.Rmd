@@ -4,6 +4,37 @@ latex_engine: pdflatex
 header-includes:
   \usepackage{helvet}
   \renewcommand\familydefault{\sfdefault}
+  
+  \usepackage{graphicx}
+  \usepackage{float}
+
+  \usepackage[french]{babel}
+  \usepackage[T1]{fontenc} 
+  
+  \usepackage{pdfpages}
+  
+  \usepackage{array, multirow}
+  \usepackage{tabularx, tabulary, tabu, longtable}
+  \usepackage{makecell}
+
+  \setlength{\tabcolsep}{18pt} 
+  \renewcommand{\arraystretch}{2} 
+  
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhead{}
+  \fancyhead[C]{\bfseries\leftmark}
+  \fancyfoot{}
+  \fancyfoot[C]{\thepage}
+
+  \setlength{\headheight}{13pt}
+  \setlength{\parindent}{0pt}
+  
+  \usepackage{tikz,lipsum,lmodern}    
+  \usepackage[most]{tcolorbox}
+  \usepackage{tcolorbox}
+  
+
 params:
   annee: 2023
   dates_compl: "11 au 16 juillet 2023"
@@ -11,10 +42,8 @@ params:
   langue: "FR"
 ---
 
-
-```{r here, include=FALSE}
-# Gestion avec here
-here::i_am("guide2023.Rproj")
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r call_Libs_Vars, include=FALSE}
@@ -26,9 +55,6 @@ source(here("code", "_Dates.R"))
 
 # Pour accès aux données du fichier excel Itineraires.xlsx
 source(here("code","programmation.R"))
-
-# Pour accès au graphique d'élévation
-source(here("code","graphique_denivele.R"))
 
 # Langue
 lang <- params$langue
@@ -46,617 +72,268 @@ opts_chunk$set( warning = FALSE,
                 quiet=TRUE)
 
 ```
+ 
+
 
 \begin{titlepage}
+
 \begin{center}
 
 \huge{\textbf{Tour de l'Abitibi `r params$annee`}}\\
 
-\vspace*{1.5cm}
+\vspace*{1.0cm}
 
-\begin{figure}
+
+\begin{figure}[H]
   \centering    
   \includegraphics[width=0.3\linewidth]{../img/logo/TA_LogoCouleur_Fondransparent.png}
 \end{figure}
 
 \vfill
 
-\line(1,0){400}\\[2mm]
+\line(1,0){350}\\[2mm]
 
 \vspace*{0.5cm}
-\huge{\textbf{GUIDE TECHNIQUE}}\\
-\vspace*{1cm}
-\Large{\textbf{53e édition}}\\
-\vspace*{1cm}
-\Large{Du `r params$dates_compl`}\\
+\emph{\huge{\textbf{GUIDE TECHNIQUE}}\\}
+\vspace*{0.75cm}
+\emph{\Large{\textbf{DÉTAILS DES PARCOURS}}\\}
+\vspace*{0.75cm}
+\Large{\textbf{`r edition`$^e$ édition}}\\
+\vspace*{0.75cm}
+\Large{\textbf{Du `r params$dates_compl`}}\\
 \vspace*{0.5cm}
-\line(1,0){400}\\[2mm]
+\line(1,0){350}\\[2mm]
 
 \vfill
 
 Version :  `r Sys.Date()` \\
 
 \end{center}
+
 \end{titlepage}
 
-# Programmation
+
+
+\vspace*{1cm}
+
+\tableofcontents
+\thispagestyle{empty}
+
+\vfill
+
+\emph{\textbf{Notes}\\}
+
+Dans le but d'éviter le gaspillage de papier et de faciliter les mises à jour du document, seuls les détails des parcours seront disponibles en format papier.
+
+Veuillez vous référer au site : \url{https://home.brunogauthier.net/guide/FR} pour l'information complète du guide technique.
+\vspace*{1cm}
+
+\newpage
 
 
 
-![](details/prog.png){#id .class width=100% height=100%}
+\thispagestyle{plain}
+\setcounter{page}{1}
+
+\includepdf[scale=0.8,pages=1,pagecommand=\section{Programmation}]{details/prog.png}
 
 \pagebreak
 
 
-```{r, echo=FALSE}
-Etape <-1
+```{r include=FALSE}
+Etape <- 1
 
+jour_date <- dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)
 
 heureDep <- iti_etape$Details$time_depart[Etape]
 
 heureArr <- iti_etape$Details$time_arrivee[Etape]
 
+comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 ```
 
-# Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`
-
-<br/>
-
-**`r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)`** 
-
- **`r iti_etape$Details$KM_Total[Etape]` km**
+\thispagestyle{plain}
+\section{Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`}
 
 
-Le commanditaire d'étape est **`r iti_etape$Details$Commanditaire[Etape]`**. 
-
-## Sommaire
-
-- `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
-- Sans circuit d'arrivée
-
-----------------------------------------------------
-                                              Heure
------------------ ----------------------------------
-Départ                                  `r heureDep`
-
-Arrivée finale                         `r heureArr`
-----------------------------------------------------
-
-## Parcours
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Full.png")))
-
-```
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{X X}
+	  \large{\textbf{`r jour_date`}}  & \multicolumn{1}{r}{\multirow{2}{*}{\includegraphics[width=0.2\textwidth]{`r comm`}}} \\
+	  \textbf{`r iti_etape$Details$KM_Total[Etape]` km}  &  \textbf{} \\
+  \end{tabularx}
+\end{table}
 
 
-<br/>
+
+\begin{table}[H]
+\centering
+		\begin{tabular}{m{6cm} c}
+    		\textbf{} & \textbf{Heure} \\ \toprule
+    		Départ & `r heureDep`\\ 
+    		\*
+    		Arrivée & `r heureArr` \\ \bottomrule
+
+	\end{tabular}
+\end{table}
 
 
-[Ride with GPS](`r iti_etape$Details$Liens[Etape]`)
 
-<br/>
+\subsection{Parcours}
 
-### Détail du départ
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Full.png"))`}
+\end{figure}
 
+\pagebreak
 
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
+\subsection{Détails du départ}
 
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png")))
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png"))`}
+\end{figure}
 
-```
-
-### Détail de l'arrivée
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png")))
-
-```
-
-## Élévation
-
-```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Full_{lang}.png")))
-
-```
-
-```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png")))
-
-```
-
-## Description détaillée
-
-```{r, out.width="100%" , fig.align='center', echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("guide_FR_PDF", "details",  glue("tableau_{Etape}.pdf")))
-
-```
+\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
+  \begin{itemize}
+  \item[!] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
+  \end{itemize}
+\end{tcolorbox}
 
 
+\subsection{Détails de l'arrivée}
+
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png"))`}
+\end{figure}
+
+\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
+  \begin{itemize}
+  \item[!] Arrivée en ligne sans circuit
+  \end{itemize}
+\end{tcolorbox}
+
+\pagebreak
+
+\subsection{Élévation}
+
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "elev", glue("Etape{Etape}_Full_{lang}.png"))`}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"))`}
+\end{figure}
+
+\pagebreak
+
+\includepdf[scale=.9]{`r here("guide_FR_PDF", "details", glue("tableau_{Etape}.pdf"))`}
 
 \pagebreak
 
 
-```{r, echo=FALSE}
-Etape <-2
+```{r include=FALSE}
+Etape <- 2
 
+jour_date <- dates_FR %>% filter(code=="Mer") %>% pull(jsem_jour_mois_an)
 
 heureDep <- iti_etape$Details$time_depart[Etape]
 
+heureEntree <- iti_etape$Details$HeureEntreeVille[Etape]
+
 heureArr <- iti_etape$Details$time_arrivee[Etape]
 
+comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 ```
 
-# Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`
+\thispagestyle{plain}
+\section{Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`}
+
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{X X}
+	  \large{\textbf{`r jour_date`}}  & \multicolumn{1}{r}{\multirow{2}{*}{\includegraphics[width=0.35\textwidth]{`r comm`}}} \\
+	  \textbf{`r iti_etape$Details$KM_Total[Etape]` km}  &  \textbf{} \\
+  \end{tabularx}
+\end{table}
 
 
 
-<br/>
+\begin{table}[h]
+\centering
+		\begin{tabular}{m{6cm} c}
+    		\textbf{} & \textbf{Heure} \\ \toprule
+    		Départ & `r heureDep`\\ 
+    		\*
+    		Arrivée au circuit & `r heureEntree`\\ 
+    		\*
+    		Arrivée & `r heureArr` \\ \bottomrule
 
-**`r dates_FR %>% filter(code=="Mer") %>% pull(jsem_jour_mois_an)`** 
-
- **`r iti_etape$Details$KM_Total[Etape]` km**
-
-
-Le commanditaire d'étape est **`r iti_etape$Details$Commanditaire[Etape]`**. 
-
-## Sommaire
-
-- `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
-
-
-----------------------------------------------------
-                                              Heure
------------------ ----------------------------------
-Départ                                  `r heureDep`
-
-Arrivée finale                         `r heureArr`
-----------------------------------------------------
-
-## Parcours
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Full.png")))
-
-```
+	\end{tabular}
+\end{table}
 
 
-<br/>
 
+\subsection{Parcours}
 
-[Ride with GPS](`r iti_etape$Details$Liens[Etape]`)
-
-<br/>
-
-### Détail du départ
-
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png")))
-
-```
-
-### Détail de l'arrivée
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png")))
-
-```
-
-## Élévation
-
-```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Full_{lang}.png")))
-
-```
-
-```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png")))
-
-```
-
-## Description détaillée
-
-```{r, out.width="100%" , fig.align='center', echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("guide_FR_PDF", "details",  glue("tableau_{Etape}.pdf")))
-
-```
-
-
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=0.6\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Full.png"))`}
+\end{figure}
 
 \pagebreak
 
+\subsection{Détails du départ}
 
-```{r, echo=FALSE}
-Etape <-4
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=0.6\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png"))`}
+\end{figure}
 
-
-heureDep <- iti_etape$Details$time_depart[Etape]
-
-heureArr <- iti_etape$Details$time_arrivee[Etape]
-
-```
-
-# Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`
-
-<br/>
-
-**`r dates_FR %>% filter(code=="Jeu") %>% pull(jsem_jour_mois_an)`** 
-
- **`r iti_etape$Details$KM_Total[Etape]` km**
+\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
+  \begin{itemize}
+  \item[!] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
+  \end{itemize}
+\end{tcolorbox}
 
 
-Le commanditaire d'étape est **`r iti_etape$Details$Commanditaire[Etape]`**. 
+\subsection{Détails de l'arrivée}
 
-## Sommaire
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png"))`}
+\end{figure}
 
-- `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
-- Sans circuit d'arrivée
-
-----------------------------------------------------
-                                              Heure
------------------ ----------------------------------
-Départ                                  `r heureDep`
-
-Arrivée finale                         `r heureArr`
-----------------------------------------------------
-
-## Parcours
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Full.png")))
-
-```
-
-
-<br/>
-
-
-[Ride with GPS](`r iti_etape$Details$Liens[Etape]`)
-
-<br/>
-
-### Détail du départ
-
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png")))
-
-```
-
-### Détail de l'arrivée
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png")))
-
-```
-
-## Élévation
-
-```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Full_{lang}.png")))
-
-```
-
-```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png")))
-
-```
-
-## Description détaillée
-
-```{r, out.width="100%" , fig.align='center', echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("guide_FR_PDF", "details",  glue("tableau_{Etape}.pdf")))
-
-```
-
-
+\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
+  \begin{itemize}
+  \item[!] `r iti_etape$Details$Nb_tours[Etape]` tours complets de circuit à l'arrivée de `r iti_etape$Details$KM_par_tours[Etape]` km
+  \item[!] L'entrée du circuit se situe à l'intersection de la 4e Rue Est et de la 14e Avenue Est
+  \end{itemize}
+\end{tcolorbox}
 
 \pagebreak
 
+\subsection{Élévation}
+
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "elev", glue("Etape{Etape}_Full_{lang}.png"))`}
+\end{figure}
 
 
-
-```{r, echo=FALSE}
-Etape <-5
-
-
-heureDep <- iti_etape$Details$time_depart[Etape]
-
-heureArr <- iti_etape$Details$time_arrivee[Etape]
-
-```
-
-# Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`
-
-<br/>
-
-**`r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)`** 
-
- **`r iti_etape$Details$KM_Total[Etape]` km**
-
-
-Le commanditaire d'étape est **`r iti_etape$Details$Commanditaire[Etape]`**. 
-
-## Sommaire
-
-- `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
-- Sans circuit d'arrivée
-- Ascension finale hors category, doublant les points de GPM
-
-----------------------------------------------------
-                                              Heure
------------------ ----------------------------------
-Départ                                  `r heureDep`
-
-Arrivée finale                         `r heureArr`
-----------------------------------------------------
-
-## Parcours
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Full.png")))
-
-```
-
-
-<br/>
-
-
-[Ride with GPS](`r iti_etape$Details$Liens[Etape]`)
-
-<br/>
-
-### Détail du départ
-
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png")))
-
-```
-
-### Détail de l'arrivée
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png")))
-
-```
-
-## Élévation
-
-```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Full_{lang}.png")))
-
-```
-
-```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png")))
-
-```
-
-## Description détaillée
-
-```{r, out.width="100%" , fig.align='center', echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("guide_FR_PDF", "details",  glue("tableau_{Etape}.pdf")))
-
-```
-
-
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"))`}
+\end{figure}
 
 \pagebreak
 
-
-
-
-
-```{r, echo=FALSE}
-Etape <-6
-
-
-heureDep <- iti_etape$Details$time_depart[Etape]
-
-heureArr <- iti_etape$Details$time_arrivee[Etape]
-
-```
-
-# Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`
-
-<br/>
-
-**`r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)`** 
-
- **`r iti_etape$Details$KM_Total[Etape]` km**
-
-
-Le commanditaire d'étape est **`r iti_etape$Details$Commanditaire[Etape]`**. 
-
-## Sommaire
-
-- `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
-- Sans circuit d'arrivée
-
-----------------------------------------------------
-                                              Heure
------------------ ----------------------------------
-Départ                                  `r heureDep`
-
-Arrivée finale                         `r heureArr`
-----------------------------------------------------
-
-## Parcours
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Full.png")))
-
-```
-
-
-<br/>
-
-
-[Ride with GPS](`r iti_etape$Details$Liens[Etape]`)
-
-<br/>
-
-### Détail du départ
-
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png")))
-
-```
-
-### Détail de l'arrivée
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png")))
-
-```
-
-## Élévation
-
-```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Full_{lang}.png")))
-
-```
-
-```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png")))
-
-```
-
-## Description détaillée
-
-```{r, out.width="100%" , fig.align='center', echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("guide_FR_PDF", "details",  glue("tableau_{Etape}.pdf")))
-
-```
-
-
-
-\pagebreak
-
-
-
-
-```{r, echo=FALSE}
-Etape <-7
-
-
-heureDep <- iti_etape$Details$time_depart[Etape]
-
-heureArr <- iti_etape$Details$time_arrivee[Etape]
-
-```
-
-# Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`
-
-<br/>
-
-**`r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)`** 
-
- **`r iti_etape$Details$KM_Total[Etape]` km**
-
-
-Le commanditaire d'étape est **`r iti_etape$Details$Commanditaire[Etape]`**. 
-
-## Sommaire
-
-- `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
-
-
-----------------------------------------------------
-                                              Heure
------------------ ----------------------------------
-Départ                                  `r heureDep`
-
-Arrivée finale                         `r heureArr`
-----------------------------------------------------
-
-## Parcours
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Full.png")))
-
-```
-
-
-<br/>
-
-
-[Ride with GPS](`r iti_etape$Details$Liens[Etape]`)
-
-<br/>
-
-### Détail du départ
-
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png")))
-
-```
-
-### Détail de l'arrivée
-
-```{r, out.width="80%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png")))
-
-```
-
-## Élévation
-
-```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Full_{lang}.png")))
-
-```
-
-```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png")))
-
-```
-
-## Description détaillée
-
-```{r, out.width="100%" , fig.align='center', echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("guide_FR_PDF", "details",  glue("tableau_{Etape}.pdf")))
-
-```
-
-
+\includepdf[scale=.9]{`r here("guide_FR_PDF", "details", glue("tableau_{Etape}.pdf"))`}
 
 \pagebreak

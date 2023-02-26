@@ -23,7 +23,6 @@ rule Z_targets:
         "guide_EN_PDF/details/prog.png",
 
         "guide_FR_PDF/guide_FR.pdf",
-        "guide_FR_PDF/guide_FR_tex.pdf",
         "guide_EN_PDF/guide_EN.pdf",
 
         "excel/Itineraires.xlsx"
@@ -173,32 +172,4 @@ rule R52_render_pdf_EN:
         cp -R {output} /Volumes/web/guide/{params.lang}/guide2023.pdf
 
         echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
-        """
-
-
-rule R53_render_pdf_tex_FR:
-    input:
-        "img/cartes/input/Etape1_Full.png",
-        "img/elev/Etape1_Full_FR.png",
-        "excel/Itineraires.xlsx",
-        "guide_FR_PDF/guide_FR_tex.Rmd",
-        "guide_FR_PDF/details/tableau_1.pdf",
-        "code/programmation.R",
-        "guide_FR_PDF/details/prog.png"
-
-    output:
-        "guide_FR_PDF/guide_FR_tex.pdf"
-    params:
-        PDF_FR = "guide_FR_PDF/guide_FR_tex.Rmd",
-        lang = "FR"
-    shell:
-        """
-        
-        Rscript -e "rmarkdown::render('{params.PDF_FR}')"
-
-        echo "  ~~ Corriger la taille du fichier ~~ "
-        ps2pdf {output} guide_FR_PDF/guide_resized_tex.pdf &&
-        rm {output} &&
-        mv guide_FR_PDF/guide_resized_tex.pdf {output} 
- 
         """
