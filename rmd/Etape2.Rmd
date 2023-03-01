@@ -20,7 +20,7 @@ heureArr <- iti_etape$Details$time_arrivee[Etape]
 
 glue('<table border=1>
     <tr>
-        <td><strong/>Présenté par</strong></td>
+        <td><strong/>Présentée par</strong></td>
         <td><img src="../img/logo/comm_{Etape}.png" width="350" style="float:right"></td>
     </tr>
 </table>')
