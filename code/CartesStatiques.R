@@ -126,20 +126,20 @@ creation_3_map <- function(no_etape,
 # Création des cartes par étapes, avec paramètres spécifiques
 
 creation_3_map(no_etape =1,
-               pct_point_debut = 0.02, 
-               pct_point_fin = 0.98,
-               pos_h_arrow = "left",
-               pos_v_arrow = "top",
-               pos_h_scale = "right",
-               pos_v_scale = "bottom",
-               buff = 300)
-
-creation_3_map(no_etape =2,
                pct_point_debut = 0.01, 
                pct_point_fin = 0.90,
                pos_h_arrow = "right",
                pos_v_arrow = "bottom",
                pos_h_scale = "left",
+               pos_v_scale = "bottom",
+               buff = 300)
+
+creation_3_map(no_etape =2,
+               pct_point_debut = 0.02, 
+               pct_point_fin = 0.98,
+               pos_h_arrow = "left",
+               pos_v_arrow = "top",
+               pos_h_scale = "right",
                pos_v_scale = "bottom",
                buff = 300)
 

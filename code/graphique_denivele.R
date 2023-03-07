@@ -64,7 +64,7 @@ elv_f_x <- function(df, num_etape, x_km ){
 
 # Fonction pour obtenir les points d'intérêts et leurs élévation
 
-elv_poi <- function(df, num_etape){
+elv_poi <- function(df = dist_df, num_etape){
 
   poi <- calcul_iti_etape(num_etape, "FR") %>% 
     select (KM_fait, Symbol) %>% 

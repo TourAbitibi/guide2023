@@ -270,7 +270,8 @@ rule R53_render_prog_prelim:
     input:
         "excel/Itineraires.xlsx",
         "gpx/output/parcours.shp",
-        "resume_prog/prog.Rmd"
+        "resume_prog/prog.Rmd",
+        "elevParcours/elev_parcours.csv"
     output:
         local = "resume_prog/prog.html",
         web = "web/prog/index.html"

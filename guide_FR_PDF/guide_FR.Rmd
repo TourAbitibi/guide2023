@@ -140,12 +140,116 @@ Veuillez vous référer au site : \url{https://home.brunogauthier.net/guide/FR} 
 \pagebreak
 
 
+
 ```{r include=FALSE}
 Etape <- 1
 
 jour_date <- dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)
 
 heureDep <- iti_etape$Details$time_depart[Etape]
+
+heureEntree <- iti_etape$Details$HeureEntreeVille[Etape]
+
+heureArr <- iti_etape$Details$time_arrivee[Etape]
+
+comm <- here("img", "logo",  glue("comm_{Etape}.png"))
+```
+
+\thispagestyle{plain}
+\section{Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`}
+
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{X X}
+	  \large{\textbf{`r jour_date`}}  & \multicolumn{1}{r}{\multirow{2}{*}{\includegraphics[width=0.35\textwidth]{`r comm`}}} \\
+	  \textbf{`r iti_etape$Details$KM_Total[Etape]` km}  &  \textbf{} \\
+  \end{tabularx}
+\end{table}
+
+\vspace*{4mm}
+
+\begin{table}[h]
+\centering
+		\begin{tabular}{m{6cm} c}
+    		\textbf{} & \textbf{Heure} \\ \toprule
+    		Départ & `r heureDep`\\ 
+    		\*
+    		Arrivée au circuit & `r heureEntree`\\ 
+    		\*
+    		Arrivée & `r heureArr` \\ \bottomrule
+
+	\end{tabular}
+\end{table}
+
+
+
+\subsection{Parcours}
+
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=0.6\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Full.png"))`}
+\end{figure}
+
+\pagebreak
+
+\subsection{Détails du départ}
+
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=0.6\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png"))`}
+\end{figure}
+
+\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
+  \begin{itemize}
+  \item[!] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
+  \end{itemize}
+\end{tcolorbox}
+
+
+\subsection{Détails de l'arrivée}
+
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png"))`}
+\end{figure}
+
+\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
+  \begin{itemize}
+  \item[!] `r iti_etape$Details$Nb_tours[Etape]` tours complets de circuit à l'arrivée de `r iti_etape$Details$KM_par_tours[Etape]` km
+  \item[!] L'entrée du circuit se situe à l'intersection de la 4e Rue Est et de la 14e Avenue Est
+  \end{itemize}
+\end{tcolorbox}
+
+\pagebreak
+
+\subsection{Élévation}
+
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "elev", glue("Etape{Etape}_Full_{lang}.png"))`}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"))`}
+\end{figure}
+
+\pagebreak
+
+\includepdf[scale=.9]{`r here("guide_FR_PDF", "details", glue("tableau_{Etape}.pdf"))`}
+
+\pagebreak
+
+```{r include=FALSE}
+Etape <- 2
+
+jour_date <- dates_FR %>% filter(code=="Mer") %>% pull(jsem_jour_mois_an)
+
+heureDep <- iti_etape$Details$time_depart[Etape]
+
+heureEntree <- iti_etape$Details$HeureEntreeVille[Etape]
 
 heureArr <- iti_etape$Details$time_arrivee[Etape]
 
@@ -236,104 +340,3 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \pagebreak
 
-
-```{r include=FALSE}
-Etape <- 2
-
-jour_date <- dates_FR %>% filter(code=="Mer") %>% pull(jsem_jour_mois_an)
-
-heureDep <- iti_etape$Details$time_depart[Etape]
-
-heureEntree <- iti_etape$Details$HeureEntreeVille[Etape]
-
-heureArr <- iti_etape$Details$time_arrivee[Etape]
-
-comm <- here("img", "logo",  glue("comm_{Etape}.png"))
-```
-
-\thispagestyle{plain}
-\section{Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`}
-
-
-\begin{table}[H]
-\centering
-\begin{tabularx}{\textwidth}{X X}
-	  \large{\textbf{`r jour_date`}}  & \multicolumn{1}{r}{\multirow{2}{*}{\includegraphics[width=0.35\textwidth]{`r comm`}}} \\
-	  \textbf{`r iti_etape$Details$KM_Total[Etape]` km}  &  \textbf{} \\
-  \end{tabularx}
-\end{table}
-
-
-
-\begin{table}[h]
-\centering
-		\begin{tabular}{m{6cm} c}
-    		\textbf{} & \textbf{Heure} \\ \toprule
-    		Départ & `r heureDep`\\ 
-    		\*
-    		Arrivée au circuit & `r heureEntree`\\ 
-    		\*
-    		Arrivée & `r heureArr` \\ \bottomrule
-
-	\end{tabular}
-\end{table}
-
-
-
-\subsection{Parcours}
-
-\begin{figure}[H]
-  \centering    
-  \includegraphics[width=0.6\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Full.png"))`}
-\end{figure}
-
-\pagebreak
-
-\subsection{Détails du départ}
-
-\begin{figure}[H]
-  \centering    
-  \includegraphics[width=0.6\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png"))`}
-\end{figure}
-
-\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-  \begin{itemize}
-  \item[!] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
-  \end{itemize}
-\end{tcolorbox}
-
-
-\subsection{Détails de l'arrivée}
-
-\begin{figure}[H]
-  \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png"))`}
-\end{figure}
-
-\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
-  \begin{itemize}
-  \item[!] `r iti_etape$Details$Nb_tours[Etape]` tours complets de circuit à l'arrivée de `r iti_etape$Details$KM_par_tours[Etape]` km
-  \item[!] L'entrée du circuit se situe à l'intersection de la 4e Rue Est et de la 14e Avenue Est
-  \end{itemize}
-\end{tcolorbox}
-
-\pagebreak
-
-\subsection{Élévation}
-
-\begin{figure}[H]
-  \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "elev", glue("Etape{Etape}_Full_{lang}.png"))`}
-\end{figure}
-
-
-\begin{figure}[H]
-  \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"))`}
-\end{figure}
-
-\pagebreak
-
-\includepdf[scale=.9]{`r here("guide_FR_PDF", "details", glue("tableau_{Etape}.pdf"))`}
-
-\pagebreak
