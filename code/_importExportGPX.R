@@ -38,7 +38,7 @@ parcours <- map_dfr(1:length(gpx_files), ~st_read(gpx_files[.x], layer = "tracks
 ## points <- st_read("d:/Tour2022_1.gpx", layer = couche[1])
 
 # Correction manuelle (pas accès au gpx sur ridewithgps pour l'instant pour correction)
-parcours$name <- c("Étape 1 - Rouyn-Noranda", "Étape 2 - Val-d'Or", "Étape 3 - CLMI",
+parcours$name <- c("Étape 1 - Val-d'Or ", "Étape 2 - Rouyn-Noranda", "Étape 3 - CLMI",
                    "Étape 4 - Malartic", "Étape 5 - Senneterre",  "Étape 6 - Boucle Preissac",
                     "Étape 7 - La Sarre")
 

@@ -127,14 +127,17 @@ etape = 1
 
  **`r data$Descr_km[etape]`**
 
-- `r data$km_neutres[etape]` km neutralisés au départ   
-- Sans circuit d'arrivée
+- `r data$km_neutres[etape]` km neutralisés au départ  
+- `r data$nb_tours[etape]` tours de circuit d'arrivée long de `r data$km_par_tour[etape]` km
+
 
 
 ----------------------------------------------------
                                               Heure
 ----------------- ----------------------------------
 Départ                     `r data$heure_dep[etape]`
+
+Arrivée en circuit    `r data$heure_arr_circuit[etape]`
 
 Arrivée finale      `r data$heure_arr_finale[etape]`
 ----------------------------------------------------
@@ -157,14 +160,12 @@ etape = 2
  **`r data$Descr_km[etape]`**
 
 - `r data$km_neutres[etape]` km neutralisés au départ
-- `r data$nb_tours[etape]` tours de circuit d'arrivée long de `r data$km_par_tour[etape]` km
+- Sans circuit d'arrivée
 
 ----------------------------------------------------
                                               Heure
 ----------------- ----------------------------------
 Départ                     `r data$heure_dep[etape]`
-
-Arrivée en circuit    `r data$heure_arr_circuit[etape]`
 
 Arrivée finale      `r data$heure_arr_finale[etape]`
 ----------------------------------------------------

@@ -10,8 +10,6 @@ Etape <-2
 
 heureDep <- iti_etape$Details$time_depart[Etape]
 
-heureCircuit <- iti_etape$Details$HeureEntreeVille[Etape]
-
 heureArr <- iti_etape$Details$time_arrivee[Etape]
 
 ```
@@ -38,14 +36,12 @@ glue('<table border=1>
 ## Sommaire
 
 - `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
-- `r iti_etape$Details$Nb_tours[Etape]` tours de circuits de `r iti_etape$Details$KM_par_tours[Etape]` km
+- Sans circuit d'arrivée
 
 ----------------------------------------------------
                                               Heure
 ----------------- ----------------------------------
 Départ                                  `r heureDep`
-
-Arrivée au circuit                      `r heureCircuit`
 
 Arrivée finale                         `r heureArr`
 ----------------------------------------------------

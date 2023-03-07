@@ -9,6 +9,8 @@ Etape <-1
 
 heureDep <- iti_etape$Details$time_depart[Etape]
 
+heureCircuit <- iti_etape$Details$HeureEntreeVille[Etape]
+
 heureArr <- iti_etape$Details$time_arrivee[Etape]
 
 ```
@@ -35,12 +37,15 @@ Le commanditaire d'étape est **`r iti_etape$Details$Commanditaire[Etape]`**.
 ## Sommaire
 
 - `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
-- Sans circuit d'arrivée
+- `r iti_etape$Details$Nb_tours[Etape]` tours de circuits de `r iti_etape$Details$KM_par_tours[Etape]` km
+
 
 ----------------------------------------------------
                                               Heure
 ----------------- ----------------------------------
 Départ                                  `r heureDep`
+
+Arrivée au circuit                      `r heureCircuit`
 
 Arrivée finale                         `r heureArr`
 ----------------------------------------------------
