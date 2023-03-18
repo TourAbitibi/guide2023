@@ -43,7 +43,7 @@ creation_3_map <- function(no_etape,
   # Filtrer sur l'étape à créer
   etape_line <- parcours_stat %>% filter(etape == no_etape)
   
-  # Filtrer sur l'étape à créer et joindre à df_POI  #TODO 
+  # Filtrer sur l'étape à créer et joindre à df_POI 
   POI <- points_stat %>% filter(etape == no_etape)
   
   # Transformer le trajet en points

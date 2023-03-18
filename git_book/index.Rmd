@@ -40,8 +40,9 @@ source(here("code", "_Dates.R"))
 # Pour accès aux données du fichier excel Itineraires.xlsx
 source(here("code","_import_itineraire.R"))
 
-# Pour accès aux tracés
+# Pour accès aux tracés et aux POI d'étapes
 parcours <- st_read(here("gpx","output","parcours.shp"))
+points <- st_read(here("gpx","output","points_parcours.shp"))
 
 # Langue
 lang <- params$langue
@@ -81,4 +82,3 @@ mapview(parcours,
         color = palette.colors(n=7, palette="ggplot2"),
         layer.name = "Étape")
 ```
-

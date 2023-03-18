@@ -136,25 +136,25 @@ rule R03_importExportElevation:
 
 # Création des cartes statiques (full, départ, arrivée) et réduction de leur taille
 # En pause pendant création
-rule R11_creationCartesStatiques:
-    input:
-        "code/_import_itineraire.R",
-        "code/CartesStatiques.R",
-        "excel/Itineraires.xlsx",
-        "gpx/output/parcours.shp"
+# rule R11_creationCartesStatiques:
+#     input:
+#         "code/_import_itineraire.R",
+#         "code/CartesStatiques.R",
+#         "excel/Itineraires.xlsx",
+#         "gpx/output/parcours.shp"
 
-    output:
-        "img/cartes/input/Etape1_Full.png"
-    params:
-        script = "code/CartesStatiques.R"
-    shell:
-        """
-        echo "n  ~~ Création des cartes statiques ~~ \n"
-        {params.script}
-        echo "\n  ~~ Préparation des images png de taille réduite ~~ \n"
-        optipng img/cartes/input/* -dir img/cartes/input/ -o1 -clobber -force -silent
-        echo "\n  ~~ Fin de l'optimisation des cartes png ~~ \n"
-        """
+#     output:
+#         "img/cartes/input/Etape1_Full.png"
+#     params:
+#         script = "code/CartesStatiques.R"
+#     shell:
+#         """
+#         echo "n  ~~ Création des cartes statiques ~~ \n"
+#         {params.script}
+#         echo "\n  ~~ Préparation des images png de taille réduite ~~ \n"
+#         optipng img/cartes/input/* -dir img/cartes/input/ -o1 -clobber -force -silent
+#         echo "\n  ~~ Fin de l'optimisation des cartes png ~~ \n"
+#         """
 
 
 # # Création des graphiques d'élévation

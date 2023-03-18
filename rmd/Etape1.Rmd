@@ -54,15 +54,67 @@ Arrivée finale                         `r heureArr`
 
 ```{r, echo = FALSE, eval = TRUE}
 
-map <- mapview(parcours[Etape,],
-        layer.name = "Parcours",
-        color = couleurs$bleuTour,
-        alpha = 0.7,
-        map.types = "OpenStreetMap",
-        lwd = 3,
-        legend = FALSE)
 
-map@map
+# Fonction pour affichage carte typique étape 
+carte_dynamique_etape <- function(no_etape = 1){
+  
+  # Filtrer sur l'étape à créer et joindre à df_POI
+  POI <- points %>% filter(etape == no_etape)
+  
+  # POI is empty ?
+  poi_isEmpty <- nrow(POI) %>% as.integer()==0
+    
+  # Filtrer sur l'étape à créer
+  etape_line <- parcours %>% filter(etape == no_etape)
+    
+  # Points arrivée
+  pt_arrivee <- st_as_sf(st_cast(st_geometry(etape_line), to = "POINT")) %>% 
+    tail(n=1) %>% 
+    rename(geometry = x) %>% 
+    mutate(label_fr = "Arrivée Finale",
+           label_en = "Finish",
+           labels = "Fin",
+           etape = no_etape,
+           name = "Arrivée Finale / Finish")
+    
+  # Création carte
+  map_parcous <-mapview(parcours[Etape,],
+                      layer.name = "Parcours",
+                      color = couleurs$bleuTour,
+                      alpha = 0.7,
+                      map.types = "OpenStreetMap",
+                      lwd = 3,
+                      legend = FALSE)
+  map_POI <- NULL
+  map_POI <- if(!poi_isEmpty){
+            mapview(POI ,
+                    layer.name = "POI",
+                    color = POI$color,
+                    col.regions = POI$color,
+                    alpha = 0.0,
+                    map.types = "OpenStreetMap",
+                    lwd = 3,
+                    legend = FALSE,
+                    homebutton = FALSE)
+  }
+    
+  map_arrivee <- mapview(pt_arrivee ,
+                        layer.name = "Fin",
+                        color = couleurs$brunMaillot,
+                        col.regions = couleurs$brunMaillot,
+                        alpha = 0.0,
+                        map.types = "OpenStreetMap",
+                        lwd = 3,
+                        legend = FALSE,
+                        homebutton = FALSE)
+  
+  map <- map_parcous + map_POI + map_arrivee
+
+  map@map 
+}
+
+
+carte_dynamique_etape(Etape)
 
 ```
 

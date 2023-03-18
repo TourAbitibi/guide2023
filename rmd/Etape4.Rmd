@@ -1,11 +1,11 @@
 <!-- Besoin de changer le # de la ville du titre et la variable Etape  -->
 
-# Étape 2 : `r iti_etape$Details$Descr_Villes[2]`
+# Étape 4 : `r iti_etape$Details$Descr_Villes[4]`
 
 
 
 ```{r, echo=FALSE}
-Etape <-2
+Etape <-4
 
 
 heureDep <- iti_etape$Details$time_depart[Etape]
@@ -26,7 +26,7 @@ glue('<table border=1>
 
 <br/>
 
-**`r dates_FR %>% filter(code=="Mer") %>% pull(jsem_jour_mois_an)`** 
+**`r dates_FR %>% filter(code=="Jeu") %>% pull(jsem_jour_mois_an)`** 
 
  **`r iti_etape$Details$KM_Total[Etape]` km**
 
