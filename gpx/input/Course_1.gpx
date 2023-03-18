@@ -1,14 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd" version="1.1" creator="http://ridewithgps.com/">
   <metadata>
-    <name>Tour 2022 - Étape 2 - VD - Amos</name>
-    <link href="https://ridewithgps.com/routes/39641884">
-      <text>Tour 2022 - Étape 2 - VD - Amos</text>
+    <name>Tour 2023 - Étape 1 - VD - Amos (course)</name>
+    <link href="https://ridewithgps.com/routes/42268509">
+      <text>Tour 2023 - Étape 1 - VD - Amos (course)</text>
     </link>
-    <time>2022-05-31T20:11:53Z</time>
+    <time>2023-03-18T11:06:03Z</time>
   </metadata>
+  <wpt lon="-77.78502169287971" lat="48.10793507865493">
+    <name>Voie ferrée / Railroad</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.77241703504237" lat="48.12748367734701">
+    <name>Départ officiel / Official start</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.65321912919894" lat="48.21437164700984">
+    <name>KOM Sprint</name>
+    <cmt>Coin chemin Fortier</cmt>
+    <desc>Coin chemin Fortier</desc>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.63740655674157" lat="48.43825159690123">
+    <name>Voie ferrée / Railroad</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.63739" lat="48.44503916107788">
+    <name>Sprint bonifications / Bonus sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.80954117946588" lat="48.54732643014073">
+    <name>KOM Sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.91638954649797" lat="48.5472899">
+    <name>Voie ferrée / Railroad</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.94842800700695" lat="48.54726718063687">
+    <name>Sprint bonifications / Bonus sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.63740871556061" lat="48.49363568576854">
+    <name>Ravito ouvert / Feed open</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.10523530274457" lat="48.56035962650352">
+    <name>Ravito voiture fermé / Feed from car closed</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.11597863697887" lat="48.57358469066883">
+    <name>Arrivée / Finish</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.95747936836314" lat="48.54726644874483">
+    <name>Zone déchets / Trash zone</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
   <trk>
-    <name>Tour 2022 - Étape 2 - VD - Amos</name>
+    <name>Tour 2023 - Étape 1 - VD - Amos (course)</name>
     <trkseg>
       <trkpt lat="48.10442" lon="-77.7836">
         <ele>306.8</ele>

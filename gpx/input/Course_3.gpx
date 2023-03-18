@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd" version="1.1" creator="http://ridewithgps.com/">
   <metadata>
-    <name>Tour 2022 - Étape 3 CLMI</name>
-    <link href="https://ridewithgps.com/routes/39642105">
-      <text>Tour 2022 - Étape 3 CLMI</text>
+    <name>Tour 2023 - Étape 3 CLMI (course)</name>
+    <link href="https://ridewithgps.com/routes/42268563">
+      <text>Tour 2023 - Étape 3 CLMI (course)</text>
     </link>
-    <time>2022-05-31T20:47:43Z</time>
+    <time>2023-03-18T11:13:12Z</time>
   </metadata>
   <trk>
-    <name>Tour 2022 - Étape 3 CLMI</name>
+    <name>Tour 2023 - Étape 3 CLMI (course)</name>
     <trkseg>
       <trkpt lat="48.57332" lon="-78.11601">
         <ele>306.4</ele>

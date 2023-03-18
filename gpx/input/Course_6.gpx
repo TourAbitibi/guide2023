@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd" version="1.1" creator="http://ridewithgps.com/">
   <metadata>
-    <name>Tour 2022 - Étape 6 - Boucle Preissac</name>
-    <link href="https://ridewithgps.com/routes/39650118">
-      <text>Tour 2022 - Étape 6 - Boucle Preissac</text>
+    <name>Tour 2023 - Étape 6 - Boucle Preissac (course)</name>
+    <link href="https://ridewithgps.com/routes/42268538">
+      <text>Tour 2023 - Étape 6 - Boucle Preissac (course)</text>
     </link>
-    <time>2022-06-01T12:55:29Z</time>
+    <time>2023-03-18T11:09:48Z</time>
   </metadata>
+  <wpt lon="-78.11594849162695" lat="48.57122307259828">
+    <name>Voie Ferrée / Railroad</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.13109977956692" lat="48.560372806350635">
+    <name>Départ officiel / Official start</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.12748000000002" lat="48.43409888235229">
+    <name>KOM Sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.15542999999998" lat="48.32774016506129">
+    <name>Sprint du maire / Mayor's sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.21411321842835" lat="48.24037057953784">
+    <name>Sprint bonifications / Bonus sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.35055685760958" lat="48.23054631427384">
+    <name>Ravito ouvert / Feed open</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.38999805951077" lat="48.226629810927285">
+    <name>Sprint bonifications / Bonus sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.39345365565738" lat="48.32000580697592">
+    <name>KOM Sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.36807546171674" lat="48.407505050704074">
+    <name>Sprint du maire / Mayor's sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.30428660206522" lat="48.517919356158544">
+    <name>Ravito fermé / Feed closed</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.3667119797577" lat="48.408843966491">
+    <name>Zone déchets / Trash zone</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
   <trk>
-    <name>Tour 2022 - Étape 6 - Boucle Preissac</name>
+    <name>Tour 2023 - Étape 6 - Boucle Preissac (course)</name>
     <trkseg>
       <trkpt lat="48.57337" lon="-78.11601">
         <ele>306.4</ele>

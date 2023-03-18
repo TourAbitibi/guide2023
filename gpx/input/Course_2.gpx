@@ -1,14 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd" version="1.1" creator="http://ridewithgps.com/">
   <metadata>
-    <name>Tour 2022 - Étape 1 - RN- Amos</name>
-    <link href="https://ridewithgps.com/routes/39641737">
-      <text>Tour 2022 - Étape 1 - RN- Amos</text>
+    <name>RN - Amos via Aiguebelle (course)</name>
+    <link href="https://ridewithgps.com/routes/42099075">
+      <text>RN - Amos via Aiguebelle (course)</text>
     </link>
-    <time>2022-05-31T19:42:17Z</time>
+    <time>2023-02-26T14:22:24Z</time>
   </metadata>
+  <wpt lon="-78.97331089601386" lat="48.254781107235">
+    <name>Départ officiel / Official start</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-79.04242218118785" lat="48.29962345389432">
+    <name>KOM Sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.85320380340464" lat="48.36072783184558">
+    <name>KOM Sprint</name>
+    <cmt>KOM</cmt>
+    <desc>KOM</desc>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.71450769001265" lat="48.36563310095575">
+    <name>Sprint bonifications / Bonus sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.64357192957242" lat="48.494927718879964">
+    <name>Sprint du maire / Mayor's sprint</name>
+    <cmt>Coin route Aiguebelle 12</cmt>
+    <desc>Coin route Aiguebelle 12</desc>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.68115902355092" lat="48.66244146547762">
+    <name>Voie ferrée / Railroad</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.64325" lat="48.6526149276633">
+    <name>Voie Ferrée / Railroad</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.53784457335311" lat="48.645053255046165">
+    <name>Sprint du maire / Mayor's sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.388249970627" lat="48.63178610834192">
+    <name>Voie ferrée oblique / Oblique railroad</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.30770024266128" lat="48.62006244286272">
+    <name>Sprint bonifications / Bonus sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.11600717852701" lat="48.57325030458755">
+    <name>Arrivée / Finish</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.66268007691683" lat="48.4319349449312">
+    <name>Ravito ouvert / Feed open</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.33427590710487" lat="48.6305603474582">
+    <name>Ravito fermé / Feed closed</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.71650848016697" lat="48.37164591604355">
+    <name>Pont de bois / Wood bridge</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.69213812258357" lat="48.66159907835384">
+    <name>Zone déchêts / Trash zone</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
   <trk>
-    <name>Tour 2022 - Étape 1 - RN- Amos</name>
+    <name>RN - Amos via Aiguebelle (course)</name>
     <trkseg>
       <trkpt lat="48.22813" lon="-79.00819">
         <ele>290.6</ele>

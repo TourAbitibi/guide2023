@@ -1,14 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd" version="1.1" creator="http://ridewithgps.com/">
   <metadata>
-    <name>Tour 2022 - Étape 5 - Senneterre</name>
-    <link href="https://ridewithgps.com/routes/39569524">
-      <text>Tour 2022 - Étape 5 - Senneterre</text>
+    <name>Étape 5 - Senneterre</name>
+    <link href="https://ridewithgps.com/routes/42268449">
+      <text>Étape 5 - Senneterre</text>
     </link>
-    <time>2022-05-26T10:13:50Z</time>
+    <time>2023-03-18T10:57:58Z</time>
   </metadata>
+  <wpt lon="-77.65571661004068" lat="48.19880871462659">
+    <name>Feed open</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.65572730730243" lat="48.18547467997872">
+    <name>Sprint du maire / Mayor's sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.30816386826656" lat="48.39007424909255">
+    <name>Official start</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.26132925323111" lat="48.390070000000016">
+    <name>Voie ferrée / Railroad</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.76563987971495" lat="48.10748902144526">
+    <name>Voie ferrée / Railroad</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.74936052125906" lat="48.14607758919421">
+    <name>Sprint bonification / Bonus Sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.31933445937031" lat="48.272411945892884">
+    <name>Feed closed</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.62515221014466" lat="48.34095232065665">
+    <name>KOM sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.77585430909772" lat="48.11234162090319">
+    <name>Voie ferrée / Railroad</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.48889171915216" lat="48.09510242952587">
+    <name>KOM Sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.35647826086587" lat="48.2083436761908">
+    <name>Sprint du maire / Mayor's sprint</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.22246546873976" lat="48.36120902594558">
+    <name>Arrivée / Finish</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.35383349667028" lat="48.40215310801556">
+    <name>Sprint bonifications / Bonus Sprint</name>
+    <cmt>Coin rue Goulet</cmt>
+    <desc>Coin rue Goulet</desc>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-77.77978562103594" lat="48.12373892114167">
+    <name>Zone déchets / Trash zone</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
   <trk>
-    <name>Tour 2022 - Étape 5 - Senneterre</name>
+    <name>Étape 5 - Senneterre</name>
     <trkseg>
       <trkpt lat="48.3902" lon="-77.24063">
         <ele>305.9</ele>

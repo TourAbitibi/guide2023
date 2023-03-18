@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd" version="1.1" creator="http://ridewithgps.com/">
   <metadata>
-    <name>Tour 2022 Etape 4 - Cadillac</name>
-    <link href="https://ridewithgps.com/routes/39889304">
-      <text>Tour 2022 Etape 4 - Cadillac</text>
+    <name>Tour 2023 - Etape 4 - Malartic (course)</name>
+    <link href="https://ridewithgps.com/routes/42268527">
+      <text>Tour 2023 - Etape 4 - Malartic (course)</text>
     </link>
-    <time>2022-06-19T20:41:18Z</time>
+    <time>2023-03-18T11:08:15Z</time>
   </metadata>
+  <wpt lon="-78.12725000000002" lat="48.15298183759389">
+    <name>Départ officiel / Official start</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.21348115438543" lat="48.232219303325735">
+    <name>Sprint du maire / Mayor's sprint (à l'aller et au retour / out and back)</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
   <trk>
-    <name>Tour 2022 Etape 4 - Cadillac</name>
+    <name>Tour 2023 - Etape 4 - Malartic (course)</name>
     <trkseg>
       <trkpt lat="48.14136" lon="-78.12246">
         <ele>322.7</ele>
