@@ -30,21 +30,19 @@ gpx_files <- sort(list.files(path = path,
                              pattern = "^Course.*gpx$",
                              full.names = TRUE))
 
-# Import et concaténation des GPX
-parcours <- map_dfr(1:length(gpx_files), ~st_read(gpx_files[.x], layer = "tracks")) %>% 
-  select(name)
+# Import et concaténation des GPX - parcours  (couche tracks)
+parcours <- map_dfr(1:length(gpx_files), ~st_read(gpx_files[.x], layer = "tracks"), .id = "etape") %>% 
+  mutate(etape = as.double(etape)) %>% 
+  select(etape, name )
 
-# manque les données Points sans abonnement premium - à suivre
-## points <- st_read("d:/Tour2022_1.gpx", layer = couche[1])
 
 # Correction manuelle (pas accès au gpx sur ridewithgps pour l'instant pour correction)
 parcours$name <- c("Étape 1 - Val-d'Or ", "Étape 2 - Rouyn-Noranda", "Étape 3 - CLMI",
                    "Étape 4 - Malartic", "Étape 5 - Senneterre",  "Étape 6 - Boucle Preissac",
                     "Étape 7 - La Sarre")
 
-# Sortir le numéro de l'étape à partir du nom
+# Joindre les détails en provenance du fichier excel (details)
 parcours <- parcours %>% 
-  mutate(etape = str_replace(name, "Étape (\\d).*", "\\1") %>% as.double()) %>% 
   left_join(y=details, by = "etape") %>% 
   select(etape, name, Jour, Date, time_depart, time_arrivee, Descr_km, KM_Total, KM_Neutres, 
           Nb_tours, KM_par_tours) %>% 
@@ -56,8 +54,33 @@ parcours <- parcours %>%
 # Correction CRS
 parcours <- st_transform(parcours, crs = 32198)
 
+################################################################################
 
-# Sauvegarde
+# Points POI liés au GPX  (couche waypoints)
+## Utilisation de mots clés [KOM, Bonus, Maire] dans le name du POI pour sortir les points à afficher
+points <- map_dfr(1:length(gpx_files), ~st_read(gpx_files[.x], layer = "waypoints"), .id = "etape") %>% 
+  mutate(etape = as.double(etape),
+         type = case_when(  str_detect(tolower(name), "start" ) ~ "Depart",
+                            str_detect(tolower(name), "kom" ) ~ "KOM",
+                            str_detect(tolower(name), "bonus" ) ~ "Bonus",
+                            str_detect(tolower(name), "maire" ) ~ "Maire",
+                            TRUE ~ NA_character_)) %>% 
+  drop_na(type) %>% 
+  select(etape, name, type)
+
+
+# Correction CRS
+points <- st_transform(points, crs = 32198)
+
+# Enregistrement des points comme .shp
+st_write(points,
+         here("gpx/output/points_parcours.shp"),
+         append=FALSE) 
+
+
+################################################################################
+
+# Sauvegarde parcours
 sauvegarde_requise <- function(){
   st_write(parcours,
          here("gpx/output/parcours.shp"),
