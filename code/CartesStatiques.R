@@ -76,9 +76,8 @@ creation_3_map <- function(no_etape,
                shape = 21,
                col = "color")+
     tm_text(text = "labels",
-            size = 0.5,
+            size = 0.7,
             ymod =0.8,
-            alpha = 0.8,
             col = couleurs$bleuTour)+
     
     # Ajout point arrivée
