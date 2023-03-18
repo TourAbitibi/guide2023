@@ -60,13 +60,15 @@ parcours <- st_transform(parcours, crs = 32198)
 ## Utilisation de mots clés [KOM, Bonus, Maire] dans le name du POI pour sortir les points à afficher
 points <- map_dfr(1:length(gpx_files), ~st_read(gpx_files[.x], layer = "waypoints"), .id = "etape") %>% 
   mutate(etape = as.double(etape),
-         type = case_when(  str_detect(tolower(name), "start" ) ~ "Depart",
-                            str_detect(tolower(name), "kom" ) ~ "KOM",
-                            str_detect(tolower(name), "bonus" ) ~ "Bonus",
-                            str_detect(tolower(name), "maire" ) ~ "Maire",
+         values = case_when(  str_detect(tolower(name), "start" ) ~ "Green",  # même noms que df_POI
+                            str_detect(tolower(name), "kom" ) ~ "Climb",
+                            str_detect(tolower(name), "bonus" ) ~ "Sprint",
+                            str_detect(tolower(name), "maire" ) ~ "Mayor",
                             TRUE ~ NA_character_)) %>% 
-  drop_na(type) %>% 
-  select(etape, name, type)
+  drop_na(values) %>% 
+  select(etape, name, values) %>% 
+  left_join(y = df_POI, by = "values") %>% 
+  rename(type = values) 
 
 
 # Correction CRS

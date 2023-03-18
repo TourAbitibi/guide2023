@@ -8,11 +8,6 @@
 #                                                                                       #
 #########################################################################################
 
-# - [x] à ajouter à snakefile
-# - [x] modifier CLMI
-# - [x] ajouter des points départs / arrivée
-# - [ ] ajout des KOM / Sprint sur carte_full
-
 here::i_am("guide2023.Rproj")
 
 source(here::here("code","/_LibsVars.R"))
@@ -24,12 +19,13 @@ library(rosm)
 library(tmap)
 
 
-# Lecture du shapefile enregistré contenant les parcours 
+# Lecture du shapefile enregistré contenant les parcours et les points
 parcours <- st_read(here("gpx/output/parcours.shp"))
+points <- st_read(here("gpx/output/points_parcours.shp"))
 
 # Modification du CRS pour fonctionnement avec OSM
 parcours_stat <- st_transform(parcours, crs = 4326)
-
+points_stat <- st_transform(points, crs = 4326)
 ################################################################################
 ################################################################################
 
@@ -47,12 +43,16 @@ creation_3_map <- function(no_etape,
   # Filtrer sur l'étape à créer
   etape_line <- parcours_stat %>% filter(etape == no_etape)
   
+  # Filtrer sur l'étape à créer et joindre à df_POI  #TODO 
+  POI <- points_stat %>% filter(etape == no_etape)
+  
   # Transformer le trajet en points
   etape_points <- st_as_sf(st_cast(st_geometry(etape_line), to = "POINT")) 
   
   # Points départ et arrivée
   pt_depart <- etape_points %>% head(n=1)
   pt_arrivee <- etape_points %>% tail(n=1)
+  
   
   # Carte complète
   map <- etape_line %>% 
@@ -69,11 +69,19 @@ creation_3_map <- function(no_etape,
     # ajout d'une rose des vents
     tm_compass(type = "arrow", 
                position = c(pos_h_arrow, pos_v_arrow)) +
-    # Ajout point de départ (vert) et arrivée (rouge)
-    tm_shape(pt_depart)+
+    # Ajout point de départ réel, KOM, Bonus, Maire
+    
+    tm_shape(POI)+
     tm_symbols(size = 0.8, 
                shape = 21,
-               col = couleurs$depart)+
+               col = "color")+
+    tm_text(text = "labels",
+            size = 0.5,
+            ymod =0.8,
+            alpha = 0.8,
+            col = couleurs$bleuTour)+
+    
+    # Ajout point arrivée
     tm_shape(pt_arrivee)+
     tm_symbols(size = 0.8, 
                shape = 23,

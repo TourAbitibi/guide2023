@@ -72,11 +72,11 @@ list_etapes <- unlist(map(1:7, ~glue("Etape{.x}")))
 list_etapes <- ordered(list_etapes, levels = list_etapes)
 
 df_POI <- tribble(
-  ~label_fr,      ~label_en,      ~values,  ~color,
-  "Départ",       "Start",        "Green",  couleurs$depart,
-  "GPM",          "KOM",          "Climb",  couleurs$vertMaillot,
-  "Sprint Bonif", "Bonif Sprint", "Sprint", couleurs$orangeMaillot,
-  "Sprint Maire", "Mayor Spritn", "Mayor",  couleurs$blueSprintMaire,
-  "Arrivée",      "Finish",       "Finish", couleurs$brunMaillot
+  ~label_fr,      ~label_en,      ~values,  ~labels, ~color,
+  "Départ",       "Start",        "Green",  "",      couleurs$depart,
+  "GPM",          "KOM",          "Climb",  "KOM",   couleurs$vertMaillot,
+  "Sprint Bonif", "Bonif Sprint", "Sprint", "Bonus", couleurs$orangeMaillot,
+  "Sprint Maire", "Mayor Sprint", "Mayor",  "$$",    couleurs$blueSprintMaire,
+  "Arrivée",      "Finish",       "Finish", "Fin",   couleurs$brunMaillot
 ) %>% 
   mutate(values = ordered(values, levels = values))
