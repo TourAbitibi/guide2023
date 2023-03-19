@@ -53,7 +53,7 @@
     <type>Dot</type>
   </wpt>
   <wpt lon="-79.01705763065964" lat="48.265253353406834">
-    <name>SQ</name>
+    <name>sign_08</name>
     <cmt>Contrôle circulation giratoire</cmt>
     <desc>Contrôle circulation giratoire</desc>
     <sym>Dot</sym>
