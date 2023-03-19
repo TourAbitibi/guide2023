@@ -40,6 +40,7 @@ rule Z_targets:
 
         "img/cartes/input/Etape1_Full.png",
         "img/elev/Etape1_Full_FR.png",
+        "img/cartes/sign/E1_sign_01.png",
 
         "excel/Itineraires.xlsx",
         "excel/signalisation.xlsx",
@@ -206,6 +207,26 @@ rule R31_importExportGPX_Signalisation:
         {params.script}
         """
 
+rule R32_creationVignetteSignalisation:
+    input:
+        "code/_importExportGPX_Signalisation.R",
+        "code/CartesStatiquesSignalisation.R",
+        "excel/signalisation.xlsx",
+        "gpx/output/points_signalisation.shp",
+        "gpx/output/points_signalisation.dbf"
+    output:
+        "img/cartes/sign/E1_sign_01.png"
+    params:
+        script = "code/CartesStatiquesSignalisation.R"
+    shell:
+        """
+        echo "n  ~~ Création des cartes statiques ~~ \n"
+        {params.script}
+        echo "\n  ~~ Préparation des images png de taille réduite ~~ \n"
+        optipng img/cartes/sign/*.png -dir img/cartes/sign/ -o1 -clobber -force
+        echo "\n  ~~ Fin de l'optimisation des cartes png ~~ \n"
+        """
+
 
 
 ##########################################################################################################################
@@ -326,7 +347,8 @@ rule R99_NAS_copy:
         "resume_prog/prog.html",
         "git_book/_book/index.html",
         "img/cartes/input/Etape1_Full.png",
-        "img/elev/Etape1_Full_FR.png"
+        "img/elev/Etape1_Full_FR.png",
+        "img/cartes/sign/E1_sign_01.png"
     output:
         "/Volumes/web/guide/index.html",
         "/Volumes/web/guide/prog/index.html",
