@@ -42,6 +42,7 @@ rule Z_targets:
         "img/elev/Etape1_Full_FR.png",
 
         "excel/Itineraires.xlsx",
+        "excel/signalisation.xlsx",
         "excel/feuilleroute.xlsx",
         "excel/staff.xlsx",
         "excel/repas.xlsx",
@@ -57,8 +58,13 @@ rule Z_targets:
         "gpx/input/Course_6.gpx",
         "gpx/input/Course_7.gpx",
 
+        "gpx/input/Signalisation_1.gpx",
+        "gpx/input/Signalisation_2.gpx",
+
         "gpx/output/parcours.shp", "gpx/output/parcours.dbf",
         "gpx/output/parcours.prj", "gpx/output/parcours.shx",
+
+        "gpx/output/points_signalisation.shp", "gpx/output/points_signalisation.dbf", "gpx/output/points_signalisation.prj", "gpx/output/points_signalisation.shx",
 
         "rasterElevation/elv_parcours.tif"
 
@@ -174,6 +180,29 @@ rule R12_creationGraphElevation:
     shell:
         """
         echo "\n   ~~ Création des graphiques d'élévation ~~ \n"
+        {params.script}
+        """
+
+##########################################################################################################################
+##########################################################################################################################
+#
+# Préparations des données de signalisation
+#
+##########################################################################################################################
+##########################################################################################################################
+
+
+
+rule R31_importExportGPX_Signalisation:
+    input:
+        "code/_importExportGPX_Signalisation.R", "excel/Itineraires.xlsx", "excel/signalisation.xlsx",
+        "gpx/input/Signalisation_1.gpx", "gpx/input/Signalisation_2.gpx"
+    output:
+        "gpx/output/points_signalisation.shp", "gpx/output/points_signalisation.dbf", "gpx/output/points_signalisation.prj", "gpx/output/points_signalisation.shx"
+    params:
+        script = "code/_importExportGPX_Signalisation.R"
+    shell:
+        """ 
         {params.script}
         """
 
