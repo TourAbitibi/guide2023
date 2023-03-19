@@ -30,20 +30,18 @@ gpx_files <- sort(list.files(path = path,
                              pattern = "^Course.*gpx$",
                              full.names = TRUE))
 
+# Liste des étapes présentes en gpx (en fx du chiffre dans le nom du Course_x.gpx)
+gpx_files_stages <- str_replace(gpx_files, ".*_(\\d).gpx", "\\1") %>% as.double()
+
 # Import et concaténation des GPX - parcours  (couche tracks)
-parcours <- map_dfr(1:length(gpx_files), ~st_read(gpx_files[.x], layer = "tracks"), .id = "etape") %>% 
+parcours <- map_dfr(gpx_files_stages, ~st_read(gpx_files[.x], layer = "tracks"), .id = "etape") %>% 
   mutate(etape = as.double(etape)) %>% 
   select(etape, name )
-
-
-# Correction manuelle (pas accès au gpx sur ridewithgps pour l'instant pour correction)
-parcours$name <- c("Étape 1 - Val-d'Or ", "Étape 2 - Rouyn-Noranda", "Étape 3 - CLMI",
-                   "Étape 4 - Malartic", "Étape 5 - Senneterre",  "Étape 6 - Boucle Preissac",
-                    "Étape 7 - La Sarre")
 
 # Joindre les détails en provenance du fichier excel (details)
 parcours <- parcours %>% 
   left_join(y=details, by = "etape") %>% 
+  mutate(name = Nom_Courts_FR) %>% 
   select(etape, name, Jour, Date, time_depart, time_arrivee, Descr_km, KM_Total, KM_Neutres, 
           Nb_tours, KM_par_tours) %>% 
   rename_all(tolower) %>% 
@@ -58,7 +56,7 @@ parcours <- st_transform(parcours, crs = 32198)
 
 # Points POI liés au GPX  (couche waypoints)
 ## Utilisation de mots clés [KOM, Bonus, Maire] dans le name du POI pour sortir les points à afficher
-points <- map_dfr(1:length(gpx_files), ~st_read(gpx_files[.x], layer = "waypoints"), .id = "etape") %>% 
+points <- map_dfr(gpx_files_stages, ~st_read(gpx_files[.x], layer = "waypoints"), .id = "etape") %>% 
   mutate(etape = as.double(etape),
          values = case_when(  str_detect(tolower(name), "start" ) ~ "Green",  # même noms que df_POI
                             str_detect(tolower(name), "kom" ) ~ "Climb",
