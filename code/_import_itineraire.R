@@ -143,12 +143,84 @@ tableau_Descrip_Etape <- function(Etape = 1, language = "FR"){
 }
 
 
-# Pour test : 
+# Fonction pour obtenir les POIs de signalisation d'une étape
+POIs_signalisation <- function(Etape = 1){
+  
+  points_signalisation %>% 
+    filter(etape == Etape) %>% 
+    as_tibble() %>% 
+    arrange(KM_reel, sign_id) %>% 
+    select(KM_reel, 
+           ID = sign_id,
+           Détails = details,
+           Type = type,
+           Fonction = fonct,
+           Responsable = resp,
+           image) %>% 
+    mutate( Type = case_when( Type == "terre_plein" ~ "Terre-plein",
+                              Type == "virage_intersection" ~ "Virage / intersection",
+                              Type == "section_gravier" ~ "Section Gravier",
+                              Type == "danger" ~ "Danger",
+                              TRUE ~ Type),
+            Fonction = case_when( Fonction == "signaleur_fixe" ~ "Signaleur Fixe",
+                                  Fonction == "signaleur_moto" ~ "Signaleur Moto",
+                                  Fonction == "signalisation_seulement" ~ "Signalisation seulement",
+                                  TRUE ~ Fonction),
+            Responsable = case_when( Responsable == "ville_depart" ~ "Ville - Départ",
+                                     Responsable == "sq_locale" ~ "SQ - Ville Départ",
+                                     Responsable == "sq_hotesse" ~ paste0("SQ - ", params$ville),
+                                     Responsable == "sq_usg" ~ "SQ - USG",
+                                     Responsable == "signaleur_moto" ~ "Signaleur - Moto",
+                                     Responsable == "signaleur_autre" ~ "Signaleur - Autre",
+                                     Responsable == "CO_benevole" ~ "Bénévole - CO",
+                                     TRUE ~ Responsable)) 
+  
+}
 
-# tableau_Descrip_Etape(1, "FR") 
+# Fonction pour obtenir le tableau Kable des POIs de signalisation
+POIs_tableau <- function(POIs) {
+  
+  POIs %>% 
+    select(- image) %>% 
+    rename("KM Réel" = KM_reel) %>% 
+    kbl(escape = F, 
+        align = c(rep('c', times = 6))) %>% 
+    kable_styling("striped",
+                  full_width = T, 
+                  font_size = 16) %>% 
+    # Conditions des colonnes
+    column_spec(1, bold = T) %>% 
+    
+    # Conditions rangées
+    row_spec(which(POIs$Type == "Danger",), bold = F, color = couleurs$rougeDanger )
+  
+}
 
-# -[x] unicode de flèches et info ne fonctionnent pas sous mac actuellement 
-# -[x] Comment passer des commandes html (comme breakline) ? kbl(escape = F)
-# - [x] Comment passer un emoji/ flèche dans le tableau ?? html code, voir fichier excel
-# - [x] Possible de sauvegarder le tableau en tiff, png,.. pour faciliter import dans un rapport pdf ?
-#         --> %>% save_kable("img/tableau_Etape1.png" )
+# Fonction pour affichage du détail de chaque point de signalisation
+
+P_sign_detail_1 <- function(P){
+  
+  P %>% 
+    select(KM_reel, Détails)%>% 
+    rename("KM Réel" = KM_reel) %>% 
+    kbl(escape = F, 
+        align = c('c', 'l')) %>% 
+    kable_styling("striped",
+                  full_width = T, 
+                  font_size = 16) %>% 
+    # Conditions des colonnes
+    column_spec(1, bold = T)
+  
+}
+
+P_sign_detail_2 <- function(P){
+  
+  P %>% 
+    select(Type, Fonction, Responsable)%>% 
+    kbl(escape = F, 
+        align = c('c', 'c', 'c')) %>% 
+    kable_styling("striped",
+                  full_width = T, 
+                  font_size = 16)
+  
+}

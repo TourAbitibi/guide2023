@@ -3,6 +3,7 @@
 
 web/FR
 web/EN
+web/organisateur
 web/img
 web/prog
 web/index.html
@@ -12,6 +13,12 @@ git_book/guide2023.Rmd
 git_book/_book
 git_book/guide2023_files
 git_book/img
+
+git_book_organisateur/guide2023.Rmd
+git_book_organisateur/_book
+git_book_organisateur/guide2023_files
+git_book_organisateur/guide_organisateur_files
+git_book_organisateur/img
 
 resume_prog/prog_files
 resume_prog/prog.html

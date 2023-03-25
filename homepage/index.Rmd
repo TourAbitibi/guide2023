@@ -26,6 +26,6 @@ output:
 
 <br/>
 
-[Documentation de l'organisateur](ORG/)
+[Documentation de l'organisateur](organisateur/)
 
 <br/>

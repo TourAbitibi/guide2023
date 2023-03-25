@@ -11,7 +11,9 @@
 rule Z_targets:
     input:
         "git_book/_book/index.html",
+        "git_book_organisateur/_book/index.html",
         "/Volumes/web/guide/FR/index.html",
+        "/Volumes/web/guide/organisateur/index.html",
         "homepage/index.html",
         "homepage/index.Rmd",
         "resume_prog/prog.Rmd",
@@ -337,6 +339,57 @@ rule R53_render_prog_prelim:
         """
 
 
+rule R54_render_book_organisateur:
+    input:
+        "code/programmation.R",
+
+        "gpx/output/parcours.shp",
+
+        # "img/cartes/intput/Etape1_Full.png",
+
+        "excel/staff.xlsx",
+        "excel/Itineraires.xlsx",
+        "excel/feuilleroute.xlsx",
+        "excel/repas.xlsx",
+        "excel/locaux.xlsx",
+
+        "script/render_book.R",
+        "git_book_organisateur/_bookdown.yml",
+        "git_book_organisateur/_output.yml",
+
+        "git_book_organisateur/index.Rmd",
+        "rmd/MotsBienvenue.Rmd",
+        "rmd/Programmation.Rmd",
+        "rmd/CO.Rmd",
+        "rmd/FeuillesRoute.Rmd",
+        "rmd/Etape1.Rmd",
+        "rmd/Etape2.Rmd",
+        "rmd/Reglements.Rmd",
+        "rmd/CirculationCourse.Rmd",
+        "rmd/Repas.Rmd",
+        "rmd/Locaux.Rmd"
+    output:
+        "git_book_organisateur/_book/index.html",
+        "web/organisateur/index.html"
+    params:
+        guide_path = "git_book_organisateur"
+    shell:
+        """
+        Rscript -e "bookdown::render_book('{params.guide_path}')"
+
+        # Créer les fichiers
+        mkdir -p web/organisateur web/img
+
+        # Copier les données html
+        cp -R {params.guide_path}/_book/* web/organisateur
+
+        # Copier les images
+        #cp -R {params.guide_path}/img/* web/img
+        cp -R img/* web/img
+
+        echo "\nGuide d'organisateur disponible au : /Users/brunogauthier/Documents/guide2023/web/organisateur/index.html\n"
+        """
+
 
 #################################################################################################################
 
@@ -346,18 +399,21 @@ rule R99_NAS_copy:
         "homepage/index.html",
         "resume_prog/prog.html",
         "git_book/_book/index.html",
+        "git_book_organisateur/_book/index.html",
         "img/cartes/input/Etape1_Full.png",
         "img/elev/Etape1_Full_FR.png",
         "img/cartes/sign/E1_sign_01.png"
     output:
         "/Volumes/web/guide/index.html",
         "/Volumes/web/guide/prog/index.html",
-        "/Volumes/web/guide/FR/index.html"
+        "/Volumes/web/guide/FR/index.html",
+        "/Volumes/web/guide/organisateur/index.html"
     params:
         home_page = "homepage/index.html",
         prog_prelim = "resume_prog/prog.html",
         prog_prelim_files = "resume_prog/prog_files",
-        script_export_gitbook = "script/script_export_guide.sh"
+        script_export_gitbook = "script/script_export_guide.sh",
+        script_export_organisateur = "script/script_export_organisateur.sh"
     shell:
         """
         echo "\n  ~~ Copie vers NAS ~~ \n"
@@ -372,5 +428,8 @@ rule R99_NAS_copy:
 
         # Transfert git_book vers NAS - Francais
         sh {params.script_export_gitbook} git_book FR
+
+        # Transfert git_book_organisateur vers NAS
+        sh {params.script_export_organisateur}
 
         """
