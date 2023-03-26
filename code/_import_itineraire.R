@@ -142,6 +142,16 @@ tableau_Descrip_Etape <- function(Etape = 1, language = "FR"){
 
 }
 
+# Fonction - calcul de l'heure de passage à un km donné (pour POIs)
+calcul_h_passage <- function(km){
+  
+  duree <- dhours(km /vit_moy_etape)
+  time_passage_moy = dep_etape_time + duree
+  time_passage_moy_h_m = format(time_passage_moy, format= "%H:%M" )
+  
+  return(time_passage_moy_h_m)
+  
+}
 
 # Fonction pour obtenir les POIs de signalisation d'une étape
 POIs_signalisation <- function(Etape = 1){
@@ -195,9 +205,13 @@ POIs_tableau <- function(POIs) {
     column_spec(1, bold = T) %>% 
     
     # Conditions rangées
+    row_spec(which (str_detect(POIs$Responsable, "SQ") ,), bold = F,  color =  couleurs$blueSprintMaire) %>%   #"#006BB7"
+    row_spec(which (str_detect(POIs$Fonction, "Moto") ,), bold = F,  color = couleurs$orangeMaillot ) %>% 
     row_spec(which(POIs$Type == "Danger",), bold = F, color = couleurs$rougeDanger )
-  
 }
+
+
+
 
 # Fonction pour affichage du détail de chaque point de signalisation
 

@@ -1,0 +1,40 @@
+
+## Signalisation - Tableau
+
+```{r, echo = FALSE, eval = TRUE}
+
+# Pour calculs des temps de passage des POIs
+dep_etape_time <- iti_etape$Details[(Etape),] %>% select(dttm_depart) %>% pull()
+vit_moy_etape <- iti_etape$Details[(Etape),] %>% select(Vit_moy) %>% pull()
+
+# Voir _import_itineraire.R pour fonction : calcul_h_passage(km)
+
+# Obtenir tous les POIs de signalisation de l'étape
+POIs <- POIs_signalisation(Etape)
+
+# Création du tableau style 'Kable'
+POIs_tableau_affichage <- POIs_tableau(POIs)
+
+# Affichage du tableau contenant tous les POIs de signalisation de l'étape
+POIs_tableau_affichage
+
+```
+
+
+## Signalisation - Détails
+
+```{r, echo=FALSE, results='asis'}
+
+
+for (poi_idx in seq(nrow(POIs))) {
+  
+  P <- POIs %>% slice(poi_idx)
+  
+  cat( knitr::knit_child(here("rmd","Signalisation_Details.Rmd"), envir = environment(), quiet = TRUE))
+
+}
+
+```
+
+
+
