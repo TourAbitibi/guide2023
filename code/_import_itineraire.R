@@ -150,7 +150,9 @@ POIs_signalisation <- function(Etape = 1){
     filter(etape == Etape) %>% 
     as_tibble() %>% 
     arrange(KM_reel, sign_id) %>% 
+    mutate(time = calcul_h_passage(KM_reel)) %>% 
     select(KM_reel, 
+           time,
            ID = sign_id,
            Détails = details,
            Type = type,
@@ -182,9 +184,10 @@ POIs_tableau <- function(POIs) {
   
   POIs %>% 
     select(- image) %>% 
-    rename("KM Réel" = KM_reel) %>% 
+    rename("KM Réel" = KM_reel,
+           "Heure Passage" = time) %>% 
     kbl(escape = F, 
-        align = c(rep('c', times = 6))) %>% 
+        align = c(rep('c', times = 7))) %>% 
     kable_styling("striped",
                   full_width = T, 
                   font_size = 16) %>% 
@@ -201,10 +204,11 @@ POIs_tableau <- function(POIs) {
 P_sign_detail_1 <- function(P){
   
   P %>% 
-    select(KM_reel, Détails)%>% 
-    rename("KM Réel" = KM_reel) %>% 
+    select(KM_reel, time, Détails)%>% 
+    rename("KM Réel" = KM_reel,
+           "Heure Passage" = time) %>% 
     kbl(escape = F, 
-        align = c('c', 'l')) %>% 
+        align = c('c', 'c','l')) %>% 
     kable_styling("striped",
                   full_width = T, 
                   font_size = 16) %>% 

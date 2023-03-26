@@ -3,6 +3,20 @@
 
 ```{r, echo = FALSE, eval = TRUE}
 
+# Pour calculs des temps de passage des POIs
+dep_etape_time <- iti_etape$Details[(Etape),] %>% select(dttm_depart) %>% pull()
+vit_moy_etape <- iti_etape$Details[(Etape),] %>% select(Vit_moy) %>% pull()
+
+calcul_h_passage <- function(km){
+  
+  duree <- dhours(km /vit_moy_etape)
+  time_passage_moy = dep_etape_time + duree
+  time_passage_moy_h_m = format(time_passage_moy, format= "%H:%M" )
+  
+  return(time_passage_moy_h_m)
+  
+}
+
 # Obtenir tous les POIs de signalisation de l'étape
 POIs <- POIs_signalisation(Etape)
 

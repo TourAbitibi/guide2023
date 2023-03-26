@@ -13,6 +13,7 @@ heureCircuit <- iti_etape$Details$HeureEntreeVille[Etape]
 
 heureArr <- iti_etape$Details$time_arrivee[Etape]
 
+
 ```
 
 ```{r, echo=FALSE, results='asis'}
