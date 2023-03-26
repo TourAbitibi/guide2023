@@ -156,6 +156,8 @@ calcul_h_passage <- function(km){
 # Fonction pour obtenir les POIs de signalisation d'une étape
 POIs_signalisation <- function(Etape = 1){
   
+  details <- iti_etape$Details[Etape,]
+  
   points_signalisation %>% 
     filter(etape == Etape) %>% 
     as_tibble() %>% 
@@ -178,8 +180,8 @@ POIs_signalisation <- function(Etape = 1){
                                   Fonction == "signaleur_moto" ~ "Signaleur Moto",
                                   Fonction == "signalisation_seulement" ~ "Signalisation seulement",
                                   TRUE ~ Fonction),
-            Responsable = case_when( Responsable == "ville_depart" ~ "Ville - Départ",
-                                     Responsable == "sq_locale" ~ "SQ - Ville Départ",
+            Responsable = case_when( Responsable == "ville_depart" ~ paste0("Ville - ", details$VilleDep),
+                                     Responsable == "sq_locale" ~ paste0("SQ - ", details$VilleDep),
                                      Responsable == "sq_hotesse" ~ paste0("SQ - ", params$ville),
                                      Responsable == "sq_usg" ~ "SQ - USG",
                                      Responsable == "signaleur_moto" ~ "Signaleur - Moto",
