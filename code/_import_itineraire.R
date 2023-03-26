@@ -183,6 +183,7 @@ POIs_signalisation <- function(Etape = 1){
             Responsable = case_when( Responsable == "ville_depart" ~ paste0("Ville - ", details$VilleDep),
                                      Responsable == "sq_locale" ~ paste0("SQ - ", details$VilleDep),
                                      Responsable == "sq_hotesse" ~ paste0("SQ - ", params$ville),
+                                     Responsable == "sq_autre" ~ "SQ - Autre",
                                      Responsable == "sq_usg" ~ "SQ - USG",
                                      Responsable == "signaleur_moto" ~ "Signaleur - Moto",
                                      Responsable == "signaleur_autre" ~ "Signaleur - Autre",

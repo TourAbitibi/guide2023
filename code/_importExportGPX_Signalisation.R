@@ -54,10 +54,18 @@ signalisation_xlsx <- read_signalisationxlsx(here("excel","signalisation.xlsx"))
 # Fonction pour obtenir le détails pour une étape en particulier 
 sign_etape <- function(no_etape){
   
+  # Données du CSV de signalisation (importé de RWPGS directement)
+  csv <- read.csv(here("gpx", "input", glue("Signalisation_{no_etape}.csv"))) %>% 
+    janitor::clean_names() %>% 
+    drop_na() %>% 
+    select(uniq_id = notes, 
+           KM_reel = distance_km_from_start)
+  
   # Description complète de l'étape
   orig_name <-paste0("signalisation_xlsx$Etape", no_etape)
   
-  eval(parse(text=orig_name)) %>% 
+  eval(parse(text=orig_name)) %>%
+    left_join(csv, by = "uniq_id") %>% 
     arrange(KM_reel) %>% 
     mutate(
       fonction = as.factor(fonction),
@@ -66,6 +74,7 @@ sign_etape <- function(no_etape){
       sign_id = paste0(etape, "_", uniq_id))
   
 }
+
 
 signalisation <- map_dfr(gpx_files_stages, ~sign_etape(.x), .id = "etape")
 

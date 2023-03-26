@@ -1,0 +1,12 @@
+Type,Notes,Distance (km) From Start,Elevation (m),Description,Edited
+Start,Start of route,0,0,,
+Danger,sign_01,0.03,305.90,terre_plein,Edited
+Danger,sign_02,0.25,305.10,terre-plein,Edited
+Danger,sign_03,0.30,305.10,terre-plein,Edited
+Danger,sign_04,0.98,302.90,terre-plein,Edited
+Control,sign_05,1.04,302.20,police,Edited
+Danger,sign_06,2.05,302.70,terre-plein,Edited
+Danger,sign_07,2.30,305.90,terre-plein,Edited
+Danger,sign_08,2.48,306.30,terre-plein,Edited
+Danger,sign_09,2.57,305.10,terre-plein,Edited
+End,End of route,119.44,306.30,
