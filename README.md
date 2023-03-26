@@ -11,4 +11,5 @@ Préparation du guide technique du [Tour de l'Abitibi](https://tourabitibi.com/)
 - Maximiser les automatisations
 - Travailler à partir des fichiers bruts (.gpx)
 - Pérenniser les opérations
+- Préparer un guide de l'organisateur permettant de présenter tous les points dangereux et la responsabilité de chacun. 
 

@@ -2,14 +2,35 @@
 
 Images nécessaires à la création des documents. 
 
+## cartes
+
+Cartes détaillées des parcours complets, départ et arrivées.
+
+## elev
+
+Profil topographique de chaque étape :
+
+- Général et détails dernieres km;
+- FR et EN.
+
 ## logo
 
-Différents logos du Tour de l'Abitibi
+Différents logos du Tour de l'Abitibi et des commanditaires (`comm_1.png`)
 
 ## photos
 
 Photos utilisées dans le guide
 
-## cartes
+## sign
 
-Cartes détaillées des parcours complets, départ et arrivées.
+Images (capture d'écran de Google StreetView ou photo) des points de signalisation qui doivent être identifiés au guide d'organisation. 
+
+### Exemple
+
+![](E1/sign_01.png)
+
+
+## support
+
+Image de support pour le guide. Par exemple, image de la caravane de course. 
+
