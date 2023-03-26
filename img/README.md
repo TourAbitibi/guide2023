@@ -13,6 +13,10 @@ Profil topographique de chaque étape :
 - Général et détails dernieres km;
 - FR et EN.
 
+### Exemple
+
+![](elev/Etape1_Final_FR.png)
+
 ## logo
 
 Différents logos du Tour de l'Abitibi et des commanditaires (`comm_1.png`)
@@ -27,10 +31,13 @@ Images (capture d'écran de Google StreetView ou photo) des points de signalisat
 
 ### Exemple
 
-![](E1/sign_01.png)
+![](sign/E1/sign_01.png)
 
 
 ## support
 
 Image de support pour le guide. Par exemple, image de la caravane de course. 
 
+### Exemple
+
+![](support/circulation_derivation.png)
