@@ -1,4 +1,28 @@
 
+## Signalisation - Carte
+
+```{r, echo=FALSE, eval=TRUE}
+
+mapview(parcours %>% filter(etape == Etape) ,
+        layer.name = "Parcours",
+        color = couleurs$bleuTour,
+        alpha = 0.7,
+        map.types = "OpenStreetMap",
+        lwd = 3,
+        legend = FALSE)+
+   mapview(points_signalisation %>% filter(etape == Etape) ,
+          layer.name = "Signalisation",
+          color = "red",
+          col.regions = "red",
+          alpha = 0.0,
+          map.types = "OpenStreetMap",
+          lwd = 3,
+          legend = FALSE,
+          homebutton = FALSE)
+
+```
+
+
 ## Signalisation - Tableau
 
 ```{r, echo = FALSE, eval = TRUE}
