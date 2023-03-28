@@ -14,6 +14,11 @@ git_book/_book
 git_book/guide2023_files
 git_book/img
 
+git_book_EN/guide2023.Rmd
+git_book_EN/_book
+git_book_EN/guide2023_files
+git_book_EN/img
+
 git_book_organisateur/guide2023.Rmd
 git_book_organisateur/_book
 git_book_organisateur/guide2023_files
