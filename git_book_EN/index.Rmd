@@ -23,7 +23,7 @@ params:
 #github-repo: rstudio/bookdown-demo
 ---
 
-# Présentation
+# Presentation
 
 ```{r here, include=FALSE}
 # Gestion avec here
@@ -41,7 +41,9 @@ source(here("code", "_Dates.R"))
 source(here("code","_import_itineraire.R"))
 
 # Pour accès aux tracés et aux POI d'étapes
-parcours <- st_read(here("gpx","output","parcours.shp"))
+parcours <- st_read(here("gpx","output","parcours.shp"))%>% 
+  mutate(name = str_replace(name, "Étape", "Stage"),
+                name = str_replace(name, "CLMI", "ITT"))
 points <- st_read(here("gpx","output","points_parcours.shp"))
 
 # Langue
@@ -69,16 +71,16 @@ opts_chunk$set( tidy = FALSE, comment = NA,
 
 Welcome to the **`r params$annee` Tour de l'Abitibi** !
 
-Here is a preview of the Tour de l'Abitibi `r edition`e edition  which will be held from `r dates_EN %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` to `r dates_EN %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)`.
+Here's a preview of the Tour de l'Abitibi `r edition`th edition,  which will be held from `r dates_EN %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` to `r dates_EN %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)`.
 
 <br/>
 
 ```{r map_globale, echo = FALSE, eval = TRUE}
 # Visualisation
-mapview(parcours, 
+mapview(parcours ,
         lwd = 2.5,
         alpha = 0.7,
         z = "name",
         color = palette.colors(n=7, palette="ggplot2"),
-        layer.name = "Étape")
+        layer.name = "Stage")
 ```

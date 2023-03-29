@@ -36,7 +36,7 @@ A deviation for vehicles is set up upstream of the finish line for each event, w
 knitr::include_graphics(here("img/support/circulation_derivation_EN.png"))
 ```
 
-### Contre-la-montre individuel {-}
+### Individual time trial {-}
 
 ```{r echo = FALSE, fig.align = 'center', out.width = "100%", fig.cap = "Source - [Guidelines for vehicle circulation in the race convoy, p.30](https://downloads.ctfassets.net/761l7gh5x5an/3gM8QxocLIQFMPSzjKor0v/7dafeb185ad035d43c6ab4c80b2d1ed3/2021-uci-road-guidelines-for-circulation-eng.pdf)"}
 

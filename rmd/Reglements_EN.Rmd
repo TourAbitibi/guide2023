@@ -12,14 +12,15 @@ Article 1 – Organization
 
 Article 2 – Race type
 
-
 :  This race is open to athletes from the junior men’s category. It is an official UCI World Junior competition. In order to be considered as a junior athlete, one must have been born in `r params$annee - 18` ou `r params$annee - 17`. The competition is registered as a 2.NCupJ category and UCI points will be awarded following article 2.14.040.    
+
+    The following waivers were granted to the organisation of the Tour de l’Abitibi by the UCI :  
+    
+    * The Tour de l’Abitibi allows the participation of regional and club teams only composed of junior riders but will not score any UCI points (article 2.14.036). In addition, club teams jerseys must respect articles 1.3.045 to 1.3.047 of the UCI rules;    
+    * The Tour de l’Abitibi race features two (2) half-stages on the same day (article 2.6.010).
    
-   The following waivers were granted to the organisation of the Tour de l’Abitibi by the UCI :
-
-    - The Tour de L’Abitibi allows the participation of regional and club teams only composed of junior riders but will not score any UCI points (article 2.14.036). In addition, club teams jerseys must respect articles 1.3.045 to 1.3.047 of the UCI rules.
-    - The Tour de l’Abitibi race features two (2) half-stages on the same day (article 2.6.010);
-
+   
+    
     
 Article 3 – Participation
  
@@ -30,7 +31,7 @@ Article 3 – Participation
     > According to the new UCI regulation (x.x.xxx) adopted in 2023, there is no longer a maximum development for junior men (gear ratio).
 
 
-Article 4 – Permanence
+Article 4 – Race headquarters
 
 :   The race headquarters are at the La Calypso high school, from Sunday `r dates_EN %>% filter(code=="Dim_Av") %>% pull(jour_mois)` to Sunday `r dates_EN %>% filter(code=="Dim") %>% pull(jour_mois_an)`, located at 800 1re Rue E, Amos, QC J9T 2H8. Opening hours are established in function of the race schedule, but there is a security guard on duty 24 hours a day.
 
@@ -455,7 +456,7 @@ The overall amount awarded for the prizes is  **`r bourse_totale` CAD**.
 
 <br/>
 
-Article 16 - Prix spéciaux
+Article 16 - Special prizes
 
 :   Les gagnants des prix spéciaux sont choisis par l’ensemble des directeurs techniques et par les commissaires par le biais d’un questionnaire
 
@@ -484,7 +485,7 @@ Article 17 – Antidoping
  
 
 
-Article 18 – Protocole et récompenses
+Article 18 – Protocol
 
 :   In compliance with the UCI rules and regulations article 1.2.112, the following riders must report daily for the protocol in competition attire a maximum of 10 minutes after the finish:
 
@@ -498,7 +499,7 @@ Article 18 – Protocole et récompenses
 
 
 
-Article 19 – Pénalities
+Article 19 – Penalities
 
 :   The UCI rules and regulations concerning penalties will apply.
 

@@ -1,0 +1,125 @@
+# Welcoming words
+
+### Word from the chairwoman of the board {-}
+
+\linebreak
+
+```{r photo_pres, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
+knitr::include_graphics(here("img", "photos", "pres.png"))
+```
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum posuere urna nec tincidunt praesent semper. Id donec ultrices tincidunt arcu non sodales neque sodales. Tristique senectus et netus et malesuada fames ac turpis. Id ornare arcu odio ut. Turpis cursus in hac habitasse platea. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. A pellentesque sit amet porttitor. Aliquet nibh praesent tristique magna sit amet purus gravida. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Sed odio morbi quis commodo odio. Integer quis auctor elit sed vulputate mi. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Tempor nec feugiat nisl pretium fusce. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Non arcu risus quis varius quam quisque id diam vel. Mauris cursus mattis molestie a iaculis. Turpis egestas sed tempus urna et pharetra pharetra massa. Cursus euismod quis viverra nibh. Tristique risus nec feugiat in.
+
+**Mélanie Rocher**    
+Chairwoman of the board         
+Tour Cycliste de l'Abitibi   
+
+```{r mots_logo_tour, echo=TRUE, echo=FALSE, fig.align='left', out.width= "25%"}
+knitr::include_graphics(here("img", "logo", "TA_LogoCouleur_Fondransparent.png"))
+```
+
+<br/>
+
+--- 
+
+\pagebreak
+
+<br/>
+
+### Word from `r params$ville` mayor {-}
+
+\linebreak
+
+```{r photo_maire, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
+
+knitr::include_graphics("https://amos.quebec/medias/2021-S%C3%A9bastien-DAstous-3.jpg")
+
+# knitr::include_graphics(here("img", "photos", "maire_amos.png"))
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum posuere urna nec tincidunt praesent semper. Id donec ultrices tincidunt arcu non sodales neque sodales. Tristique senectus et netus et malesuada fames ac turpis. Id ornare arcu odio ut. Turpis cursus in hac habitasse platea. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. A pellentesque sit amet porttitor. Aliquet nibh praesent tristique magna sit amet purus gravida. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Sed odio morbi quis commodo odio. Integer quis auctor elit sed vulputate mi. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Tempor nec feugiat nisl pretium fusce. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Non arcu risus quis varius quam quisque id diam vel. Mauris cursus mattis molestie a iaculis. Turpis egestas sed tempus urna et pharetra pharetra massa. Cursus euismod quis viverra nibh. Tristique risus nec feugiat in.
+
+**Sébastien D’Astous**    
+Amos mayor 
+  
+
+```{r mots_logo_amos, echo=TRUE, echo=FALSE, fig.align='left', out.width= "25%"}
+knitr::include_graphics("https://amos.quebec/resources/images/new/logo-amos.png")
+```
+
+<br/>
+
+---
+
+\pagebreak
+
+<br/>
+
+### Word from the Ministers {-}
+
+\linebreak
+
+```{r photo_ministre_gauche, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:left; padding:10px"'}
+
+knitr::include_graphics("https://coalitionavenirquebec.org/wp-content/uploads/2018/08/photo-profil-charest-isabelle-brome-missisquoi.png")
+
+```
+
+```{r photo_ministre_droite, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
+
+knitr::include_graphics("https://coalitionavenirquebec.org/wp-content/uploads/2018/08/photo-profil-proulx-caroline-berthier-sans-main.png")
+
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum posuere urna nec tincidunt praesent semper. Id donec ultrices tincidunt arcu non sodales neque sodales. Tristique senectus et netus et malesuada fames ac turpis. Id ornare arcu odio ut. Turpis cursus in hac habitasse platea. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. A pellentesque sit amet porttitor. Aliquet nibh praesent tristique magna sit amet purus gravida. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Sed odio morbi quis commodo odio. Integer quis auctor elit sed vulputate mi. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Tempor nec feugiat nisl pretium fusce. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Non arcu risus quis varius quam quisque id diam vel. Mauris cursus mattis molestie a iaculis. Turpis egestas sed tempus urna et pharetra pharetra massa. Cursus euismod quis viverra nibh. Tristique risus nec feugiat in.
+
+Aliquet porttitor lacus luctus accumsan tortor posuere. Felis bibendum ut tristique et egestas quis ipsum. Mattis enim ut tellus elementum sagittis vitae. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Magna sit amet purus gravida. Nulla malesuada pellentesque elit eget gravida cum sociis. In pellentesque massa placerat duis. Amet aliquam id diam maecenas ultricies mi. Id velit ut tortor pretium viverra suspendisse potenti. Sed sed risus pretium quam vulputate dignissim. Id porta nibh venenatis cras sed felis eget velit. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae. In metus vulputate eu scelerisque. Auctor eu augue ut lectus arcu bibendum at varius. Nec ultrices dui sapien eget mi proin. Faucibus nisl tincidunt eget nullam non nisi est. Integer quis auctor elit sed vulputate. Dui vivamus arcu felis bibendum ut tristique et egestas quis. Ac turpis egestas sed tempus urna et.
+
+<br/>
+
+
+**Isabelle Charest**    
+Ministre responsable du Sport, du Loisir et du Plein air
+
+<br/>
+
+**Caroline Proulx**   
+Ministre du Tourisme
+
+```{r, echo=FALSE,out.width="75%",fig.show='hold',fig.align='center'}
+knitr::include_graphics(here("img", "logo", "gouv_quebec_large.png"))
+``` 
+
+<br/>
+
+---
+
+\pagebreak
+
+<br/>
+
+
+### Word from the regional Minister {-}
+
+\linebreak
+
+```{r photo_ministre_reg, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
+
+knitr::include_graphics("https://coalitionavenirquebec.org/wp-content/uploads/2018/08/photo-profil-dufour-pierre-abitibi-est.png")
+
+```
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum posuere urna nec tincidunt praesent semper. Id donec ultrices tincidunt arcu non sodales neque sodales. Tristique senectus et netus et malesuada fames ac turpis. Id ornare arcu odio ut. Turpis cursus in hac habitasse platea. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. A pellentesque sit amet porttitor. Aliquet nibh praesent tristique magna sit amet purus gravida. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Sed odio morbi quis commodo odio. Integer quis auctor elit sed vulputate mi. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Tempor nec feugiat nisl pretium fusce. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Non arcu risus quis varius quam quisque id diam vel. Mauris cursus mattis molestie a iaculis. Turpis egestas sed tempus urna et pharetra pharetra massa. Cursus euismod quis viverra nibh. Tristique risus nec feugiat in.
+
+
+**Pierre Dufour**       
+Adjoint parlementaire du ministre de l’Économie, de l’Innovation et de l’Énergie    
+Adjoint parlementaire pour la région de l'Abitibi-Témiscamingue
+
+
+```{r, echo=FALSE,out.width="75%",fig.show='hold',fig.align='center'}
+knitr::include_graphics(here("img", "logo", "gouv_quebec_large.png"))
+``` 
+

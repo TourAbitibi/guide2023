@@ -11,8 +11,10 @@
 rule Z_targets:
     input:
         "git_book/_book/index.html",
+        "git_book_EN/_book/index.html",
         "git_book_organisateur/_book/index.html",
         "/Volumes/web/guide/FR/index.html",
+        "/Volumes/web/guide/EN/index.html",
         "/Volumes/web/guide/organisateur/index.html",
         "homepage/index.html",
         "homepage/index.Rmd",
@@ -21,27 +23,37 @@ rule Z_targets:
         "web/index.html",
         "web/prog/index.html",
         "web/FR/index.html",
+        "web/EN/index.html",
 
         "git_book/index.Rmd",
+        "git_book_EN/index.Rmd",
         "rmd/MotsBienvenue.Rmd",
+        "rmd/MotsBienvenue_EN.Rmd",
         "rmd/Programmation.Rmd",
+        "rmd/Programmation_EN.Rmd",
         "code/programmation.R",
         "rmd/CO.Rmd",
         "rmd/FeuillesRoute.Rmd",
         "rmd/Etape1.Rmd",
+        "rmd/Etape1_EN.Rmd",
         "rmd/Etape2.Rmd",
         "rmd/Reglements.Rmd",
+        "rmd/Reglements_EN.Rmd",
         "rmd/CarteAbitibi.Rmd",
         "rmd/Regl_sejour.Rmd",
+        "rmd/Regl_sejour_EN.Rmd",
         "rmd/Locaux.Rmd",
         "rmd/Repas.Rmd",
         "rmd/MedMasso.Rmd",
+        "rmd/MedMasso_EN.Rmd",
         "rmd/CirculationCourse.Rmd",
+        "rmd/CirculationCourse_EN.Rmd",
 
         "elevParcours/elev_parcours.csv",
 
         "img/cartes/input/Etape1_Full.png",
         "img/elev/Etape1_Full_FR.png",
+        "img/elev/Etape1_Full_EN.png",
         "img/cartes/sign/E1_sign_01.png",
 
         "excel/Itineraires.xlsx",
@@ -239,6 +251,66 @@ rule R32_creationVignetteSignalisation:
 ##########################################################################################################################
 ##########################################################################################################################
 
+rule R50_render_book_EN:
+    input:
+        "code/programmation.R",
+
+        "gpx/output/parcours.shp",
+
+        "img/cartes/input/Etape1_Full.png",
+
+        "elevParcours/elev_parcours.csv",
+        "img/elev/Etape1_Full_EN.png",
+
+        "excel/staff.xlsx",
+        "excel/Itineraires.xlsx",
+        "excel/feuilleroute.xlsx",
+        "excel/repas.xlsx",
+        "excel/locaux.xlsx",
+        "excel/prix.xlsx",
+        "excel/med_masso.xlsx",
+
+        "script/render_book.R",
+        "git_book_EN/_bookdown.yml",
+        "git_book_EN/_output.yml",
+
+        "git_book_EN/index.Rmd",
+        "rmd/MotsBienvenue_EN.Rmd",
+        "rmd/Programmation_EN.Rmd",
+        "rmd/CO.Rmd",
+        "rmd/FeuillesRoute_EN.Rmd",
+        "rmd/Etape1_EN.Rmd",
+        "rmd/Etape2.Rmd",
+        "rmd/Reglements_EN.Rmd",
+        "rmd/CirculationCourse_EN.Rmd",
+        "rmd/Regl_sejour_EN.Rmd",
+        "rmd/Repas.Rmd",
+        "rmd/MedMasso_EN.Rmd",
+        "rmd/Locaux.Rmd",
+        "rmd/CarteAbitibi.Rmd"
+    output:
+        "git_book_EN/_book/index.html",
+        "web/EN/index.html"
+    params:
+        guide_path = "git_book_EN",
+        lang = "EN"
+    shell:
+        """
+        Rscript -e "bookdown::render_book('{params.guide_path}')"
+
+        # Créer les fichiers
+        mkdir -p web/{params.lang} web/img
+
+        # Copier les données html
+        cp -R {params.guide_path}/_book/* web/{params.lang}
+
+        # Copier les images
+        #cp -R {params.guide_path}/img/* web/img
+        cp -R img/* web/img
+
+        echo "\nGuide disponible au : /Users/brunogauthier/Documents/guide2023/web/{params.lang}/index.html\n"
+        """
+
 
 rule R51_render_book:
     input:
@@ -399,6 +471,7 @@ rule R99_NAS_copy:
         "homepage/index.html",
         "resume_prog/prog.html",
         "git_book/_book/index.html",
+        "git_book_EN/_book/index.html",
         "git_book_organisateur/_book/index.html",
         "img/cartes/input/Etape1_Full.png",
         "img/elev/Etape1_Full_FR.png",
@@ -407,6 +480,7 @@ rule R99_NAS_copy:
         "/Volumes/web/guide/index.html",
         "/Volumes/web/guide/prog/index.html",
         "/Volumes/web/guide/FR/index.html",
+        "/Volumes/web/guide/EN/index.html",
         "/Volumes/web/guide/organisateur/index.html"
     params:
         home_page = "homepage/index.html",
@@ -428,6 +502,9 @@ rule R99_NAS_copy:
 
         # Transfert git_book vers NAS - Francais
         sh {params.script_export_gitbook} git_book FR
+
+        # Transfert git_book vers NAS - Anglais
+        sh {params.script_export_gitbook} git_book_EN EN
 
         # Transfert git_book_organisateur vers NAS
         sh {params.script_export_organisateur}

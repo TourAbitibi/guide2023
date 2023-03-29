@@ -49,7 +49,7 @@ In order to benefit from massage therapy, please register at the local in advanc
 
 **Fees** : 20 mins session - payable in cash on site 
 
-```{r horraire_med_EN, echo=FALSE}
+```{r horraire_med_EN_2, echo=FALSE}
 
 med_xlsx <- here("excel", "med_masso.xlsx")
 

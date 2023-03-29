@@ -107,7 +107,7 @@ graph_elev_complet <-  function(df, num_etape, iti_etape , language){
   graph <- ggplot(NULL, aes(x= dist, y = elev))+
     geom_line(data = data_graph_base, color=couleurs$bleuTour, linewidth=0.8, show.legend = FALSE)+
     {if (language == "FR") {ggtitle(glue("Étape {num_etape} - Profil topographique"),
-                                subtitle = glue("{iti_etape$Details$Descr_Villes[num_etape]} ({iti_etape$Details$Descr_km[num_etape]})"))} else {ggtitle(glue("Stage {num_etape} - Topographic profil"),
+                                subtitle = glue("{iti_etape$Details$Descr_Villes[num_etape]} ({iti_etape$Details$Descr_km[num_etape]})"))} else {ggtitle(glue("Stage {num_etape} - Topographic profile"),
                    subtitle = glue("{iti_etape$Details$Descr_Villes[num_etape]} ({iti_etape$Details$Descr_km[num_etape]})"))}}+
       xlab("Distance (km)")+
       ylab("Elevation (m)")+
@@ -153,7 +153,7 @@ graph_elev_arrivee <-  function(df , num_etape , iti_etape, language , km_finaux
   graph <- ggplot(NULL, aes(x= dist, y = elev))+
     geom_line(data = data_graph_base, color=couleurs$bleuTour, linewidth=0.8, show.legend = FALSE)+
     {if (language == "FR") {ggtitle(glue("Étape {num_etape} - Profil topographique - {km_finaux} derniers km"),
-                                subtitle = glue("{iti_etape$Details$Descr_Villes[num_etape]} ({iti_etape$Details$Descr_km[num_etape]})"))} else {ggtitle(glue("Stage {num_etape} - Topographic profil - Last {km_finaux} km"),
+                                subtitle = glue("{iti_etape$Details$Descr_Villes[num_etape]} ({iti_etape$Details$Descr_km[num_etape]})"))} else {ggtitle(glue("Stage {num_etape} - Topographic profile - Last {km_finaux} km"),
                                                                                                                                                          subtitle = glue("{iti_etape$Details$Descr_Villes[num_etape]} ({iti_etape$Details$Descr_km[num_etape]})"))}}+
     xlab("Distance (km)")+
     ylab("Elevation (m)")+
