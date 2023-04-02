@@ -486,7 +486,7 @@ rule R99_NAS_copy:
         home_page = "homepage/index.html",
         prog_prelim = "resume_prog/prog.html",
         prog_prelim_files = "resume_prog/prog_files",
-        script_export_gitbook = "script/script_export_guide.sh",
+        script_export_gitbook = "script/script_export_guide_FR_EN.sh",
         script_export_organisateur = "script/script_export_organisateur.sh"
     shell:
         """
@@ -500,11 +500,8 @@ rule R99_NAS_copy:
         cp -R {params.prog_prelim} /Volumes/web/guide/prog/index.html
         cp -R {params.prog_prelim_files} /Volumes/web/guide/prog/
 
-        # Transfert git_book vers NAS - Francais
-        sh {params.script_export_gitbook} git_book FR
-
-        # Transfert git_book vers NAS - Anglais
-        sh {params.script_export_gitbook} git_book_EN EN
+        # Transfert git_book vers NAS - FR & EN
+        sh {params.script_export_gitbook}
 
         # Transfert git_book_organisateur vers NAS
         sh {params.script_export_organisateur}
