@@ -105,6 +105,7 @@ tableau_Descrip_Etape <- function(Etape = 1, language = "FR"){
     column_spec(2, bold = T) %>%
     
     # Conditions de rangées
+    row_spec(which(descr_iti$Symbol == "Green",), bold = F, color = "darkgreen" ) %>%
     row_spec(which(descr_iti$Symbol == "Mayor",), bold = F, color = couleurs$blueSprintMaire ) %>% # , background = ""
     row_spec(which(descr_iti$Symbol == "Sprint",), bold = F, color = couleurs$orangeMaillot ) %>%
     row_spec(which(descr_iti$Symbol == "Climb",), bold = F, color = couleurs$vertMaillot ) %>%

@@ -30,7 +30,7 @@ glue('<table border=1>
 
 **`r dates_EN %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)`** 
 
- **`r iti_etape$Details$KM_Total[Etape]` km**
+ **`r iti_etape$Details$Distance_totale[Etape]` km**
 
 
 ## Summary
