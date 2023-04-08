@@ -115,8 +115,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 **Pierre Dufour**       
-Adjoint parlementaire du ministre de l’Économie, de l’Innovation et de l’Énergie    
-Adjoint parlementaire pour la région de l'Abitibi-Témiscamingue
+Parliamentary assistant to the Minister of Economy, Innovation and Energy    
+Parliamentary assistant for the Abitibi-Témiscamingue region
 
 
 ```{r, echo=FALSE,out.width="75%",fig.show='hold',fig.align='center'}

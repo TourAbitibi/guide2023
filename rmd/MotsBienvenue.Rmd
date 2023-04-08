@@ -136,9 +136,10 @@ À tous, je vous souhaite beaucoup succès, et que votre passage chez nous soit
 Bon Tour de l’Abitibi!
 
 
-**Pierre Dufour**       
+**Pierre Dufour**     
+Député d'Abitibi-Est
 Adjoint parlementaire du ministre de l’Économie, de l’Innovation et de l’Énergie    
-Adjoint parlementaire pour la région de l'Abitibi-Témiscamingue
+Adjoint gouvernemental au ministre responsable de la région de l'Abitibi-Témiscamingue
 
 
 ```{r, echo=FALSE,out.width="75%",fig.show='hold',fig.align='center'}
