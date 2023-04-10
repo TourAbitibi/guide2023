@@ -49,7 +49,7 @@
     <sym>Dot</sym>
     <type>Dot</type>
   </wpt>
-  <wpt lon="-77.63740871556061" lat="48.49363568576854">
+  <wpt lon="-77.62547824986237" lat="48.32350664087993">
     <name>Ravito ouvert / Feed open</name>
     <sym>Dot</sym>
     <type>Dot</type>
@@ -59,7 +59,7 @@
     <sym>Dot</sym>
     <type>Dot</type>
   </wpt>
-  <wpt lon="-78.11597863697887" lat="48.57358469066883">
+  <wpt lon="-78.11597863697887" lat="48.57348530714502">
     <name>Arrivée / Finish</name>
     <sym>Dot</sym>
     <type>Dot</type>
@@ -72,14 +72,17 @@
   <trk>
     <name>Tour 2023 - Étape 1 - VD - Amos (course)</name>
     <trkseg>
-      <trkpt lat="48.10442" lon="-77.7836">
-        <ele>306.8</ele>
+      <trkpt lat="48.10432" lon="-77.78376">
+        <ele>307.2</ele>
       </trkpt>
       <trkpt lat="48.10454" lon="-77.78336">
         <ele>306.1</ele>
       </trkpt>
       <trkpt lat="48.10463" lon="-77.78315">
         <ele>305.8</ele>
+      </trkpt>
+      <trkpt lat="48.10471" lon="-77.78324">
+        <ele>305.7</ele>
       </trkpt>
       <trkpt lat="48.10471" lon="-77.78324">
         <ele>305.7</ele>
@@ -1349,6 +1352,9 @@
       </trkpt>
       <trkpt lat="48.32268" lon="-77.62615">
         <ele>344.6</ele>
+      </trkpt>
+      <trkpt lat="48.323326" lon="-77.625522">
+        <ele>349.6</ele>
       </trkpt>
       <trkpt lat="48.3234" lon="-77.62545">
         <ele>349.8</ele>
@@ -3799,6 +3805,9 @@
         <ele>306.2</ele>
       </trkpt>
       <trkpt lat="48.57348" lon="-78.11597">
+        <ele>306.3</ele>
+      </trkpt>
+      <trkpt lat="48.573362" lon="-78.115967">
         <ele>306.3</ele>
       </trkpt>
       <trkpt lat="48.57307" lon="-78.11596">
