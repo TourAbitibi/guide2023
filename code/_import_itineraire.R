@@ -158,13 +158,16 @@ calcul_h_passage <- function(km){
 POIs_signalisation <- function(Etape = 1){
   
   details <- iti_etape$Details[Etape,]
+  neutre_etape <- details$KM_Neutres
   
   points_signalisation %>% 
     filter(etape == Etape) %>% 
     as_tibble() %>% 
     arrange(KM_reel, sign_id) %>% 
-    mutate(time = calcul_h_passage(KM_reel)) %>% 
+    mutate(time = calcul_h_passage(KM_reel),
+           KM_course = KM_reel - neutre_etape) %>% 
     select(KM_reel, 
+           KM_course,
            time,
            ID = sign_id,
            Détails = details,
@@ -197,7 +200,7 @@ POIs_signalisation <- function(Etape = 1){
 POIs_tableau <- function(POIs) {
   
   POIs %>% 
-    select(- image) %>% 
+    select(- image, -KM_course) %>% 
     rename("KM Réel" = KM_reel,
            "Heure Passage" = time) %>% 
     kbl(escape = F, 
@@ -238,11 +241,14 @@ P_sign_detail_1 <- function(P){
 P_sign_detail_2 <- function(P){
   
   P %>% 
-    select(Type, Fonction, Responsable)%>% 
+    select(KM_course, Type, Fonction, Responsable)%>% 
+    rename("KM Course" = KM_course) %>% 
     kbl(escape = F, 
         align = c('c', 'c', 'c')) %>% 
     kable_styling("striped",
                   full_width = T, 
-                  font_size = 16)
+                  font_size = 16)%>% 
+    # Conditions des colonnes
+    column_spec(1, bold = T)
   
 }

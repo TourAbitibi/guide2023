@@ -8,7 +8,7 @@ output: html_document
 
 ```{r, echo = FALSE, eval = TRUE}
 
-# Affichage des 2 tableaux détaillés 
+# Affichage des 2 tableaux détaillés  (provient de : code/_import_itineraire.R)
 P_sign_detail_1(P)
 P_sign_detail_2(P)
 

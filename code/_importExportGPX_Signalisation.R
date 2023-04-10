@@ -68,15 +68,16 @@ sign_etape <- function(no_etape){
     left_join(csv, by = "uniq_id") %>% 
     arrange(KM_reel) %>% 
     mutate(
+      etape = no_etape %>% as.double(),
       fonction = as.factor(fonction),
       type = as.factor(type),
       responsable = as.factor(responsable),
-      sign_id = paste0(etape, "_", uniq_id))
+      sign_id = paste0("E",no_etape, "_", uniq_id))
   
 }
 
 
-signalisation <- map_dfr(gpx_files_stages, ~sign_etape(.x), .id = "etape")
+signalisation <- map_dfr(gpx_files_stages, ~sign_etape(.x))
 
 ################################################################################
 ################################################################################
@@ -84,8 +85,9 @@ signalisation <- map_dfr(gpx_files_stages, ~sign_etape(.x), .id = "etape")
 # Points POI liés au GPX  de signalisation (couche waypoints)
 # Utilisation du mot "sign" dans le name pour voir si c'est un élément de signalisation
 
-points_signalisation <- map_dfr(gpx_files_stages, ~st_read(gpx_files[.x], layer = "waypoints"), .id= "etape") %>% 
-  mutate(etape = as.double(etape),
+points_signalisation <- map_dfr(gpx_files_stages, ~st_read(gpx_files[match(.x, gpx_files_stages)], layer = "waypoints"), .id= "idx") %>%
+  mutate(idx = as.double(idx),
+         etape = gpx_files_stages[idx],
          type = case_when(  str_detect(tolower(name), "sign" ) ~ "signalisation",
                             TRUE ~ NA_character_),
          sign_id = paste0("E", etape, "_", name )) %>% 
@@ -101,7 +103,7 @@ points_signalisation <- map_dfr(gpx_files_stages, ~st_read(gpx_files[.x], layer 
          type, 
          resp = responsable,
          image,
-         KM_reel)
+         KM_reel) %>% print(n=100)
 
 
 # Correction CRS
