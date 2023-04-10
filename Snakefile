@@ -20,7 +20,7 @@ rule Z_targets:
         "homepage/index.Rmd",
         "resume_prog/prog.Rmd",
         "resume_prog/prog.html",
-        "web/index.html",
+        #"web/index.html",
         "web/prog/index.html",
         "web/FR/index.html",
         "web/EN/index.html",
@@ -75,6 +75,7 @@ rule Z_targets:
 
         "gpx/input/Signalisation_1.gpx",
         "gpx/input/Signalisation_2.gpx",
+        "gpx/input/Signalisation_7.gpx",
 
         "gpx/output/parcours.shp", "gpx/output/parcours.dbf",
         "gpx/output/parcours.prj", "gpx/output/parcours.shx",
@@ -373,21 +374,21 @@ rule R51_render_book:
         """
 
 
-rule R52_render_homepage:
-    input:
-        "homepage/index.Rmd",
-    output:
-        "homepage/index.html",
-        "web/index.html"
-    params:
-        "homepage/index.html"
-    shell:
-        """
-        Rscript -e "rmarkdown::render('{input}')"
-        echo "\n  ~~ Copie vers dossier web local ~~ \n"
-        mkdir -p web
-        cp -R {params} web
-        """
+# rule R52_render_homepage:
+#     input:
+#         "homepage/index.Rmd",
+#     output:
+#         "homepage/index.html",
+#         "web/index.html"
+#     params:
+#         "homepage/index.html"
+#     shell:
+#         """
+#         Rscript -e "rmarkdown::render('{input}')"
+#         echo "\n  ~~ Copie vers dossier web local ~~ \n"
+#         mkdir -p web
+#         cp -R {params} web
+#         """
 
 
 rule R53_render_prog_prelim:

@@ -175,8 +175,8 @@ dfe <- tibble(
   date =  glue('{dates_prog[5]} (PM)<br/><br/><strong>Stage 4 (half-stage)</strong>'),
   presente  =  glue('<img src="../img/logo/comm_4.png" width="100">'),
   epreuve =  glue('Road race</strong><br/>{df$VilleDep[4]} - {df$Via[4]} - {df$VilleArr[4]}<br/>Distance : {df$Descr_km[4]}<br/>({df$KM_Neutres[4]} km controlled start)'), 
-  dep = glue('{df$time_depart[4]}</strong><br/>{df$VilleDep[4]}, {df$LieuDepEN[4]}'),
-  arr = glue('{df$time_arrivee[4]}</strong><br/>{df$VilleArr[4]}, {df$LieuArrEN[4]}')
+  dep = glue('<strong>{df$time_depart[4]}</strong><br/>{df$VilleDep[4]}, {df$LieuDepEN[4]}'),
+  arr = glue('<strong>{df$time_arrivee[4]}</strong><br/>{df$VilleArr[4]}, {df$LieuArrEN[4]}')
 ) %>% 
   bind_rows(dfe,.)
 
@@ -186,8 +186,8 @@ dfe <- tibble(
   date =  glue('{dates_prog[6]}<br/><br/><strong>Stage 5</strong>'),
   presente  =  glue('<img src="../img/logo/comm_5.png" width="100">'),
   epreuve =  glue('Road race</strong><br/>{df$VilleDep[5]} &#8634; {df$VilleArr[5]}<br/> {df$Via[5]}<br/>Distance : {df$Descr_km[5]}<br/>({df$KM_Neutres[5]} km controlled start)'), 
-  dep = glue('{df$time_depart[5]}</strong><br/>{df$VilleDep[5]},<br/>{df$LieuDepEN[5]}'),
-  arr = glue('{df$time_arrivee[5]}</strong><br/>{df$VilleArr[5]},<br/>{df$LieuArrEN[5]}')
+  dep = glue('<strong>{df$time_depart[5]}</strong><br/>{df$VilleDep[5]},<br/>{df$LieuDepEN[5]}'),
+  arr = glue('<strong>{df$time_arrivee[5]}</strong><br/>{df$VilleArr[5]},<br/>{df$LieuArrEN[5]}')
 ) %>% 
   bind_rows(dfe,.)
 
@@ -197,8 +197,8 @@ dfe <- tibble(
   date =  glue('{dates_prog[7]}<br/><br/><strong>Stage 6</strong>'),
   presente  =  glue('<img src="../img/logo/comm_6.png" width="100">'),
   epreuve =  glue('Road race</strong><br/>{df$VilleDep[6]} &#8635; {df$VilleArr[6]}<br/>{df$Via[6]}<br/>Distance : {df$Descr_km[6]}<br/>({df$KM_Neutres[6]} km controlled start)'), 
-  dep = glue('{df$time_depart[6]}</strong><br/>{df$VilleDep[6]},<br/>{df$LieuDepEN[6]}'),
-  arr = glue('{df$time_arrivee[6]}</strong><br/>{df$VilleArr[6]},<br/>{df$LieuArrEN[6]}')
+  dep = glue('<strong>{df$time_depart[6]}</strong><br/>{df$VilleDep[6]},<br/>{df$LieuDepEN[6]}'),
+  arr = glue('<strong>{df$time_arrivee[6]}</strong><br/>{df$VilleArr[6]},<br/>{df$LieuArrEN[6]}')
 ) %>% 
   bind_rows(dfe,.)
 
@@ -207,7 +207,7 @@ dfe <- tibble(
   date =  glue('{dates_prog[8]}<br/><br/><strong>Stage 7</strong>'),
   presente  =  glue('<img src="../img/logo/comm_7.png" width="100">'),
   epreuve =  glue('Road race</strong><br/>{df$VilleDep[7]} - {df$VilleArr[7]}<br/>{df$Via[7]}<br/>Distance : {df$Descr_km[7]}<br/>({df$KM_Neutres[7]} km controlled start)'), 
-  dep = glue('{df$time_depart[7]}</strong><br/>{df$VilleDep[7]}, {df$LieuDepEN[7]}'),
+  dep = glue('<strong>{df$time_depart[7]}</strong><br/>{df$VilleDep[7]}, {df$LieuDepEN[7]}'),
   arr = glue('Circuit arrival : <br/><strong>{df$HeureEntreeVille[7]}</strong> <br/>Finish : <br/><strong>{df$time_arrivee[7]}</strong><br/>{df$VilleArr[7]}, {df$LieuArrEN[7]}')
 ) %>% 
   bind_rows(dfe,.)
