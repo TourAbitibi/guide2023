@@ -32,7 +32,8 @@ librarian::shelf(quiet = TRUE,
   scales,
   conflicted,
   here,
-  png
+  png,
+  usethis # https://usethis.r-lib.org/reference/ui.html --> ui_info, ui_todo, ...
 )
 
 # Gestion des conflits

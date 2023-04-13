@@ -21,7 +21,7 @@ details <- iti_etape$Details %>% rename(etape = Etape)
 
 ################################################################################
 
-# Import des GPX
+# Import des GPX de courses
 
 path <- here("gpx","input")
 
@@ -32,6 +32,8 @@ gpx_files <- sort(list.files(path = path,
 
 # Liste des étapes présentes en gpx (en fx du chiffre dans le nom du Course_x.gpx)
 gpx_files_stages <- str_replace(gpx_files, ".*_(\\d).gpx", "\\1") %>% as.double()
+
+ui_done("Les {ui_field('étapes')} {ui_value(gpx_files_stages)} possèdent un fichier gpx de course.")
 
 # Import et concaténation des GPX - parcours  (couche tracks)
 parcours <- map_dfr(gpx_files_stages, ~st_read(gpx_files[.x], layer = "tracks"), .id = "etape") %>% 
@@ -68,6 +70,7 @@ points <- map_dfr(gpx_files_stages, ~st_read(gpx_files[.x], layer = "waypoints")
   left_join(y = df_POI, by = "values") %>% 
   rename(type = values) 
 
+ui_info("Il y a {ui_value(nrow(points))} POIs de course importés")
 
 # Correction CRS
 points <- st_transform(points, crs = 32198)
@@ -86,7 +89,7 @@ sauvegarde_requise <- function(){
          here("gpx/output/parcours.shp"),
          append=FALSE) # pour écrire par dessus
   
-  print("Sauvegarde de `parcours.shp` faite!")
+  ui_done("Sauvegarde de {ui_field('gpx/output/parcours.shp')} faite!")
 }
 
 ################################################################################
@@ -96,6 +99,8 @@ sauvegarde_requise <- function(){
 # (création .tif, .csv aux prochaines étapes)
 
 ## Vérifier si le parcours.shp existe
+
+ui_todo("Vérifier si le parcours.shp a été modifié avant de le modifier.")
 
 parcours_en_memoire = NULL # assignation initiale
 
@@ -108,5 +113,5 @@ a_sauvegarder <- ifelse(!is.na(meme_parcours) & meme_parcours, FALSE, TRUE)
 
 ## Sauvegarder seulement si a changé
 ifelse(a_sauvegarder,  sauvegarde_requise(),
-       "Pas besoin d'écrire `parcours.shp` à nouveau : aucun changmenet")
+       "Pas besoin d'écrire `parcours.shp` à nouveau : aucun changement")
        

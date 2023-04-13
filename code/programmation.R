@@ -32,6 +32,8 @@ dates_prog <- str_replace(dates_FR$jsem_jour_mois, ", ", "<br>")
 
 # Création du tibble Français #
 
+# Ajout des lignes une à une
+
 # Lundi 
 dff <- tibble(
   date =  glue('{dates_prog[2]}'),

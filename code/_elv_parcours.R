@@ -18,11 +18,14 @@ source(here::here("code","_LibsVars.R"))
 parcours <- st_read(here("gpx/output/parcours.shp"))
 
 
-# Télécharger les élévations dans la zone couvrant les tracés
-# Attention : long à télécharger
+ui_todo("Télécharger les {ui_field('élévations')} dans la zone couvrant les parcours.")
+ui_warn("Long à télécharger")
+
 elv_parcours <- get_elev_raster(parcours,
                                 z=12,
                                neg_to_na = TRUE)
+
+ui_done("{ui_field('Élévations')} téléchargées.")
 
 
 # Sauvegarde du fichier tif 
@@ -30,6 +33,7 @@ elv_parcours %>%
   writeRaster(here("rasterElevation/elv_parcours.tif"),
              overwrite=TRUE)
 
+ui_done("{ui_field('Élévations')} sauvegardées vers {ui_field('rasterElevation/elv_parcours.tif')}")
 
 ################################################################################
 

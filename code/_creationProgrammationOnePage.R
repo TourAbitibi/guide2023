@@ -23,6 +23,7 @@ source(here("code","programmation.R"))
 
 ################################################################################
 
+ui_todo("Création de la programmation en français")
 
 # Tableau Français - Format kable 
 prog_FR <- dff %>% 
@@ -41,10 +42,16 @@ prog_FR <- dff %>%
 save_kable(prog_FR, here("guide_FR_PDF", "details", "prog.png"),
            bs_theme = "spacelab")
 
+ui_done("Création de la programmation en francçais OK")
+
+
 ################################################################################
 ################################################################################
 
 # Tableau Anglais - Format kable 
+
+ui_todo("Création de la programmation en anglais")
+
 
 prog_EN <- dfe %>% 
   select(-presente) %>% 
@@ -61,3 +68,6 @@ prog_EN <- dfe %>%
 
 save_kable(prog_EN, here("guide_EN_PDF", "details", "prog.png"),
            bs_theme = "spacelab")
+
+ui_done("Création de la programmation en anglais OK")
+
