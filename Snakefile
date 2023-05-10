@@ -13,9 +13,9 @@ rule Z_targets:
         "git_book/_book/index.html",
         "git_book_EN/_book/index.html",
         "git_book_organisateur/_book/index.html",
-        "/Volumes/web/guide/FR/index.html",
-        "/Volumes/web/guide/EN/index.html",
-        "/Volumes/web/guide/organisateur/index.html",
+        #"/Volumes/web/guide/FR/index.html",
+        #"/Volumes/web/guide/EN/index.html",
+        #"/Volumes/web/guide/organisateur/index.html",
         "homepage/index.html",
         "homepage/index.Rmd",
         "resume_prog/prog.Rmd",
@@ -87,7 +87,16 @@ rule Z_targets:
     output:
         "dag.png"
     shell:
-        "snakemake -s Snakefile --dag | dot -Tpng > dag.png"
+        """
+        snakemake -s Snakefile --dag | dot -Tpng > dag.png
+        
+        echo "\n  ~~ Copie vers PVE1 ~~ \n"
+
+        # Transfert via SCP
+
+        scp -r  web/* bruno@192.168.101.120:/home/bruno/guide_web/
+        
+        """
 
 
 
@@ -469,44 +478,45 @@ rule R54_render_book_organisateur:
 #################################################################################################################
 
 
-rule R99_NAS_copy:
-    input:
-        "homepage/index.html",
-        "resume_prog/prog.html",
-        "git_book/_book/index.html",
-        "git_book_EN/_book/index.html",
-        "git_book_organisateur/_book/index.html",
-        "img/cartes/input/Etape1_Full.png",
-        "img/elev/Etape1_Full_FR.png",
-        "img/cartes/sign/E1_sign_01.png"
-    output:
-        "/Volumes/web/guide/index.html",
-        "/Volumes/web/guide/prog/index.html",
-        "/Volumes/web/guide/FR/index.html",
-        "/Volumes/web/guide/EN/index.html",
-        "/Volumes/web/guide/organisateur/index.html"
-    params:
-        home_page = "homepage/index.html",
-        prog_prelim = "resume_prog/prog.html",
-        prog_prelim_files = "resume_prog/prog_files",
-        script_export_gitbook = "script/script_export_guide_FR_EN.sh",
-        script_export_organisateur = "script/script_export_organisateur.sh"
-    shell:
-        """
-        echo "\n  ~~ Copie vers NAS ~~ \n"
+# rule R99_NAS_copy:
+#     input:
+#         "homepage/index.html",
+#         "resume_prog/prog.html",
+#         "git_book/_book/index.html",
+#         "git_book_EN/_book/index.html",
+#         "git_book_organisateur/_book/index.html",
+#         "img/cartes/input/Etape1_Full.png",
+#         "img/elev/Etape1_Full_FR.png",
+#         "img/cartes/sign/E1_sign_01.png"
+#     output:
+#         "/Volumes/web/guide/index.html",
+#         "/Volumes/web/guide/prog/index.html",
+#         "/Volumes/web/guide/FR/index.html",
+#         "/Volumes/web/guide/EN/index.html",
+#         "/Volumes/web/guide/organisateur/index.html"
+#     params:
+#         home_page = "homepage/index.html",
+#         prog_prelim = "resume_prog/prog.html",
+#         prog_prelim_files = "resume_prog/prog_files",
+#         script_export_gitbook = "script/script_export_guide_FR_EN.sh",
+#         script_export_organisateur = "script/script_export_organisateur.sh"
+#     shell:
+#         """
+#         echo "\n  ~~ Copie vers NAS ~~ \n"
 
-        # Transfert page d'accueil temporaire
-        mkdir -p /Volumes/web/guide /Volumes/web/guide/prog/
-        cp -R {params.home_page} /Volumes/web/guide
+#         # Transfert page d'accueil temporaire
+#         mkdir -p /Volumes/web/guide /Volumes/web/guide/prog/
+#         cp -R {params.home_page} /Volumes/web/guide
 
-        # Transfert programmation préliminaire
-        cp -R {params.prog_prelim} /Volumes/web/guide/prog/index.html
-        cp -R {params.prog_prelim_files} /Volumes/web/guide/prog/
+#         # Transfert programmation préliminaire
+#         cp -R {params.prog_prelim} /Volumes/web/guide/prog/index.html
+#         cp -R {params.prog_prelim_files} /Volumes/web/guide/prog/
 
-        # Transfert git_book vers NAS - FR & EN
-        sh {params.script_export_gitbook}
+#         # Transfert git_book vers NAS - FR & EN
+#         sh {params.script_export_gitbook}
 
-        # Transfert git_book_organisateur vers NAS
-        sh {params.script_export_organisateur}
+#         # Transfert git_book_organisateur vers NAS
+#         sh {params.script_export_organisateur}
 
-        """
+#         """
+
