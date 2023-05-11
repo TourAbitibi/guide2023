@@ -92,10 +92,16 @@ rule Z_targets:
         
         echo "\n  ~~ Copie vers PVE1 ~~ \n"
 
-        # Transfert via SCP
+        ## Transfert via SCP
 
-        scp -r  web/* bruno@192.168.101.120:/home/bruno/guide_web/
-        
+        # scp -r  web/* bruno@192.168.101.120:/home/bruno/guide_web/
+
+	# Rsync pour en continue
+
+	rsync -avh web/* bruno@192.168.101.120:/home/bruno/guide_web/ --delete-after  
+
+	echo "\n  ~~ Fin de la synchronisation ~~ \n"
+      
         """
 
 
