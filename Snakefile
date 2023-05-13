@@ -13,20 +13,19 @@ rule Z_targets:
         "git_book/_book/index.html",
         "git_book_EN/_book/index.html",
         "git_book_organisateur/_book/index.html",
-        #"/Volumes/web/guide/FR/index.html",
-        #"/Volumes/web/guide/EN/index.html",
-        #"/Volumes/web/guide/organisateur/index.html",
         "homepage/index.html",
         "homepage/index.Rmd",
         "resume_prog/prog.Rmd",
         "resume_prog/prog.html",
-        #"web/index.html",
-        "web/prog/index.html",
-        "web/FR/index.html",
-        "web/EN/index.html",
+        "index.html",
+        "prog/index.html",
+        "organisateur/index.html",
+        "FR/index.html",
+        "EN/index.html",
 
         "git_book/index.Rmd",
         "git_book_EN/index.Rmd",
+        "git_book_organisateur/index.Rmd",
         "rmd/MotsBienvenue.Rmd",
         "rmd/MotsBienvenue_EN.Rmd",
         "rmd/Programmation.Rmd",
@@ -38,6 +37,8 @@ rule Z_targets:
         "rmd/Etape1_EN.Rmd",
         "rmd/Etape2.Rmd",
         "rmd/Etape3.Rmd",
+        "rmd/Etape4.Rmd",
+        "rmd/Etape7.Rmd",
         "rmd/Reglements.Rmd",
         "rmd/Reglements_EN.Rmd",
         "rmd/CarteAbitibi.Rmd",
@@ -76,11 +77,11 @@ rule Z_targets:
 
         "gpx/input/Signalisation_1.gpx",
         "gpx/input/Signalisation_2.gpx",
+        "gpx/input/Signalisation_3.gpx",
         "gpx/input/Signalisation_7.gpx",
 
-        "gpx/output/parcours.shp", "gpx/output/parcours.dbf",
-        "gpx/output/parcours.prj", "gpx/output/parcours.shx",
-
+        "gpx/output/parcours.shp", "gpx/output/parcours.dbf", "gpx/output/parcours.prj", "gpx/output/parcours.shx",
+        "gpx/output/points_parcours.shp", "gpx/output/points_parcours.dbf", "gpx/output/points_parcours.prj", "gpx/output/points_parcours.shx",
         "gpx/output/points_signalisation.shp", "gpx/output/points_signalisation.dbf", "gpx/output/points_signalisation.prj", "gpx/output/points_signalisation.shx",
 
         "rasterElevation/elv_parcours.tif"
@@ -90,14 +91,18 @@ rule Z_targets:
     shell:
         """
         snakemake -s Snakefile --dag | dot -Tpng > dag.png
-       
+
         echo "\n  ~~ Rsync vers PVE1 ~~ \n"
 
-        rsync -avhP img/* web/img --delete-after
-	    rsync -avhP web/* bruno@192.168.101.120:/home/bruno/guide_web/ --delete-after  
+        rsync -avhP img/* bruno@192.168.101.120:/home/bruno/guide_web/img/ --delete-after
+        rsync -avhP FR/* bruno@192.168.101.120:/home/bruno/guide_web/FR/ --delete-after
+        rsync -avhP EN* bruno@192.168.101.120:/home/bruno/guide_web/EN/ --delete-after
+        rsync -avhP prog/* bruno@192.168.101.120:/home/bruno/guide_web/prog/ --delete-after
+        rsync -avhP organisateur/* bruno@192.168.101.120:/home/bruno/guide_web/organisateur/ --delete-after
+        rsync -avhP index.html bruno@192.168.101.120:/home/bruno/guide_web/index.html
 
 	    echo "\n  ~~ Fin de la synchronisation ~~ \n"
-      
+
         """
 
 
@@ -184,9 +189,9 @@ rule R11_creationCartesStatiques:
         """
         echo "n  ~~ Création des cartes statiques ~~ \n"
         {params.script}
-        echo "\n  ~~ Préparation des images png de taille réduite ~~ \n"
+        echo "\n  ~~ Préparation des cartes statiques png de taille réduite ~~ \n"
         optipng img/cartes/input/* -dir img/cartes/input/ -o1 -clobber -force -silent
-        echo "\n  ~~ Fin de l'optimisation des cartes png ~~ \n"
+        echo "\n  ~~ Fin de l'optimisation des cartes statiques png ~~ \n"
         """
 
 
@@ -246,11 +251,11 @@ rule R32_creationVignetteSignalisation:
         script = "code/CartesStatiquesSignalisation.R"
     shell:
         """
-        echo "n  ~~ Création des cartes statiques ~~ \n"
+        echo "n  ~~ Création des cartes statiques de signalisation (vignettes) ~~ \n"
         {params.script}
-        echo "\n  ~~ Préparation des images png de taille réduite ~~ \n"
+        echo "\n  ~~ Préparation des cartes statiques de signalisation png de taille réduite ~~ \n"
         optipng img/cartes/sign/*.png -dir img/cartes/sign/ -o1 -clobber -force
-        echo "\n  ~~ Fin de l'optimisation des cartes png ~~ \n"
+        echo "\n  ~~ Fin de l'optimisation des cartes de signalisation png ~~ \n"
         """
 
 
@@ -291,9 +296,9 @@ rule R50_render_book_EN:
         "rmd/Programmation_EN.Rmd",
         "rmd/CO.Rmd",
         "rmd/FeuillesRoute_EN.Rmd",
-        "rmd/Etape1_EN.Rmd",
-        "rmd/Etape2.Rmd",
-        "rmd/Etape3.Rmd",
+        "rmd/Etape1_EN.Rmd",  # Faire ménage après la traduction
+        "rmd/Etape2.Rmd",     #
+        "rmd/Etape3.Rmd",     #
         "rmd/Reglements_EN.Rmd",
         "rmd/CirculationCourse_EN.Rmd",
         "rmd/Regl_sejour_EN.Rmd",
@@ -303,7 +308,7 @@ rule R50_render_book_EN:
         "rmd/CarteAbitibi.Rmd"
     output:
         "git_book_EN/_book/index.html",
-        "web/EN/index.html"
+        "EN/index.html"
     params:
         guide_path = "git_book_EN",
         lang = "EN"
@@ -311,17 +316,10 @@ rule R50_render_book_EN:
         """
         Rscript -e "bookdown::render_book('{params.guide_path}')"
 
-        # Créer les fichiers
-        mkdir -p web/{params.lang} web/img
-
         # Copier les données html
-        cp -R {params.guide_path}/_book/* web/{params.lang}
+        cp -R {params.guide_path}/_book/* {params.lang}
 
-        # Copier les images
-        #cp -R {params.guide_path}/img/* web/img
-        cp -R img/* web/img
-
-        echo "\nGuide disponible au : /Users/brunogauthier/Documents/guide2023/web/{params.lang}/index.html\n"
+        echo "\nGuide disponible au : /Users/brunogauthier/Documents/guide2023/{params.lang}/index.html\n"
         """
 
 
@@ -331,7 +329,7 @@ rule R51_render_book:
 
         "gpx/output/parcours.shp",
 
-        # "img/cartes/intput/Etape1_Full.png",
+        "img/cartes/intput/Etape1_Full.png",
 
         "elevParcours/elev_parcours.csv",
         "img/elev/Etape1_Full_FR.png",
@@ -356,6 +354,7 @@ rule R51_render_book:
         "rmd/Etape1.Rmd",
         "rmd/Etape2.Rmd",
         "rmd/Etape3.Rmd",
+        "rmd/Etape7.Rmd",
         "rmd/Reglements.Rmd",
         "rmd/CirculationCourse.Rmd",
         "rmd/Regl_sejour.Rmd",
@@ -365,7 +364,7 @@ rule R51_render_book:
         "rmd/CarteAbitibi.Rmd"
     output:
         "git_book/_book/index.html",
-        "web/FR/index.html"
+        "FR/index.html"
     params:
         guide_path = "git_book",
         lang = "FR"
@@ -373,35 +372,30 @@ rule R51_render_book:
         """
         Rscript -e "bookdown::render_book('{params.guide_path}')"
 
-        # Créer les fichiers
-        mkdir -p web/{params.lang} web/img
-
         # Copier les données html
-        cp -R {params.guide_path}/_book/* web/{params.lang}
+        cp -R {params.guide_path}/_book/* {params.lang}
 
-        # Copier les images
-        #cp -R {params.guide_path}/img/* web/img
-        cp -R img/* web/img
-
-        echo "\nGuide disponible au : /Users/brunogauthier/Documents/guide2023/web/{params.lang}/index.html\n"
+        echo "\nGuide disponible au : /Users/brunogauthier/Documents/guide2023/{params.lang}/index.html\n"
         """
 
 
-# rule R52_render_homepage:
-#     input:
-#         "homepage/index.Rmd",
-#     output:
-#         "homepage/index.html",
-#         "web/index.html"
-#     params:
-#         "homepage/index.html"
-#     shell:
-#         """
-#         Rscript -e "rmarkdown::render('{input}')"
-#         echo "\n  ~~ Copie vers dossier web local ~~ \n"
-#         mkdir -p web
-#         cp -R {params} web
-#         """
+rule R52_render_homepage:
+    input:
+        "homepage/index.Rmd",
+    output:
+        "homepage/index.html",
+        "index.html"
+
+    params:
+        "homepage/index.html"
+    shell:
+        """
+        Rscript -e "rmarkdown::render('{input}')"
+
+        echo "\n  ~~ Copie index acceuil vers dossier local ~~ \n"
+        
+        cp -R {params} index.html
+        """
 
 
 rule R53_render_prog_prelim:
@@ -412,16 +406,17 @@ rule R53_render_prog_prelim:
         "elevParcours/elev_parcours.csv"
     output:
         local = "resume_prog/prog.html",
-        web = "web/prog/index.html"
+        web = "prog/index.html"
     params:
         "resume_prog/prog.Rmd"
     shell:
         """
-        mkdir -p web web/prog 
         Rscript -e "rmarkdown::render('{params}')"
-        echo "\n  ~~ Copie vers dossier web local ~~ \n"
+
+        echo "\n  ~~ Copie programmation préliminaire vers dossier web local ~~ \n"
+
         cp -R {output.local} {output.web}
-        cp -R resume_prog/prog_files web/prog/
+        cp -R resume_prog/prog_files prog/
         """
 
 
@@ -431,7 +426,7 @@ rule R54_render_book_organisateur:
 
         "gpx/output/parcours.shp",
 
-        # "img/cartes/intput/Etape1_Full.png",
+        "img/cartes/intput/Etape1_Full.png",
 
         "excel/staff.xlsx",
         "excel/Itineraires.xlsx",
@@ -453,75 +448,22 @@ rule R54_render_book_organisateur:
         "rmd/Etape3.Rmd",
         "rmd/Etape7.Rmd",
         "rmd/BoucleSignalisation.Rmd",
+        "rmd/Signalisation_Details.Rmd",
         "rmd/Reglements.Rmd",
         "rmd/CirculationCourse.Rmd",
         "rmd/Repas.Rmd",
         "rmd/Locaux.Rmd"
     output:
         "git_book_organisateur/_book/index.html",
-        "web/organisateur/index.html"
+        "organisateur/index.html"
     params:
         guide_path = "git_book_organisateur"
     shell:
         """
         Rscript -e "bookdown::render_book('{params.guide_path}')"
 
-        # Créer les fichiers
-        mkdir -p web/organisateur web/img
-
         # Copier les données html
-        cp -R {params.guide_path}/_book/* web/organisateur
+        cp -R {params.guide_path}/_book/* organisateur
 
-        # Copier les images
-        #cp -R {params.guide_path}/img/* web/img
-        cp -R img/* web/img
-
-        echo "\nGuide d'organisateur disponible au : /Users/brunogauthier/Documents/guide2023/web/organisateur/index.html\n"
+        echo "\nGuide d'organisateur disponible au : /Users/brunogauthier/Documents/guide2023/organisateur/index.html\n"
         """
-
-
-#################################################################################################################
-
-
-# rule R99_NAS_copy:
-#     input:
-#         "homepage/index.html",
-#         "resume_prog/prog.html",
-#         "git_book/_book/index.html",
-#         "git_book_EN/_book/index.html",
-#         "git_book_organisateur/_book/index.html",
-#         "img/cartes/input/Etape1_Full.png",
-#         "img/elev/Etape1_Full_FR.png",
-#         "img/cartes/sign/E1_sign_01.png"
-#     output:
-#         "/Volumes/web/guide/index.html",
-#         "/Volumes/web/guide/prog/index.html",
-#         "/Volumes/web/guide/FR/index.html",
-#         "/Volumes/web/guide/EN/index.html",
-#         "/Volumes/web/guide/organisateur/index.html"
-#     params:
-#         home_page = "homepage/index.html",
-#         prog_prelim = "resume_prog/prog.html",
-#         prog_prelim_files = "resume_prog/prog_files",
-#         script_export_gitbook = "script/script_export_guide_FR_EN.sh",
-#         script_export_organisateur = "script/script_export_organisateur.sh"
-#     shell:
-#         """
-#         echo "\n  ~~ Copie vers NAS ~~ \n"
-
-#         # Transfert page d'accueil temporaire
-#         mkdir -p /Volumes/web/guide /Volumes/web/guide/prog/
-#         cp -R {params.home_page} /Volumes/web/guide
-
-#         # Transfert programmation préliminaire
-#         cp -R {params.prog_prelim} /Volumes/web/guide/prog/index.html
-#         cp -R {params.prog_prelim_files} /Volumes/web/guide/prog/
-
-#         # Transfert git_book vers NAS - FR & EN
-#         sh {params.script_export_gitbook}
-
-#         # Transfert git_book_organisateur vers NAS
-#         sh {params.script_export_organisateur}
-
-#         """
-
