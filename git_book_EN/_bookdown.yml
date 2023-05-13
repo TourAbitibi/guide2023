@@ -15,6 +15,7 @@ rmd_files:
   - "../rmd/FeuillesRoute_EN.Rmd"
   - "../rmd/Etape1_EN.Rmd"
   - "../rmd/Etape2.Rmd"
+  - "../rmd/Etape3.Rmd"
   - "../rmd/Etape4.Rmd"
   - "../rmd/Reglements_EN.Rmd"
   - "../rmd/CirculationCourse_EN.Rmd"
