@@ -89,18 +89,12 @@ rule Z_targets:
     shell:
         """
         snakemake -s Snakefile --dag | dot -Tpng > dag.png
-        
-        echo "\n  ~~ Copie vers PVE1 ~~ \n"
+       
+        echo "\n  ~~ Rsync vers PVE1 ~~ \n"
 
-        ## Transfert via SCP
+	    rsync -avhP web/* bruno@192.168.101.120:/home/bruno/guide_web/ --delete-after  
 
-        # scp -r  web/* bruno@192.168.101.120:/home/bruno/guide_web/
-
-	# Rsync pour en continue
-
-	rsync -avh web/* bruno@192.168.101.120:/home/bruno/guide_web/ --delete-after  
-
-	echo "\n  ~~ Fin de la synchronisation ~~ \n"
+	    echo "\n  ~~ Fin de la synchronisation ~~ \n"
       
         """
 
