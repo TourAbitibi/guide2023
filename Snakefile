@@ -96,7 +96,7 @@ rule Z_targets:
 
         rsync -avhP img/* bruno@192.168.101.120:/home/bruno/guide_web/img/ --delete-after
         rsync -avhP FR/* bruno@192.168.101.120:/home/bruno/guide_web/FR/ --delete-after
-        rsync -avhP EN* bruno@192.168.101.120:/home/bruno/guide_web/EN/ --delete-after
+        rsync -avhP EN/* bruno@192.168.101.120:/home/bruno/guide_web/EN/ --delete-after
         rsync -avhP prog/* bruno@192.168.101.120:/home/bruno/guide_web/prog/ --delete-after
         rsync -avhP organisateur/* bruno@192.168.101.120:/home/bruno/guide_web/organisateur/ --delete-after
         rsync -avhP index.html bruno@192.168.101.120:/home/bruno/guide_web/index.html

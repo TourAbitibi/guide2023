@@ -7,7 +7,7 @@ editor_options:
 
 
 
-# Medical assistance"
+# Medical assistance
 
 
 Every foreign rider must have medical insurance.  
