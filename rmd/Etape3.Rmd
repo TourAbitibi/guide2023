@@ -106,7 +106,8 @@ knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"
 ```{r echo=FALSE, message=FALSE, warning=FALSE, quiet=TRUE}
 
 
-tableau_Descrip_Etape(Etape, lang)
+
+tableau_Descrip_Etape_CLMI(Etape, lang)
 
 ```
 

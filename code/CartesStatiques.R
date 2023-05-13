@@ -184,7 +184,7 @@ creation_3_map(no_etape =6,
 
 
 creation_3_map(no_etape =7,
-               pct_point_debut = 0.02, 
+               pct_point_debut = 0.012, 
                pct_point_fin = 0.97,
                pos_h_arrow = "right",
                pos_v_arrow = "top",
@@ -198,7 +198,7 @@ creation_3_map(no_etape =7,
 
 
 no_etape = 3
-pct_point_debut = 0.03
+pct_point_debut = 0.04
 pct_point_fin = 0.97
 pos_h_arrow = "left"
 pos_v_arrow = "top"

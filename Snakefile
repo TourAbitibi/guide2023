@@ -93,6 +93,7 @@ rule Z_targets:
        
         echo "\n  ~~ Rsync vers PVE1 ~~ \n"
 
+        rsync -avhP img/* web/img --delete-after
 	    rsync -avhP web/* bruno@192.168.101.120:/home/bruno/guide_web/ --delete-after  
 
 	    echo "\n  ~~ Fin de la synchronisation ~~ \n"
@@ -129,7 +130,7 @@ rule R01_importExportGPX:
 rule R02_elv_parcours:
     input:
         "code/_elv_parcours.R"  # ,   ## pose pendant la pédiode de test
-        # "gpx/output/parcours.shp"
+        #"gpx/output/parcours.shp"
 
     output:
         "rasterElevation/elv_parcours.tif"
@@ -147,7 +148,7 @@ rule R03_importExportElevation:
     input:
         "code/_importExportElevation.R",
         "rasterElevation/elv_parcours.tif"  # ,   ## pose pendant la pédiode de test
-        # "gpx/output/parcours.shp"
+        #"gpx/output/parcours.shp"
 
     output:
         "elevParcours/elev_parcours.csv"

@@ -71,11 +71,18 @@ extractionElevation <- function(etape =1 ){
 }
 ################################################################################
 
+ui_todo("Extraire les {ui_field('élévations')} dans la zone couvrant les parcours.")
+ui_warn("Longue opération")
 
 # Extraction de l'élévation sur tous les parcours
 elv_df <-map_dfr(.x= 1:n_etape, ~extractionElevation(.x))
+
+
+ui_done("Extraction des {ui_field('Élévations')} terminées.")
 
 ################################################################################
 
 # Sauvegarde du fichier en .csv
 write_csv(elv_df, here("elevParcours/elev_parcours.csv"))
+
+ui_done("Écriture du fichier {ui_field('elevParcours/elev_parcours.csv')} terminée.")

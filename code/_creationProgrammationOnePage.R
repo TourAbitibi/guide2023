@@ -42,7 +42,7 @@ prog_FR <- dff %>%
 save_kable(prog_FR, here("guide_FR_PDF", "details", "prog.png"),
            bs_theme = "spacelab")
 
-ui_done("Création de la programmation en francçais OK")
+ui_done("Création de la programmation en français OK")
 
 
 ################################################################################

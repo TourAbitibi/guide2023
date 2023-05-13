@@ -30,7 +30,17 @@ rule Z_targets:
     output:
         "dag_PDF.png"
     shell:
-        "snakemake -s SnakePDF --dag | dot -Tpng > {output}"
+        """
+        snakemake -s SnakePDF --dag | dot -Tpng > {output}
+        
+        echo "\n  ~~ Rsync vers PVE1 ~~ \n"
+
+        rsync -avhP img/* web/img --delete-after
+	    rsync -avhP web/* bruno@192.168.101.120:/home/bruno/guide_web/ --delete-after  
+
+	    echo "\n  ~~ Fin de la synchronisation ~~ \n"
+        
+        """
 
 
 ##########################################################################################################################
@@ -131,8 +141,7 @@ rule R51_render_pdf_FR:
 
          echo "  ~~ Copier le pdf vers le serveur ~~ "
 
-        cp -R {output} web/{params.lang}/guide2023.pdf &&
-        cp -R {output} /Volumes/web/guide/{params.lang}/guide2023.pdf
+        cp -R {output} web/{params.lang}/guide2023.pdf
 
         echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
         """
@@ -157,7 +166,6 @@ rule R52_render_pdf_EN:
     shell:
         """
         mkdir -p web web/EN
-        mkdir -p /Volumes/web/guide/{params.lang}
 
         Rscript -e "rmarkdown::render('{params.PDF_EN}')"
 
@@ -168,8 +176,7 @@ rule R52_render_pdf_EN:
 
          echo "  ~~ Copier le pdf vers le serveur ~~ "
 
-        cp -R {output} web/{params.lang}/guide2023.pdf &&
-        cp -R {output} /Volumes/web/guide/{params.lang}/guide2023.pdf
+        cp -R {output} web/{params.lang}/guide2023.pdf
 
         echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
         """

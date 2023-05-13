@@ -99,19 +99,20 @@ sauvegarde_requise <- function(){
 # (création .tif, .csv aux prochaines étapes)
 
 ## Vérifier si le parcours.shp existe
-
-ui_todo("Vérifier si le parcours.shp a été modifié avant de le modifier.")
-
-parcours_en_memoire = NULL # assignation initiale
-
-if (file.exists(here("gpx","output","parcours.shp"))) { parcours_en_memoire = st_read(here("gpx/output/parcours.shp"))}     
-
-## Vérifier si les 2 parcours sont exactement les mêmes.
-meme_parcours <- all(parcours == parcours_en_memoire)
-
-a_sauvegarder <- ifelse(!is.na(meme_parcours) & meme_parcours, FALSE, TRUE)
-
-## Sauvegarder seulement si a changé
-ifelse(a_sauvegarder,  sauvegarde_requise(),
-       "Pas besoin d'écrire `parcours.shp` à nouveau : aucun changement")
-       
+# 
+# ui_todo("Vérifier si le parcours.shp a été modifié avant de le modifier.")
+# 
+# parcours_en_memoire = NULL # assignation initiale
+# 
+# if (file.exists(here("gpx","output","parcours.shp"))) { parcours_en_memoire = st_read(here("gpx/output/parcours.shp"))}     
+# 
+# ## Vérifier si les 2 parcours sont exactement les mêmes.
+# meme_parcours <- all(parcours == parcours_en_memoire)
+# 
+# a_sauvegarder <- ifelse(!is.na(meme_parcours) & meme_parcours, FALSE, TRUE)
+# 
+# ## Sauvegarder seulement si a changé
+# ifelse(a_sauvegarder,  sauvegarde_requise(),
+#        "Pas besoin d'écrire `parcours.shp` à nouveau : aucun changement")
+    
+sauvegarde_requise()   

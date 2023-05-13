@@ -7,6 +7,11 @@
     </link>
     <time>2023-03-18T11:13:12Z</time>
   </metadata>
+  <wpt lon="-78.116" lat="48.574119811525556">
+    <name>Start</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
   <trk>
     <name>Tour 2023 - Étape 3 CLMI (course)</name>
     <trkseg>
@@ -229,9 +234,6 @@
       <trkpt lat="48.59181" lon="-78.06946">
         <ele>334.5</ele>
       </trkpt>
-      <trkpt lat="48.59181" lon="-78.06946">
-        <ele>334.5</ele>
-      </trkpt>
       <trkpt lat="48.59127" lon="-78.06937">
         <ele>334.4</ele>
       </trkpt>
@@ -271,25 +273,31 @@
       <trkpt lat="48.58751" lon="-78.07288">
         <ele>329.7</ele>
       </trkpt>
-      <trkpt lat="48.58746" lon="-78.0732">
-        <ele>328.5</ele>
+      <trkpt lat="48.58748" lon="-78.07308">
+        <ele>328.9</ele>
       </trkpt>
-      <trkpt lat="48.5876" lon="-78.07325">
-        <ele>328.7</ele>
+      <trkpt lat="48.58748" lon="-78.07308">
+        <ele>328.9</ele>
       </trkpt>
-      <trkpt lat="48.58749" lon="-78.07398">
-        <ele>327.2</ele>
+      <trkpt lat="48.58733" lon="-78.07405">
+        <ele>327.3</ele>
       </trkpt>
-      <trkpt lat="48.58737" lon="-78.0747">
-        <ele>327.9</ele>
+      <trkpt lat="48.58722" lon="-78.07493">
+        <ele>328.6</ele>
       </trkpt>
-      <trkpt lat="48.58712" lon="-78.07552">
-        <ele>329.3</ele>
+      <trkpt lat="48.5871" lon="-78.07543">
+        <ele>329.2</ele>
       </trkpt>
-      <trkpt lat="48.58688" lon="-78.07634">
+      <trkpt lat="48.58696" lon="-78.07589">
+        <ele>329.7</ele>
+      </trkpt>
+      <trkpt lat="48.58681" lon="-78.0762699">
         <ele>330.4</ele>
       </trkpt>
-      <trkpt lat="48.58646" lon="-78.07692">
+      <trkpt lat="48.58664" lon="-78.07661">
+        <ele>330.9</ele>
+      </trkpt>
+      <trkpt lat="48.58645" lon="-78.07691">
         <ele>330.5</ele>
       </trkpt>
       <trkpt lat="48.58603" lon="-78.0775">
@@ -364,11 +372,14 @@
       <trkpt lat="48.5751" lon="-78.0888">
         <ele>317.5</ele>
       </trkpt>
-      <trkpt lat="48.5751" lon="-78.0900599">
+      <trkpt lat="48.5751" lon="-78.09005">
         <ele>316.9</ele>
       </trkpt>
       <trkpt lat="48.5751" lon="-78.0913099">
         <ele>315.8</ele>
+      </trkpt>
+      <trkpt lat="48.5751" lon="-78.09256">
+        <ele>314.2</ele>
       </trkpt>
       <trkpt lat="48.5751" lon="-78.09256">
         <ele>314.2</ele>
@@ -442,16 +453,19 @@
       <trkpt lat="48.57517" lon="-78.11578">
         <ele>303.1</ele>
       </trkpt>
+      <trkpt lat="48.57517" lon="-78.11578">
+        <ele>303.1</ele>
+      </trkpt>
       <trkpt lat="48.57517" lon="-78.116">
         <ele>303.2</ele>
       </trkpt>
       <trkpt lat="48.57455" lon="-78.116">
         <ele>304.7</ele>
       </trkpt>
-      <trkpt lat="48.57394" lon="-78.116">
+      <trkpt lat="48.57393" lon="-78.116">
         <ele>306.1</ele>
       </trkpt>
-      <trkpt lat="48.57332" lon="-78.11601">
+      <trkpt lat="48.57331" lon="-78.11601">
         <ele>306.4</ele>
       </trkpt>
     </trkseg>

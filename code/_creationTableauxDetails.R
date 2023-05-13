@@ -32,3 +32,16 @@ walk(1:7, ~ecrire_tableau(.x, "FR"))
 # Produire les tableaux en anglais
 walk(1:7, ~ecrire_tableau(.x, "EN"))
 
+################################################################################
+
+ecrire_tableau_CLMI <- function(Etape, lang){
+  
+  tableau_Descrip_Etape_CLMI(Etape, lang) %>% save_kable(here(glue("guide_{lang}_PDF"), "details"  , glue("tableau_{Etape}.pdf")))
+  
+}
+
+# Écraser le tableau pour le CLMI - français
+ecrire_tableau_CLMI(3, "FR")
+
+# Écraser le tableau pour le CLMI - anglais
+ecrire_tableau_CLMI(3, "EN")

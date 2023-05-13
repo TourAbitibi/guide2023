@@ -143,6 +143,50 @@ tableau_Descrip_Etape <- function(Etape = 1, language = "FR"){
 
 }
 
+# Tableau custom pour le CLMI, copié du code/_import_itineraire.R
+
+tableau_Descrip_Etape_CLMI <- function(Etape = 3, language = "FR"){
+  
+  descr_iti <- calcul_iti_etape(Etape, language)
+  
+  descr_iti %>% 
+    select(KM_a_faire,
+           KM_fait,
+           Emoji,
+           Details,
+           time_arr_rapide,
+           time_arr_moy,
+           time_arr_lent) %>% 
+    kbl(col.names = NULL,
+        escape = F, # permet de passer les <br/>
+        align = c(rep('c', times = 7))) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T, 
+                  font_size = 16) %>%
+    
+    # Conditions des colonnes
+    column_spec(2, bold = T) %>%
+    
+    # Conditions de rangées
+    row_spec(which(descr_iti$Symbol == "Green",), bold = F, color = "darkgreen" ) %>%
+    row_spec(which(descr_iti$Symbol == "Danger",), bold = F, color = couleurs$rougeDanger ) %>%
+    row_spec(which(descr_iti$Symbol == "Finish",), bold = T, color = couleurs$brunMaillot) %>%
+    
+    # Header tableau
+    add_header_above(  c({if (language=="FR") "restant" else "to go"}, 
+                         {if (language=="FR") "fait" else "done"},
+                         {if (language=="FR") "parcours" else "info"}, 
+                         iti_etape$Details$Descr_km[Etape],
+                         iti_etape$Details$Vit_rapide[Etape],
+                         iti_etape$Details$Vit_moy[Etape],
+                         iti_etape$Details$Vit_lent[Etape])) %>% 
+    add_header_above(c( "km"  = 2, 
+                        {if(language=="FR") "Info" else "Course"}, 
+                        iti_etape$Details$Descr_Villes[Etape], 
+                        "km/h" = 3 )) 
+  
+}
+
 # Fonction - calcul de l'heure de passage à un km donné (pour POIs)
 calcul_h_passage <- function(km){
   
