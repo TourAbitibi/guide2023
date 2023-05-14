@@ -17,6 +17,8 @@ rmd_files:
   - "../rmd/Etape2.Rmd"
   - "../rmd/Etape3.Rmd"
   - "../rmd/Etape4.Rmd"
+  - "../rmd/Etape5.Rmd"
+  - "../rmd/Etape6.Rmd"
   - "../rmd/Etape7.Rmd"
   - "../rmd/Reglements.Rmd"
   - "../rmd/CirculationCourse.Rmd"
