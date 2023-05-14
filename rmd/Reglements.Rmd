@@ -85,13 +85,13 @@ Article 10 – Arrivée en circuit (Étape 2)
     Si à l’entrée du circuit, il est déterminé par le commissaire que le coureur ne pourra arriver dans le délai d’arrivée prescrit, le commissaire pourra arrêter ce dernier et il ne pourra reprendre le départ à la prochaine étape.
 
 
-Article 11 – Circuits urbains (Étape 7)
+Article 11 – Arrivée en circuit - dernière étape (Étape 7)
 
-:   Lors de l’étape 7, un coureur doublé par le peloton avant son 5e passage sur la ligne d’arrivée du circuit urbain sera retiré de la course par les commissaires et recevra un résultat « hors-délai ». 
+:   Lors de la dernière étape, un coureur arrêté par le commissaire à l’entrée du circuit d'arrivée sera considéré **hors délai** et n’apparaîtra pas aux résultats.
 
-    Un coureur doublé par le peloton après son 5e passage sur la ligne d’arrivée sera retiré de la course par les commissaires et sera crédité d’un temps calculé basé sur sa vitesse moyenne pour la distance qu’il aura parcourue, après s’être présenté à la table des commissaires à la ligne d’arrivée.
+    Un coureur doublé sur le circuit d’arrivée devra se retirer de la course et sera crédité d’un temps calculé. Il apparaîtra aux résultats s’il se rapporte aux commissaires à la ligne d’arrivée lors de son exclusion.
     
-    Tout coureur abandonnant en cours de circuit lors de l’étape 7 obtiendra un résultat d’**abandon**.
+    Tout coureur abandonnant en cours de circuit lors de la dernière étape obtiendra un résultat d’**abandon**.
     
 
 Article 12 – Bonifications en temps

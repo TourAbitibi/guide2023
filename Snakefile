@@ -127,7 +127,7 @@ rule R01_importExportGPX:
         """
 
 
-# Rule partiellement en pause pendant création !!!!
+
 rule R02_elv_parcours:
     input:
         "code/_elv_parcours.R"  # ,   ## pose pendant la pédiode de test
@@ -143,7 +143,6 @@ rule R02_elv_parcours:
         """
 
 
-# Rule partiellement en pause pendant création !!!!
 
 rule R03_importExportElevation:
     input:
@@ -170,46 +169,46 @@ rule R03_importExportElevation:
 
 # Création des cartes statiques (full, départ, arrivée) et réduction de leur taille
 # En pause pendant création
-rule R11_creationCartesStatiques:
-    input:
-        "code/_import_itineraire.R",
-        "code/CartesStatiques.R",
-        "excel/Itineraires.xlsx",
-        "gpx/output/parcours.shp"
+# rule R11_creationCartesStatiques:
+#     input:
+#         "code/_import_itineraire.R",
+#         "code/CartesStatiques.R",
+#         "excel/Itineraires.xlsx",
+#         "gpx/output/parcours.shp"
 
-    output:
-        "img/cartes/input/Etape1_Full.png"
-    params:
-        script = "code/CartesStatiques.R"
-    shell:
-        """
-        echo "n  ~~ Création des cartes statiques ~~ \n"
-        {params.script}
-        echo "\n  ~~ Préparation des cartes statiques png de taille réduite ~~ \n"
-        optipng img/cartes/input/* -dir img/cartes/input/ -o1 -clobber -force -silent
-        echo "\n  ~~ Fin de l'optimisation des cartes statiques png ~~ \n"
-        """
+#     output:
+#         "img/cartes/input/Etape1_Full.png"
+#     params:
+#         script = "code/CartesStatiques.R"
+#     shell:
+#         """
+#         echo "n  ~~ Création des cartes statiques ~~ \n"
+#         {params.script}
+#         echo "\n  ~~ Préparation des cartes statiques png de taille réduite ~~ \n"
+#         optipng img/cartes/input/* -dir img/cartes/input/ -o1 -clobber -force -silent
+#         echo "\n  ~~ Fin de l'optimisation des cartes statiques png ~~ \n"
+#         """
 
 
 # # Création des graphiques d'élévation
 # # En pause pendant création
-rule R12_creationGraphElevation:
-    input:
-        "code/graphique_denivele.R",
-        "excel/Itineraires.xlsx",
-        "gpx/output/parcours.shp",
-        "rasterElevation/elv_parcours.tif",
-        "elevParcours/elev_parcours.csv"
+# rule R12_creationGraphElevation:
+#     input:
+#         "code/graphique_denivele.R",
+#         "excel/Itineraires.xlsx",
+#         "gpx/output/parcours.shp",
+#         "rasterElevation/elv_parcours.tif",
+#         "elevParcours/elev_parcours.csv"
 
-    output:
-        "img/elev/Etape1_Full_FR.png"
-    params:
-        script = "code/graphique_denivele.R"
-    shell:
-        """
-        echo "\n   ~~ Création des graphiques d'élévation ~~ \n"
-        {params.script}
-        """
+#     output:
+#         "img/elev/Etape1_Full_FR.png"
+#     params:
+#         script = "code/graphique_denivele.R"
+#     shell:
+#         """
+#         echo "\n   ~~ Création des graphiques d'élévation ~~ \n"
+#         {params.script}
+#         """
 
 ##########################################################################################################################
 ##########################################################################################################################
