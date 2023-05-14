@@ -1,11 +1,14 @@
 
-<!-- Besoin de changer le # de la ville du titre et la variable Etape  -->
+<!-- Besoin de changer le # de la ville du titre et la variable Etape et codeJour -->
+
+<!-- Version anglaise  -- AVEC circuit d'arrivée   -->
 
 # Stage 1 : `r iti_etape$Details$Descr_Villes[1]`
 
 ```{r, echo=FALSE}
 Etape <-1
 
+codeJour <- "Mar"
 
 heureDep <- iti_etape$Details$time_depart[Etape]
 
@@ -28,7 +31,7 @@ glue('<table border=1>
 
 <br/>
 
-**`r dates_EN %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)`** 
+**`r dates_EN %>% filter(code== codeJour) %>% pull(jsem_jour_mois_an)`** 
 
  **`r iti_etape$Details$Distance_totale[Etape]` km**
 

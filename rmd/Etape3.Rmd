@@ -1,12 +1,14 @@
-<!-- Besoin de changer le # de la ville du titre et la variable Etape  -->
+<!-- Besoin de changer le # de la ville du titre et la variable Etape et codeJour -->
+
+<!-- CLMI -->
 
 # Étape 3 : `r iti_etape$Details$Descr_Villes[3]`
-
 
 
 ```{r, echo=FALSE}
 Etape <-3
 
+codeJour <- "Jeu"
 
 heureDep <- iti_etape$Details$time_depart[Etape]
 
@@ -30,12 +32,10 @@ glue('<table border=1>
 
 <br/>
 
-**`r dates_FR %>% filter(code=="Mer") %>% pull(jsem_jour_mois_an)`** 
+**`r dates_FR %>% filter(code == codeJour) %>% pull(jsem_jour_mois_an)`** 
 
  **`r iti_etape$Details$Distance_totale[Etape]` km**
 
-
- 
 
 ## Sommaire
 
@@ -105,9 +105,8 @@ knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, quiet=TRUE}
 
-
-
-tableau_Descrip_Etape_CLMI(Etape, lang)
+# Tableau sans footer pour le CLMI
+tableau_Descrip_Etape_BASE(Etape, lang)
 
 ```
 

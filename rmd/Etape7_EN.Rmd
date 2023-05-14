@@ -1,11 +1,11 @@
 
 <!-- Besoin de changer le # de la ville du titre et la variable Etape et codeJour -->
 
-<!-- Version FR - AVEC circuit d'arrivée -->
+<!-- Version anglaise  -- AVEC circuit d'arrivée   -->
 
 <!-- Notes spéciale pour dernière étape -->
 
-# Étape 7 : `r iti_etape$Details$Descr_Villes[7]`
+# Stage 7 : `r iti_etape$Details$Descr_Villes[7]`
 
 ```{r, echo=FALSE}
 Etape <-7
@@ -18,13 +18,14 @@ heureCircuit <- iti_etape$Details$HeureEntreeVille[Etape]
 
 heureArr <- iti_etape$Details$time_arrivee[Etape]
 
+
 ```
 
 ```{r, echo=FALSE, results='asis'}
 
 glue('<table border=1>
     <tr>
-        <td><strong/>Présentée par</strong></td>
+        <td><strong/>Powered by</strong></td>
         <td><img src="../img/logo/comm_{Etape}.png" width="350" style="float:right"></td>
     </tr>
 </table>')
@@ -32,28 +33,28 @@ glue('<table border=1>
 
 <br/>
 
-**`r dates_FR %>% filter(code== codeJour) %>% pull(jsem_jour_mois_an)`** 
+**`r dates_EN %>% filter(code== codeJour) %>% pull(jsem_jour_mois_an)`** 
 
  **`r iti_etape$Details$Distance_totale[Etape]` km**
 
 
-## Sommaire
+## Summary
 
-- `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
-- `r iti_etape$Details$Nb_tours[Etape]` tours de circuits de `r iti_etape$Details$KM_par_tours[Etape]` km
+- `r iti_etape$Details$KM_Neutres[Etape]` neutralized km from the start   
+- `r iti_etape$Details$Nb_tours[Etape]` circuits laps of `r iti_etape$Details$KM_par_tours[Etape]` km
 
 
 ----------------------------------------------------
-                                              Heure
+                                              Time
 ----------------- ----------------------------------
-Départ                                  `r heureDep`
+Start                                  `r heureDep`
 
-Arrivée au circuit                      `r heureCircuit`
+Circuit entrance                       `r heureCircuit`
 
-Arrivée finale                         `r heureArr`
+Finish                                 `r heureArr`
 ----------------------------------------------------
 
-## Parcours
+## Course
 
 ```{r, echo = FALSE, eval = TRUE}
 
@@ -65,11 +66,11 @@ carte_dynamique_etape(Etape)
 <br/>
 
 
-<a href="`r iti_etape$Details$Liens[Etape]`" target="blank">Lien vers <strong>Ride with GPS</strong></a>
+<a href="`r iti_etape$Details$Liens[Etape]`" target="blank">Link to <strong>Ride with GPS</strong></a>
 
 <br/>
 
-### Détail du départ
+### Start details
 
 
 ```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
@@ -78,7 +79,7 @@ knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Dep.p
 
 ```
 
-### Détail de l'arrivée
+### Finish details
 
 ```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
 
@@ -87,7 +88,7 @@ knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Arr.p
 ```
 
 
-## Élévation
+## Topographic profile
 
 ```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
 
@@ -101,7 +102,7 @@ knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"
 
 ```
 
-## Description détaillée
+## Detailed description
 
 ```{r echo=FALSE}
 
@@ -112,4 +113,4 @@ tableau_Descrip_Etape(Etape, lang)
 
 ### Notes {-}
 
-Merci de consulter l'article 11 des [règlements particuliers][Règlements particuliers] concernant l'arrivée en circuit de cette dernière étape.
+Please refer to article 11 of the [specific rules][Specific rules] for the circuit arrival of this last stage.

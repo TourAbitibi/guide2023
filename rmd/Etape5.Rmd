@@ -1,20 +1,16 @@
-
 <!-- Besoin de changer le # de la ville du titre et la variable Etape et codeJour -->
 
-<!-- Version FR - AVEC circuit d'arrivée -->
+<!-- Version FR - SANS circuit d'arrivée   -->
 
-<!-- Notes spéciale pour dernière étape -->
+# Étape 5 : `r iti_etape$Details$Descr_Villes[5]`
 
-# Étape 7 : `r iti_etape$Details$Descr_Villes[7]`
 
 ```{r, echo=FALSE}
-Etape <-7
+Etape <-5
 
-codeJour <- "Dim"
+codeJour <- "Ven"
 
 heureDep <- iti_etape$Details$time_depart[Etape]
-
-heureCircuit <- iti_etape$Details$HeureEntreeVille[Etape]
 
 heureArr <- iti_etape$Details$time_arrivee[Etape]
 
@@ -37,18 +33,18 @@ glue('<table border=1>
  **`r iti_etape$Details$Distance_totale[Etape]` km**
 
 
+ 
+
 ## Sommaire
 
 - `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
-- `r iti_etape$Details$Nb_tours[Etape]` tours de circuits de `r iti_etape$Details$KM_par_tours[Etape]` km
-
+- Arrivée au sommet du Mont Bell : bonification doublée pour Classement général individuel de la montagne (GPM) (art. 13.3, [Règlements particuliers])
+- Cérémonies protocolaires sur le site de départ devant l'hôtel de ville de Senneterre
 
 ----------------------------------------------------
                                               Heure
 ----------------- ----------------------------------
 Départ                                  `r heureDep`
-
-Arrivée au circuit                      `r heureCircuit`
 
 Arrivée finale                         `r heureArr`
 ----------------------------------------------------
@@ -63,7 +59,6 @@ carte_dynamique_etape(Etape)
 
 
 <br/>
-
 
 <a href="`r iti_etape$Details$Liens[Etape]`" target="blank">Lien vers <strong>Ride with GPS</strong></a>
 
@@ -101,15 +96,14 @@ knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"
 
 ```
 
+
 ## Description détaillée
 
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE, quiet=TRUE}
 
 
-tableau_Descrip_Etape(Etape, lang)
+tableau_Descrip_Etape_Sommet(Etape, lang)
 
 ```
 
-### Notes {-}
 
-Merci de consulter l'article 11 des [règlements particuliers][Règlements particuliers] concernant l'arrivée en circuit de cette dernière étape.

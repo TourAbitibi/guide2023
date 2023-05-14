@@ -1,4 +1,6 @@
-<!-- Besoin de changer le # de la ville du titre et la variable Etape  -->
+<!-- Besoin de changer le # de la ville du titre et la variable Etape et codeJour -->
+
+<!-- Version FR - SANS circuit d'arrivée -->
 
 # Étape 2 : `r iti_etape$Details$Descr_Villes[2]`
 
@@ -7,6 +9,7 @@
 ```{r, echo=FALSE}
 Etape <-2
 
+codeJour <- "Mer"
 
 heureDep <- iti_etape$Details$time_depart[Etape]
 
@@ -26,12 +29,11 @@ glue('<table border=1>
 
 <br/>
 
-**`r dates_FR %>% filter(code=="Mer") %>% pull(jsem_jour_mois_an)`** 
+**`r dates_FR %>% filter(code== codeJour) %>% pull(jsem_jour_mois_an)`** 
 
  **`r iti_etape$Details$Distance_totale[Etape]` km**
 
 
- 
 
 ## Sommaire
 
@@ -102,5 +104,4 @@ knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"
 tableau_Descrip_Etape(Etape, lang)
 
 ```
-
 
