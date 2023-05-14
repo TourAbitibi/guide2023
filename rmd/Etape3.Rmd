@@ -106,7 +106,7 @@ knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"
 ```{r echo=FALSE, message=FALSE, warning=FALSE, quiet=TRUE}
 
 # Tableau sans footer pour le CLMI
-tableau_Descrip_Etape_BASE(Etape, lang)
+tableau_Descrip_BASE(Etape, lang)
 
 ```
 

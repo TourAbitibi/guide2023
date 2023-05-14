@@ -33,12 +33,8 @@ rule Z_targets:
         "code/programmation.R",
         "rmd/CO.Rmd",
         "rmd/FeuillesRoute.Rmd",
-        "rmd/Etape1.Rmd",
-        "rmd/Etape1_EN.Rmd",
-        "rmd/Etape2.Rmd",
-        "rmd/Etape3.Rmd",
-        "rmd/Etape4.Rmd",
-        "rmd/Etape7.Rmd",
+        "rmd/Etape1_EN.Rmd", "rmd/Etape2_EN.Rmd", "rmd/Etape3_EN.Rmd", "rmd/Etape4_EN.Rmd", "rmd/Etape5_EN.Rmd", "rmd/Etape6_EN.Rmd", "rmd/Etape7_EN.Rmd",
+        "rmd/Etape1.Rmd", "rmd/Etape2.Rmd", "rmd/Etape3.Rmd", "rmd/Etape4.Rmd", "rmd/Etape5.Rmd", "rmd/Etape6.Rmd", "rmd/Etape7.Rmd",
         "rmd/Reglements.Rmd",
         "rmd/Reglements_EN.Rmd",
         "rmd/CarteAbitibi.Rmd",
@@ -296,9 +292,7 @@ rule R50_render_book_EN:
         "rmd/Programmation_EN.Rmd",
         "rmd/CO.Rmd",
         "rmd/FeuillesRoute_EN.Rmd",
-        "rmd/Etape1_EN.Rmd",  # Faire ménage après la traduction
-        "rmd/Etape2.Rmd",     #
-        "rmd/Etape3.Rmd",     #
+        "rmd/Etape1_EN.Rmd", "rmd/Etape2_EN.Rmd", "rmd/Etape3_EN.Rmd", "rmd/Etape4_EN.Rmd", "rmd/Etape5_EN.Rmd", "rmd/Etape6_EN.Rmd", "rmd/Etape7_EN.Rmd",
         "rmd/Reglements_EN.Rmd",
         "rmd/CirculationCourse_EN.Rmd",
         "rmd/Regl_sejour_EN.Rmd",
@@ -329,7 +323,7 @@ rule R51_render_book:
 
         "gpx/output/parcours.shp",
 
-        "img/cartes/intput/Etape1_Full.png",
+        "img/cartes/input/Etape1_Full.png",
 
         "elevParcours/elev_parcours.csv",
         "img/elev/Etape1_Full_FR.png",
@@ -351,10 +345,7 @@ rule R51_render_book:
         "rmd/Programmation.Rmd",
         "rmd/CO.Rmd",
         "rmd/FeuillesRoute.Rmd",
-        "rmd/Etape1.Rmd",
-        "rmd/Etape2.Rmd",
-        "rmd/Etape3.Rmd",
-        "rmd/Etape7.Rmd",
+        "rmd/Etape1.Rmd", "rmd/Etape2.Rmd", "rmd/Etape3.Rmd", "rmd/Etape4.Rmd", "rmd/Etape5.Rmd", "rmd/Etape6.Rmd", "rmd/Etape7.Rmd",
         "rmd/Reglements.Rmd",
         "rmd/CirculationCourse.Rmd",
         "rmd/Regl_sejour.Rmd",
@@ -426,7 +417,7 @@ rule R54_render_book_organisateur:
 
         "gpx/output/parcours.shp",
 
-        "img/cartes/intput/Etape1_Full.png",
+        "img/cartes/input/Etape1_Full.png",
 
         "excel/staff.xlsx",
         "excel/Itineraires.xlsx",
@@ -443,10 +434,7 @@ rule R54_render_book_organisateur:
         "rmd/Programmation.Rmd",
         "rmd/CO.Rmd",
         "rmd/FeuillesRoute.Rmd",
-        "rmd/Etape1.Rmd",
-        "rmd/Etape2.Rmd",
-        "rmd/Etape3.Rmd",
-        "rmd/Etape7.Rmd",
+        "rmd/Etape1.Rmd", "rmd/Etape2.Rmd", "rmd/Etape3.Rmd", "rmd/Etape4.Rmd", "rmd/Etape5.Rmd", "rmd/Etape6.Rmd", "rmd/Etape7.Rmd",
         "rmd/BoucleSignalisation.Rmd",
         "rmd/Signalisation_Details.Rmd",
         "rmd/Reglements.Rmd",

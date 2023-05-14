@@ -36,6 +36,7 @@ glue('<table border=1>
 ## Summary
 
 - `r iti_etape$Details$KM_Neutres[Etape]` neutralized km from the start   
+- Clockwise loop
 - Without circuit finish
 
 

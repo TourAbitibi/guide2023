@@ -37,7 +37,8 @@ glue('<table border=1>
 
 ## Sommaire
 
-- `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
+- `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ 
+- Boucle en sens horaire
 - Sans circuit d'arrivée
 
 ----------------------------------------------------
