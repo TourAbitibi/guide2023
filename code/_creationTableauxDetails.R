@@ -19,29 +19,48 @@ source(here::here("code","/_import_itineraire.R"))
 
 ################################################################################
 
+# Définir les étapes selon STD, CLMI ou SOMMET
+etapesStd <- c(1,2,4,6,7)
+etapeCLMI <- 3
+etapeSOMMET <- 5
+  
+################################################################################
+################################################################################
 
-ecrire_tableau <- function(Etape, lang){
+
+ecrire_tableau_STD <- function(Etape, lang){
 
   tableau_Descrip_Etape(Etape, lang) %>% save_kable(here(glue("guide_{lang}_PDF"), "details"  , glue("tableau_{Etape}.pdf")))
 
 }
 
-# Produire les tableaux en français
-walk(1:7, ~ecrire_tableau(.x, "FR"))
+# Produire les tableaux STD - FR et EN
+walk(etapesStd, ~ecrire_tableau_STD(.x, "FR"))
+walk(etapesStd, ~ecrire_tableau_STD(.x, "EN"))
 
-# Produire les tableaux en anglais
-walk(1:7, ~ecrire_tableau(.x, "EN"))
 
-################################################################################
+
+# Produire le tableau pour le CLMI - FR et EN
 
 ecrire_tableau_CLMI <- function(Etape, lang){
   
-  tableau_Descrip_Etape_CLMI(Etape, lang) %>% save_kable(here(glue("guide_{lang}_PDF"), "details"  , glue("tableau_{Etape}.pdf")))
+  tableau_Descrip_BASE(Etape, lang) %>% save_kable(here(glue("guide_{lang}_PDF"), "details"  , glue("tableau_{Etape}.pdf")))
   
 }
 
-# Écraser le tableau pour le CLMI - français
-ecrire_tableau_CLMI(3, "FR")
+ecrire_tableau_CLMI(etapeCLMI, "FR")
+ecrire_tableau_CLMI(etapeCLMI, "EN")
 
-# Écraser le tableau pour le CLMI - anglais
-ecrire_tableau_CLMI(3, "EN")
+
+
+# Écraser le tableau pour l'arrivée au sommet - FR et EN
+
+ecrire_tableau_SOMMET <- function(Etape, lang){
+  
+  tableau_Descrip_Etape_Sommet(Etape, lang) %>% save_kable(here(glue("guide_{lang}_PDF"), "details"  , glue("tableau_{Etape}.pdf")))
+  
+}
+
+ecrire_tableau_SOMMET(etapeSOMMET, "FR")
+ecrire_tableau_SOMMET(etapeSOMMET, "EN")
+

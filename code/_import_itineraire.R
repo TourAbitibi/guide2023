@@ -80,10 +80,13 @@ calcul_iti_etape <- function(Etape, language = "FR"){
 
 }
 
-# Création tableau description détaillée 
+################################################################################
 
-tableau_Descrip_Etape <- function(Etape = 1, language = "FR"){
+# Création tableau description détaillée
 
+
+tableau_Descrip_BASE <- function(Etape = 1, language = "FR"){
+  
   descr_iti <- calcul_iti_etape(Etape, language)
   
   descr_iti %>% 
@@ -123,7 +126,16 @@ tableau_Descrip_Etape <- function(Etape = 1, language = "FR"){
     add_header_above(c( "km"  = 2, 
                         {if(language=="FR") "Info" else "Course"}, 
                         iti_etape$Details$Descr_Villes[Etape], 
-                        "km/h" = 3 )) %>% 
+                        "km/h" = 3 )) 
+  
+  
+}
+
+# Tableau typique avec footer complet
+
+tableau_Descrip_Etape <- function(Etape = 1, language = "FR"){
+
+  tableau_Descrip_BASE(Etape, language) %>%  # Tableau de base sans footer
     {if (language == "FR")
     footnote(.,general  = c("Sprint bonification : 3-2-1 sec & 6-4-2 pts",
                          "Arrivée finale : 10-6-4 sec & 30-24-20-16-12-10-8-6-4-2 pts",
@@ -143,49 +155,35 @@ tableau_Descrip_Etape <- function(Etape = 1, language = "FR"){
 
 }
 
-# Tableau custom pour le CLMI, copié du code/_import_itineraire.R
 
-tableau_Descrip_Etape_CLMI <- function(Etape = 3, language = "FR"){
+# Création tableau description détaillée - arrivée au sommet 
+
+tableau_Descrip_Etape_Sommet <- function(Etape = 1, language = "FR"){
   
-  descr_iti <- calcul_iti_etape(Etape, language)
-  
-  descr_iti %>% 
-    select(KM_a_faire,
-           KM_fait,
-           Emoji,
-           Details,
-           time_arr_rapide,
-           time_arr_moy,
-           time_arr_lent) %>% 
-    kbl(col.names = NULL,
-        escape = F, # permet de passer les <br/>
-        align = c(rep('c', times = 7))) %>% 
-    kable_styling("striped",      # kable_minimal
-                  full_width = T, 
-                  font_size = 16) %>%
-    
-    # Conditions des colonnes
-    column_spec(2, bold = T) %>%
-    
-    # Conditions de rangées
-    row_spec(which(descr_iti$Symbol == "Green",), bold = F, color = "darkgreen" ) %>%
-    row_spec(which(descr_iti$Symbol == "Danger",), bold = F, color = couleurs$rougeDanger ) %>%
-    row_spec(which(descr_iti$Symbol == "Finish",), bold = T, color = couleurs$brunMaillot) %>%
-    
-    # Header tableau
-    add_header_above(  c({if (language=="FR") "restant" else "to go"}, 
-                         {if (language=="FR") "fait" else "done"},
-                         {if (language=="FR") "parcours" else "info"}, 
-                         iti_etape$Details$Descr_km[Etape],
-                         iti_etape$Details$Vit_rapide[Etape],
-                         iti_etape$Details$Vit_moy[Etape],
-                         iti_etape$Details$Vit_lent[Etape])) %>% 
-    add_header_above(c( "km"  = 2, 
-                        {if(language=="FR") "Info" else "Course"}, 
-                        iti_etape$Details$Descr_Villes[Etape], 
-                        "km/h" = 3 )) 
+  tableau_Descrip_BASE(Etape, language) %>% # Tableau de base sans footer
+    {if (language == "FR")
+      footnote(.,general  = c("Sprint bonification : 3-2-1 sec & 6-4-2 pts",
+                              "Arrivée finale : 10-6-4 sec & 30-24-20-16-12-10-8-6-4-2 pts",
+                              "GPM : 5-3-2 points",
+                              "GPM - arrivée au sommet : 10-6-4 points"
+      ),
+      general_title = "Points et bonifications :",
+      title_format = c("italic", "bold"),
+      escape= FALSE) else
+        footnote(.,general  = c("Bonus sprint : 3-2-1 sec & 6-4-2 pts",
+                                "Final Finish : 10-6-4 sec & 30-24-20-16-12-10-8-6-4-2 pts",
+                                "KOM : 5-3-2 points",
+                                "KOM - mountain top finish : 10-6-4 points"
+        ),
+        general_title = "Points and bonifications :",
+        title_format = c("italic", "bold"),
+        escape= FALSE)
+    }
   
 }
+
+
+################################################################################
 
 # Fonction - calcul de l'heure de passage à un km donné (pour POIs)
 calcul_h_passage <- function(km){
