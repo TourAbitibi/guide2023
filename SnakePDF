@@ -134,7 +134,7 @@ rule R51_render_pdf_FR:
         """
         Rscript -e "rmarkdown::render('{params.PDF_FR}')"
 
-        echo "  ~~ Corriger la taille du fichier ~~ "
+        echo "  ~~ Corriger la taille du fichier FR ~~ "
 
         ps2pdf {output} guide_FR_PDF/guide_resized.pdf &&
         rm {output} &&
@@ -167,7 +167,7 @@ rule R52_render_pdf_EN:
         """
         Rscript -e "rmarkdown::render('{params.PDF_EN}')"
 
-        echo "  ~~ Corriger la taille du fichier ~~ "
+        echo "  ~~ Corriger la taille du fichier EN ~~ "
 
         ps2pdf {output} guide_EN_PDF/guide_resized.pdf &&
         rm {output} &&
