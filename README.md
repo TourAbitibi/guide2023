@@ -11,5 +11,13 @@ Préparation du guide technique du [Tour de l'Abitibi](https://tourabitibi.com/)
 - Maximiser les automatisations
 - Travailler à partir des fichiers bruts (.gpx)
 - Pérenniser les opérations
-- Préparer un guide de l'organisateur permettant de présenter tous les points dangereux et la responsabilité de chacun. 
+- Préparer un guide de l'organisateur permettant de présenter tous les points dangereux et la responsabilité de chacun.
 
+## Guide WEB
+
+Les guides suivants sont disponibles sur le web via https://tourabitibi.github.io/guide2023/
+
+- `index.html` comme page d'acceuil
+- dossier `prog`pour partager la programmation préliminaire Tour Abitibi et Tour Relève
+- dossiers `EN`et `FR` pour la version en ligne du guide technique - course
+- dossier `organisateur`pour la version du guide avec les détails de l'organisation
