@@ -35,8 +35,10 @@ rule Z_targets:
         
         echo "\n  ~~ Rsync vers PVE1 ~~ \n"
 
-        rsync -avhP img/* web/img --delete-after
-	    rsync -avhP web/* bruno@192.168.101.120:/home/bruno/guide_web/ --delete-after  
+        rsync -avhP img/* bruno@192.168.101.120:/home/bruno/guide_web/img/ --delete-after
+
+        rsync -avhP FR/* bruno@192.168.101.120:/home/bruno/guide_web/FR/ --delete-after
+        rsync -avhP EN/* bruno@192.168.101.120:/home/bruno/guide_web/EN/ --delete-after
 
 	    echo "\n  ~~ Fin de la synchronisation ~~ \n"
         
@@ -130,20 +132,18 @@ rule R51_render_pdf_FR:
         lang = "FR"
     shell:
         """
-        mkdir -p web web/FR
-
         Rscript -e "rmarkdown::render('{params.PDF_FR}')"
 
         echo "  ~~ Corriger la taille du fichier ~~ "
+
         ps2pdf {output} guide_FR_PDF/guide_resized.pdf &&
         rm {output} &&
         mv guide_FR_PDF/guide_resized.pdf {output} &&
 
-         echo "  ~~ Copier le pdf vers le serveur ~~ "
+        echo "  ~~ Copier le pdf vers le fichier FR ~~ "
 
-        cp -R {output} web/{params.lang}/guide2023.pdf
+        cp -R {output} {params.lang}/guide2023.pdf
 
-        echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
         """
 
 ##########################################################################################################################
@@ -165,18 +165,16 @@ rule R52_render_pdf_EN:
         lang = "EN"
     shell:
         """
-        mkdir -p web web/EN
-
         Rscript -e "rmarkdown::render('{params.PDF_EN}')"
 
         echo "  ~~ Corriger la taille du fichier ~~ "
+
         ps2pdf {output} guide_EN_PDF/guide_resized.pdf &&
         rm {output} &&
         mv guide_EN_PDF/guide_resized.pdf {output} &&
 
-         echo "  ~~ Copier le pdf vers le serveur ~~ "
+        echo "  ~~ Copier le pdf vers le fichier EN ~~ "
 
-        cp -R {output} web/{params.lang}/guide2023.pdf
+        cp -R {output} {params.lang}/guide2023.pdf
 
-        echo "\nGuide PDF disponible au : https://home.brunogauthier.net/guide/{params.lang}/guide2023.pdf\n"  
         """
