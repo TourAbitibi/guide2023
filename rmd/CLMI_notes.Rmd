@@ -1,0 +1,108 @@
+
+<!-- CLMI_notes.Rmd  : info/photo pour rampe du CLMI -->
+
+# Installation - CLMI
+
+Présentation de différentes vues sur le secteur du départ/arrivée du CLMI et de sa rampe de départ.
+
+
+### Vues générales
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_07.JPG"))
+```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_09.JPG"))
+```
+
+
+### Positionnement de la rampe
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_01.JPG"))
+```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_06.JPG"))
+```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_08.JPG"))
+```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_10.JPG"))
+```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_13.JPG"))
+```
+
+### Secteur vérification vélos
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_02.JPG"))
+```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_03.JPG"))
+```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_04.JPG"))
+```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_05.JPG"))
+```
+
+
+### Déviation des voitures suiveuses
+
+Les voitures d'équipe choisissent de suivre certains leurs coureurs. Le retour se fait via la 3e avenue Est et la 1ere rue Est.
+
+Il faut être extrêmement prudent dans le secteur de la rue Principale Nord et de la 3e avenue : beaucoup de circulation des coureurs en fin de parcours, des voitures suiveuses, des coureurs en préparation, spectateurs, etc...
+
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "sign", "E3", "sign_92.png"))
+```
+
+### Secteur ligne arrivée
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_11.JPG"))
+```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_12.JPG"))
+```
+
+<br/>
+
+Il faut aussi gérer la sortie des coureurs de la section sécurisée. 
+
+> Il faut éviter à tout prix qu'ils retournent jusqu'à la ligne d'arrivée, où il pourrait causer une collision avec un coureur finissant son parcours à pleine vitesse. 
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "sign", "E3", "sign_91.png"))
+```
