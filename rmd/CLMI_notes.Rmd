@@ -5,6 +5,11 @@
 
 Présentation de différentes vues sur le secteur du départ/arrivée du CLMI et de sa rampe de départ.
 
+### Localisation
+
+```{r, out.width="70%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "cartes", "sign", "E3_sign_01.png"))
+```
 
 ### Vues générales
 
@@ -16,6 +21,30 @@ knitr::include_graphics(here("img", "support", "rampe", "rampe_07.JPG"))
 
 ```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
 knitr::include_graphics(here("img", "support", "rampe", "rampe_09.JPG"))
+```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_14.JPG"))
+```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_15.JPG"))
+```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_16.JPG"))
+```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_17.JPG"))
 ```
 
 
@@ -40,14 +69,15 @@ knitr::include_graphics(here("img", "support", "rampe", "rampe_08.JPG"))
 <br/>
 
 ```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "rampe", "rampe_10.JPG"))
+knitr::include_graphics(here("img", "support", "rampe", "rampe_18.JPG"))
 ```
 
 <br/>
 
 ```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "rampe", "rampe_13.JPG"))
+knitr::include_graphics(here("img", "support", "rampe", "rampe_19.JPG"))
 ```
+
 
 ### Secteur vérification vélos
 
@@ -84,6 +114,19 @@ Il faut être extrêmement prudent dans le secteur de la rue Principale Nord et 
 ```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
 knitr::include_graphics(here("img", "sign", "E3", "sign_92.png"))
 ```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_10.JPG"))
+```
+
+<br/>
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "rampe", "rampe_13.JPG"))
+```
+
 
 ### Secteur ligne arrivée
 
