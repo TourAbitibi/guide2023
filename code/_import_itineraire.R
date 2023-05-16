@@ -45,7 +45,8 @@ calcul_iti_etape <- function(Etape, language = "FR"){
 
   # Description complète de l'étape
   orig_name <-paste0("iti_etape$Etape_", Etape, sep="")
-  df_orig <- eval(parse(text=orig_name))
+  df_orig <- eval(parse(text=orig_name)) %>% 
+    mutate(KM_reel = as.double(KM_reel))
   
   #heure_dep <- iti_etape$Details$Heure_dep[Etape]
   #min_dep <- iti_etape$Details$min_dep[Etape]

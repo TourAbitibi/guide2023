@@ -174,7 +174,7 @@ creation_3_map(no_etape =5,
                buff = 600)
  
 creation_3_map(no_etape =6,
-               pct_point_debut = 0.02, 
+               pct_point_debut = 0.048, 
                pct_point_fin = 0.97,
                pos_h_arrow = "right",
                pos_v_arrow = "bottom",

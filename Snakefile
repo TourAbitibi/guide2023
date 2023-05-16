@@ -191,8 +191,8 @@ rule R03_importExportElevation:
 #         """
 
 
-# # Création des graphiques d'élévation
-# # En pause pendant création
+# Création des graphiques d'élévation
+# En pause pendant création
 # rule R12_creationGraphElevation:
 #     input:
 #         "code/graphique_denivele.R",
@@ -416,14 +416,17 @@ rule R54_render_book_organisateur:
         "code/programmation.R",
 
         "gpx/output/parcours.shp",
+        "gpx/output/points_signalisation.shp", "gpx/output/points_signalisation.dbf", "gpx/output/points_signalisation.prj", "gpx/output/points_signalisation.shx",
 
         "img/cartes/input/Etape1_Full.png",
+        "img/cartes/sign/E1_sign_01.png",
 
         "excel/staff.xlsx",
         "excel/Itineraires.xlsx",
         "excel/feuilleroute.xlsx",
         "excel/repas.xlsx",
         "excel/locaux.xlsx",
+        "excel/signalisation.xlsx",
 
         "script/render_book.R",
         "git_book_organisateur/_bookdown.yml",

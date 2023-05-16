@@ -473,7 +473,7 @@ read_excel(feuilleroute_xlsx, sheet = "LUN_AP") %>%
   
   ### Préparation des pages détaillées par Étape, contenant la partie technique (même que le guide) et les détails de signalisation ###
 
-for (i in c(1,2, 3, 7)){
+for (i in c(1,2, 3, 6, 7)){
   
   cat( knitr::knit_child(here("rmd",glue("Etape{i}.Rmd")), envir = environment(), quiet = TRUE))
   
