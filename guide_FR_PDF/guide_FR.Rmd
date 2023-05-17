@@ -125,7 +125,7 @@ Version :  `r Sys.Date()` \\
 
 Dans le but d'éviter le gaspillage de papier et de faciliter les mises à jour du document, seuls les détails des parcours seront disponibles en format papier.
 
-Veuillez vous référer au site : \url{https://home.brunogauthier.net/guide/FR} pour l'information complète du guide technique.
+Veuillez vous référer au site : \url{https://tourabitibi.github.io/guide2023/FR} pour l'information complète du guide technique.
 \vspace*{1cm}
 
 \newpage

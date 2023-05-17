@@ -125,7 +125,7 @@ Version :  `r Sys.Date()` \\
 
 In order to avoid wasting paper and to facilitate updates to the document, only the details of the courses will be available in paper format.
 
-Please refer to the website : \url{https://home.brunogauthier.net/guide/EN} for complete technical guide information.
+Please refer to the website : \url{https://tourabitibi.github.io/guide2023/EN/} for complete technical guide information.
 
 \vspace*{1cm}
 
