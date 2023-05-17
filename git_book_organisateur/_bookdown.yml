@@ -13,6 +13,7 @@ rmd_files:
   - "../rmd/CO.Rmd"
   - "../rmd/FeuillesRoute.Rmd"
   - "../rmd/BoucleSignalisation.Rmd" # Contient le détails d'étape technique + détails signalisation, à modifier pour ajouter les étapes
+  - "../rmd/Sites.Rmd"
   - "../rmd/CLMI_notes.Rmd"
   - "../rmd/Reglements.Rmd"
   - "../rmd/CirculationCourse.Rmd"

@@ -1,6 +1,6 @@
-fig:unnamed-chunk-35
-fig:unnamed-chunk-36
-fig:unnamed-chunk-37
+fig:unnamed-chunk-69
+fig:unnamed-chunk-70
+fig:unnamed-chunk-71
 présentation
 programmation
 comité-organisateur
@@ -132,6 +132,14 @@ point-dintérêt---e7_sign_12
 point-dintérêt---e7_sign_13
 point-dintérêt---e7_sign_14
 point-dintérêt---e7_sign_15
+sites-départ-arrivée
+site-départ---arrivée-amos
+site-départ---val-dor
+site-départ---rouyn-noranda
+site-départ---arrivée-malartic
+site-départ---senneterre
+site-arrivée---mont-bell---senneterre
+site-départ---la-sarre
 installation---clmi
 localisation
 vues-générales

@@ -486,6 +486,213 @@ for (i in c(1,2, 3, 6, 7)){
 <!--chapter:end:../rmd/BoucleSignalisation.Rmd-->
 
 
+<!-- Sites.Rmd  : info/photo pour sites de départs arrivées -->
+
+# Sites Départ Arrivée
+
+Présentation de différentes photos concernant les lieux de départs et arrivées.
+
+### Site départ - arrivée -- Amos
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Amos", "site_1.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Amos", "site_2.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Amos", "site_3.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Amos", "site_4.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Amos", "site_5.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Amos", "site_6.JPG"))
+```
+<br/>
+
+Et quelques références un peu plus vieilles
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Amos", "ref_1.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Amos", "ref_2.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Amos", "ref_3.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Amos", "ref_4.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Amos", "ref_5.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Amos", "ref_6.JPG"))
+```
+<br/>
+
+Voir [Installation - CLMI] pour la section spécifique au contre-la-montre du jeudi matin.
+
+### Site départ - Val-d'Or
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "VD", "site_21.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "VD", "site_22.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "VD", "site_23.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "VD", "site_24.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "VD", "site_25.JPG"))
+```
+<br/>
+
+
+
+### Site départ - Rouyn-Noranda
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "RN", "site_11.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "RN", "site_12.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "RN", "site_13.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "RN", "site_14.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "RN", "site_15.JPG"))
+```
+<br/>
+
+
+### Site départ - arrivée -- Malartic
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Malartic", "site_31.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Malartic", "site_32.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Malartic", "site_33.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Malartic", "site_34.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Malartic", "site_35.JPG"))
+```
+<br/>
+
+On voit ici que l'arche gonflable a été déplacée durant la course, avant l'arrivée, derrière le *flat bed*.
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Malartic", "site_36.JPG"))
+```
+<br/>
+
+
+### Site départ - Senneterre
+
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Senneterre", "site_41.JPG"))
+```
+<br/>
+
+On voit ici que l'arche gonflable a été déplacée pour l'arrivée, derrière le *flat bed*.
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Senneterre", "site_42.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Senneterre", "site_43.JPG"))
+```
+<br/>
+
+### Site arrivée - Mont Bell - Senneterre
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "Senneterre", "site_44.JPG"))
+```
+<br/>
+
+### Site départ - La Sarre
+
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "LS", "site_51.JPG"))
+```
+<br/>
+
+```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "sites", "LS", "site_52.JPG"))
+```
+<br/>
+
+<!--chapter:end:../rmd/Sites.Rmd-->
+
+
 <!-- CLMI_notes.Rmd  : info/photo pour rampe du CLMI -->
 
 # Installation - CLMI
