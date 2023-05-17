@@ -38,6 +38,10 @@ Images (capture d'écran de Google StreetView ou photo) des points de signalisat
 
 Image de support pour le guide. Par exemple, image de la caravane de course. 
 
+### rampe et sites
+
+Photos spécifiques pour supporter l'installation des sites par l'équipe logistique. Sert dans les pages `rmd/CLMI_notes.Rmd` et `rmd/Sites.Rmd`
+
 ### Exemple
 
 ![](support/circulation_derivation.png)
