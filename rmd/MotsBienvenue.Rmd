@@ -39,7 +39,7 @@ knitr::include_graphics(here("img", "logo", "TA_LogoCouleur_Fondransparent.png")
 
 ```{r photo_maire, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
 
-knitr::include_graphics("https://amos.quebec/medias/2021-S%C3%A9bastien-DAstous-3.jpg")
+knitr::include_graphics(here("img", "photos", "maire_amos.png"))
 
 # knitr::include_graphics(here("img", "photos", "maire_amos.png"))
 ```
@@ -59,7 +59,7 @@ Maire de la Ville d'Amos
   
 
 ```{r mots_logo_amos, echo=TRUE, echo=FALSE, fig.align='left', out.width= "25%"}
-knitr::include_graphics("https://amos.quebec/resources/images/new/logo-amos.png")
+knitr::include_graphics(here("img", "logo", "VilleAmos.png"))
 ```
 
 <br/>

@@ -33,9 +33,8 @@ knitr::include_graphics(here("img", "logo", "TA_LogoCouleur_Fondransparent.png")
 
 ```{r photo_maire, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
 
-knitr::include_graphics("https://amos.quebec/medias/2021-S%C3%A9bastien-DAstous-3.jpg")
+knitr::include_graphics(here("img", "photos", "maire_amos.png"))
 
-# knitr::include_graphics(here("img", "photos", "maire_amos.png"))
 ```
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum posuere urna nec tincidunt praesent semper. Id donec ultrices tincidunt arcu non sodales neque sodales. Tristique senectus et netus et malesuada fames ac turpis. Id ornare arcu odio ut. Turpis cursus in hac habitasse platea. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. A pellentesque sit amet porttitor. Aliquet nibh praesent tristique magna sit amet purus gravida. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Sed odio morbi quis commodo odio. Integer quis auctor elit sed vulputate mi. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Tempor nec feugiat nisl pretium fusce. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Non arcu risus quis varius quam quisque id diam vel. Mauris cursus mattis molestie a iaculis. Turpis egestas sed tempus urna et pharetra pharetra massa. Cursus euismod quis viverra nibh. Tristique risus nec feugiat in.
@@ -45,7 +44,7 @@ Amos mayor
   
 
 ```{r mots_logo_amos, echo=TRUE, echo=FALSE, fig.align='left', out.width= "25%"}
-knitr::include_graphics("https://amos.quebec/resources/images/new/logo-amos.png")
+knitr::include_graphics(here("img", "logo", "VilleAmos.png"))
 ```
 
 <br/>

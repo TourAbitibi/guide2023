@@ -39,8 +39,8 @@ dff <- tibble(
   date =  glue('{dates_prog[2]}'),
   presente  =  glue('<img src="../img/logo/comm_0.png" width="100">'),
   epreuve =  glue('Présentation des équipes<br/>Challenge Sprint Abitibi<br/>'), 
-  dep = glue('<strong>17h30</strong><br/><br/><strong>18h30</strong><br/>Amos, Cathédrale'),
-  arr = glue('<strong>18h</strong><br/><br/><strong>20h</strong><br/>Amos, Cathédrale')
+  dep = glue('<strong>16h30</strong><br/><br/><strong>17h30</strong><br/>Amos, Cathédrale'),
+  arr = glue('<strong>17h</strong><br/><br/><strong>19h</strong><br/>Amos, Cathédrale')
 )
 
 # Mardi 
@@ -135,8 +135,8 @@ dfe <- tibble(
   date =  glue('{dates_prog[2]}'),
   presente  =  glue('<img src="../img/logo/comm_0.png" width="100">'),
   epreuve =  glue('Team Presentation<br/>Challenge Sprint Abitibi<br/>'), 
-  dep = glue('<strong>17h30</strong><br/><br/><strong>18h30</strong><br/>Amos, Cathedral'),
-  arr = glue('<strong>18h</strong><br/><br/><strong>20h</strong><br/>Amos, Cathedral')
+  dep = glue('<strong>16h30</strong><br/><br/><strong>17h30</strong><br/>Amos, Cathedral'),
+  arr = glue('<strong>17h</strong><br/><br/><strong>19h</strong><br/>Amos, Cathedral')
 )
 
 # Mardi 
