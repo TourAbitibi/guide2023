@@ -93,7 +93,7 @@ Article 10 – Circuit finish (Stage 2)
 
 Article 11 – Circuit finish - last stage (Stage 7)
 
-:   During the last stage, a rider stopped by the commissaire at the circuit entrance will be considered ***hors délai*** **(out of the time cut)**  and will not appear on the results.   
+:   During the last stage, a rider stopped by the commissaire at the circuit entrance will be credited with a calculated time and won't enter the circuit. If he is already considered out of time limit relative to the first rider who entered the circuit, he will be considered ***hors délai*** **(out of the time cut)**  and will not appear on the final results.   
 
     On the circuit finish, a lapped rider will be pulled out of the race. He will be credited with a calculated time once he reports to the commissaires at the finish line.
 

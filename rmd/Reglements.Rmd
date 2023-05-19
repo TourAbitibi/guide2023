@@ -87,7 +87,7 @@ Article 10 – Arrivée en circuit (Étape 2)
 
 Article 11 – Arrivée en circuit - dernière étape (Étape 7)
 
-:   Lors de la dernière étape, un coureur arrêté par le commissaire à l’entrée du circuit d'arrivée sera considéré **hors délai** et n’apparaîtra pas aux résultats.
+:   Lors de la dernière étape, un coureur arrêté par le commissaire à l’entrée du circuit d'arrivée obtiendra un temps calculé et n'entrera pas sur le circuit. S'il est déjà en dehors du temps limite relativement au premier coureur entré sur le circuit, il sera considéré **hors délai** et n’apparaîtra pas aux résultats finaux.
 
     Un coureur doublé sur le circuit d’arrivée devra se retirer de la course et sera crédité d’un temps calculé. Il apparaîtra aux résultats s’il se rapporte aux commissaires à la ligne d’arrivée lors de son exclusion.
     
