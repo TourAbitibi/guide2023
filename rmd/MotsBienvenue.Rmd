@@ -9,7 +9,7 @@ knitr::include_graphics(here("img", "photos", "pres.png"))
 ```
 
 
-C’est au nom de tous les membres du conseil d’administration, du comité organisateur, que j’aimerais vous souhaiter la bienvenue au `r edition`e Tour de l’Abitibi. Nous sommes très fiers de notre événement cycliste, le seul dans sa catégorie en Amérique du Nord! Sa longévité est attribuable à la passion, l’engouement et l’engagement inconditionnel des Témiscabitibiens!
+C’est au nom de tous les membres du conseil d’administration, du comité organisateur, que j’aimerais vous souhaiter la bienvenue au `r edition`e Tour de l’Abitibi `r params$sponsor`. Nous sommes très fiers de notre événement cycliste, le seul dans sa catégorie en Amérique du Nord! Sa longévité est attribuable à la passion, l’engouement et l’engagement inconditionnel des Témiscabitibiens!
 
 Pour sa `r edition`e édition, le Tour accueillera avec plaisir plus d’une vingtaine d’équipes provenant d’un peu partout à travers le monde ainsi qu’une équipe de la belle région de l’Abitibi-Témiscamingue. Comme les années dernières, les partisans des équipes pourront suivre les courses en direct sur notre site web en se rendant au <a href="https://www.tourabitibi.com" target="blank">www.tourabitibi.com</a>.
 

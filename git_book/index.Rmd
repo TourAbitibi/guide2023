@@ -19,6 +19,7 @@ params:
   dates_compl: "11 au 16 juillet 2023"
   ville: "Amos"
   langue: "FR"  # FR ou EN
+  sponsor : ""
 #link-citations: yes
 #github-repo: rstudio/bookdown-demo
 ---
@@ -67,9 +68,9 @@ opts_chunk$set( tidy = FALSE, comment = NA,
 ```
 
 
-Bonjour et bienvenue au **Tour de l'Abitibi `r params$annee`** !
+Bonjour et bienvenue au **Tour de l'Abitibi `r params$sponsor` `r params$annee`** !
 
-Voici un aperçu de la `r edition`e édition du Tour de l'Abitibi qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)`.
+Voici un aperçu de la `r edition`e édition du Tour de l'Abitibi `r params$sponsor` qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)`.
 
 <br/>
 

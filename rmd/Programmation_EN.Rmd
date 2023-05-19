@@ -13,7 +13,7 @@ source(here("code","programmation.R"))
 ```
 
 
-###  `r params$annee` Tour de l'Abitibi - `r edition`th edition {-}
+###  `r params$annee` Tour de l'Abitibi `r params$sponsor` - `r edition`th edition {-}
 
 
 ```{r echo=FALSE, results='asis'}

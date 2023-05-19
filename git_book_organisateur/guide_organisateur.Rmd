@@ -19,6 +19,7 @@ params:
   dates_compl: "11 au 16 juillet 2023"
   ville: "Amos"
   langue: "FR"
+  sponsor: ""
 #github-repo: rstudio/bookdown-demo
 ---
 
@@ -68,11 +69,11 @@ opts_chunk$set( tidy = FALSE, comment = NA,
 ```
 
 
-Bonjour et bienvenue au **Tour de l'Abitibi `r params$annee`** !
+Bonjour et bienvenue au **Tour de l'Abitibi `r params$sponsor` `r params$annee`** !
 
-Voici un aperçu de la `r edition`e édition du Tour de l'Abitibi qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)`.
+Voici un aperçu de la `r edition`e édition du Tour de l'Abitibi `r params$sponsor` qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)`.
 
-Ce guide de l'organisateur contient toutes les informations essentielles pour préparer les différentes étapes du Tour de l'Abitibi et ainsi assurer la sécurité des coureurs, des participants et de la population générale. 
+Ce guide de l'organisateur contient toutes les informations essentielles pour préparer les différentes étapes du Tour de l'Abitibi `r params$sponsor` et ainsi assurer la sécurité des coureurs, des participants et de la population générale. 
 
 Notamment, il vous permettra de retrouver tous les détails : 
 
@@ -119,7 +120,7 @@ source(here("code","programmation.R"))
 ```
 
 
-###  Tour de l'Abitibi `r params$annee` - `r edition`e édition {-}
+###  Tour de l'Abitibi `r params$sponsor` `r params$annee` - `r edition`e édition {-}
 
 
 ```{r echo=FALSE, results='asis'}
@@ -850,9 +851,9 @@ knitr::include_graphics(here("img", "sign", "E3", "sign_91.png"))
 
 Article 1 – Organisation
 
-:   L’épreuve du Tour de l’Abitibi est une épreuve junior par étapes organisée par Le Tour cycliste de l’Abitibi inc. (1122, 8e Rue - Suite 201, Val-d'Or (Québec) J9P 3N6) sous les règlements et la sanction de <a href="https://uci.org" target="blank">l'Union Cycliste Internationale</a> (UCI). 
+:   L’épreuve du Tour de l’Abitibi `r params$sponsor` est une épreuve junior par étapes organisée par Le Tour cycliste de l’Abitibi inc. (1122, 8e Rue - Suite 201, Val-d'Or (Québec) J9P 3N6) sous les règlements et la sanction de <a href="https://uci.org" target="blank">l'Union Cycliste Internationale</a> (UCI). 
 
-    Le Tour de l’Abitibi est également sanctionné par la <a href="https://fqsc.net/" target="blank">Fédération Québécoise des Sports Cyclistes</a> (FQSC) et <a href="https://fcyclingcanada.ca/" target="blank">Cyclisme Canada</a> (CC). 
+    Le Tour de l’Abitibi `r params$sponsor` est également sanctionné par la <a href="https://fqsc.net/" target="blank">Fédération Québécoise des Sports Cyclistes</a> (FQSC) et <a href="https://fcyclingcanada.ca/" target="blank">Cyclisme Canada</a> (CC). 
 
     L’épreuve est disputée sous le règlement UCI et seule l’échelle des sanctions UCI s’appliquera. Elle se dispute du `r params$dates_compl`.
 

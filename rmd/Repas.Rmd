@@ -172,11 +172,11 @@ left_join(x= df, y= dates_EN, by= "code") %>%
 ### Notes {-}
 
 ```{r , eval=(lang == "FR"), results='asis', echo= FALSE}
-glue("**Le menu est sujet à changement <br/> <br/>Le Tour de l’Abitibi n’est pas responsable des réactions allergiques et/ou des intolérances alimentaires**")
+glue("**Le menu est sujet à changement <br/> <br/>Le Tour Cycliste de l’Abitibi n’est pas responsable des réactions allergiques et/ou des intolérances alimentaires**")
 ```
 
 ```{r , eval=(lang != "FR"), results='asis', echo= FALSE }
-glue("**Menu may vary <br/> <br/>The Tour de l’Abitibi is not responsible of any allergic reactions and/or food intolerances**")
+glue("**Menu may vary <br/> <br/>The Tour Cycliste de l’Abitibi is not responsible of any allergic reactions and/or food intolerances**")
 ```
 
 

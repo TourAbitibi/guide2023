@@ -2,9 +2,9 @@
 
 Article 1 – Organization
 
-:   The Tour de l’Abitibi is a junior stage road race organized by Le Tour Cycliste de l’Abitibi Inc. (1122, 8e Rue - Suite 201, Val-d'Or (Québec) J9P 3N6) under the rules and regulations of hte <a href="https://uci.org" target="blank">Union Cycliste Internationale</a> (UCI). 
+:   The Tour de l’Abitibi `r params$sponsor` is a junior stage road race organized by Le Tour Cycliste de l’Abitibi Inc. (1122, 8e Rue - Suite 201, Val-d'Or (Québec) J9P 3N6) under the rules and regulations of hte <a href="https://uci.org" target="blank">Union Cycliste Internationale</a> (UCI). 
 
-    The Tour de l’Abitibi is also sanctioned by the  <a href="https://fqsc.net/" target="blank">Fédération Québécoise des Sports Cyclistes</a> (FQSC) and <a href="https://fcyclingcanada.ca/" target="blank">Cycling Canada</a>(CC). 
+    The Tour de l’Abitibi `r params$sponsor` is also sanctioned by the  <a href="https://fqsc.net/" target="blank">Fédération Québécoise des Sports Cyclistes</a> (FQSC) and <a href="https://fcyclingcanada.ca/" target="blank">Cycling Canada</a>(CC). 
 
     The event is regulated by the UCI rulebook and only the UCI scale of penalties will apply. The competition takes place from `r params$dates_compl`.
 
