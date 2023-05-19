@@ -14,6 +14,7 @@ output:
 params:
   annee: 2023
   ville: "Amos"
+  sponsor: ""
 editor_options: 
   chunk_output_type: console
 ---
@@ -91,9 +92,9 @@ lien_iframe <- function(etape){
 
 <br/>
 
-# Tour de l'Abitibi
+# Tour de l'Abitibi `r params$sponsor`
 
-Voici un aperçu préliminaire de la `r edition`e édition du Tour de l'Abitibi qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)` à `r params$ville`. 
+Voici un aperçu préliminaire de la `r edition`e édition du Tour de l'Abitibi `r params$sponsor` qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)` à `r params$ville`. 
 
 
 <br/>
