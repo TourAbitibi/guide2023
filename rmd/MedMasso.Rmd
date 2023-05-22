@@ -15,6 +15,25 @@ Chaque coureur étranger doit avoir une assurance médicale.
 Advenant des blessures graves nécessitant une hospitalisation ou une opération, l’assurance devra défrayer les coûts supplémentaires reliés aux frais administratifs et médicaux. Un responsable de l’équipe pourrait avoir à payer les frais à l’hôpital en attendant le remboursement de l’assurance.
 
 
+### Hôpitaux de la région {-}
+
+```{r, echo=FALSE}
+resp_medical <- read_excel(staff_xlsx, sheet = "CO") %>% 
+  filter(role_en == 'Medical')
+
+```
+
+
+| Ville         | Adresse                | Téléphone      |
+| :------------ | :--------------------- | :------------- |
+| Amos          | 622, 4e rue Ouest      | (819) 732-3341 |
+| Val-d'Or      | 725, 6e rue            | (819) 855-5858 |
+| Rouyn-Noranda | 4, 9e rue              | (819) 764-5131 |
+| Malartic      | 1141, rue Royale       | (819) 757-4342 |
+| Senneterre    | 961,rue de la Clinique | (819) 825-5858 |
+| La Sarre      | 679 2e Rue E           | (819) 333-2311 | 
+
+<div style="background-color: #ffaca3; border-radius: 5px; border: 2px solid#ff3924; padding: 3px;">Merci de contacter le responsable médical **avant** de vous déplacer à l'hôpital : **`r resp_medical %>% pull(noms)`** au `r resp_medical %>% pull(cell)`</div>
 
 ### Horaire de la clinique médicale {-}
 
@@ -38,9 +57,6 @@ En dehors de ces heures, les cyclistes peuvent s’adresser à l’accueil et ce
 
 L’équipe médicale sera présente à la ligne de départ 1h avant le début de chaque étape et au fil d’arrivée les 30 minutes suivant la fin de l’étape.
 
-
-
-<br/>
 
 ### Horaire de la clinique de massothérapie {-}
 

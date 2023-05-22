@@ -16,6 +16,7 @@ rmd_files:
   - "../rmd/Sites.Rmd"
   - "../rmd/CLMI_notes.Rmd"
   - "../rmd/Reglements.Rmd"
+  - "../rmd/ardoise.Rmd"
   - "../rmd/CirculationCourse.Rmd"
   - "../rmd/FollowMee.Rmd"
   - "../rmd/Locaux.Rmd"
