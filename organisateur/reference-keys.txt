@@ -1,6 +1,6 @@
-fig:unnamed-chunk-69
-fig:unnamed-chunk-70
-fig:unnamed-chunk-71
+fig:unnamed-chunk-72
+fig:unnamed-chunk-73
+fig:unnamed-chunk-74
 présentation
 programmation
 comité-organisateur
@@ -147,6 +147,7 @@ positionnement-de-la-rampe
 secteur-vérification-vélos
 déviation-des-voitures-suiveuses
 secteur-ligne-arrivée
+application-gps-followmee
 règlements-particuliers
 circulation-en-course
 liste-des-locaux

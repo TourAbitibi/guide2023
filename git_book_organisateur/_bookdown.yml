@@ -15,6 +15,7 @@ rmd_files:
   - "../rmd/BoucleSignalisation.Rmd" # Contient le détails d'étape technique + détails signalisation, à modifier pour ajouter les étapes
   - "../rmd/Sites.Rmd"
   - "../rmd/CLMI_notes.Rmd"
+  - "../rmd/FollowMee.Rmd"
   - "../rmd/Reglements.Rmd"
   - "../rmd/CirculationCourse.Rmd"
   - "../rmd/Locaux.Rmd"
