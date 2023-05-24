@@ -45,6 +45,7 @@ rule Z_targets:
         "rmd/Sites.Rmd",
         "rmd/FollowMee.Rmd",
         "rmd/ardoise.Rmd",
+        "rmd/dep_neutre.Rmd",
         "rmd/Repas.Rmd",
         "rmd/MedMasso.Rmd",
         "rmd/MedMasso_EN.Rmd",
@@ -66,7 +67,7 @@ rule Z_targets:
         "excel/locaux.xlsx",
         "excel/med_masso.xlsx",
         "excel/prix.xlsx",
-        "excel/ardoise_info.xlsx",
+        "excel/ardoise_info_neutre.xlsx",
 
         "gpx/input/Course_1.gpx",
         "gpx/input/Course_2.gpx",
@@ -431,7 +432,7 @@ rule R54_render_book_organisateur:
         "excel/repas.xlsx",
         "excel/locaux.xlsx",
         "excel/signalisation.xlsx",
-        "excel/ardoise_info.xlsx",
+        "excel/ardoise_info_neutre.xlsx",
 
         "script/render_book.R",
         "git_book_organisateur/_bookdown.yml",
@@ -449,6 +450,7 @@ rule R54_render_book_organisateur:
         "rmd/Sites.Rmd",
         "rmd/FollowMee.Rmd",
         "rmd/ardoise.Rmd",
+        "rmd/dep_neutre.Rmd",
         "rmd/Reglements.Rmd",
         "rmd/CirculationCourse.Rmd",
         "rmd/Repas.Rmd",

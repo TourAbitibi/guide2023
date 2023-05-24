@@ -1,6 +1,6 @@
-fig:unnamed-chunk-74
-fig:unnamed-chunk-75
-fig:unnamed-chunk-76
+fig:unnamed-chunk-79
+fig:unnamed-chunk-80
+fig:unnamed-chunk-81
 présentation
 programmation
 comité-organisateur
@@ -149,6 +149,7 @@ déviation-des-voitures-suiveuses
 secteur-ligne-arrivée
 règlements-particuliers
 moto-info-et-ardoisier
+dépannage-neutre
 circulation-en-course
 application-gps-followmee
 liste-des-locaux

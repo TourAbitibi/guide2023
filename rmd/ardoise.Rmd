@@ -19,7 +19,7 @@ Instructions et horaires pour les opérateurs de moto-info et ardoisiers.
 site_rdv <- "Polyvalente La Forêt"
 ################################################################################
 
-here("excel", "ardoise_info.xlsx") %>% 
+here("excel", "ardoise_info_neutre.xlsx") %>% 
   read_excel(sheet = "HORAIRE") %>% 
   mutate_if(is.character, ~replace_na(., "---")) %>% 
   inner_join(iti_etape$Details, by = 'Etape') %>% 
@@ -59,7 +59,7 @@ here("excel", "ardoise_info.xlsx") %>%
 
 ```{r, echo=FALSE}
 
-here("excel", "ardoise_info.xlsx") %>% 
+here("excel", "ardoise_info_neutre.xlsx") %>% 
   read_excel(sheet = "COORD") %>% 
   mutate_if(is.character, ~replace_na(., "---")) %>% 
   filter(Nom != c('TBD')) %>% 
