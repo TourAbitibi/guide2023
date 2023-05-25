@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxdata="http://www.cluetrust.com/XML/GPXDATA/1/0" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.cluetrust.com/XML/GPXDATA/1/0 http://www.cluetrust.com/Schemas/gpxdata10.xsd" version="1.1" creator="http://ridewithgps.com/">
   <metadata>
-    <name>Étape 5 - Senneterre</name>
+    <name>Tour 2023 - Étape 5 - Senneterre (course)</name>
     <link href="https://ridewithgps.com/routes/42268449">
-      <text>Étape 5 - Senneterre</text>
+      <text>Tour 2023 - Étape 5 - Senneterre (course)</text>
     </link>
     <time>2023-03-18T10:57:58Z</time>
   </metadata>
-  <wpt lon="-77.65571661004068" lat="48.19880871462659">
+  <wpt lon="-77.62704916008951" lat="48.367985341463324">
     <name>Feed open</name>
     <sym>Dot</sym>
     <type>Dot</type>
@@ -79,8 +79,13 @@
     <sym>Dot</sym>
     <type>Dot</type>
   </wpt>
+  <wpt lon="-77.2504702618811" lat="48.38297391086956">
+    <name>Senneterre</name>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
   <trk>
-    <name>Étape 5 - Senneterre</name>
+    <name>Tour 2023 - Étape 5 - Senneterre (course)</name>
     <trkseg>
       <trkpt lat="48.3902" lon="-77.24063">
         <ele>305.9</ele>
@@ -1790,6 +1795,9 @@
         <ele>315.1</ele>
       </trkpt>
       <trkpt lat="48.3677" lon="-77.62712">
+        <ele>314.4</ele>
+      </trkpt>
+      <trkpt lat="48.367657" lon="-77.62712">
         <ele>314.4</ele>
       </trkpt>
       <trkpt lat="48.36732" lon="-77.62712">
@@ -6829,17 +6837,32 @@
       <trkpt lat="48.09278" lon="-77.39887">
         <ele>340.2</ele>
       </trkpt>
-      <trkpt lat="48.09255" lon="-77.39834">
-        <ele>342.7</ele>
+      <trkpt lat="48.092726" lon="-77.398746">
+        <ele>340.8</ele>
       </trkpt>
-      <trkpt lat="48.09218" lon="-77.39764">
-        <ele>345.7</ele>
+      <trkpt lat="48.092541" lon="-77.398287">
+        <ele>342.8</ele>
       </trkpt>
-      <trkpt lat="48.09218" lon="-77.39764">
-        <ele>345.7</ele>
+      <trkpt lat="48.092487" lon="-77.398044">
+        <ele>343.5</ele>
+      </trkpt>
+      <trkpt lat="48.092456" lon="-77.397819">
+        <ele>343.9</ele>
+      </trkpt>
+      <trkpt lat="48.092464" lon="-77.39758">
+        <ele>344.1</ele>
+      </trkpt>
+      <trkpt lat="48.092522" lon="-77.397345">
+        <ele>344.1</ele>
+      </trkpt>
+      <trkpt lat="48.092609" lon="-77.3971399">
+        <ele>344.3</ele>
       </trkpt>
       <trkpt lat="48.0926" lon="-77.3971399">
         <ele>344.3</ele>
+      </trkpt>
+      <trkpt lat="48.09274" lon="-77.397">
+        <ele>344.5</ele>
       </trkpt>
       <trkpt lat="48.09274" lon="-77.397">
         <ele>344.5</ele>
@@ -9297,6 +9320,9 @@
       </trkpt>
       <trkpt lat="48.38288" lon="-77.2505">
         <ele>305.2</ele>
+      </trkpt>
+      <trkpt lat="48.383163" lon="-77.25041">
+        <ele>305.7</ele>
       </trkpt>
       <trkpt lat="48.38408" lon="-77.25012">
         <ele>306.1</ele>
