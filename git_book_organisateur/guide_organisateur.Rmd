@@ -881,7 +881,7 @@ Article 3 – Participation
 
 Article 4 – Permanence
 
-:   La permanence de l’épreuve opère du dimanche `r dates_FR %>% filter(code=="Dim_Av") %>% pull(jour_mois)` au dimanche `r dates_FR %>% filter(code=="Dim") %>% pull(jour_mois_an)` à l’école secondaire La Calypso, au 800 1re Rue E, Amos, QC J9T 2H8. Les heures d’ouverture sont établies en fonction de l’horaire des courses, mais un gardien de sécurité est présent 24 heures sur 24.
+:   La permanence de l’épreuve opère du dimanche `r dates_FR %>% filter(code=="Dim_Av") %>% pull(jour_mois)` au dimanche `r dates_FR %>% filter(code=="Lun_Ap") %>% pull(jour_mois_an)` à l’école secondaire La Forêt, au 850 1re Rue E, Amos, QC J9T 2H8. Les heures d’ouverture sont établies en fonction de l’horaire des courses, mais un gardien de sécurité est présent 24 heures sur 24.
 
     La rencontre initiale entre l’organisation du Tour et les responsables d’équipes se fait à la permanence le dimanche `r dates_FR %>% filter(code=="Dim_Av") %>% pull(jour_mois)` de 12h00 à 23h00 et le lundi `r dates_FR %>% filter(code=="Lun_Av") %>% pull(jour_mois)` de 8h00 à 16h30.
     
@@ -899,7 +899,7 @@ Article 5 – Ordre de la caravane
 
 Article 6 – Ordre de départ pour le contre-la-montre
 
-:   L’ordre de départ est l’ordre inverse du classement général au temps après l’étape #2. Toutefois le collège des commissaires peut modifier cet ordre afin d’éviter que deux coureurs d’une même équipe se suivent (2.6.023). 
+:   L’ordre de départ est l’ordre inverse du classement général au temps après l’étape No 2. Toutefois le collège des commissaires peut modifier cet ordre afin d’éviter que deux coureurs d’une même équipe se suivent (2.6.023). 
 
     Les départs se donneront à intervalle d’une (1) minute, à l’exception des 10 derniers coureurs qui partiront avec un intervalle de deux (2) minutes.
 
@@ -957,7 +957,7 @@ Article 12 – Bonifications en temps
 
 Article 13 – Classements
 
-:   Les classements suivants sont établis. La course fait l’objet de cinq (5) classements généraux différents:
+:   La course fait l’objet de cinq (5) classements généraux différents:
 
 
     * Classement général individuel au temps (Maillot brun) 2.6.014; 2.6.015; 2.6.019
@@ -1025,19 +1025,19 @@ Article 13.4 - Classement général individuel de la relève
 
 Article 13.5 - Classement général par équipe au temps
 
-:   Le classement par équipes du jour s’établit par l’addition des trois (3) meilleurs temps individuels de chaque équipe. 
+:   Le classement par équipe du jour s’établit par l’addition des trois (3) meilleurs temps individuels de chaque équipe. 
 
     En cas d’égalité, les équipes sont départagées par l’addition des places obtenues par leurs trois meilleurs temps de l’étape. En cas de nouvelle égalité, les équipes sont départagées par la place de leur meilleur coureur au classement de l’étape. (Article 2.6.016 du règlement UCI)
 
 
-    Le classement général par équipes s’établit par l’addition des trois meilleurs temps individuels de chaque équipe dans toutes les étapes courues. En cas d’égalité, il est fait application des critères suivants, jusqu’à ce qu’il y ait départage :
+    Le classement général par équipe s’établit par l’addition des trois meilleurs temps individuels de chaque équipe dans toutes les étapes courues. En cas d’égalité, il est fait application des critères suivants, jusqu’à ce qu’il y ait départage :
     
-    1. Nombre de premières places dans le classement par équipes du jour;
-    2. Nombre de deuxièmes places dans le classement par équipes du jour; etc.
+    1. Nombre de premières places dans le classement par équipe du jour;
+    2. Nombre de deuxièmes places dans le classement par équipe du jour; etc.
     
     S’il y a toujours égalité, les équipes sont départagées par la place de leur meilleur coureur au classement général individuel.
 
-    Toute équipe réduite à moins de trois coureurs est éliminée du classement général par équipes.
+    Toute équipe réduite à moins de trois coureurs est éliminée du classement général par équipe.
 
 
 Article 14 - Réclamation
@@ -1315,7 +1315,7 @@ Article 16 - Prix spéciaux
     * Trophée du plus utile à son équipe – MVP of each team Trophy
 
 
-[^abitibien]: Coureur abitibien d’origine ou habitant en Abitibi, selon le classement général individuel au temps
+[^abitibien]: Coureur en provenance ou habitant en Abitibi-Témiscamingue, selon le classement général individuel au temps
 
 
 Article 17 – Antidopage
@@ -1335,7 +1335,7 @@ Article 18 – Protocole et récompenses
     * Les 3 premiers de l’étape.
     * Les leaders des classements suivants : 
     
-        * Classement individuel au temps (maillot brun), 
+        * classement individuel au temps (maillot brun), 
         * classement général aux points (maillot orange), 
         * leader de première année (maillot bleu) et 
         * leader au classement de la montagne (maillot à pois).
@@ -1350,7 +1350,7 @@ Article 19 – Pénalités
     Si une deuxième infraction devait se produire ou en cas d’infraction grave, la voiture d’équipe pourrait être exclue complètement de la caravane.
 
 
-Article 20 – Services d’urgences
+Article 20 – Services d’urgence
 
 :   Étant donné le caractère urbain de certaines épreuves et de l’importance accordée par l’organisation à la sécurité du public, la priorité sera accordée aux services d’urgence en cas d’incident et tous devront s’y conformer.
 

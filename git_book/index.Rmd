@@ -70,7 +70,7 @@ opts_chunk$set( tidy = FALSE, comment = NA,
 
 Bonjour et bienvenue au **Tour de l'Abitibi `r params$sponsor` `r params$annee`** !
 
-Voici un aperçu de la `r edition`e édition du Tour de l'Abitibi `r params$sponsor` qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)`.
+Voici un aperçu de la `r edition`e édition du Tour de l'Abitibi `r params$sponsor` qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an) %>% tolower()` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an) %>% tolower()`.
 
 <br/>
 
