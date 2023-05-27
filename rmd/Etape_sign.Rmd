@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 
 ## Signalisation - Carte
 
@@ -72,4 +77,67 @@ for (poi_idx in seq(nrow(POIs))) {
 ```
 
 
+## Matériel pour signalisation (flèchage)
 
+```{r, eval= (iti_etape$Details$Nb_tours[Etape] >0 ) , echo=FALSE, results='asis'}
+
+# S'il y a un circuit, on veut le nombre d'affiche jusqu'au circuit d'arrivée
+
+descr_iti <- calcul_iti_etape(Etape, "FR")
+  
+descr_iti %>% as_tibble() %>% 
+  mutate(ligne_entree_circuit = str_detect(Details, "circuit d'arrivée" )) %>% 
+  slice(1:(which(ligne_entree_circuit))) %>%
+  select(Symbol) %>% 
+  janitor::tabyl(Symbol) %>% 
+  filter(!Symbol %in% c("Info", "Start", "Danger", "Bypass" )) %>% 
+  left_join(iti_etape$Lexique, by = "Symbol") %>% 
+  select(Type = Info_FR,
+         Nombre = n,
+         -percent) %>% 
+  arrange(Type) %>% 
+  kbl(  escape = F, # permet de passer les <br/>
+        align = c(rep('c', times = 2))) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = TRUE, 
+                  font_size = 16) %>% 
+  column_spec(2, bold = T) %>% 
+  add_header_above(c( "Affichage des épreuves"  = 2)) %>% 
+  footnote(.,general = c(
+              "Jusqu'à l'entrée du circuit d'arrivée",
+              "Panneaux 25 km, 20 km, 10 km, 5 km, 4 km, 3 km, 2 km par équipe route (Maurice)",
+              "Flamme rouge (1 km) et panneaux métriques 500 m, 300 m, 200 m, 150 m, 100 m, 50 m à installer par l'équipe en ville"))
+```
+
+
+```{r, eval= (iti_etape$Details$Nb_tours[Etape] == 0 ) , echo=FALSE, results='asis'}
+
+# S'il n'y a pas de circuit, on veut le nombre d'affiche total
+
+descr_iti <- calcul_iti_etape(Etape, "FR")
+  
+descr_iti %>% as_tibble() %>% 
+  select(Symbol) %>% 
+  janitor::tabyl(Symbol) %>% 
+  filter(!Symbol %in% c("Info", "Start", "Danger" , "Bypass", "Finish", "Bell")) %>% 
+  left_join(iti_etape$Lexique, by = "Symbol") %>% 
+  select(Type = Info_FR,
+         Nombre = n,
+         -percent) %>% 
+  arrange(Type) %>% 
+  kbl(  escape = F, # permet de passer les <br/>
+        align = c(rep('c', times = 2))) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = TRUE, 
+                  font_size = 16) %>% 
+  column_spec(2, bold = T) %>% 
+  add_header_above(c( "Affichage des épreuves"  = 2)) %>% 
+  footnote(.,general = c(
+              "Jusqu'à la ligne d'arrivée",
+              "Panneaux 25 km, 20 km, 10 km, 5 km, 4 km, 3 km, 2 km par équipe route (Maurice)",
+              "Flamme rouge (1 km) et panneaux métriques 500 m, 300 m, 200 m, 150 m, 100 m, 50 m à installer par l'équipe en ville"))
+```
+
+<br/>
+
+**Références** : <a href="https://downloads.ctfassets.net/761l7gh5x5an/7qhUGLmnseEMGg95GQnF1V/4228000a541888393810a793e2e16a50/uci-guide-orga-epreuve-road-2021-fra.pdf" target="_blank">Guide organisateur UCI, p.113</a>.

@@ -38,6 +38,7 @@ point-dintérêt---e1_sign_19
 point-dintérêt---e1_sign_20
 point-dintérêt---e1_sign_21
 point-dintérêt---e1_sign_22
+matériel-pour-signalisation-flèchage
 étape-2-rouyn-noranda---amos
 sommaire-1
 parcours-1
@@ -59,6 +60,7 @@ point-dintérêt---e2_sign_14
 point-dintérêt---e2_sign_15
 point-dintérêt---e2_sign_16
 point-dintérêt---e2_sign_17
+matériel-pour-signalisation-flèchage-1
 étape-3-amos---clmi
 sommaire-2
 parcours-2
@@ -78,6 +80,7 @@ point-dintérêt---e3_sign_70
 point-dintérêt---e3_sign_92
 point-dintérêt---e3_sign_90
 point-dintérêt---e3_sign_91
+matériel-pour-signalisation-flèchage-2
 étape-5-senneterre---vd---senneterre
 sommaire-3
 parcours-3
@@ -110,6 +113,7 @@ point-dintérêt---e5_sign_18
 point-dintérêt---e5_sign_19
 point-dintérêt---e5_sign_60
 point-dintérêt---e5_sign_51
+matériel-pour-signalisation-flèchage-3
 étape-6-amos--preissac---rh---amos
 sommaire-4
 parcours-4
@@ -139,6 +143,7 @@ point-dintérêt---e6_sign_14
 point-dintérêt---e6_sign_15
 point-dintérêt---e6_sign_16
 point-dintérêt---e6_sign_17
+matériel-pour-signalisation-flèchage-4
 étape-7-la-sarre---amos
 sommaire-5
 parcours-5
@@ -164,6 +169,7 @@ point-dintérêt---e7_sign_12
 point-dintérêt---e7_sign_13
 point-dintérêt---e7_sign_14
 point-dintérêt---e7_sign_15
+matériel-pour-signalisation-flèchage-5
 sites-départ-arrivée
 site-départ---arrivée-amos
 site-départ---val-dor
