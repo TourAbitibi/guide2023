@@ -71,7 +71,7 @@ opts_chunk$set( tidy = FALSE, comment = NA,
 
 Bonjour et bienvenue au **Tour de l'Abitibi `r params$sponsor` `r params$annee`** !
 
-Voici un aperçu de la `r edition`e édition du Tour de l'Abitibi `r params$sponsor` qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)`.
+Voici un aperçu de la `r edition`e édition du Tour de l'Abitibi `r params$sponsor` qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an) %>% tolower()` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an) %>% tolower()`.
 
 Ce guide de l'organisateur contient toutes les informations essentielles pour préparer les différentes étapes du Tour de l'Abitibi `r params$sponsor` et ainsi assurer la sécurité des coureurs, des participants et de la population générale. 
 
@@ -83,6 +83,7 @@ Notamment, il vous permettra de retrouver tous les détails :
   - Parcours avec détails du départ et de l'arrivée;
   - Tableaux détaillés des éléments de course;
   - Détails de tous les points d'intérêts identifiés devant être protégés par un bénévole ou membre des forces de l'ordre (ex, terre-plein, intersection dangereuse, carrefour giratoire, etc.);
+  - Quantité d'affiches requises sur la route;
   - Photos et localisation précise des ces points d'intérêt; 
   - Responsabilité des intervenants (qui fait quoi);
 - Règlements particuliers de l'épreuve sportive;
