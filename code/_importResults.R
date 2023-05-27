@@ -158,6 +158,8 @@ nb_lignes_skip_resultat_etape <- function(class, motCle, etape = derniere_etape_
     
   }
   
+  close(fc)
+  
   return(rangee_titre)
 }
 
@@ -201,7 +203,7 @@ start_list_coureurs <- read.csv(path_liste_coureurs,
 
 # Écriture de la start list de coureurs vers un .csv
 
-start_list_coureurs %>% write_csv(here("results", "coureurs.csv"))
+start_list_coureurs %>% write_csv(here("results", "Liste_Coureurs.csv"))
 
 ################################################################################ 
 
@@ -212,7 +214,7 @@ start_list_equipes <- start_list_coureurs %>%
   unique()
 
 # Écriture de la start list d'équipes vers un .csv
-start_list_equipes %>% write_csv(here("results", "equipes.csv"))
+start_list_equipes %>% write_csv(here("results", "Liste_Equipes.csv"))
   
 ################################################################################ 
 ################################################################################ 
@@ -250,21 +252,23 @@ map_results_KOM <- function(etape_map){
       select(-V3, -V4, -V5, -V6, -V7, -V8, -V10) %>% 
       drop_na() %>% 
       rename( 
-        Postion = V1,
+        Position = V1,
         Bib = V2,
         PointsKOM = V9) %>% 
       mutate(
         ApresEtape = etape_relle)
     
-  }
+}
+
 
 # Écriture vers un fichier CSV de résultats des KOM
 etapes_effectives_resulstats_KOM$etapes_relles %>% 
   map(\(etapes) .f = map_results_KOM(etapes)) %>% 
-  list_rbind() %>% print(n=100) %>% 
-  write_csv(here("results", "KOM_results.csv"))
+  list_rbind() %>% 
+  write_csv(here("results", "KOM_General_results.csv"))
   
-
+################################################################################ 
+################################################################################ 
 
 
 # Création des résultats de Points (Orange)
@@ -300,9 +304,9 @@ map_results_Points <- function(etape_map){
     select(-V3, -V4, -V5, -V6, -V7, -V8, -V10) %>% 
     drop_na() %>% 
     rename( 
-      Postion = V1,
+      Position = V1,
       Bib = V2,
-      PointsKOM = V9) %>% 
+      Points = V9) %>% 
     mutate(
       ApresEtape = etape_relle)
   
@@ -311,7 +315,199 @@ map_results_Points <- function(etape_map){
 # Écriture vers un fichier CSV de résultats des Points
 etapes_effectives_resulstats_Points$etapes_relles %>% 
   map(\(etapes) .f = map_results_Points(etapes)) %>% 
-  list_rbind() %>% print(n=100) %>% 
-  write_csv(here("results", "Points_results.csv"))
+  list_rbind() %>%
+  write_csv(here("results", "Points_Genral_results.csv"))
 
 
+
+################################################################################ 
+################################################################################ 
+
+# Gérer le fait que Stage 3 n'a pas de points, donc potentiellement pas de classement
+# (voir KOM si ajustement requis)
+etapes_effectives_resultats_Etapes <- tibble(etapes_relles = 1:7, etapes_effectives = 1:7) %>% 
+  filter(etapes_relles <= derniere_etape_terminee)
+
+#### Fonction Résultats d'Étapes (tout et jeune)
+
+map_results_Etapes <- function(etape_map, class){
+  
+  path_liste_Etape <- df_files %>% 
+    filter(classification == class) 
+  
+  etape_relle <- etapes_effectives_resultats_Etapes %>% filter(etapes_relles == etape_map) %>% pull(etapes_relles)
+  etape_effective <- etapes_effectives_resultats_Etapes %>% filter(etapes_relles == etape_map) %>% pull(etapes_effectives)
+  
+  read.csv(path_liste_Etape %>% 
+             filter(stage == etape_effective) %>% 
+             pull(file_path), 
+           sep = ';', 
+           skip = nb_lignes_skip_resultat_etape(class = class, 
+                                                motCle = "License", 
+                                                etape = etape_effective),
+           header = FALSE,
+           fileEncoding = "UTF-16LE") %>% 
+    as_tibble() %>% 
+    select(V1, V2, V9) %>% 
+    filter(V1 != "",
+           V9 != "") %>% 
+    drop_na() %>% 
+    rename( 
+      Position = V1,
+      Bib = V2,
+      TempsEtape = V9) %>% 
+    mutate(
+      Position = as.double(Position),
+      Etape = etape_relle)
+  
+}
+
+# Écriture vers un fichier CSV de résultats des Etapes 
+etapes_effectives_resultats_Etapes$etapes_relles %>% 
+  map(\(etapes) .f = map_results_Etapes(etapes, "Etape")) %>% 
+  list_rbind() %>% 
+  write_csv(here("results", "Etapes_results.csv"))
+
+# Écriture vers un fichier CSV de résultats des Etapes Jeunes
+etapes_effectives_resultats_Etapes$etapes_relles %>% 
+  map(\(etapes) .f = map_results_Etapes(etapes, "EtapeJeune")) %>% 
+  list_rbind() %>% 
+  write_csv(here("results", "Jeunes_Etapes_results.csv"))
+
+
+################################################################################ 
+################################################################################ 
+
+#### Fonction Résultats Général (tout et jeune)
+
+map_results_General <- function(etape_map, class){
+  
+  path_liste_Etape <- df_files %>% 
+    filter(classification == class) 
+  
+  etape_relle <- etapes_effectives_resultats_Etapes %>% filter(etapes_relles == etape_map) %>% pull(etapes_relles)
+  etape_effective <- etapes_effectives_resultats_Etapes %>% filter(etapes_relles == etape_map) %>% pull(etapes_effectives)
+  
+  read.csv(path_liste_Etape %>% 
+             filter(stage == etape_effective) %>% 
+             pull(file_path), 
+           sep = ';', 
+           skip = nb_lignes_skip_resultat_etape(class = class, 
+                                                motCle = "License", 
+                                                etape = etape_effective),
+           header = FALSE,
+           fileEncoding = "UTF-16LE") %>% 
+    as_tibble() %>% 
+    select(V1, V2, V9) %>% 
+    filter(V1 != "",
+           V9 != "") %>% 
+    drop_na() %>% 
+    rename( 
+      Position = V1,
+      Bib = V2,
+      TempsGeneral = V9) %>% 
+    mutate(
+      Position = as.double(Position),
+      ApresEtape = etape_relle)
+  
+}
+
+# Écriture vers un fichier CSV de résultats des Général
+etapes_effectives_resultats_Etapes$etapes_relles %>% 
+  map(\(etapes) .f = map_results_General(etapes, "General")) %>% 
+  list_rbind() %>% 
+  write_csv(here("results", "General_results.csv"))
+
+# Écriture vers un fichier CSV de résultats des Général Jeunes
+etapes_effectives_resultats_Etapes$etapes_relles %>% 
+  map(\(etapes) .f = map_results_General(etapes, "GeneralJeune")) %>% 
+  list_rbind() %>% 
+  write_csv(here("results", "Jeune_General_results.csv"))
+
+################################################################################ 
+################################################################################ 
+
+#### Fonction Résultats Général Équipe 
+
+map_results_EquipeGenral <- function(etape_map, class){
+  
+  path_liste_Etape <- df_files %>% 
+    filter(classification == class) 
+  
+  etape_relle <- etapes_effectives_resultats_Etapes %>% filter(etapes_relles == etape_map) %>% pull(etapes_relles)
+  etape_effective <- etapes_effectives_resultats_Etapes %>% filter(etapes_relles == etape_map) %>% pull(etapes_effectives)
+  
+  read.csv(path_liste_Etape %>% 
+             filter(stage == etape_effective) %>% 
+             pull(file_path), 
+           sep = ';', 
+           skip = 4 + nb_lignes_skip_resultat_etape(class = class, 
+                                                motCle = "General classification", 
+                                                etape = etape_effective),
+           header = FALSE,
+           fileEncoding = "UTF-16LE") %>% 
+    as_tibble() %>% 
+    select(V1, V2, V4) %>% 
+    mutate(ligne_gen = str_detect(V2, "General classification")) %>% 
+    slice((which(ligne_gen)+1):nrow(.)) %>% 
+    select(-ligne_gen) %>% 
+    drop_na() %>% 
+    rename( 
+      Position = V1,
+      Equipe = V2,
+      TempsGeneral = V4) %>% 
+    mutate(
+      Position = as.double(Position),
+      ApresEtape = etape_relle)
+  
+}
+
+# Écriture vers un fichier CSV de résultats des Équipes - Général
+etapes_effectives_resultats_Etapes$etapes_relles %>% 
+  map(\(etapes) .f = map_results_EquipeGenral(etapes, "Equipe")) %>% 
+  list_rbind() %>% 
+  write_csv(here("results", "Equipe_General_results.csv"))
+
+
+
+#### Fonction Résultats Général Équipe 
+
+map_results_EquipeEtape <- function(etape_map, class){
+  
+  path_liste_Etape <- df_files %>% 
+    filter(classification == class) 
+  
+  etape_relle <- etapes_effectives_resultats_Etapes %>% filter(etapes_relles == etape_map) %>% pull(etapes_relles)
+  etape_effective <- etapes_effectives_resultats_Etapes %>% filter(etapes_relles == etape_map) %>% pull(etapes_effectives)
+  
+  read.csv(path_liste_Etape %>% 
+             filter(stage == etape_effective) %>% 
+             pull(file_path), 
+           sep = ';', 
+           skip = 4 + nb_lignes_skip_resultat_etape(class = class, 
+                                                    motCle = "General classification", 
+                                                    etape = etape_effective),
+           header = FALSE,
+           fileEncoding = "UTF-16LE") %>% 
+    as_tibble() %>% 
+    select(V1, V2, V4) %>% 
+    mutate(ligne_gen = str_detect(V2, "General classification")) %>% 
+    slice(1:(which(ligne_gen)-1)) %>% 
+    select(-ligne_gen) %>% 
+    drop_na() %>% 
+    rename( 
+      Position = V1,
+      Equipe = V2,
+      Temps = V4) %>% 
+    mutate(
+      Position = as.double(Position),
+      ApresEtape = etape_relle)
+  
+}
+
+
+# Écriture vers un fichier CSV de résultats des Équipes - Etapes
+etapes_effectives_resultats_Etapes$etapes_relles %>% 
+  map(\(etapes) .f = map_results_EquipeEtape(etapes, "Equipe")) %>% 
+  list_rbind() %>% 
+  write_csv(here("results", "Equipes_Etapes_results.csv"))
