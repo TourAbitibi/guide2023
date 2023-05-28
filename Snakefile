@@ -199,23 +199,24 @@ rule R03_importExportElevation:
 
 # Création des graphiques d'élévation
 # En pause pendant création
-# rule R12_creationGraphElevation:
-#     input:
-#         "code/graphique_denivele.R",
-#         "excel/Itineraires.xlsx",
-#         "gpx/output/parcours.shp",
-#         "rasterElevation/elv_parcours.tif",
-#         "elevParcours/elev_parcours.csv"
+#   Attention, code à dé-commenté dans "code/graphique_denivele.R" si nouveaux GPX ou distances corrigées
+rule R12_creationGraphElevation:
+    input:
+        "code/graphique_denivele.R",
+        "excel/Itineraires.xlsx",
+        "gpx/output/parcours.shp",
+        "rasterElevation/elv_parcours.tif",
+        "elevParcours/elev_parcours.csv"
 
-#     output:
-#         "img/elev/Etape1_Full_FR.png"
-#     params:
-#         script = "code/graphique_denivele.R"
-#     shell:
-#         """
-#         echo "\n   ~~ Création des graphiques d'élévation ~~ \n"
-#         {params.script}
-#         """
+    output:
+        "img/elev/Etape1_Full_FR.png"
+    params:
+        script = "code/graphique_denivele.R"
+    shell:
+        """
+        echo "\n   ~~ Création des graphiques d'élévation ~~ \n"
+        {params.script}
+        """
 
 ##########################################################################################################################
 ##########################################################################################################################
@@ -240,6 +241,9 @@ rule R31_importExportGPX_Signalisation:
         {params.script}
         """
 
+
+# À mettre en pause une fois les points de signalisations finalisés :
+# Très long à produire et optimiser
 rule R32_creationVignetteSignalisation:
     input:
         "code/_importExportGPX_Signalisation.R",

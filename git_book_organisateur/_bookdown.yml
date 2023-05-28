@@ -5,7 +5,7 @@ language:
     toc: "Table des matières"
     fig: "FIGURE "
     tab: "TABLEAU "
-  ui:
+  ui: 
     chapter_name: ""
 rmd_files:
   - "index.Rmd"

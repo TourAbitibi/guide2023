@@ -18,8 +18,8 @@ source(here::here("code","/_LibsVars.R"))
 source(here("code","_import_itineraire.R"))
 
 # Si besoin de mettre à jour à partir de nouveaux .gpx
-#   source(here("code","_importExportGPX.R"))
-#   source(here("code","_elv_parcours.R"))
+#  source(here("code","_importExportGPX.R"))
+#  source(here("code","_elv_parcours.R"))
 
 
 

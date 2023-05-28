@@ -155,7 +155,7 @@ creation_3_map(no_etape =2,
 
 
 creation_3_map(no_etape =4,
-               pct_point_debut = 0.03, 
+               pct_point_debut = 0.032, 
                pct_point_fin = 0.96,
                pos_h_arrow = "right",
                pos_v_arrow = "top",
@@ -165,7 +165,7 @@ creation_3_map(no_etape =4,
 
 
 creation_3_map(no_etape =5,
-               pct_point_debut = 0.005, 
+               pct_point_debut = 0.003 , 
                pct_point_fin = 0.97,
                pos_h_arrow = "right",
                pos_v_arrow = "bottom",
