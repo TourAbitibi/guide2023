@@ -8,6 +8,8 @@ header-includes:
   \usepackage{graphicx}
   \usepackage{float}
 
+  \usepackage{pifont}  
+
   \usepackage[french]{babel}
   \usepackage[T1]{fontenc} 
   
@@ -40,6 +42,7 @@ params:
   dates_compl: "11 au 16 juillet 2023"
   ville: "Amos"
   langue: "FR"
+  lienWeb: "https://tourabitibi.github.io/guide2023/FR"
 ---
 
 ```{r setup, include=FALSE}
@@ -114,8 +117,6 @@ Version :  `r Sys.Date()` \\
 
 
 
-\vspace*{1cm}
-
 \tableofcontents
 \thispagestyle{empty}
 
@@ -125,8 +126,8 @@ Version :  `r Sys.Date()` \\
 
 Dans le but d'éviter le gaspillage de papier et de faciliter les mises à jour du document, seuls les détails des parcours seront disponibles en format papier.
 
-Veuillez vous référer au site : \url{https://tourabitibi.github.io/guide2023/FR} pour l'information complète du guide technique.
-\vspace*{1cm}
+Veuillez vous référer au site : \url{`r params$lienWeb`} pour l'information complète du guide technique.
+
 
 \newpage
 
@@ -202,7 +203,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
   \begin{itemize}
-  \item[!] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
+  \item[\ding{46}] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
   \end{itemize}
 \end{tcolorbox}
 
@@ -216,8 +217,8 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
   \begin{itemize}
-  \item[!] `r iti_etape$Details$Nb_tours[Etape]` tours complets de circuit à l'arrivée de `r iti_etape$Details$KM_par_tours[Etape]` km en sens horaire.
-  \item[!] L'entrée du circuit se situe à l'intersection de la 4e Rue Est et de la 14e Avenue Est
+  \item[\ding{46}] `r iti_etape$Details$Nb_tours[Etape]` tours complets de circuit à l'arrivée de `r iti_etape$Details$KM_par_tours[Etape]` km en sens horaire.
+  \item[\ding{46}] L'entrée du circuit se situe à l'intersection de la 4e Rue Est et de la 14e Avenue Est
   \end{itemize}
 \end{tcolorbox}
 
@@ -301,7 +302,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
   \begin{itemize}
-  \item[!] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
+  \item[\ding{46}] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
   \end{itemize}
 \end{tcolorbox}
 
@@ -315,7 +316,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
   \begin{itemize}
-  \item[!] Arrivée en ligne sans circuit
+  \item[\ding{46}] Arrivée en ligne sans circuit
   \end{itemize}
 \end{tcolorbox}
 
@@ -407,8 +408,8 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
   \begin{itemize}
-  \item[!] Contre-la-montre de type aller-retour : 2 x 5 km
-  \item[!] Déviation des voitures suiveuses vers la 3e ave Est et la 1ere Rue Est
+  \item[\ding{46}] Contre-la-montre de type aller-retour : 2 x 5 km
+  \item[\ding{46}] Déviation des voitures suiveuses vers la 3e ave Est et la 1ere Rue Est
   \end{itemize}
 \end{tcolorbox}
 
@@ -441,10 +442,113 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 \pagebreak
 
 
+
+```{r include=FALSE}
+Etape <- 4
+
+jour_date <- dates_FR %>% filter(code=="Jeu") %>% pull(jsem_jour_mois_an)
+
+heureDep <- iti_etape$Details$time_depart[Etape]
+
+heureEntree <- iti_etape$Details$HeureEntreeVille[Etape]
+
+heureArr <- iti_etape$Details$time_arrivee[Etape]
+
+comm <- here("img", "logo",  glue("comm_{Etape}.png"))
+```
+
+\thispagestyle{plain}
+\section{Étape `r Etape` : `r iti_etape$Details$Descr_Villes[Etape]`}
+
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{X X}
+	  \large{\textbf{`r jour_date`}}  & \multicolumn{1}{r}{\multirow{2}{*}{\includegraphics[width=0.2\textwidth]{`r comm`}}} \\
+	  \textbf{`r iti_etape$Details$KM_Total[Etape]` km}  &  \textbf{} \\
+  \end{tabularx}
+\end{table}
+
+
+
+\begin{table}[H]
+\centering
+		\begin{tabular}{m{6cm} c}
+    		\textbf{} & \textbf{Heure} \\ \toprule
+    		Départ & `r heureDep`\\ 
+    		\*
+    		Arrivée & `r heureArr` \\ \bottomrule
+
+	\end{tabular}
+\end{table}
+
+
+
+\subsection{Parcours}
+
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Full.png"))`}
+\end{figure}
+
+\pagebreak
+
+\subsection{Détails du départ}
+
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=0.8\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png"))`}
+\end{figure}
+
+\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
+  \begin{itemize}
+  \item[\ding{46}] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
+  \end{itemize}
+\end{tcolorbox}
+
+
+\subsection{Détails de l'arrivée}
+
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=0.7\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png"))`}
+\end{figure}
+
+\begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
+  \begin{itemize}
+  \item[\ding{46}] Douches disponibles après la course au Centre Michel-Brière (aréna)
+  \item[\ding{46}] Repas servi au Théâtre Meglab, près de la ligne d'arrivée
+  \end{itemize}
+\end{tcolorbox}
+
+\pagebreak
+
+\subsection{Élévation}
+
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "elev", glue("Etape{Etape}_Full_{lang}.png"))`}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering    
+  \includegraphics[width=\textwidth]{`r here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"))`}
+\end{figure}
+
+\pagebreak
+
+\includepdf[scale=.9]{`r here("guide_FR_PDF", "details", glue("tableau_{Etape}.pdf"))`}
+
+\pagebreak
+
+
+
+
 ```{r include=FALSE}
 Etape <- 5
 
-jour_date <- dates_FR %>% filter(code=="Mer") %>% pull(jsem_jour_mois_an)
+jour_date <- dates_FR %>% filter(code=="Ven") %>% pull(jsem_jour_mois_an)
 
 heureDep <- iti_etape$Details$time_depart[Etape]
 
@@ -500,7 +604,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
   \begin{itemize}
-  \item[!] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
+  \item[\ding{46}] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
   \end{itemize}
 \end{tcolorbox}
 
@@ -514,8 +618,8 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
   \begin{itemize}
-  \item[!] Arrivée au sommet du Mont Bell
-  \item[!] Les points du GPM sont doublés au GPM à l'arrivée
+  \item[\ding{46}] Arrivée au sommet du Mont Bell
+  \item[\ding{46}] Les points du GPM sont doublés au GPM à l'arrivée
   \end{itemize}
 \end{tcolorbox}
 
@@ -601,7 +705,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
   \begin{itemize}
-  \item[!] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
+  \item[\ding{46}] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
   \end{itemize}
 \end{tcolorbox}
 
@@ -615,7 +719,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
   \begin{itemize}
-  \item[!] Arrivée en ligne sans circuit
+  \item[\ding{46}] Arrivée en ligne sans circuit
   \end{itemize}
 \end{tcolorbox}
 
@@ -704,7 +808,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
   \begin{itemize}
-  \item[!] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
+  \item[\ding{46}] Départ neutralisé sur `r iti_etape$Details$KM_Neutres[Etape]` km
   \end{itemize}
 \end{tcolorbox}
 
@@ -718,8 +822,8 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
   \begin{itemize}
-  \item[!] `r iti_etape$Details$Nb_tours[Etape]` tours complets de circuit à l'arrivée de `r iti_etape$Details$KM_par_tours[Etape]` km en sens horaire.
-  \item[!] L'entrée du circuit se situe à l'intersection de la 4e Rue Est et de la 14e Avenue Est
+  \item[\ding{46}] `r iti_etape$Details$Nb_tours[Etape]` tours complets de circuit à l'arrivée de `r iti_etape$Details$KM_par_tours[Etape]` km en sens horaire.
+  \item[\ding{46}] L'entrée du circuit se situe à l'intersection de la 4e Rue Est et de la 14e Avenue Est
   \end{itemize}
 \end{tcolorbox}
 
