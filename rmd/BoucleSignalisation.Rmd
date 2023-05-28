@@ -2,7 +2,7 @@
   
   ### Préparation des pages détaillées par Étape, contenant la partie technique (même que le guide) et les détails de signalisation ###
 
-for (i in c(1 :3, 5:7)){
+for (i in c(1:7)){
   
   cat( knitr::knit_child(here("rmd",glue("Etape{i}.Rmd")), envir = environment(), quiet = TRUE))
   
