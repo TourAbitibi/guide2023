@@ -54,6 +54,14 @@ Finish                                 `r heureArr`
 
 ## Course
 
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+
+knitr::include_graphics(here("img", "cartes", params$input_output,  glue("Etape{Etape}_Full.png")))
+
+```
+
+<br/>
+
 ```{r, echo = FALSE, eval = TRUE}
 
 
@@ -133,7 +141,7 @@ carte_dynamique_etape(Etape)
 
 ```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
 
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png")))
+knitr::include_graphics(here("img", "cartes", params$input_output,  glue("Etape{Etape}_Dep.png")))
 
 ```
 
@@ -141,7 +149,7 @@ knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Dep.p
 
 ```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
 
-knitr::include_graphics(here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png")))
+knitr::include_graphics(here("img", "cartes", params$input_output,  glue("Etape{Etape}_Arr.png")))
 
 ```
 
