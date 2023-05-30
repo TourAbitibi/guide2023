@@ -20,6 +20,7 @@ params:
   ville: "Amos"
   langue: "FR"
   sponsor: ""
+  input_output : "output"  #Quel dossier pour afficher les cartes des tracés : Full, Dep, Arr.
 #github-repo: rstudio/bookdown-demo
 ---
 
