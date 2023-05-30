@@ -40,6 +40,8 @@ rule Z_targets:
         rsync -avhP FR/* bruno@192.168.101.120:/home/bruno/guide_web/guide/FR/ --delete-after
         rsync -avhP EN/* bruno@192.168.101.120:/home/bruno/guide_web/guide/EN/ --delete-after
 
+        rsync -avhP organisateur/* bruno@192.168.101.120:/home/bruno/guide_web/guide/organisateur/ --delete-after
+
 	    echo "\n  ~~ Fin de la synchronisation ~~ \n"
         
         """
@@ -143,6 +145,10 @@ rule R51_render_pdf_FR:
         echo "  ~~ Copier le pdf vers le fichier FR ~~ "
 
         cp -R {output} {params.lang}/guide2023.pdf
+
+        echo "  ~~ Copier le pdf vers le fichier organisateur ~~ "
+        
+        cp -R {output} organisateur/guide_organisateur.pdf
 
         """
 
