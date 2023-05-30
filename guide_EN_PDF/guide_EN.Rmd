@@ -43,6 +43,8 @@ params:
   ville: "Amos"
   langue: "EN"
   lienWeb: "https://tourabitibi.github.io/guide2023/EN"
+  input_output : "output"  #Quel dossier pour afficher les cartes des tracés : Full, Dep, Arr.
+
 ---
 
 ```{r setup, include=FALSE}
@@ -188,7 +190,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=0.6\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Full.png"))`}
+  \includegraphics[width=0.6\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Full.png"))`}
 \end{figure}
 
 \pagebreak
@@ -197,7 +199,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=0.8\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png"))`}
+  \includegraphics[width=0.8\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Dep.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
@@ -211,7 +213,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png"))`}
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Arr.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
@@ -285,7 +287,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Full.png"))`}
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Full.png"))`}
 \end{figure}
 
 \pagebreak
@@ -294,7 +296,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png"))`}
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Dep.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
@@ -308,7 +310,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png"))`}
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Arr.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
@@ -390,7 +392,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Full.png"))`}
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Full.png"))`}
 \end{figure}
 
 \pagebreak
@@ -399,7 +401,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png"))`}
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Dep.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
@@ -414,7 +416,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png"))`}
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Arr.png"))`}
 \end{figure}
 
 
@@ -482,7 +484,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Full.png"))`}
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Full.png"))`}
 \end{figure}
 
 \pagebreak
@@ -491,7 +493,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=0.8\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png"))`}
+  \includegraphics[width=0.8\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Dep.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
@@ -505,7 +507,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=0.7\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png"))`}
+  \includegraphics[width=0.7\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Arr.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
@@ -579,7 +581,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Full.png"))`}
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Full.png"))`}
 \end{figure}
 
 \pagebreak
@@ -588,7 +590,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png"))`}
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Dep.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
@@ -602,7 +604,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=0.7\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png"))`}
+  \includegraphics[width=0.7\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Arr.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
@@ -676,7 +678,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=0.6\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Full.png"))`}
+  \includegraphics[width=0.6\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Full.png"))`}
 \end{figure}
 
 \pagebreak
@@ -685,7 +687,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=0.8\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png"))`}
+  \includegraphics[width=0.8\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Dep.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
@@ -699,7 +701,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png"))`}
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Arr.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
@@ -780,7 +782,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=1\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Full.png"))`}
+  \includegraphics[width=1\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Full.png"))`}
 \end{figure}
 
 \pagebreak
@@ -789,7 +791,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=0.9\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Dep.png"))`}
+  \includegraphics[width=0.9\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Dep.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
@@ -803,7 +805,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", "input",  glue("Etape{Etape}_Arr.png"))`}
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Arr.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
