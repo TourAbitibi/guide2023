@@ -72,6 +72,7 @@ opts_chunk$set( tidy = FALSE, comment = NA,
 ```
 
 
+
 Welcome to the **`r params$annee` Tour de l'Abitibi `r params$sponsor`** !
 
 Here's a preview of the Tour de l'Abitibi `r params$sponsor` `r edition`th edition,  which will be held from `r dates_EN %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` to `r dates_EN %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)`.

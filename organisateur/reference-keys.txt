@@ -1,6 +1,6 @@
-fig:unnamed-chunk-79
-fig:unnamed-chunk-80
-fig:unnamed-chunk-81
+fig:unnamed-chunk-82
+fig:unnamed-chunk-83
+fig:unnamed-chunk-84
 présentation
 programmation
 comité-organisateur
@@ -212,6 +212,7 @@ secteur-vérification-vélos
 déviation-des-voitures-suiveuses
 secteur-ligne-arrivée
 règlements-particuliers
+signaleur
 moto-info-et-ardoisier
 dépannage-neutre
 circulation-en-course

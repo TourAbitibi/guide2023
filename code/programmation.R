@@ -61,7 +61,7 @@ dff <- tibble(
   presente  =  glue('<img src="../img/logo/comm_2.png" width="200">'),
   epreuve =  glue('<strong>Route</strong><br/>{df$VilleDep[2]} - {df$VilleArr[2]}<br/>{df$Via[2]}<br/>Distance : {df$Descr_km[2]}<br/>({df$KM_Neutres[2]} km neutralisés au départ)'), 
   dep = glue('<strong>{df$time_depart[2]}</strong><br/>{df$VilleDep[2]}, {df$LieuDepFR[2]}'),
-  arr = glue('<strong>{df$time_arrivee[1]}</strong><br/>{df$VilleArr[2]}, {df$LieuArrFR[2]}')
+  arr = glue('<strong>{df$time_arrivee[2]}</strong><br/>{df$VilleArr[2]}, {df$LieuArrFR[2]}')
 ) %>% 
   bind_rows(dff,.)
 

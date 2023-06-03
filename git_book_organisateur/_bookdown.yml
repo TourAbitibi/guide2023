@@ -5,7 +5,7 @@ language:
     toc: "Table des matières"
     fig: "FIGURE "
     tab: "TABLEAU "
-  ui: 
+  ui:
     chapter_name: ""
 rmd_files:
   - "index.Rmd"
@@ -16,6 +16,7 @@ rmd_files:
   - "../rmd/Sites.Rmd"
   - "../rmd/CLMI_notes.Rmd"
   - "../rmd/Reglements.Rmd"
+  - "../rmd/signaleur.Rmd"
   - "../rmd/ardoise.Rmd"
   - "../rmd/dep_neutre.Rmd"
   - "../rmd/CirculationCourse.Rmd"

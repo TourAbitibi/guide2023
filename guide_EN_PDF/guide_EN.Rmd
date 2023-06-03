@@ -512,7 +512,6 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
   \begin{itemize}
-  \item[\ding{46}] Shower available after the race at the \emph{Centre Michel-Brière} (arena)
   \item[\ding{46}] Dinner will be served at the \emph{Théâtre Meglab}, near the finish line
   \end{itemize}
 \end{tcolorbox}

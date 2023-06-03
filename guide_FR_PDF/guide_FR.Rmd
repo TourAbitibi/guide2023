@@ -518,7 +518,6 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
   \begin{itemize}
-  \item[\ding{46}] Douches disponibles après la course au Centre Michel-Brière (aréna)
   \item[\ding{46}] Repas servi au Théâtre Meglab, près de la ligne d'arrivée
   \end{itemize}
 \end{tcolorbox}
