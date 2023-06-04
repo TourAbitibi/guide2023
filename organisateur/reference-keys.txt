@@ -1,6 +1,6 @@
-fig:unnamed-chunk-82
-fig:unnamed-chunk-83
-fig:unnamed-chunk-84
+fig:unnamed-chunk-87
+fig:unnamed-chunk-88
+fig:unnamed-chunk-89
 présentation
 programmation
 comité-organisateur
@@ -215,6 +215,7 @@ règlements-particuliers
 signaleur
 moto-info-et-ardoisier
 dépannage-neutre
+motos-caméras
 circulation-en-course
 application-gps-followmee
 liste-des-locaux
