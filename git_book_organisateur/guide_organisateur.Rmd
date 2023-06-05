@@ -1470,6 +1470,142 @@ editor_options:
   chunk_output_type: console
 ---
 
+<!-- dep_neutre.Rmd  : info pour horaire et coordonnées moto-info et ardoisier -->
+
+# Dépannage neutre
+
+Instructions et horaires pour l'équipe de dépannage neutre.
+
+### Horaire {-}
+
+```{r, echo=FALSE}
+
+################################################################################ 
+# Site de départ des autobus pour rendez-vous #
+site_rdv <- "Polyvalente La Forêt"
+################################################################################
+
+here("excel", "ardoise_info_neutre.xlsx") %>% 
+  read_excel(sheet = "HORAIRE_DEP") %>% 
+  mutate_if(is.character, ~replace_na(., "---")) %>% 
+  inner_join(iti_etape$Details, by = 'Etape') %>% 
+  mutate(
+    Heure_Navette = format(Heure_Navette, format = "%H:%M")
+  ) %>% 
+  select(
+    'Étape' = Etape,
+    Jour,
+    "Villes d'étape" = Descr_Villes,
+    'Heure Navette' = Heure_Navette,
+    'Départ Course' = Depart,
+    'Notes' = notes
+  ) %>% 
+  kbl(escape = F, # permet de passer les <br/>
+      align = c('c', 'l','l', 'c','c','l'),
+      ) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T) 
+
+
+```
+<br/>
+
+```{r, echo=FALSE}
+
+here("excel", "ardoise_info_neutre.xlsx") %>% 
+  read_excel(sheet = "HORAIRE_DEP") %>% 
+  mutate_if(is.character, ~replace_na(., "---")) %>% 
+  inner_join(iti_etape$Details, by = 'Etape') %>% 
+  mutate(
+    Heure_Navette = format(Heure_Navette, format = "%H:%M")
+  ) %>% 
+  select(
+    'Étape' = Etape,
+    'Conducteur 1' = cond_1,
+    'Mécano 1'= dep_1,
+    'Conducteur 2' = cond_2,
+    'Mécano 2'= dep_2,
+    'Conducteur 3' = cond_3,
+    'Mécano 3'= dep_3
+  ) %>% 
+  kbl(escape = F, # permet de passer les <br/>
+      align = c('c', rep('l', times = 6)),
+      ) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T) 
+
+
+```
+
+#### Notes {-}
+
+- S'assurer d'être à `r params$ville` - `r site_rdv`, 30-45 min avant le départ de la navette.
+- Si vous vous rendez directement à Malartic ou Senneterre, merci d'aviser <a href="mailto:tour@brunogauthier.net?subject=Tour Abitibi - Dépannage Neutre">Bruno Gauthier</a> à l'avance.
+- Pour l'étape 6, être à la ligne départ/arrivée 1h minimum avant le départ.
+- Vous irez de `r params$ville` vers la ville de départ en voiture, retour dans une voiture de dépannage neutre. 
+- S’assurer de récupérer et rendre le matériel à chaque journée, sauf entente préalable. 
+
+
+### Coordonnées de l'équipe {-}
+
+```{r, echo=FALSE}
+
+here("excel", "ardoise_info_neutre.xlsx") %>% 
+  read_excel(sheet = "COORD_DEP") %>% 
+  mutate_if(is.character, ~replace_na(., "---")) %>% 
+  filter(!Nom %in% c('TBD', 'Non-requis','---')) %>% 
+  kbl(escape = F, # permet de passer les <br/>
+      align = c(rep('l', times = 3)),
+      ) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T) 
+
+```
+
+### Instructions {-}
+
+#### Rôle : Dépannage neutre {-}
+
+- Back-up aux équipes
+- Radio-tour peut indiquer d'assurer le service pour une équipe en particulier
+- Chute majeure - toujours s'arrêter et s'assurer que tout le monde est dépanné par les équipes avant de repartir
+- Prendre en note le numéro du coureur ayant reçu une roue ou un vélo
+
+```{r, out.width="90%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "neutre", "neutre_auto.jpg"))
+```
+
+#### Matériel {-}
+
+- Clés Allen communes (4, 5, 6, mm)
+- Clé à pédales/Allen 8mm sur *ratchet* si possible en cas de changement de vélo 
+- Guenille
+- Crayon feutre ou papier-crayon pour identifier roues avec crevaison avec numéro de dossard du coureur
+- Emporter quelques bouteilles d’eau pour ravitailler les coureurs échappés si nécessaire.
+
+
+```{r, out.width="90%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "neutre", "neutre_moto.jpg"))
+```
+
+#### Références UCI {-}
+
+##### Véhicule de dépannage neutre {-}
+
+L’organisateur doit prévoir au minimum trois véhicules d’assistance neutre (voitures ou motos) qui disposent de vélos et/ou roues de rechange permettant de dépanner tout coureur au cours de l’épreuve. Ces véhicules d’assistance neutre sont positionnés par le Président du Collège des Commissaires devant ou derrière les différents groupes de coureurs selon les circonstances de course.
+
+
+**Références complètes** : <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf" target="_blank">Guide UCI, p. 295</a>
+
+
+<!--chapter:end:../rmd/dep_neutre.Rmd-->
+
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
 <!-- ardoise.Rmd  : info pour horaire et coordonnées moto-info et ardoisier -->
 
 # Moto-Info et Ardoisier
@@ -1638,142 +1774,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-<!-- dep_neutre.Rmd  : info pour horaire et coordonnées moto-info et ardoisier -->
-
-# Dépannage neutre
-
-Instructions et horaires pour l'équipe de dépannage neutre.
-
-### Horaire {-}
-
-```{r, echo=FALSE}
-
-################################################################################ 
-# Site de départ des autobus pour rendez-vous #
-site_rdv <- "Polyvalente La Forêt"
-################################################################################
-
-here("excel", "ardoise_info_neutre.xlsx") %>% 
-  read_excel(sheet = "HORAIRE_DEP") %>% 
-  mutate_if(is.character, ~replace_na(., "---")) %>% 
-  inner_join(iti_etape$Details, by = 'Etape') %>% 
-  mutate(
-    Heure_Navette = format(Heure_Navette, format = "%H:%M")
-  ) %>% 
-  select(
-    'Étape' = Etape,
-    Jour,
-    "Villes d'étape" = Descr_Villes,
-    'Heure Navette' = Heure_Navette,
-    'Départ Course' = Depart,
-    'Notes' = notes
-  ) %>% 
-  kbl(escape = F, # permet de passer les <br/>
-      align = c('c', 'l','l', 'c','c','l'),
-      ) %>% 
-    kable_styling("striped",      # kable_minimal
-                  full_width = T) 
-
-
-```
-<br/>
-
-```{r, echo=FALSE}
-
-here("excel", "ardoise_info_neutre.xlsx") %>% 
-  read_excel(sheet = "HORAIRE_DEP") %>% 
-  mutate_if(is.character, ~replace_na(., "---")) %>% 
-  inner_join(iti_etape$Details, by = 'Etape') %>% 
-  mutate(
-    Heure_Navette = format(Heure_Navette, format = "%H:%M")
-  ) %>% 
-  select(
-    'Étape' = Etape,
-    'Conducteur 1' = cond_1,
-    'Mécano 1'= dep_1,
-    'Conducteur 2' = cond_2,
-    'Mécano 2'= dep_2,
-    'Conducteur 3' = cond_3,
-    'Mécano 3'= dep_3
-  ) %>% 
-  kbl(escape = F, # permet de passer les <br/>
-      align = c('c', rep('l', times = 6)),
-      ) %>% 
-    kable_styling("striped",      # kable_minimal
-                  full_width = T) 
-
-
-```
-
-#### Notes {-}
-
-- S'assurer d'être à `r params$ville` - `r site_rdv`, 30-45 min avant le départ de la navette.
-- Si vous vous rendez directement à Malartic ou Senneterre, merci d'aviser <a href="mailto:tour@brunogauthier.net?subject=Tour Abitibi - Dépannage Neutre">Bruno Gauthier</a> à l'avance.
-- Pour l'étape 6, être à la ligne départ/arrivée 1h minimum avant le départ.
-- Vous irez de `r params$ville` vers la ville de départ en voiture, retour dans une voiture de dépannage neutre. 
-- S’assurer de récupérer et rendre le matériel à chaque journée, sauf entente préalable. 
-
-
-### Coordonnées de l'équipe {-}
-
-```{r, echo=FALSE}
-
-here("excel", "ardoise_info_neutre.xlsx") %>% 
-  read_excel(sheet = "COORD_DEP") %>% 
-  mutate_if(is.character, ~replace_na(., "---")) %>% 
-  filter(!Nom %in% c('TBD', 'Non-requis','---')) %>% 
-  kbl(escape = F, # permet de passer les <br/>
-      align = c(rep('l', times = 3)),
-      ) %>% 
-    kable_styling("striped",      # kable_minimal
-                  full_width = T) 
-
-```
-
-### Instructions {-}
-
-#### Rôle : Dépannage neutre {-}
-
-- Back-up aux équipes
-- Radio-tour peut indiquer d'assurer le service pour une équipe en particulier
-- Chute majeure - toujours s'arrêter et s'assurer que tout le monde est dépanné par les équipes avant de repartir
-- Prendre en note le numéro du coureur ayant reçu une roue ou un vélo
-
-```{r, out.width="90%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "neutre", "neutre_auto.jpg"))
-```
-
-#### Matériel {-}
-
-- Clés Allen communes (4, 5, 6, mm)
-- Clé à pédales/Allen 8mm sur *ratchet* si possible en cas de changement de vélo 
-- Guenille
-- Crayon feutre ou papier-crayon pour identifier roues avec crevaison avec numéro de dossard du coureur
-- Emporter quelques bouteilles d’eau pour ravitailler les coureurs échappés si nécessaire.
-
-
-```{r, out.width="90%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "neutre", "neutre_moto.jpg"))
-```
-
-#### Références UCI {-}
-
-##### Véhicule de dépannage neutre {-}
-
-L’organisateur doit prévoir au minimum trois véhicules d’assistance neutre (voitures ou motos) qui disposent de vélos et/ou roues de rechange permettant de dépanner tout coureur au cours de l’épreuve. Ces véhicules d’assistance neutre sont positionnés par le Président du Collège des Commissaires devant ou derrière les différents groupes de coureurs selon les circonstances de course.
-
-
-**Références complètes** : <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf" target="_blank">Guide UCI, p. 295</a>
-
-
-<!--chapter:end:../rmd/dep_neutre.Rmd-->
-
----
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
-
 <!-- tv  : info pour moto tv -->
 
 # Motos-Caméras
@@ -1792,6 +1792,13 @@ Il doit aussi, de plus en plus, créer lui-même du contenu et le diffuser sur i
 
 - <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf" target="_blank">Guide Organisateur UCI, section J.5 p. 245</a>
 - <a href="https://assets.ctfassets.net/761l7gh5x5an/6CZrPOFvHrTlhFnDN1tnA5/ca2b2ad10820c4509dd5cdc0d6198ada/guidedeproductiontv-tvproductionguide_neutral.pdf" target="_blank">Guide Production TV UCI, p. 18</a>
+
+
+### Communications et respect des directives {-}
+
+Pour la sécurité de tous et le bon déroulement sportif de l'épreuve, le pilote de la moto-caméra et son caméraman doivent être en tout temps à l'écoute de la fréquence Radio-Tour sur le radio fourni par l'organisation. Ces derniers doivent se soumettre immédiatement à toute demande en provenance de la direction course.
+
+Le caméraman et le pilote **peuvent être sanctionnés** s’ils contreviennent à un règlement ou à une directive lors d’une épreuve (mise hors course, amende, etc.).
 
 
 ### Position des motos-caméras durant la course {-}
