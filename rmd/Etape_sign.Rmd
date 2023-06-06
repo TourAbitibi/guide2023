@@ -140,4 +140,4 @@ descr_iti %>% as_tibble() %>%
 
 <br/>
 
-**Références** : <a href="https://downloads.ctfassets.net/761l7gh5x5an/7qhUGLmnseEMGg95GQnF1V/4228000a541888393810a793e2e16a50/uci-guide-orga-epreuve-road-2021-fra.pdf" target="_blank">Guide organisateur UCI, p.113</a>.
+**Références** : <a href="https://downloads.ctfassets.net/761l7gh5x5an/7qhUGLmnseEMGg95GQnF1V/4228000a541888393810a793e2e16a50/uci-guide-orga-epreuve-road-2021-fra.pdf#page=115" target="_blank">Guide organisateur UCI, p.113</a>.

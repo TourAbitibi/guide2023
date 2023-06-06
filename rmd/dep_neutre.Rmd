@@ -129,5 +129,5 @@ knitr::include_graphics(here("img", "support", "neutre", "neutre_moto.jpg"))
 L’organisateur doit prévoir au minimum trois véhicules d’assistance neutre (voitures ou motos) qui disposent de vélos et/ou roues de rechange permettant de dépanner tout coureur au cours de l’épreuve. Ces véhicules d’assistance neutre sont positionnés par le Président du Collège des Commissaires devant ou derrière les différents groupes de coureurs selon les circonstances de course.
 
 
-**Références complètes** : <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf" target="_blank">Guide UCI, p. 295</a>
+**Références complètes** : <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf#page=297" target="_blank">Guide UCI, p. 295</a>
 

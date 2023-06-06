@@ -1409,7 +1409,7 @@ Ils sont munis d’un sifflet et d’un drapeau jaune, fourni par l’organisate
 
 
 
-**Références complètes** : <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf" target="_blank">Guide UCI, section C.3.1 p. 151</a>
+**Références complètes** : <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf#page=153" target="_blank">Guide UCI, section C.3.1 p. 151</a>
 
 
 #### Exemple en vidéo : Signaleur moto - Drapeau jaune {-}
@@ -1426,7 +1426,7 @@ Ils les arrêtent avant le passage des coureurs, évitant ainsi qu’ils ne s’
 Au moment du passage des coureurs et suiveurs, ils leur indiquent le parcours à suivre. À la différence des membres de l’escorte motocycliste, le personnel statique peut être à son poste bien avant le passage de la course et peut donc anticiper sur les mesures à prendre pour sécuriser l’épreuve. 
 
 
-**Références complètes** : <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf" target="_blank">Guide UCI, section C.3.2 p. 159</a>
+**Références complètes** : <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf#page=161" target="_blank">Guide UCI, section C.3.2 p. 159</a>
 
 
 #### Exemple en photos : Signaleurs statiques - Drapeau jaune {-}
@@ -1595,7 +1595,7 @@ knitr::include_graphics(here("img", "support", "neutre", "neutre_moto.jpg"))
 L’organisateur doit prévoir au minimum trois véhicules d’assistance neutre (voitures ou motos) qui disposent de vélos et/ou roues de rechange permettant de dépanner tout coureur au cours de l’épreuve. Ces véhicules d’assistance neutre sont positionnés par le Président du Collège des Commissaires devant ou derrière les différents groupes de coureurs selon les circonstances de course.
 
 
-**Références complètes** : <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf" target="_blank">Guide UCI, p. 295</a>
+**Références complètes** : <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf#page=297" target="_blank">Guide UCI, p. 295</a>
 
 
 <!--chapter:end:../rmd/dep_neutre.Rmd-->
@@ -1714,7 +1714,7 @@ On ne montre pas l'ardoise aux coureurs :
 Dans la mesure du possible, sur une course télévisée, il faut éviter de couper le champ de la caméra. Il est intéressant de montrer l'ardoise au public ainsi que dans la zone de ravitaillement où les assistants des équipes n'ont pas toujours ces informations.
 
 
-**Références complètes** : <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf" target="_blank">Guide UCI, p. 294</a>
+**Références complètes** : <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf#page=296" target="_blank">Guide UCI, p. 294</a>
 
 
 #### Comment montrer l'ardoise {-}
@@ -1734,9 +1734,13 @@ knitr::include_graphics(here("img", "support", "ardoise", "ardoise_montrer_1.jpg
 knitr::include_graphics(here("img", "support", "ardoise", "ardoise_montrer_2.jpg"))
 ```
 
-<br/>
 
-Un exemple en vidéo : <a href="https://www.youtube.com/watch?v=OA1hth5Xyno" target="_blank">Lien Youtube</a>
+
+##### Un exemple en vidéo 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OA1hth5Xyno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<br/>
 
 #### Positionnement des motos {-}
 
@@ -1790,8 +1794,8 @@ Il doit aussi, de plus en plus, créer lui-même du contenu et le diffuser sur i
 
 **Références complètes** : 
 
-- <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf" target="_blank">Guide Organisateur UCI, section J.5 p. 245</a>
-- <a href="https://assets.ctfassets.net/761l7gh5x5an/6CZrPOFvHrTlhFnDN1tnA5/ca2b2ad10820c4509dd5cdc0d6198ada/guidedeproductiontv-tvproductionguide_neutral.pdf" target="_blank">Guide Production TV UCI, p. 18</a>
+- <a href="https://archive.uci.org/docs/default-source/publications/2021/uci-guide-orga-epreuve-road-2021-fra.pdf#page=247" target="_blank">Guide Organisateur UCI, section J.5 p. 245</a>
+- <a href="https://assets.ctfassets.net/761l7gh5x5an/6CZrPOFvHrTlhFnDN1tnA5/ca2b2ad10820c4509dd5cdc0d6198ada/guidedeproductiontv-tvproductionguide_neutral.pdf#page=18" target="_blank">Guide Production TV UCI, p. 18</a>
 
 
 ### Communications et respect des directives {-}
@@ -1873,7 +1877,7 @@ Quelques exemples en vidéos.
 
 ###  Course sur route {-}
 
-```{r echo = FALSE, fig.align = 'center', out.width = "100%", fig.cap = "Source - [UCI - Directives de circulation des véhicules en course, p.7](https://downloads.ctfassets.net/761l7gh5x5an/3gM8QxocLIQFMPSzjKor0v/9c3ae8c70aeca646d6a1984684658271/2021-uci-road-guidelines-for-circulation-fr.pdf)"}
+```{r echo = FALSE, fig.align = 'center', out.width = "100%", fig.cap = "Source - [UCI - Directives de circulation des véhicules en course, p.7](https://downloads.ctfassets.net/761l7gh5x5an/3gM8QxocLIQFMPSzjKor0v/9c3ae8c70aeca646d6a1984684658271/2021-uci-road-guidelines-for-circulation-fr.pdf#page=7)"}
 
 knitr::include_graphics(here("img/support/circulation_Course.png"))
 ```
@@ -1894,14 +1898,14 @@ Afin d'assurer la sécurité des coureurs et de la population locale, ces direct
 
 Une dérivation pour les véhicules est aménagée en amont de la ligne d'arrivée pour chaque épreuve, à l'exception de l'étape **5** (arrivée au sommet).
 
-```{r echo = FALSE, fig.align = 'center', out.width = "100%", fig.cap = "Source - [UCI - Directives de circulation des véhicules en course, p.18](https://downloads.ctfassets.net/761l7gh5x5an/3gM8QxocLIQFMPSzjKor0v/9c3ae8c70aeca646d6a1984684658271/2021-uci-road-guidelines-for-circulation-fr.pdf)"}
+```{r echo = FALSE, fig.align = 'center', out.width = "100%", fig.cap = "Source - [UCI - Directives de circulation des véhicules en course, p.18](https://downloads.ctfassets.net/761l7gh5x5an/3gM8QxocLIQFMPSzjKor0v/9c3ae8c70aeca646d6a1984684658271/2021-uci-road-guidelines-for-circulation-fr.pdf#page=18)"}
 
 knitr::include_graphics(here("img/support/circulation_derivation.png"))
 ```
 
 ### Contre-la-montre individuel {-}
 
-```{r echo = FALSE, fig.align = 'center', out.width = "100%", fig.cap = "Source - [UCI - Directives de circulation des véhicules en course, p.30](https://downloads.ctfassets.net/761l7gh5x5an/3gM8QxocLIQFMPSzjKor0v/9c3ae8c70aeca646d6a1984684658271/2021-uci-road-guidelines-for-circulation-fr.pdf)"}
+```{r echo = FALSE, fig.align = 'center', out.width = "100%", fig.cap = "Source - [UCI - Directives de circulation des véhicules en course, p.30](https://downloads.ctfassets.net/761l7gh5x5an/3gM8QxocLIQFMPSzjKor0v/9c3ae8c70aeca646d6a1984684658271/2021-uci-road-guidelines-for-circulation-fr.pdf#page=30)"}
 
 knitr::include_graphics(here("img/support/circulation_CLMI.png"))
 ```
