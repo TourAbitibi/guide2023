@@ -125,7 +125,8 @@ rule R51_render_pdf_FR:
         "guide_FR_PDF/guide_FR.Rmd",
         "guide_FR_PDF/details/tableau_1.pdf",
         "code/programmation.R",
-        "guide_FR_PDF/details/prog.png"
+        "guide_FR_PDF/details/prog.png",
+        "img/logo/comm_0.png", "img/logo/comm_1.png", "img/logo/comm_2.png", "img/logo/comm_3.png", "img/logo/comm_4.png", "img/logo/comm_5.png", "img/logo/comm_6.png", "img/logo/comm_7.png",
 
     output:
         "guide_FR_PDF/guide_FR.pdf"
@@ -162,7 +163,9 @@ rule R52_render_pdf_EN:
         "guide_EN_PDF/guide_EN.Rmd",
         "guide_EN_PDF/details/tableau_1.pdf",
         "code/programmation.R",
-        "guide_EN_PDF/details/prog.png"
+        "guide_EN_PDF/details/prog.png",
+        "img/logo/comm_0.png", "img/logo/comm_1.png", "img/logo/comm_2.png", "img/logo/comm_3.png", "img/logo/comm_4.png", "img/logo/comm_5.png", "img/logo/comm_6.png", "img/logo/comm_7.png",
+
 
     output:
         "guide_EN_PDF/guide_EN.pdf"
