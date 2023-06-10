@@ -358,7 +358,50 @@ maillots_porteurs_tableau_EN <- function(Stage){
 
 # Fonction pour créer tableau des coureurs - Startlist
 
+
 startlist_tableau_FR <- function(){
+  
+    data <- start_list_coureurs %>% 
+    select(
+      "No." = Bib,
+      Coureur,
+      "Équipe" = Team,
+      "Code Équipe" = TeamShort,
+      Pays,
+      Catégorie = Naissance
+    ) 
+  
+  DT::datatable(data, escape = FALSE,rownames = FALSE,
+                options = list(pageLength = 200, 
+                               autoWidth = TRUE,
+                               lengthMenu = c(50, 100, 200)))
+
+}
+
+startlist_tableau_EN <- function(){
+  
+  data <- start_list_coureurs %>% 
+    select(
+      "No." = Bib,
+      Rider = Coureur,
+      Team,
+      "Team Code" = TeamShort,
+      Country = Pays,
+      Category = Naissance
+    ) 
+  
+  DT::datatable(data, escape = FALSE,rownames = FALSE,
+                options = list(pageLength = 200, 
+                               autoWidth = TRUE,
+                               lengthMenu = c(50, 100, 200)))
+  
+}
+
+################################################################################ 
+
+# Tableau Startlist en Kable - non-utilisé
+
+startlist_tableau_FR_kbl <- function(){
   
   start_list_coureurs %>% 
     select(
@@ -377,7 +420,7 @@ startlist_tableau_FR <- function(){
     column_spec(1, bold = T) 
 }
 
-startlist_tableau_EN <- function(){
+startlist_tableau_EN_kbl <- function(){
   
   start_list_coureurs %>% 
     select(
