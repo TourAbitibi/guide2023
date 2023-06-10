@@ -92,7 +92,9 @@ maillots_liste<- tribble(
     "Brun", "Brown", 
     "Orange", "Orange", 
     "Pois", "KOM", 
-    "Bleu", "Blue")
+    "Bleu", "Blue") %>% 
+  mutate(Maillot = Maillot %>% as.factor(),
+         Jersey = Jersey %>%  as.factor())
 
 
 # Liste des Médailles et emoji correspondant

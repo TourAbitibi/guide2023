@@ -177,4 +177,36 @@ tableau_Descrip_Etape(Etape, lang)
 
 ```
 
+<!-- impression des résultats si existent  -->
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+glue("## Results")
+```
+
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+glue("### Stage podium {-}", .open = "[")
+```
+
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+podium_EN(Etape)
+
+```
+
+
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+glue("### Distinctive jerseys after the stage {-}", .open = "[")
+```
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+maillots_apres_etape_tableau_EN(Etape)
+
+```
 

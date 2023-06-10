@@ -3,6 +3,9 @@
 ################################################################################
 # Utiliser les résultats traités dans `_importResults.R`
 #
+# -->  Tant que le fichier `Liste_Coureurs.csv` n'est pas dans le dossier 
+#      `results`, les résultats et porteurs ne s'afficheront pas !
+#
 ################################################################################
 
 here::i_am("guide2023.Rproj")
@@ -16,12 +19,19 @@ source(here::here("code","/_LibsVars.R"))
 ### Les fichiers doivent exister pour éviter des erreurs ###
 
 # Lecture  de la start list de coureurs vers un .csv
-start_list_coureurs <- read_csv(here("results", "Liste_Coureurs.csv"), show_col_types = FALSE)
+file_path <- here("results", "Liste_Coureurs.csv")
+if(file.exists(file_path)){
+  start_list_coureurs <- read_csv(file_path, show_col_types = FALSE)
+
+  STARTLIST_existe <- TRUE
+  
+} else STARTLIST_existe <- FALSE
+
 
 # Lecture des Maillots
 ## KOM - Montagne
 file_path <- here("results", "KOM_General_results.csv")
-if(file.exists(file_path)){
+if(file.exists(file_path) & STARTLIST_existe){
   Maillots_KOM <- read_csv(file_path, show_col_types = FALSE) %>% 
     filter(Position == 1) %>% 
     left_join(start_list_coureurs, by = "Bib") %>% 
@@ -38,7 +48,7 @@ if(file.exists(file_path)){
 
 ## ORANGE - Sprint
 file_path <- here("results", "Points_General_results.csv")
-if(file.exists(file_path)){
+if(file.exists(file_path) & STARTLIST_existe){
   Maillots_ORANGE <- read_csv(file_path, show_col_types = FALSE) %>%
   filter(Position == 1) %>% 
   left_join(start_list_coureurs, by = "Bib") %>% 
@@ -56,7 +66,7 @@ if(file.exists(file_path)){
 
 ## BRUN - Général
 file_path <- here("results", "General_results.csv")
-if(file.exists(file_path)){
+if(file.exists(file_path) & STARTLIST_existe){
   Maillots_BRUN <- read_csv(file_path, show_col_types = FALSE) %>% 
   filter(Position == 1) %>% 
   left_join(start_list_coureurs, by = "Bib") %>% 
@@ -74,7 +84,7 @@ if(file.exists(file_path)){
 
 ## BLEU - Jeune
 file_path <- here("results", "Jeune_General_results.csv")
-if(file.exists(file_path)){
+if(file.exists(file_path) & STARTLIST_existe){
   Maillots_BLEU <- read_csv(file_path, show_col_types = FALSE) %>% 
   filter(Position == 1) %>% 
   left_join(start_list_coureurs, by = "Bib") %>% 
@@ -92,7 +102,7 @@ if(file.exists(file_path)){
 
 ## Équipe
 file_path <- here("results", "Equipe_General_results.csv")
-if(file.exists(file_path)){
+if(file.exists(file_path) & STARTLIST_existe){
   Maillots_EQUIPE <- read_csv(file_path, show_col_types = FALSE) %>% 
   filter(Position == 1) %>% 
   select(
@@ -107,7 +117,7 @@ if(file.exists(file_path)){
 
 # Lecture des podiums
 file_path <- here("results", "Etapes_results.csv")
-if(file.exists(file_path)){
+if(file.exists(file_path) & STARTLIST_existe){
   PODIUMS <- read_csv(file_path, show_col_types = FALSE) %>% 
   filter(Position %in% 1:3) %>% 
   left_join(start_list_coureurs, by = "Bib") %>% 
@@ -127,7 +137,7 @@ if(file.exists(file_path)){
 
 # Lecture des porteurs de maillots
 file_path <- here("results", "Maillots_Porteurs.csv")
-if(file.exists(file_path)){
+if(file.exists(file_path) & STARTLIST_existe){
   Maillots_PORTEURS <- read_csv(file_path, show_col_types = FALSE) %>% 
   drop_na() %>% 
   mutate(
@@ -152,14 +162,18 @@ if(file.exists(file_path)){
 
 # Est-ce que les fichiers de résultats existent :
 
-results_existent_tous <-  PODIUM_existe & 
+results_existent_tous <- FALSE  # initilisation à faux
+
+results_existent_tous <-  STARTLIST_existe &
+                          PODIUM_existe & 
                           BRUN_existe & 
                           BLEU_existe &
                           ORANGE_existe &
                           KOM_existe
 
 # Est-ce que le fichier de porteurs de maillot existe
-## Variable :  PORTEURS_existe
+
+PORTEURS_existe <- STARTLIST_existe & PORTEURS_existe
 
 ################################################################################ 
 
@@ -168,26 +182,34 @@ results_existent_tous <-  PODIUM_existe &
 
 verif_resultats_complets <- function(Stage){
   
-  PODIUMS %>% filter(Etape == Stage) %>% nrow() == 3  &
-  Maillots_BRUN %>% filter(ApresEtape == Stage) %>%  nrow() == 1  &
-  Maillots_BLEU %>% filter(ApresEtape == Stage) %>%  nrow() == 1  &
-  Maillots_KOM %>% filter(ApresEtape == Stage) %>%  nrow() == 1  &
-  Maillots_ORANGE %>% filter(ApresEtape == Stage) %>%  nrow() == 1  &
-  Maillots_EQUIPE %>% filter(ApresEtape == Stage) %>%  nrow() == 1
+  if(results_existent_tous){
+  
+    PODIUMS %>% filter(Etape == Stage) %>% nrow() == 3  &
+    Maillots_BRUN %>% filter(ApresEtape == Stage) %>%  nrow() == 1  &
+    Maillots_BLEU %>% filter(ApresEtape == Stage) %>%  nrow() == 1  &
+    Maillots_KOM %>% filter(ApresEtape == Stage) %>%  nrow() == 1  &
+    Maillots_ORANGE %>% filter(ApresEtape == Stage) %>%  nrow() == 1  &
+    Maillots_EQUIPE %>% filter(ApresEtape == Stage) %>%  nrow() == 1
+  } else FALSE
 }
 
 
 # Fonction pour voir si Porteurs de maillots existe, retourne TRUE
 
-verif_porteurs_complets <- function(AfterStage){
-  
-  Maillots_PORTEURS %>% filter(ApresEtape == AfterStage) %>% nrow() == 4
+verif_porteurs_complets <- function(BeforeStage){
+  if(PORTEURS_existe){
+    
+    Stage <- BeforeStage - 1
+    
+    Maillots_PORTEURS %>% filter(ApresEtape == Stage) %>% nrow() == 4
+
+  } else FALSE
 }
 
 
 ################################################################################ 
 
-#TODO Fonction pour créer tableau du podium de l'étape
+# Fonction pour créer tableau du podium de l'étape
 
 Stage = 1
 
@@ -224,7 +246,7 @@ podium_EN <- function(Stage){
 }
 
 
-#TODO Fonction pour créer tableau des maillots à la fin de l'étape
+# Fonction pour créer tableau des maillots à la fin de l'étape
 
 maillots_apres_etape<- function(Stage){
   tribble(
@@ -330,3 +352,46 @@ maillots_porteurs_tableau_EN <- function(Stage){
     row_spec(3, color = couleurs$vertMaillot) %>% 
     row_spec(4, color = couleurs$blueSprintMaire) 
 } 
+
+
+################################################################################ 
+
+# Fonction pour créer tableau des coureurs - Startlist
+
+startlist_tableau_FR <- function(){
+  
+  start_list_coureurs %>% 
+    select(
+      "No." = Bib,
+      Coureur,
+      "Équipe" = Team,
+      "Code Équipe" = TeamShort,
+      Pays,
+      Catégorie = Naissance
+    ) %>% 
+    kbl(escape = F, # permet de passer les <br/>
+        align = c('c', 'l', 'l', 'c','c', 'c')) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T, 
+                  font_size = 16) %>% 
+    column_spec(1, bold = T) 
+}
+
+startlist_tableau_EN <- function(){
+  
+  start_list_coureurs %>% 
+    select(
+      "No." = Bib,
+      Rider = Coureur,
+      Team,
+      "Team Code" = TeamShort,
+      Country = Pays,
+      Category = Naissance
+    ) %>% 
+    kbl(escape = F, # permet de passer les <br/>
+        align = c('c', 'l', 'l', 'c', 'c', 'c')) %>% 
+    kable_styling("striped",      # kable_minimal
+                  full_width = T, 
+                  font_size = 16) %>% 
+    column_spec(1, bold = T) 
+}
