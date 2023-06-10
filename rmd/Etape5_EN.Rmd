@@ -108,6 +108,22 @@ knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"
 
 ```
 
+<!-- impression des porteurs de maillots si existent  -->
+
+```{r, eval=(verif_porteurs_complets(BeforeStage = Etape)), results='asis', echo= FALSE }
+
+glue("## Jersey wearers for the stage")
+```
+
+
+```{r, eval=(verif_porteurs_complets(BeforeStage = Etape)), results='asis', echo= FALSE }
+
+maillots_porteurs_tableau_EN(Etape)
+
+```
+
+<!-- fin porteur maillots -->
+
 ## Detailed description
 
 ```{r echo=FALSE}
@@ -117,4 +133,36 @@ tableau_Descrip_Etape_Sommet(Etape, lang)
 
 ```
 
+<!-- impression des résultats si existent  -->
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+glue("## Results")
+```
+
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+glue("### Stage podium {-}", .open = "[")
+```
+
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+podium_EN(Etape)
+
+```
+
+
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+glue("### Distinctive jerseys after the stage {-}", .open = "[")
+```
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+maillots_apres_etape_tableau_EN(Etape)
+
+```
 

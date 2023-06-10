@@ -316,7 +316,7 @@ map_results_Points <- function(etape_map){
 etapes_effectives_resulstats_Points$etapes_relles %>% 
   map(\(etapes) .f = map_results_Points(etapes)) %>% 
   list_rbind() %>%
-  write_csv(here("results", "Points_Genral_results.csv"))
+  write_csv(here("results", "Points_General_results.csv"))
 
 
 
@@ -454,7 +454,7 @@ map_results_EquipeGenral <- function(etape_map, class){
     drop_na() %>% 
     rename( 
       Position = V1,
-      Equipe = V2,
+      Team = V2,
       TempsGeneral = V4) %>% 
     mutate(
       Position = as.double(Position),
@@ -497,7 +497,7 @@ map_results_EquipeEtape <- function(etape_map, class){
     drop_na() %>% 
     rename( 
       Position = V1,
-      Equipe = V2,
+      Team = V2,
       Temps = V4) %>% 
     mutate(
       Position = as.double(Position),

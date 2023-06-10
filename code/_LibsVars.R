@@ -81,3 +81,31 @@ df_POI <- tribble(
   "Arrivée",      "Finish",       "Finish", "Fin",   couleurs$brunMaillot
 ) %>% 
   mutate(values = ordered(values, levels = values))
+
+
+################################################################################ 
+
+# Liste des maillots
+
+maillots_liste<- tribble(
+    ~Maillot, ~Jersey,  
+    "Brun", "Brown", 
+    "Orange", "Orange", 
+    "Pois", "KOM", 
+    "Bleu", "Blue") %>% 
+  mutate(Maillot = Maillot %>% as.factor(),
+         Jersey = Jersey %>%  as.factor())
+
+
+# Liste des Médailles et emoji correspondant
+
+  ## https://www.compart.com/fr/unicode/search?q=m%C3%A9daille#characters
+
+medaille_emoji <- tribble(
+  ~Position, ~emoji,
+  1, "&#129351;",
+  2, "&#129352;",
+  3, "&#129353;"
+)
+
+################################################################################ 

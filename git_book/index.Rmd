@@ -39,6 +39,9 @@ source(here::here("code","_LibsVars.R"))
 # Dates
 source(here("code", "_Dates.R"))
 
+# Utilisation Résultats
+source(here("code", "_useResults.R"))
+
 # Pour accès aux données du fichier excel Itineraires.xlsx
 source(here("code","_import_itineraire.R"))
 

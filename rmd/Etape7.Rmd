@@ -109,6 +109,22 @@ knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"
 
 ```
 
+<!-- impression des porteurs de maillots si existent  -->
+
+```{r, eval=(verif_porteurs_complets(BeforeStage = Etape)), results='asis', echo= FALSE }
+
+glue("## Porteurs des maillots pour l'étape")
+```
+
+
+```{r, eval=(verif_porteurs_complets(BeforeStage = Etape)), results='asis', echo= FALSE }
+
+maillots_porteurs_tableau_FR(Etape)
+
+```
+
+<!-- fin porteur maillots -->
+
 ## Description détaillée
 
 ```{r echo=FALSE}
@@ -121,3 +137,36 @@ tableau_Descrip_Etape(Etape, lang)
 ### Notes {-}
 
 Merci de consulter l'article 11 des [règlements particuliers][Règlements particuliers] concernant l'arrivée en circuit de cette dernière étape.
+
+<!-- impression des résultats si existent  -->
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+glue("## Résultats")
+```
+
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+glue("### Podium de l'étape {-}", .open = "[")
+```
+
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+podium_FR(Etape)
+
+```
+
+
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+glue("### Maillots distinctifs après l'étape finale {-}", .open = "[")
+```
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+maillots_apres_etape_tableau_FR(Etape)
+
+```

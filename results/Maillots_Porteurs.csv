@@ -1,25 +1,25 @@
 ApresEtape,Maillot,Bib
 1,Brun,11
 1,Orange,22
-1,Bleu,
-1,Pois,
-2,Brun,
-2,Orange,
-2,Bleu,
-2,Pois,
+1,Pois, 101
+1,Bleu, 51
+2,Brun, 12
+2,Orange, 11
+2,Pois, 12
+2,Bleu, 13
 3,Brun,
 3,Orange,
-3,Bleu,
 3,Pois,
+3,Bleu,
 4,Brun,
 4,Orange,
-4,Bleu,
 4,Pois,
+4,Bleu,
 5,Brun,
 5,Orange,
-5,Bleu,
 5,Pois,
+5,Bleu,
 6,Brun,
 6,Orange,
-6,Bleu,
 6,Pois,
+6,Bleu,
