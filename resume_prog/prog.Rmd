@@ -1,6 +1,6 @@
 ---
 title: "Programmation Tour 2023 - Amos"
-subtitle: "Détails préliminaires - CONFIDENTIEL"
+subtitle: "Détails préliminaires"
 author: "Bruno Gauthier"
 date: 'MAJ `r Sys.Date()`'
 output:
@@ -14,7 +14,7 @@ output:
 params:
   annee: 2023
   ville: "Amos"
-  sponsor: ""
+  sponsor: "Glencore"
 editor_options: 
   chunk_output_type: console
 ---
@@ -114,7 +114,7 @@ mapview(parcours,
 
 ## `r dates_FR %>% filter(code=="Lun_Av") %>% pull(jsem_jour_mois_an)` - Présentation des équipes et Challenge Sprint
 
-De 17:30 à 20:00, secteur Cathédrale. 
+De 16:30 à 19:00, secteur Cathédrale. 
 
 <br/>
 
