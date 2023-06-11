@@ -6,7 +6,7 @@ bookdown::gitbook:
       before: |
         <li><a href="index.html" >Guide 2023 - Organisateur</a></li>
       after: |
-        <li><a href="https://tourabitibi.com" target="blank">Tour de l'Abitibi</a></li>
+        <li><a href="https://tourabitibi.com" target="blank">Tour de l'Abitibi Glencore</a></li>
     download: ["pdf"]
 bookdown::pdf_book:
   includes:

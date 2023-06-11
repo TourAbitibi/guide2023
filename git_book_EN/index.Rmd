@@ -1,5 +1,5 @@
 --- 
-title: "Tour de l'Abitibi 2023 - Technical Guide"
+title: "Tour de l'Abitibi Glencore 2023 - Technical Guide"
 author: "Bruno Gauthier"
 institute: "Tour de l'Abitibi"
 date: "Last update : `r Sys.Date()`"
@@ -19,7 +19,7 @@ params:
   dates_compl: "July 11 to 16, 2023"
   ville: "Amos"
   langue: "EN"  # FR ou EN
-  sponsor: ""
+  sponsor: "Glencore"
   input_output : "output"  #Quel dossier pour afficher les cartes des tracés : Full, Dep, Arr.
 
 #link-citations: yes
@@ -75,10 +75,15 @@ opts_chunk$set( tidy = FALSE, comment = NA,
 ```
 
 
+```{r logo_tour_sponsor, echo=TRUE, echo=FALSE, out.width= "25%", out.extra='style="float:right; padding:10px"'}
+knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
+```
 
-Welcome to the **`r params$annee` Tour de l'Abitibi `r params$sponsor`** !
+<br/>
 
-Here's a preview of the Tour de l'Abitibi `r params$sponsor` `r edition`th edition,  which will be held from `r dates_EN %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` to `r dates_EN %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)`.
+Welcome to the `r edition`th edition of the **`r params$annee` Tour de l'Abitibi `r params$sponsor`**, which will be held from `r dates_EN %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` to `r dates_EN %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)` in `r params$ville`.
+
+In this online technical guide, you'll find all the details about the event, as well as details about your stay in Abitibi-Témiscamingue. 
 
 <br/>
 
@@ -90,4 +95,14 @@ mapview(parcours ,
         z = "name",
         color = palette.colors(n=7, palette="ggplot2"),
         layer.name = "Stage")
+```
+
+<br/>
+
+You can also download a condensed version of the technical guide, containing only the stages descriptions, by clicking on the PDF icon at the top left of the screen.
+
+<br/>
+
+```{r lien_pdf, out.width="40%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "lien_pdf.png"))
 ```

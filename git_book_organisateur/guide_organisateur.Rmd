@@ -1,5 +1,6 @@
 --- 
-title: "Tour de l'Abitibi 2023 - Guide de l'Organisateur"
+title: "Tour de l'Abitibi Glencore 2023" 
+subtitle: "Guide de l'Organisateur"
 author: "Bruno Gauthier"
 institute: "Tour de l'Abitibi"
 date: "Dernière mise à jour : `r Sys.Date()`"
@@ -19,7 +20,7 @@ params:
   dates_compl: "11 au 16 juillet 2023"
   ville: "Amos"
   langue: "FR"
-  sponsor: ""
+  sponsor: "Glencore"
   input_output : "output"  #Quel dossier pour afficher les cartes des tracés : Full, Dep, Arr.
 #github-repo: rstudio/bookdown-demo
 ---
@@ -75,7 +76,7 @@ opts_chunk$set( tidy = FALSE, comment = NA,
 
 ```{r logo_page_index, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
 
-knitr::include_graphics(here("img", "logo", "TA_LogoCouleur_Fondransparent.png"))
+knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
 
 ```
 
