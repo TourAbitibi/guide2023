@@ -1,5 +1,5 @@
 --- 
-title: "Tour de l'Abitibi 2023 - Guide Technique"
+title: "Tour de l'Abitibi Glencore 2023 - Guide Technique"
 author: "Bruno Gauthier"
 institute: "Tour de l'Abitibi"
 date: "Dernière mise à jour : `r Sys.Date()`"
@@ -19,7 +19,7 @@ params:
   dates_compl: "11 au 16 juillet 2023"
   ville: "Amos"
   langue: "FR"  # FR ou EN
-  sponsor : ""
+  sponsor : "Glencore"
   input_output : "output"  #Quel dossier pour afficher les cartes des tracés : Full, Dep, Arr.
 #link-citations: yes
 #github-repo: rstudio/bookdown-demo
@@ -71,10 +71,15 @@ opts_chunk$set( tidy = FALSE, comment = NA,
 
 ```
 
+```{r logo_tour_sponsor, echo=TRUE, echo=FALSE, out.width= "25%", out.extra='style="float:right; padding:10px"'}
+knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
+```
 
-Bonjour et bienvenue au **Tour de l'Abitibi `r params$sponsor` `r params$annee`** !
+<br/>
 
-Voici un aperçu de la `r edition`e édition du Tour de l'Abitibi `r params$sponsor` qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an) %>% tolower()` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an) %>% tolower()`.
+Bienvenue à la **`r edition`e** édition du **Tour de l'Abitibi `r params$sponsor` `r params$annee`** qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an) %>% tolower()` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an) %>% tolower()` à `r params$ville`.
+
+Vous trouverez dans ce guide technique "en ligne" tous les détails concernant l'épreuve sportive de même que les détails de votre séjour en Abitibi-Témiscamingue. 
 
 <br/>
 
@@ -87,3 +92,15 @@ mapview(parcours,
         color = palette.colors(n=7, palette="ggplot2"),
         layer.name = "Étape")
 ```
+
+<br/>
+
+Vous pouvez aussi télécharger une version allégée du guide technique, contenant seulement, les descriptions des étapes en cliquant sur l'icône de PDF en haut à gauche de l'écran.
+
+<br/>
+
+```{r lien_pdf, out.width="40%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics(here("img", "support", "lien_pdf.png"))
+```
+
+

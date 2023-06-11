@@ -16,7 +16,7 @@ Chairwoman of the board
 Tour Cycliste de l'Abitibi   
 
 ```{r mots_logo_tour, echo=TRUE, echo=FALSE, fig.align='left', out.width= "25%"}
-knitr::include_graphics(here("img", "logo", "TA_LogoCouleur_Fondransparent.png"))
+knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
 ```
 
 <br/>

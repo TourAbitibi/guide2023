@@ -296,10 +296,11 @@ rule R50_render_book_EN:
         "excel/med_masso.xlsx",
 
         "script/render_book.R",
+
         "git_book_EN/_bookdown.yml",
         "git_book_EN/_output.yml",
-
         "git_book_EN/index.Rmd",
+
         "rmd/MotsBienvenue_EN.Rmd",
         "rmd/Programmation_EN.Rmd",
         "rmd/CO.Rmd",
@@ -349,10 +350,11 @@ rule R51_render_book:
         "excel/med_masso.xlsx",
 
         "script/render_book.R",
+
         "git_book/_bookdown.yml",
         "git_book/_output.yml",
-
         "git_book/index.Rmd",
+
         "rmd/MotsBienvenue.Rmd",
         "rmd/Programmation.Rmd",
         "rmd/CO.Rmd",
@@ -442,10 +444,11 @@ rule R54_render_book_organisateur:
         "excel/ardoise_info_neutre.xlsx",
 
         "script/render_book.R",
+
         "git_book_organisateur/_bookdown.yml",
         "git_book_organisateur/_output.yml",
-
         "git_book_organisateur/index.Rmd",
+        
         "rmd/MotsBienvenue.Rmd",
         "rmd/Programmation.Rmd",
         "rmd/CO.Rmd",

@@ -40,6 +40,7 @@ header-includes:
 params:
   annee: 2023
   dates_compl: "July 11th to 16, 2023"
+  sponsor: "Glencore"
   ville: "Amos"
   langue: "EN"
   lienWeb: "https://tourabitibi.github.io/guide2023/EN"
@@ -84,14 +85,14 @@ opts_chunk$set( warning = FALSE,
 
 \begin{center}
 
-\huge{\textbf{`r params$annee` Tour de l'Abitibi}}\\
+\huge{\textbf{`r params$annee` Tour de l'Abitibi `r params$sponsor`}}\\
 
 \vspace*{1.0cm}
 
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=0.3\linewidth]{../img/logo/TA_LogoCouleur_Fondransparent.png}
+  \includegraphics[width=0.3\linewidth]{../img/logo/TA_Glencore.png}
 \end{figure}
 
 \vfill

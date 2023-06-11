@@ -1,5 +1,5 @@
 ---
-title: "Tour de l'Abitibi 2023"
+title: "Tour de l'Abitibi Glencore 2023"
 image: "https://tourabitibi.com/wp-content/uploads/2022/04/favicon-tour-abitibi-velo-course-route-cyclisme.jpg"
 links:
   - label: Facebook
