@@ -29,7 +29,7 @@ To ensure the safety of the riders and the local population, these specific guid
 
 ### Caravan deviation {-}
 
-A deviation for vehicles is set up upstream of the finish line for each event, with the exception of stage **5** (summit finish).
+A deviation for vehicles is set up upstream of the finish line for each event. <!--, with the exception of stage **5** (summit finish).--> 
 
 ```{r echo = FALSE, fig.align = 'center', out.width = "100%", fig.cap = "Source - [UCI - Guidelines for vehicle circulation in the race convoy, p.18](https://downloads.ctfassets.net/761l7gh5x5an/3gM8QxocLIQFMPSzjKor0v/7dafeb185ad035d43c6ab4c80b2d1ed3/2021-uci-road-guidelines-for-circulation-eng.pdf)"}
 

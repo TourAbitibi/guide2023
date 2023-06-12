@@ -83,7 +83,7 @@ knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
 
 Welcome to the `r edition`th edition of the **`r params$annee` Tour de l'Abitibi `r params$sponsor`**, which will be held from `r dates_EN %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` to `r dates_EN %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)` in `r params$ville`.
 
-In this online technical guide, you'll find all the details about the event, as well as details about your stay in Abitibi-Témiscamingue. 
+In this online technical guide, you will find all the details about the event, as well as details about your stay in Abitibi-Témiscamingue. 
 
 <br/>
 

@@ -24,7 +24,7 @@ Afin d'assurer la sécurité des coureurs et de la population locale, ces direct
 
 ### Dérivation de la caravane {-}
 
-Une dérivation pour les véhicules est aménagée en amont de la ligne d'arrivée pour chaque épreuve, à l'exception de l'étape **5** (arrivée au sommet).
+Une dérivation pour les véhicules est aménagée en amont de la ligne d'arrivée pour chaque épreuve. <!--, à l'exception de l'étape **5** (arrivée au sommet).-->
 
 ```{r echo = FALSE, fig.align = 'center', out.width = "100%", fig.cap = "Source - [UCI - Directives de circulation des véhicules en course, p.18](https://downloads.ctfassets.net/761l7gh5x5an/3gM8QxocLIQFMPSzjKor0v/9c3ae8c70aeca646d6a1984684658271/2021-uci-road-guidelines-for-circulation-fr.pdf#page=18)"}
 
