@@ -33,6 +33,47 @@ knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
 
 <br/>
 
+### Mot du commanditaire en titre {-}
+
+\linebreak
+
+```{r photo_AlexisSegal, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
+
+knitr::include_graphics(here("img", "photos", "comm_titre.jpg"))
+
+```
+
+C’est avec beaucoup d’enthousiasme que Glencore a choisi de s’associer au Tour de l’Abitibi pour les trois prochaines années. Cet évènement est profondément ancré dans l’histoire de la région, tout comme l’est Glencore au Canada.
+
+Par ce partenariat, Glencore souhaite encourager le rayonnement international du Tour de l’Abitibi. C’est un clin d’œil au rôle mondial de nos employés qui œuvrent à fournir les métaux dont le monde a besoin pour réussir la transition énergétique!
+
+Glencore est fier de ce nouveau partenariat qui repose sur des valeurs chères à l’entreprise.
+
+La santé et la sécurité de nos employés constituent une priorité absolue pour Glencore. Nous croyons que le maintien de saines habitudes de vie via la pratique d’activités sportives contribue à la promotion de ces valeurs.
+
+Glencore favorise également la diversité et l’inclusion au sein de ses équipes. Notre partenariat avec le Tour de l’Abitibi, qui vise notamment à supporter le développement d’un premier volet féminin dans les prochaines années, s’inscrit dans cette démarche.
+
+Enfin, nous tenons à souligner la contribution des bénévoles, entraîneurs, officiels, organisateurs, et bien sûr des coureurs, sans qui cet évènement ne serait pas possible.
+
+À tous, merci pour votre engagement!
+
+
+**Alexis Segal**      
+Directeur Relations gouvernementales et affaires publiques
+
+
+```{r mots_logo_Glencore, echo=TRUE, echo=FALSE, fig.align='left', out.width= "35%"}
+knitr::include_graphics(here("img", "logo", "Glencore.png"))
+```
+
+<br/>
+
+---
+
+\pagebreak
+
+<br/>
+
 ### Mot du Maire de la Ville d'Amos {-}
 
 \linebreak

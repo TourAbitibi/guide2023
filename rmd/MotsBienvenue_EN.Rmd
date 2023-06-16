@@ -1,6 +1,6 @@
 # Welcoming words
 
-### Word from the chairwoman of the board {-}
+### A word from the chairwoman of the board {-}
 
 \linebreak
 
@@ -27,7 +27,48 @@ knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
 
 <br/>
 
-### Word from `r params$ville` mayor {-}
+### A word from our title partner {-}
+
+\linebreak
+
+```{r photo_AlexisSegal, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
+
+knitr::include_graphics(here("img", "photos", "comm_titre.jpg"))
+
+```
+
+Glencore is thrilled to announce its partnership with the Tour de l’Abitibi for the next three years. This event holds deep historical significance in the region, much like Glencore does in Canada.
+
+Through this partnership, Glencore aims to support the international prominence of the Tour de l'Abitibi. It is a nod to the global role our employees play in providing the metals needed for a successful energy transition.
+
+Glencore is proud of this new partnership, which is built upon values cherished by the company.
+
+The health and safety of our employees are top priorities for Glencore. We believe that maintaining healthy lifestyles through engaging in sports activities contributes to the promotion of these values.
+
+Glencore also promotes diversity and inclusion within its teams. Our partnership with the Tour de l'Abitibi, particularly in supporting the development of a women's category in the coming years, aligns with this commitment.
+
+Lastly, we would like to acknowledge the contributions of volunteers, coaches, officials, organizers, and, of course, the riders, without whom this event would not be possible.
+
+To everyone involved, thank you for your dedication!
+
+
+**Alexis Segal**   
+Director of Government Relations and Public Affairs
+
+
+```{r mots_logo_Glencore, echo=TRUE, echo=FALSE, fig.align='left', out.width= "35%"}
+knitr::include_graphics(here("img", "logo", "Glencore.png"))
+```
+
+<br/>
+
+---
+
+\pagebreak
+
+<br/>
+
+### A word from `r params$ville` mayor {-}
 
 \linebreak
 
@@ -55,7 +96,7 @@ knitr::include_graphics(here("img", "logo", "VilleAmos.png"))
 
 <br/>
 
-### Word from the Ministers {-}
+### A word from the Ministers {-}
 
 \linebreak
 
@@ -99,7 +140,7 @@ knitr::include_graphics(here("img", "logo", "gouv_quebec_large.png"))
 <br/>
 
 
-### Word from the regional Minister {-}
+### A word from the regional Minister {-}
 
 \linebreak
 
