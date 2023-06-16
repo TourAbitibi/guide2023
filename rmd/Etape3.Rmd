@@ -122,18 +122,6 @@ maillots_porteurs_tableau_FR(Etape)
 
 ```
 
-<!-- fin porteur maillots -->
-
-## Description détaillée
-
-```{r echo=FALSE, message=FALSE, warning=FALSE, quiet=TRUE}
-
-# Tableau sans footer pour le CLMI
-tableau_Descrip_BASE(Etape, lang)
-
-```
-
-<!-- impression des résultats si existent  -->
 
 ```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
 

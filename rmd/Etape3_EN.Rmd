@@ -109,21 +109,6 @@ knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"
 
 ```
 
-<!-- impression des porteurs de maillots si existent  -->
-
-```{r, eval=(verif_porteurs_complets(BeforeStage = Etape)), results='asis', echo= FALSE }
-
-glue("## Jersey wearers for the stage")
-```
-
-
-```{r, eval=(verif_porteurs_complets(BeforeStage = Etape)), results='asis', echo= FALSE }
-
-maillots_porteurs_tableau_EN(Etape)
-
-```
-
-<!-- fin porteur maillots -->
 
 ## Detailed description
 
