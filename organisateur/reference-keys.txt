@@ -67,6 +67,7 @@ parcours-2
 détail-du-départ-2
 détail-de-larrivée-2
 élévation-2
+description-détaillée-2
 signalisation---carte-2
 signalisation---tableau-2
 signalisation---détails-2
@@ -86,7 +87,7 @@ parcours-3
 détail-du-départ-3
 détail-de-larrivée-3
 élévation-3
-description-détaillée-2
+description-détaillée-3
 signalisation---carte-3
 signalisation---tableau-3
 signalisation---détails-3
@@ -112,7 +113,7 @@ parcours-4
 détail-du-départ-4
 détail-de-larrivée-4
 élévation-4
-description-détaillée-3
+description-détaillée-4
 signalisation---carte-4
 signalisation---tableau-4
 signalisation---détails-4
@@ -145,7 +146,7 @@ parcours-5
 détail-du-départ-5
 détail-de-larrivée-5
 élévation-5
-description-détaillée-4
+description-détaillée-5
 signalisation---carte-5
 signalisation---tableau-5
 signalisation---détails-5
@@ -175,7 +176,7 @@ parcours-6
 détail-du-départ-6
 détail-de-larrivée-6
 élévation-6
-description-détaillée-5
+description-détaillée-6
 signalisation---carte-6
 signalisation---tableau-6
 signalisation---détails-6

@@ -108,20 +108,16 @@ knitr::include_graphics(here("img", "elev", glue("Etape{Etape}_Final_{lang}.png"
 
 ```
 
-<!-- impression des porteurs de maillots si existent  -->
+## Description détaillée
 
-```{r, eval=(verif_porteurs_complets(BeforeStage = Etape)), results='asis', echo= FALSE }
+```{r echo=FALSE}
 
-glue("## Porteurs des maillots pour l'étape")
-```
-
-
-```{r, eval=(verif_porteurs_complets(BeforeStage = Etape)), results='asis', echo= FALSE }
-
-maillots_porteurs_tableau_FR(Etape)
+# Tableau sans footer pour le CLMI
+tableau_Descrip_BASE(Etape, lang)
 
 ```
 
+<!-- impression des résultats si existent  -->
 
 ```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
 
