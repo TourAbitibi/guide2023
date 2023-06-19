@@ -12,8 +12,7 @@ toc-title: "Table des Matières"
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
-    Guide technique du Tour de l'Abitibi 2023, une étape de la Coupe des Nations de l'UCI.
-    Présentation de la programmation, des parcours et des réglements pour l'épreuve. 
+    Guide technique du Tour de l'Abitibi 2023, version de l'organisateur.
 suppress-bibliography: yes
 params:
   annee: 2023
