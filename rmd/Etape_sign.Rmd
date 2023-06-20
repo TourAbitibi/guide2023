@@ -135,7 +135,7 @@ descr_iti %>% as_tibble() %>%
   footnote(.,general = c(
               "Jusqu'à la ligne d'arrivée",
               "Panneaux 25 km, 20 km, 10 km, 5 km, 4 km, 3 km, 2 km par équipe route (Maurice)",
-              "Flamme rouge (1 km) et panneaux métriques 500 m, 300 m, 200 m, 150 m, 100 m, 50 m à installer par l'équipe en ville"))
+              "Flamme rouge (1 km), panneaux métriques 500 m, 300 m, 200 m, 150 m, 100 m, 50 m, affiche déviation de caravane et zone ravito fixe à installer par l'équipe en ville"))
 ```
 
 <br/>
