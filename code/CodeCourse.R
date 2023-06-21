@@ -7,30 +7,19 @@
 #
 ################################################################################
 
-here::i_am("guide2023.Rproj")
-
 source(here::here("code","/_LibsVars.R"))
 
 source(here("code","_import_itineraire.R"))
 
 ################################################################################ 
 
-tableau_en_course <- function(Etape = 1, km_actuel = 0, vit_actuelle = 44, language = "FR"){
-  
-  # Description complète de l'étape
-  orig_name <-paste0("iti_etape$Etape_", Etape, sep="")
-  df_orig <- eval(parse(text=orig_name)) %>% 
-    mutate(KM_reel = as.double(KM_reel))
-  
-  # df `Détails` pour l'étape
-  details <- iti_etape$Details[Etape,]
-  
+tableau_en_course <- function(Etape = 1, km_actuel = 10, vit_actuelle = 44, heure_dep,  language = "FR"){
   
   calcul_iti_etape(Etape , "FR")%>% 
     as_tibble() %>% 
     mutate(
-      dur_h_reel = dhours(df_orig$KM_reel / vit_actuelle),
-      time_arr_reel = details$dttm_depart + dur_h_reel,
+      dur_h_reel = dhours(KM_fait / vit_actuelle),
+      time_arr_reel = heure_dep + dur_h_reel, # en fx heure départ réel
       time_arr_reel = format(time_arr_reel, format= "%H:%M" )
     ) %>% 
     select(KM_a_faire,
@@ -50,7 +39,7 @@ tableau_en_course <- function(Etape = 1, km_actuel = 0, vit_actuelle = 44, langu
     
     # Conditions des colonnes
     column_spec(2, bold = T) %>%
-    column_spec(6, bold = T) %>%
+    column_spec(6, bold = T, italic = T) %>%
     
     # Header tableau
     add_header_above(  c({if (language=="FR") "restant" else "to go"}, 

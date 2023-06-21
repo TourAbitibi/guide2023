@@ -18,12 +18,12 @@ ui_info("L'heure est {ui_value(now())}")
 Etape <- 1
 
 HEURE_DEP_REEL <- heure_dep_fx(
-  heure = 21,  
-  min = 46,
-  sec = 34)
+  heure = 17,  
+  min = 00,
+  sec = 00)
 
 # Données à MAJ en cours d'étape
-KM_ACTUEL <- 46
+KM_ACTUEL <- 10
 
 ################################################################################ 
 
@@ -34,7 +34,8 @@ VITESSE_MOY_ACTUEL <- KM_ACTUEL / HEURE_COURSE_ACTUEL
 TEMPS_COURSE_ACTUEL <- hms::as_hms(HEURE_COURSE_ACTUEL * 3600)
 
 # Création tableau avec km restant seulement et prévision selon vitesse actuelle
-tableau_en_course(Etape, km_actuel = KM_ACTUEL , vit_actuelle = VITESSE_MOY_ACTUEL, "FR")
+tableau_en_course(Etape, km_actuel = KM_ACTUEL , vit_actuelle = VITESSE_MOY_ACTUEL, 
+                  heure_dep = HEURE_DEP_REEL, "FR")
 
 ################################################################################ 
 
