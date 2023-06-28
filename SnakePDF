@@ -35,12 +35,24 @@ rule Z_targets:
         
         echo "\n  ~~ Rsync vers PVE1 ~~ \n"
 
+        echo "\n  ~~ Rsync vers Traefik 120 ~~ \n"
+
         rsync -avhP img/* bruno@192.168.101.120:/home/bruno/guide_web/guide/img/ --delete-after
 
         rsync -avhP FR/* bruno@192.168.101.120:/home/bruno/guide_web/guide/FR/ --delete-after
         rsync -avhP EN/* bruno@192.168.101.120:/home/bruno/guide_web/guide/EN/ --delete-after
 
         rsync -avhP organisateur/* bruno@192.168.101.120:/home/bruno/guide_web/guide/organisateur/ --delete-after
+
+
+        echo "\n  ~~ Rsync vers Docker 150 ~~ \n"
+
+        rsync -avhP img/* bruno@192.168.101.150:/home/bruno/guide_web/guide/img/ --delete-after
+
+        rsync -avhP FR/* bruno@192.168.101.150:/home/bruno/guide_web/guide/FR/ --delete-after
+        rsync -avhP EN/* bruno@192.168.101.150:/home/bruno/guide_web/guide/EN/ --delete-after
+
+        rsync -avhP organisateur/* bruno@192.168.101.150:/home/bruno/guide_web/guide/organisateur/ --delete-after
 
 	    echo "\n  ~~ Fin de la synchronisation ~~ \n"
         
