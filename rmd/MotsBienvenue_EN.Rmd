@@ -9,11 +9,18 @@ knitr::include_graphics(here("img", "photos", "pres.png"))
 ```
 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum posuere urna nec tincidunt praesent semper. Id donec ultrices tincidunt arcu non sodales neque sodales. Tristique senectus et netus et malesuada fames ac turpis. Id ornare arcu odio ut. Turpis cursus in hac habitasse platea. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. A pellentesque sit amet porttitor. Aliquet nibh praesent tristique magna sit amet purus gravida. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Sed odio morbi quis commodo odio. Integer quis auctor elit sed vulputate mi. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Tempor nec feugiat nisl pretium fusce. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Non arcu risus quis varius quam quisque id diam vel. Mauris cursus mattis molestie a iaculis. Turpis egestas sed tempus urna et pharetra pharetra massa. Cursus euismod quis viverra nibh. Tristique risus nec feugiat in.
+On behalf of all the members of the board of directors, the organizing committee, I would like to welcome you to the 53rd Tour de l'Abitibi Glencore. We are very proud of our cycling event, the only one in its category in North America! Its longevity is due to the passion, enthusiasm and unconditional commitment of the Témiscabitibians!
+
+For its 53rd edition, the Tour will welcome young cyclists from all over the world. This year, we will be attending the longest Tour de l'Abitibi Glencore, with a total of 686.2 km of racing. As in previous years, team fans can watch the races live on our website at www.tourabitibi.com.
+
+I would like to acknowledge the indispensable work of our many volunteers and our permanent team, who worked throughout the year to offer you a most memorable event during the week of the Tour in Amos. In addition, I would like to make a special mention to our faithful and generous partners, without whom the event would not take place, not to mention our current partner, Glencore.
+
+On behalf of myself and all those involved in the success of this sporting event, I would like to thank the cyclists and their companions for travelling to Abitibi-Timiskaming. To all of you, I wish you the best of luck, and that the visit to our beautiful region will forever be remembered.
+
 
 **Mélanie Rocher**    
 Chairwoman of the board         
-Tour Cycliste de l'Abitibi   
+Tour Cycliste de l'Abitibi inc.   
 
 ```{r mots_logo_tour, echo=TRUE, echo=FALSE, fig.align='left', out.width= "25%"}
 knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
@@ -78,7 +85,14 @@ knitr::include_graphics(here("img", "photos", "maire_amos.png"))
 
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum posuere urna nec tincidunt praesent semper. Id donec ultrices tincidunt arcu non sodales neque sodales. Tristique senectus et netus et malesuada fames ac turpis. Id ornare arcu odio ut. Turpis cursus in hac habitasse platea. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. A pellentesque sit amet porttitor. Aliquet nibh praesent tristique magna sit amet purus gravida. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Sed odio morbi quis commodo odio. Integer quis auctor elit sed vulputate mi. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Tempor nec feugiat nisl pretium fusce. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Non arcu risus quis varius quam quisque id diam vel. Mauris cursus mattis molestie a iaculis. Turpis egestas sed tempus urna et pharetra pharetra massa. Cursus euismod quis viverra nibh. Tristique risus nec feugiat in.
+It is with great pride that the City of Amos is hosting, in 2023, one of the most prestigious junior cycling events in the world, the Tour de l'Abitibi.
+
+Founding city of such a major event, Amos considers itself a full member of the Tour de l’Abitibi team, year after year. We believed in it from the very beginning, and we still believe in it.
+
+The members of the municipal council would like to sincerely thank you for your presence and take this opportunity to wish the best of luck to all the members of this beautiful organization who also work for the overcoming of our sports youth.
+
+Enjoy your stay in Amos.
+
 
 **Sébastien D’Astous**    
 Amos mayor 
@@ -130,23 +144,26 @@ knitr::include_graphics(here("img", "logo", "gouv_quebec_large.png"))
 <br/>
 
 
-### A word from the regional Minister {-}
+### A word from the regional Member of the National Assembly {-}
 
 \linebreak
 
-```{r photo_ministre_reg, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
+```{r photo_deputee_reg, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
 
-knitr::include_graphics("https://coalitionavenirquebec.org/wp-content/uploads/2018/08/photo-profil-dufour-pierre-abitibi-est.png")
+knitr::include_graphics("https://coalitionavenirquebec.org/wp-content/uploads/2018/08/photo-profil-blais-suzanne-abitibi-ouest.png")
 
 ```
 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum posuere urna nec tincidunt praesent semper. Id donec ultrices tincidunt arcu non sodales neque sodales. Tristique senectus et netus et malesuada fames ac turpis. Id ornare arcu odio ut. Turpis cursus in hac habitasse platea. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. A pellentesque sit amet porttitor. Aliquet nibh praesent tristique magna sit amet purus gravida. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Sed odio morbi quis commodo odio. Integer quis auctor elit sed vulputate mi. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Tempor nec feugiat nisl pretium fusce. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Non arcu risus quis varius quam quisque id diam vel. Mauris cursus mattis molestie a iaculis. Turpis egestas sed tempus urna et pharetra pharetra massa. Cursus euismod quis viverra nibh. Tristique risus nec feugiat in.
+It is a privilege to receive the 53rd edition of the Tour de l'Abitibi Glencore in Amos. This major event is the only one of the 9 competitions on the UCI Junior Nations Cup circuit to be presented in America. The Tour de l'Abitibi Glencore is important to our region. It is an opportunity to showcase the talents of young cyclists. I am convinced that some of them will aspire to great futures in the world of cycling.
+
+I would like to thank the organizers and volunteers of the Tour de l'Abitibi Glencore for their involvement. Thanks to this involvement, the Tour de l’Abitibi Glencore allows Abitibi-Timiskaming to shine on the international cycling scene.
+
+I wish our young athletes good luck and hope that they will have good memories of Amos and our region.
 
 
-**Pierre Dufour**       
-Parliamentary assistant to the Minister of Economy, Innovation and Energy    
-Parliamentary assistant for the Abitibi-Témiscamingue region
+**Suzanne Blais**       
+Member of the National Assembly for Abitibi-Ouest
 
 
 ```{r, echo=FALSE,out.width="75%",fig.show='hold',fig.align='center'}

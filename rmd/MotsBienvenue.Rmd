@@ -11,15 +11,15 @@ knitr::include_graphics(here("img", "photos", "pres.png"))
 
 C’est au nom de tous les membres du conseil d’administration, du comité organisateur, que j’aimerais vous souhaiter la bienvenue au `r edition`e Tour de l’Abitibi `r params$sponsor`. Nous sommes très fiers de notre événement cycliste, le seul dans sa catégorie en Amérique du Nord! Sa longévité est attribuable à la passion, l’engouement et l’engagement inconditionnel des Témiscabitibiens!
 
-Pour sa `r edition`e édition, le Tour accueillera avec plaisir plus d’une vingtaine d’équipes provenant d’un peu partout à travers le monde ainsi qu’une équipe de la belle région de l’Abitibi-Témiscamingue. Comme les années dernières, les partisans des équipes pourront suivre les courses en direct sur notre site web en se rendant au <a href="https://www.tourabitibi.com" target="blank">www.tourabitibi.com</a>.
+Pour sa `r edition`e édition, le Tour accueillera des jeunes cyclistes provenant d’un peu partout à travers le monde. Cette année, nous assisterons au plus long Tour de l’Abitibi Glencore, soit un Tour totalisant 686,2 km de course. Comme les années dernières, les partisans des équipes pourront suivre les courses en direct sur notre site web en se rendant au <a href="https://www.tourabitibi.com" target="blank">www.tourabitibi.com</a>.
 
-Je tiens à souligner le travail indispensable de nos nombreux bénévoles et de notre équipe permanente, qui tout au long de l’année, ont travaillé pour vous offrir un événement des plus mémorable lors de la semaine du Tour à Amos. De plus, j’aimerais faire une mention toute spéciale à nos fidèles et généreux partenaires, sans qui l’événement n’aurait pas lieu.
+Je tiens à souligner le travail indispensable de nos nombreux bénévoles et de notre équipe permanente, qui tout au long de l’année, ont travaillé pour vous offrir un événement des plus mémorable lors de la semaine du Tour à Amos. De plus, j’aimerais faire une mention toute spéciale à nos fidèles et généreux partenaires, sans qui l’événement n’aurait pas lieu, sans oublier notre partenaire en titre ; Glencore.
 
 En mon nom et en celui de tous ceux et celles qui participent à la réussite de cette compétition sportive, j’aimerais remercier les cyclistes et leurs accompagnateurs de s’être déplacés jusqu’en Abitibi-Témiscamingue. À vous tous, je vous souhaite la meilleure des chances, et que le passage dans notre magnifique région soit à jamais gravé dans votre mémoire.
 
 **Mélanie Rocher**    
 Présidente du Conseil d'Administration         
-Tour Cycliste de l'Abitibi   
+Tour Cycliste de l'Abitibi inc. 
 
 ```{r mots_logo_tour, echo=TRUE, echo=FALSE, fig.align='left', out.width= "25%"}
 knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
@@ -109,7 +109,7 @@ knitr::include_graphics(here("img", "logo", "VilleAmos.png"))
 
 <br/>
 
-### Mot des Ministres {-}
+### Mot de la Ministre {-}
 
 \linebreak
 
@@ -142,32 +142,28 @@ knitr::include_graphics(here("img", "logo", "gouv_quebec_large.png"))
 <br/>
 
 
-### Mot du Ministre régional {-}
+### Mot de la députée régionale {-}
 
 \linebreak
 
-```{r photo_ministre_reg, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
+```{r photo_deputee_reg, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
 
-knitr::include_graphics("https://coalitionavenirquebec.org/wp-content/uploads/2018/08/photo-profil-dufour-pierre-abitibi-est.png")
+knitr::include_graphics("https://coalitionavenirquebec.org/wp-content/uploads/2018/08/photo-profil-blais-suzanne-abitibi-ouest.png")
 
 ```
 
 
-Je suis fier de m’associer à la `r edition`e édition du Tour de l’Abitibi. Cet événement cycliste d’envergure internationale inclus dans le circuit de la Coupe des Nations Junior est le seul à être présenté en Amérique. Ce rendez-vous sportif met en valeur la région et offre à ces nombreux athlètes venus d’ailleurs l’immensité du décor abitibien.  
+C’est un privilège de recevoir la 53e édition du Tour de l’Abitibi Glencore à Amos. Cet évènement d’envergure est la seule des 9 compétitions dans le circuit de la Coupe des nations Junior UCI à être présentée en Amérique. Le Tour de l’Abitibi Glencore est important pour notre région. C’est l’occasion de mettre en valeur les talents des jeunes cyclistes. Je suis persuadée que certains d’entre eux aspireront à de grands avenirs dans le monde du cyclisme.
 
-Je tiens à remercier le comité organisateur et tous les bénévoles pour leur travail sans relâche tout au long de l’année afin d’offrir une expérience des plus mémorables à tous les cyclistes, accompagnateurs et touristes. Une mention tout à fait spéciale à tous les partenaires du Tour de l’Abitibi qui ont rendu possible la tenue de cet événement de grande envergure.    
+Je tiens à remercier les organisateurs et les bénévoles du Tour de l’Abitibi Glencore pour leur implication. Grâce à cette implication, le Tour de l’Abitibi Glencore permet à l’Abitibi-Témiscamingue de rayonner sur la scène cycliste internationale.
 
-Cette rencontre sportive est un moment privilégié pour les jeunes élites du cyclisme et pour leurs supporteurs.    
-
-À tous, je vous souhaite beaucoup de succès, et que votre passage chez nous soit à jamais gravé dans votre mémoire.    
-
-Bon Tour de l’Abitibi!
+Je souhaite à nos jeunes athlètes beaucoup de succès et j’espère qu’ils garderont de beaux souvenirs d’Amos et de notre région.
 
 
-**Pierre Dufour**     
-Député d'Abitibi-Est
-Adjoint parlementaire du ministre de l’Économie, de l’Innovation et de l’Énergie    
-Adjoint gouvernemental au ministre responsable de la région de l'Abitibi-Témiscamingue
+**Suzanne Blais**     
+Députée dans Abitibi-Ouest
+Adjointe parlementaire à la ministre responsable Solidarité sociale   
+
 
 
 ```{r, echo=FALSE,out.width="75%",fig.show='hold',fig.align='center'}
