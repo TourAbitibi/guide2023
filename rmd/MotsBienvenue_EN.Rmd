@@ -96,15 +96,10 @@ knitr::include_graphics(here("img", "logo", "VilleAmos.png"))
 
 <br/>
 
-### A word from the Ministers {-}
+### A word from the Minister {-}
 
 \linebreak
 
-```{r photo_ministre_gauche, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:left; padding:10px"'}
-
-knitr::include_graphics("https://coalitionavenirquebec.org/wp-content/uploads/2018/08/photo-profil-charest-isabelle-brome-missisquoi.png")
-
-```
 
 ```{r photo_ministre_droite, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
 
@@ -118,11 +113,6 @@ Aliquet porttitor lacus luctus accumsan tortor posuere. Felis bibendum ut tristi
 
 <br/>
 
-
-**Isabelle Charest**    
-Ministre responsable du Sport, du Loisir et du Plein air
-
-<br/>
 
 **Caroline Proulx**   
 Ministre du Tourisme
