@@ -92,7 +92,7 @@ L'ardoisier sera piloté par une moto équipé d'un récepteur avec les fréquen
 Une ardoise doit être claire et rapide à lire. Sur le côté gauche de l'ardoise, les différents groupes - ou les numéros de dossards - seront marqués et soulignés :
 
 ```{r, out.width="70%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "ardoise", "ardoise_exemple.png"))
+knitr::include_graphics("https://i.ibb.co/Qfb2y0q/ardoise-exemple.png")
 ```
 
 <br/>
@@ -118,7 +118,7 @@ Dans la mesure du possible, sur une course télévisée, il faut éviter de coup
 #### Comment montrer l'ardoise {-}
 
 ```{r, out.width="70%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "ardoise", "ardoise_montrer_1.jpg"))
+knitr::include_graphics("https://i.ibb.co/KwjFqdm/ardoise-montrer-1.jpg")
 ```
 
 <br/>
@@ -129,7 +129,7 @@ knitr::include_graphics(here("img", "support", "ardoise", "ardoise_montrer_1.jpg
 
 
 ```{r, out.width="60%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "ardoise", "ardoise_montrer_2.jpg"))
+knitr::include_graphics("https://i.ibb.co/HXNpMHg/ardoise-montrer-2.jpg")
 ```
 
 

@@ -2,6 +2,8 @@
 
 Images nécessaires à la création des documents. 
 
+> Plusieurs images statiques sont aussi en ligne à : https://brunogauthier.imgbb.com
+
 ## cartes
 
 Cartes détaillées des parcours complets, départ et arrivées.
