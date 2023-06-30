@@ -8,64 +8,64 @@ Présentation de différentes photos concernant les lieux de départs et arrivé
 ### Site départ - arrivée -- Amos
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Amos", "site_1.JPG"))
+knitr::include_graphics("https://i.ibb.co/nQcPt5Z/site-1.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Amos", "site_2.JPG"))
+knitr::include_graphics("https://i.ibb.co/2NzFWX3/site-2.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Amos", "site_3.JPG"))
+knitr::include_graphics("https://i.ibb.co/M2FGWcN/site-3.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Amos", "site_4.JPG"))
+knitr::include_graphics("https://i.ibb.co/Z1rWmPm/site-4.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Amos", "site_5.JPG"))
+knitr::include_graphics("https://i.ibb.co/C95LVMX/site-5.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Amos", "site_6.JPG"))
+knitr::include_graphics("https://i.ibb.co/YkynzT8/site-6.jpg")
 ```
 <br/>
 
 Et quelques références un peu plus vieilles
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Amos", "ref_1.JPG"))
+knitr::include_graphics("https://i.ibb.co/7XFyb5t/ref-1.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Amos", "ref_2.JPG"))
+knitr::include_graphics("https://i.ibb.co/3ccqTyX/ref-2.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Amos", "ref_3.JPG"))
+knitr::include_graphics("https://i.ibb.co/W04dTBZ/ref-3.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Amos", "ref_4.JPG"))
+knitr::include_graphics("https://i.ibb.co/DC2Q2F7/ref-4.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Amos", "ref_5.JPG"))
+knitr::include_graphics("https://i.ibb.co/DM3y2sY/ref-5.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Amos", "ref_6.JPG"))
+knitr::include_graphics("https://i.ibb.co/nnPVzjP/ref-6.jpg")
 ```
 <br/>
 
@@ -74,27 +74,27 @@ Voir [Installation - CLMI] pour la section spécifique au contre-la-montre du je
 ### Site départ - Val-d'Or
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "VD", "site_21.JPG"))
+knitr::include_graphics("https://i.ibb.co/5W4VhcQ/site-21.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "VD", "site_22.JPG"))
+knitr::include_graphics("https://i.ibb.co/0qTr2wM/site-22.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "VD", "site_23.JPG"))
+knitr::include_graphics("https://i.ibb.co/Th3ShgV/site-23.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "VD", "site_24.JPG"))
+knitr::include_graphics("https://i.ibb.co/7bgwkYW/site-24.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "VD", "site_25.JPG"))
+knitr::include_graphics("https://i.ibb.co/Kzrqfq4/site-25.jpg")
 ```
 <br/>
 
@@ -103,27 +103,27 @@ knitr::include_graphics(here("img", "support", "sites", "VD", "site_25.JPG"))
 ### Site départ - Rouyn-Noranda
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "RN", "site_11.JPG"))
+knitr::include_graphics("https://i.ibb.co/2M0X9rT/site-11.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "RN", "site_12.JPG"))
+knitr::include_graphics("https://i.ibb.co/BsfZQcZ/site-12.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "RN", "site_13.JPG"))
+knitr::include_graphics("https://i.ibb.co/gZVyXXb/site-13.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "RN", "site_14.JPG"))
+knitr::include_graphics("https://i.ibb.co/NLH1kP1/site-14.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "RN", "site_15.JPG"))
+knitr::include_graphics("https://i.ibb.co/Mh2RL3P/site-15.jpg")
 ```
 <br/>
 
@@ -131,34 +131,34 @@ knitr::include_graphics(here("img", "support", "sites", "RN", "site_15.JPG"))
 ### Site départ - arrivée -- Malartic
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Malartic", "site_31.JPG"))
+knitr::include_graphics("https://i.ibb.co/cvYzVn5/site-31.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Malartic", "site_32.JPG"))
+knitr::include_graphics("https://i.ibb.co/5cRNf0d/site-32.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Malartic", "site_33.JPG"))
+knitr::include_graphics("https://i.ibb.co/bQKj3f5/site-33.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Malartic", "site_34.JPG"))
+knitr::include_graphics("https://i.ibb.co/pvLYn79/site-34.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Malartic", "site_35.JPG"))
+knitr::include_graphics("https://i.ibb.co/swF6tf3/site-35.jpg")
 ```
 <br/>
 
 On voit ici que l'arche gonflable a été déplacée durant la course, avant l'arrivée, derrière le *flat bed*.
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Malartic", "site_36.JPG"))
+knitr::include_graphics("https://i.ibb.co/ZYwTkj0/site-36.jpg")
 ```
 <br/>
 
@@ -167,26 +167,26 @@ knitr::include_graphics(here("img", "support", "sites", "Malartic", "site_36.JPG
 
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Senneterre", "site_41.JPG"))
+knitr::include_graphics("https://i.ibb.co/gJLpqgV/site-41.jpg")
 ```
 <br/>
 
 On voit ici que l'arche gonflable a été déplacée pour l'arrivée, derrière le *flat bed*.
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Senneterre", "site_42.JPG"))
+knitr::include_graphics("https://i.ibb.co/KwydZ1q/site-42.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Senneterre", "site_43.JPG"))
+knitr::include_graphics("https://i.ibb.co/rsNdt5D/site-43.jpg")
 ```
 <br/>
 
 ### Site arrivée - Mont Bell - Senneterre
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "Senneterre", "site_44.JPG"))
+knitr::include_graphics("https://i.ibb.co/6Dqg214/site-44.jpg")
 ```
 <br/>
 
@@ -194,11 +194,11 @@ knitr::include_graphics(here("img", "support", "sites", "Senneterre", "site_44.J
 
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "LS", "site_51.JPG"))
+knitr::include_graphics("https://i.ibb.co/fdkW6Wd/site-51.jpg")
 ```
 <br/>
 
 ```{r, out.width="75%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics(here("img", "support", "sites", "LS", "site_52.JPG"))
+knitr::include_graphics("https://i.ibb.co/fGG9qQz/site-52.jpg")
 ```
 <br/>
