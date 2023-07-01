@@ -33,9 +33,11 @@ glue('<table border=1>
  **`r iti_etape$Details$Distance_totale[Etape]` km**
 
 
+> **Mise à jour du 1^er^ juillet 2023** : étant donné les incendies de forêts importants sévissant au Québec et plus particulièrement en Abitibi-Témiscamingue, il a été décidé de remplacer l'étape 5 de Senneterre par une étape plus près de la ville hôtesse d'Amos. Afin de permettre ce changement, le parcours de l'étape 6 a été repris, mais en sens inverse.
  
 
 ## Sommaire
+
 
 - `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
 - Sans circuit d'arrivée  

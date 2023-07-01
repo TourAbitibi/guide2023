@@ -109,3 +109,15 @@ medaille_emoji <- tribble(
 )
 
 ################################################################################ 
+
+
+# Liens règlements UCI
+## PDF des règlements UCI
+
+uci_p1_FR <- "https://assets.ctfassets.net/761l7gh5x5an/wQympSG6EWlKq6o6HKw9E/dc4f11d32bd13331be62c834d9070f1c/1-GEN-20230220-F.pdf"
+uci_p2_FR <- "https://assets.ctfassets.net/761l7gh5x5an/6l7RYpnS5bOmq32rzaBdNx/77c464d49bad0f321e03f9b0e62e2be8/2-ROA-20230613-F.pdf"
+
+uci_p1_EN <- "https://assets.ctfassets.net/761l7gh5x5an/wQympSG6EWlKq6o6HKw9E/d2911e42e627bbd055483f57cc0027fb/1-GEN-20230220-E.pdf"
+uci_p2_EN <- "https://assets.ctfassets.net/761l7gh5x5an/3zdJc5antr1dA3GYeDKdBu/bef82a9d7336e9b798c364066db92581/2-ROA-20230613-E.pdf"
+
+uci_financial <- "https://assets.ctfassets.net/761l7gh5x5an/4LhHQ0knlVpQFA1wf3X2Re/d6066b0cb0f95507c1117cf0e1afdb13/ROA-20220420_-_2023_Road_Financial_Obligations_-v2_PW_Lbo_Corrected_17.06.2022.pdf"

@@ -81,9 +81,14 @@ knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
 
 <br/>
 
-Welcome to the `r edition`th edition of the **`r params$annee` Tour de l'Abitibi `r params$sponsor`**, which will be held from `r dates_EN %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` to `r dates_EN %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)` in `r params$ville`.
+Welcome to the `r edition`^th^ edition of the **`r params$annee` Tour de l'Abitibi `r params$sponsor`**, which will be held from `r dates_EN %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` to `r dates_EN %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)` in `r params$ville`.
 
 In this online technical guide, you will find all the details about the event, as well as details about your stay in Abitibi-Témiscamingue. 
+
+<br/>
+
+> **Update from 2023, July 1^st^** : in view of the major forest fires in Quebec, particularly in Abitibi-Temiscamingue, it was decided to replace stage 5 from Senneterre with a stage closer to the host town of Amos. To accommodate this change, the route of stage 6 was used again, but in the opposite direction. See details in the [stage 5][Stage 5 : Amos - RH - Preissac - Amos] tab.
+
 
 <br/>
 

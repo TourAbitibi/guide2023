@@ -32,6 +32,8 @@ glue('<table border=1>
  **`r iti_etape$Details$Distance_totale[Etape]` km**
 
 
+> **Update from 2023, July 1^st^** : in view of the major forest fires in Quebec, particularly in Abitibi-Temiscamingue, it was decided to replace stage 5 from Senneterre with a stage closer to the host town of Amos. To accommodate this change, the route of stage 6 was used again, but in the opposite direction.
+
 ## Summary
 
 - `r iti_etape$Details$KM_Neutres[Etape]` neutralized km from the start   
