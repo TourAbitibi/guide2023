@@ -581,7 +581,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Full.png"))`}
+  \includegraphics[width=0.6\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Full.png"))`}
 \end{figure}
 
 \pagebreak
@@ -590,7 +590,7 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Dep.png"))`}
+  \includegraphics[width=0.85\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Dep.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
@@ -604,13 +604,12 @@ comm <- here("img", "logo",  glue("comm_{Etape}.png"))
 
 \begin{figure}[H]
   \centering    
-  \includegraphics[width=0.7\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Arr.png"))`}
+  \includegraphics[width=\textwidth]{`r here("img", "cartes", params$input_output,  glue("Etape{Etape}_Arr.png"))`}
 \end{figure}
 
 \begin{tcolorbox}[colback=orange!5!white,colframe=orange!75!black]
   \begin{itemize}
-  \item[\ding{46}] Finish at the summit of Mont Bell
-  \item[\ding{46}] KOM point doubled at the finish line KOM
+  \item[\ding{46}] Finish without circuit
   \end{itemize}
 \end{tcolorbox}
 

@@ -54,13 +54,7 @@ Finish                                 `r heureArr`
 
 ## Course
 
-```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-
-knitr::include_graphics(here("img", "cartes", params$input_output,  glue("Etape{Etape}_Full.png")))
-
-```
-
-<br/>
+### Interactive map
 
 ```{r, echo = FALSE, eval = TRUE}
 
@@ -133,6 +127,16 @@ carte_dynamique_etape(Etape)
 
 
 <a href="`r iti_etape$Details$Liens[Etape]`" target="blank">Link to <strong>Ride with GPS</strong></a>
+
+<br/>
+
+### Full course
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+
+knitr::include_graphics(here("img", "cartes", params$input_output,  glue("Etape{Etape}_Full.png")))
+
+```
 
 <br/>
 

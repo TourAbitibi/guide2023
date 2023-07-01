@@ -81,7 +81,7 @@ knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
 
 Bonjour et bienvenue au **Tour de l'Abitibi `r params$sponsor` `r params$annee`** !
 
-Voici un aperçu de la `r edition`e édition du Tour de l'Abitibi `r params$sponsor` qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an) %>% tolower()` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an) %>% tolower()`.
+Voici un aperçu de la `r edition`^e^ édition du Tour de l'Abitibi `r params$sponsor` qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an) %>% tolower()` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an) %>% tolower()`.
 
 Ce guide de l'organisateur contient toutes les informations essentielles pour préparer les différentes étapes du Tour de l'Abitibi `r params$sponsor` et ainsi assurer la sécurité des coureurs, des participants et de la population générale. 
 
@@ -101,6 +101,10 @@ Notamment, il vous permettra de retrouver tous les détails :
 
 Ce site est un complément du **Guide Technique** complet pour les membres de l'organisation.
 
+
+<br/>
+
+> **Mise à jour du 1^er^ juillet 2023** : étant donné les incendies de forêts importants sévissant au Québec et plus particulièrement en Abitibi-Témiscamingue, il a été décidé de remplacer l'étape 5 de Senneterre par une étape plus près de la ville hôtesse d'Amos. Afin de permettre ce changement, le parcours de l'étape 6 a été repris, mais en sens inverse. Voir les détails dans l'onglet [étape 5][Étape 5 : Amos - RH - Preissac - Amos].
 
 <br/>
 

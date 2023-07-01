@@ -20,9 +20,9 @@ source(here::here("code","/_import_itineraire.R"))
 ################################################################################
 
 # Définir les étapes selon STD, CLMI ou SOMMET
-etapesStd <- c(1,2,4,6,7)
+etapesStd <- c(1,2,4,5,6,7)
 etapeCLMI <- 3
-etapeSOMMET <- 5
+# etapeSOMMET <- c()
   
 ################################################################################
 ################################################################################
@@ -61,6 +61,6 @@ ecrire_tableau_SOMMET <- function(Etape, lang){
   
 }
 
-ecrire_tableau_SOMMET(etapeSOMMET, "FR")
-ecrire_tableau_SOMMET(etapeSOMMET, "EN")
+# ecrire_tableau_SOMMET(etapeSOMMET, "FR")
+# ecrire_tableau_SOMMET(etapeSOMMET, "EN")
 

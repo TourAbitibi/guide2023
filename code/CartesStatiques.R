@@ -165,13 +165,13 @@ creation_3_map(no_etape =4,
 
 
 creation_3_map(no_etape =5,
-               pct_point_debut = 0.003 , 
-               pct_point_fin = 0.97,
+               pct_point_debut = 0.044, 
+               pct_point_fin = 0.970,
                pos_h_arrow = "right",
                pos_v_arrow = "bottom",
-               pos_h_scale = "right",
+               pos_h_scale = "left",
                pos_v_scale = "top",
-               buff = 600)
+               buff = 300)
  
 creation_3_map(no_etape =6,
                pct_point_debut = 0.048, 

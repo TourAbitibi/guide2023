@@ -101,20 +101,20 @@ rule Z_targets:
 
         echo "\n  ~~ Rsync vers Traefik 120 ~~ \n"
 
-        rsync -avhP img/* bruno@192.168.101.120:/home/bruno/guide_web/guide/img/ --delete-after
-        rsync -avhP FR/* bruno@192.168.101.120:/home/bruno/guide_web/guide/FR/ --delete-after
-        rsync -avhP EN/* bruno@192.168.101.120:/home/bruno/guide_web/guide/EN/ --delete-after
-        rsync -avhP prog/* bruno@192.168.101.120:/home/bruno/guide_web/guide/prog/ --delete-after
-        rsync -avhP organisateur/* bruno@192.168.101.120:/home/bruno/guide_web/guide/organisateur/ --delete-after
+        rsync -avhP img/* bruno@192.168.101.120:/home/bruno/guide_web/guide/img/ --delete-after &
+        rsync -avhP FR/* bruno@192.168.101.120:/home/bruno/guide_web/guide/FR/ --delete-after &
+        rsync -avhP EN/* bruno@192.168.101.120:/home/bruno/guide_web/guide/EN/ --delete-after &
+        rsync -avhP prog/* bruno@192.168.101.120:/home/bruno/guide_web/guide/prog/ --delete-after &
+        rsync -avhP organisateur/* bruno@192.168.101.120:/home/bruno/guide_web/guide/organisateur/ --delete-after &
         rsync -avhP index.html bruno@192.168.101.120:/home/bruno/guide_web/guide/index.html
 
         echo "\n  ~~ Rsync vers Docker 150 ~~ \n"
 
-        rsync -avhP img/* bruno@192.168.101.150:/home/bruno/guide_web/guide/img/ --delete-after
-        rsync -avhP FR/* bruno@192.168.101.150:/home/bruno/guide_web/guide/FR/ --delete-after
-        rsync -avhP EN/* bruno@192.168.101.150:/home/bruno/guide_web/guide/EN/ --delete-after
-        rsync -avhP prog/* bruno@192.168.101.150:/home/bruno/guide_web/guide/prog/ --delete-after
-        rsync -avhP organisateur/* bruno@192.168.101.150:/home/bruno/guide_web/guide/organisateur/ --delete-after
+        rsync -avhP img/* bruno@192.168.101.150:/home/bruno/guide_web/guide/img/ --delete-after &
+        rsync -avhP FR/* bruno@192.168.101.150:/home/bruno/guide_web/guide/FR/ --delete-after &
+        rsync -avhP EN/* bruno@192.168.101.150:/home/bruno/guide_web/guide/EN/ --delete-after &
+        rsync -avhP prog/* bruno@192.168.101.150:/home/bruno/guide_web/guide/prog/ --delete-after &
+        rsync -avhP organisateur/* bruno@192.168.101.150:/home/bruno/guide_web/guide/organisateur/ --delete-after &
         rsync -avhP index.html bruno@192.168.101.150:/home/bruno/guide_web/guide/index.html
 
 	    echo "\n  ~~ Fin de la synchronisation ~~ \n"
@@ -148,36 +148,36 @@ rule R01_importExportGPX:
 
 
 
-rule R02_elv_parcours:
-    input:
-        "code/_elv_parcours.R"  # ,   ## pose pendant la pédiode de test
-        #"gpx/output/parcours.shp"
+# rule R02_elv_parcours:
+#     input:
+#         "code/_elv_parcours.R"  # ,   ## pose pendant la pédiode de test
+#         # "gpx/output/parcours.shp"
 
-    output:
-        "rasterElevation/elv_parcours.tif"
-    params:
-        script = "code/_elv_parcours.R"
-    shell:
-        """ 
-        {params.script}
-        """
+#     output:
+#         "rasterElevation/elv_parcours.tif"
+#     params:
+#         script = "code/_elv_parcours.R"
+#     shell:
+#         """ 
+#         {params.script}
+#         """
 
 
 
-rule R03_importExportElevation:
-    input:
-        "code/_importExportElevation.R",
-        "rasterElevation/elv_parcours.tif"  # ,   ## pose pendant la pédiode de test
-        #"gpx/output/parcours.shp"
+# rule R03_importExportElevation:
+#     input:
+#         "code/_importExportElevation.R",
+#         "rasterElevation/elv_parcours.tif"  # ,   ## pose pendant la pédiode de test
+#         # "gpx/output/parcours.shp"
 
-    output:
-        "elevParcours/elev_parcours.csv"
-    params:
-        script = "code/_importExportElevation.R"
-    shell:
-        """ 
-        {params.script}
-        """
+#     output:
+#         "elevParcours/elev_parcours.csv"
+#     params:
+#         script = "code/_importExportElevation.R"
+#     shell:
+#         """ 
+#         {params.script}
+#         """
 
 ##########################################################################################################################
 ##########################################################################################################################
@@ -244,7 +244,10 @@ rule R12_creationGraphElevation:
 rule R31_importExportGPX_Signalisation:
     input:
         "code/_importExportGPX_Signalisation.R", "excel/Itineraires.xlsx", "excel/signalisation.xlsx",
-        "gpx/input/Signalisation_1.gpx", "gpx/input/Signalisation_2.gpx"
+        "gpx/input/Signalisation_1.gpx", "gpx/input/Signalisation_2.gpx", "gpx/input/Signalisation_3.gpx", "gpx/input/Signalisation_3.gpx",
+        "gpx/input/Signalisation_5.gpx", "gpx/input/Signalisation_5.gpx", "gpx/input/Signalisation_7.gpx", 
+        "gpx/input/Signalisation_1.csv", "gpx/input/Signalisation_2.csv", "gpx/input/Signalisation_3.csv", "gpx/input/Signalisation_3.csv",
+        "gpx/input/Signalisation_5.csv", "gpx/input/Signalisation_5.csv", "gpx/input/Signalisation_7.csv", 
     output:
         "gpx/output/points_signalisation.shp", "gpx/output/points_signalisation.dbf", "gpx/output/points_signalisation.prj", "gpx/output/points_signalisation.shx"
     params:

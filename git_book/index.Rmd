@@ -77,11 +77,17 @@ knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
 
 <br/>
 
-Bienvenue à la **`r edition`e** édition du **Tour de l'Abitibi `r params$sponsor` `r params$annee`** qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an) %>% tolower()` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an) %>% tolower()` à `r params$ville`.
+Bienvenue à la **`r edition`^e^** édition du **Tour de l'Abitibi `r params$sponsor` `r params$annee`** qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an) %>% tolower()` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an) %>% tolower()` à `r params$ville`.
 
 Vous trouverez dans ce guide technique "en ligne" tous les détails concernant l'épreuve sportive de même que les détails de votre séjour en Abitibi-Témiscamingue. 
 
 <br/>
+
+
+
+> **Mise à jour du 1^er^ juillet 2023** : étant donné les incendies de forêts importants sévissant au Québec et plus particulièrement en Abitibi-Témiscamingue, il a été décidé de remplacer l'étape 5 de Senneterre par une étape plus près de la ville hôtesse d'Amos. Afin de permettre ce changement, le parcours de l'étape 6 a été repris, mais en sens inverse. Voir les détails dans l'onglet [étape 5][Étape 5 : Amos - RH - Preissac - Amos].
+
+<br/> 
 
 ```{r map_globale, echo = FALSE, eval = TRUE}
 # Visualisation
@@ -92,6 +98,8 @@ mapview(parcours,
         color = palette.colors(n=7, palette="ggplot2"),
         layer.name = "Étape")
 ```
+
+
 
 <br/>
 

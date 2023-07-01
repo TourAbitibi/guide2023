@@ -8,4 +8,4 @@ Pour éviter que :
 
 soient affichés avant la course, il faut **déplacer le fichier `results/Liste_Coureurs.csv`** hors du fichier `results/`.
 
-Cela empêche l'affichage des tableaux dans les pages d'étapes.
+Cela empêche l'affichage des tableaux dans les pages d'étapes lors de l'utilisation de `code/_importResults.R`

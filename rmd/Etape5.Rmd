@@ -33,13 +33,15 @@ glue('<table border=1>
  **`r iti_etape$Details$Distance_totale[Etape]` km**
 
 
+> **Mise à jour du 1^er^ juillet 2023** : étant donné les incendies de forêts importants sévissant au Québec et plus particulièrement en Abitibi-Témiscamingue, il a été décidé de remplacer l'étape 5 de Senneterre par une étape plus près de la ville hôtesse d'Amos. Afin de permettre ce changement, le parcours de l'étape 6 a été repris, mais en sens inverse.
  
 
 ## Sommaire
 
+
 - `r iti_etape$Details$KM_Neutres[Etape]` km neutralisés au départ   
-- Arrivée au sommet du Mont Bell : bonification doublée pour Classement général individuel de la montagne (GPM) (art. 13.3, [Règlements particuliers])
-- Cérémonies protocolaires sur le site de départ devant l'hôtel de ville de Senneterre
+- Sans circuit d'arrivée  
+
 
 ----------------------------------------------------
                                               Heure
@@ -51,13 +53,8 @@ Arrivée finale                         `r heureArr`
 
 ## Parcours
 
-```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+### Carte interactive
 
-knitr::include_graphics(here("img", "cartes", params$input_output,  glue("Etape{Etape}_Full.png")))
-
-```
-
-<br/>
 
 ```{r, echo = FALSE, eval = TRUE}
 
@@ -69,6 +66,16 @@ carte_dynamique_etape(Etape)
 <br/>
 
 <a href="`r iti_etape$Details$Liens[Etape]`" target="blank">Lien vers <strong>Ride with GPS</strong></a>
+
+<br/>
+
+### Parcours complet
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+
+knitr::include_graphics(here("img", "cartes", params$input_output,  glue("Etape{Etape}_Full.png")))
+
+```
 
 <br/>
 
@@ -88,12 +95,6 @@ knitr::include_graphics(here("img", "cartes", params$input_output,  glue("Etape{
 knitr::include_graphics(here("img", "cartes", params$input_output,  glue("Etape{Etape}_Arr.png")))
 
 ```
-
-#### En images {-}
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z7yGlUB9rwk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<br/>
 
 ## Élévation
 
@@ -130,7 +131,7 @@ maillots_porteurs_tableau_FR(Etape)
 ```{r echo=FALSE, message=FALSE, warning=FALSE, quiet=TRUE}
 
 
-tableau_Descrip_Etape_Sommet(Etape, lang)
+tableau_Descrip_Etape(Etape, lang)
 
 ```
 

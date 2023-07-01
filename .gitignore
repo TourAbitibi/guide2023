@@ -28,12 +28,16 @@ git_book_organisateur/img
 resume_prog/prog_files
 resume_prog/prog.html
 
+# Version intermédiaire des pdf, pas besoin d'être synchronisé
+guide_EN_PDF/guide_EN.pdf 
+guide_FR_PDF/guide_FR.pdf
+
 # Image du processu Snakemake, pas requis de synchronisé
 dag.png
 dag_PDF.png
 
 # fichier tif trop gros et peut être produit localement
- rasterElevation/elv_parcours.tif
+rasterElevation/elv_parcours.tif
 
 ################################################################################
 # History files
