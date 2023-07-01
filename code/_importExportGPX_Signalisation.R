@@ -57,9 +57,9 @@ sign_etape <- function(no_etape){
   # Données du CSV de signalisation (importé de RWPGS directement)
   csv <- read.csv(here("gpx", "input", glue("Signalisation_{no_etape}.csv"))) %>% 
     janitor::clean_names() %>% 
-    drop_na() %>% 
     select(uniq_id = notes, 
-           KM_reel = distance_km_from_start)
+           KM_reel = distance_km_from_start) %>% 
+    drop_na() 
   
   # Description complète de l'étape
   orig_name <-paste0("signalisation_xlsx$Etape", no_etape)
