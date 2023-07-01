@@ -2035,6 +2035,8 @@ glue("### Locaux des équipes {-}", .open = "[")
 
 locaux_xlsx <- here("excel", "locaux.xlsx")
 
+# Note : mettre en ordre manuellement dans le fichier excel selon l'ordre des dossards !
+
 read_excel(locaux_xlsx, sheet = "EQUIPES") %>% 
   select(role = ifelse(lang=="FR", "equipe_fr", "equipe_en"),
          room) %>% 
@@ -2062,8 +2064,9 @@ glue("### Locaux administratifs {-}", .open = "[")
 locaux_xlsx <- here("excel", "locaux.xlsx")
 
 read_excel(locaux_xlsx, sheet = "ADMIN") %>% 
-  select(role = ifelse(lang=="FR", "equipe_fr", "equipe_en"),
-         room) %>% 
+  select(role = ifelse(lang=="FR", "commite_fr", "commite_en"),
+         room = ifelse(lang=="FR", "room_fr", "room_en")) %>% 
+  arrange(role) %>% 
   kbl(col.names = NULL,
       escape = F, # permet de passer les <br/>
       align = c("l","r"),
