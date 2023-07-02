@@ -3,6 +3,7 @@ bookdown::gitbook:
   css: style.css
   includes:
     in_header: matamo-analytics.html
+  config:
     toc:
       before: |
         <li><a href="index.html" >Guide technique 2023</a></li>
