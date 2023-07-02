@@ -279,11 +279,7 @@ rule R31_importExportGPX_Signalisation:
 #         echo "\n  ~~ Préparation des cartes statiques de signalisation png de taille réduite ~~ \n"
 #         optipng img/cartes/sign/*.png -dir img/cartes/sign/ -o1 -clobber -force
 #         echo "\n  ~~ Fin de l'optimisation des cartes de signalisation png ~~ \n"
-<<<<<<< HEAD
 #        """
-=======
-#         """
->>>>>>> issue_63
 
 
 
