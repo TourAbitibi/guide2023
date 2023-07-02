@@ -1,6 +1,6 @@
-fig:unnamed-chunk-87
-fig:unnamed-chunk-88
-fig:unnamed-chunk-89
+fig:unnamed-chunk-94
+fig:unnamed-chunk-95
+fig:unnamed-chunk-96
 présentation
 programmation
 comité-organisateur
@@ -217,6 +217,14 @@ site-départ---arrivée-malartic
 site-départ---senneterre
 site-arrivée---mont-bell---senneterre
 site-départ---la-sarre
+croquis-installation
+croquis-départ---arrivée---amos
+croquis---challenge-sprint---amos
+croquis---clmi---amos
+croquis---départ---val-dor
+croquis---départ---rouyn-noranda
+croquis---départ-arrivée---malartic
+croquis---départ---la-sarre
 installation---clmi
 localisation
 vues-générales
