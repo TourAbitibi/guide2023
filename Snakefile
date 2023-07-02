@@ -260,25 +260,25 @@ rule R31_importExportGPX_Signalisation:
 
 # À mettre en pause une fois les points de signalisations finalisés :
 # Très long à produire et optimiser
-rule R32_creationVignetteSignalisation:
-    input:
-        "code/_importExportGPX_Signalisation.R",
-        "code/CartesStatiquesSignalisation.R",
-        "excel/signalisation.xlsx",
-        "gpx/output/points_signalisation.shp",
-        "gpx/output/points_signalisation.dbf"
-    output:
-        "img/cartes/sign/E1_sign_01.png"
-    params:
-        script = "code/CartesStatiquesSignalisation.R"
-    shell:
-        """
-        echo "n  ~~ Création des cartes statiques de signalisation (vignettes) ~~ \n"
-        {params.script}
-        echo "\n  ~~ Préparation des cartes statiques de signalisation png de taille réduite ~~ \n"
-        optipng img/cartes/sign/*.png -dir img/cartes/sign/ -o1 -clobber -force
-        echo "\n  ~~ Fin de l'optimisation des cartes de signalisation png ~~ \n"
-        """
+# rule R32_creationVignetteSignalisation:
+#     input:
+#         "code/_importExportGPX_Signalisation.R",
+#         "code/CartesStatiquesSignalisation.R",
+#         "excel/signalisation.xlsx",
+#         "gpx/output/points_signalisation.shp",
+#         "gpx/output/points_signalisation.dbf"
+#     output:
+#         "img/cartes/sign/E1_sign_01.png"
+#     params:
+#         script = "code/CartesStatiquesSignalisation.R"
+#     shell:
+#         """
+#         echo "n  ~~ Création des cartes statiques de signalisation (vignettes) ~~ \n"
+#         {params.script}
+#         echo "\n  ~~ Préparation des cartes statiques de signalisation png de taille réduite ~~ \n"
+#         optipng img/cartes/sign/*.png -dir img/cartes/sign/ -o1 -clobber -force
+#         echo "\n  ~~ Fin de l'optimisation des cartes de signalisation png ~~ \n"
+#         """
 
 
 

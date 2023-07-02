@@ -21,3 +21,15 @@ Les guides suivants sont disponibles sur le web via https://tourabitibi.github.i
 - dossier `prog`pour partager la programmation préliminaire Tour Abitibi et Tour Relève
 - dossiers `EN`et `FR` pour la version en ligne du guide technique - course
 - dossier `organisateur`pour la version du guide avec les détails de l'organisation
+
+
+## Processus manuels
+
+Certains processus manuels sont aussi inclus :
+
+- `code/DocCourse.R`pour suivre les vitesses moyennes et maj des prévisions d'heures de passage en temps réel
+- `code/_importResults.R`pour importer les résultats en provenance du logiciel de suivi de RSS Timing
+- `code/_exportLignes_Jaune_JauneMoto.R`# produire un fichier excel contenant :
+  - Les lignes à tracer sur la route
+  - Les signaleurs drapeaux jaunes 
+  - Les motos drapeaux jaunes 
