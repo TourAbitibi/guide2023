@@ -739,6 +739,64 @@ knitr::include_graphics("https://i.ibb.co/fGG9qQz/site-52.jpg")
 <!--chapter:end:../rmd/Sites.Rmd-->
 
 
+<!-- Croquis.Rmd  : croquis d'installation pour équipe logistiques -->
+
+# Croquis Installation
+
+Présentation des différents site de compétition et des installations logistiques qui y sont requises.
+
+### Croquis départ - arrivée - Amos
+
+```{r, out.width="95%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics("https://i.ibb.co/XJy04Cq/croquis-site-amos.png")
+```
+<br/>
+
+### Croquis - Challenge Sprint - Amos
+
+```{r, out.width="95%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics("https://i.ibb.co/yqDdTCb/croquis-challengesprint.png")
+```
+<br/>
+
+### Croquis - CLMI - Amos
+
+```{r, out.width="95%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics("https://i.ibb.co/m8dFN2G/croquis-clmi-amos.png")
+```
+<br/>
+
+### Croquis - Départ - Val-d'Or
+
+```{r, out.width="95%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics("https://i.ibb.co/tHc0nWd/croquis-dep-vd.png")
+```
+<br/>
+
+### Croquis - Départ - Rouyn-Noranda 
+
+```{r, out.width="95%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics("https://i.ibb.co/Rz25BzY/croquis-dep-rn.png")
+```
+<br/>
+
+### Croquis - Départ Arrivée - Malartic
+
+```{r, out.width="95%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics("https://i.ibb.co/KD9chrr/croquis-dep-arr-malartic.png")
+```
+<br/>
+
+### Croquis - Départ - La Sarre
+
+```{r, out.width="95%",fig.align='center',  echo = FALSE, eval = TRUE}
+knitr::include_graphics("https://i.ibb.co/8Dn5fyj/croquis-dep-lasarre.png")
+```
+
+
+<!--chapter:end:../rmd/Croquis.Rmd-->
+
+
 <!-- CLMI_notes.Rmd  : info/photo pour rampe du CLMI -->
 
 # Installation - CLMI
