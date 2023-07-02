@@ -99,4 +99,9 @@ list.files(path = "gpx/input",
 
 # convert x.tiff -compress lzw y.tif  --> à valider, pour compresser 
 
+################################################################################ 
+################################################################################ 
 
+# Matamo pour analytic
+## Fichier `matamo-analytics.html`à changer dans les 3 git_book`, dans le fichier `resume_prog/` et directement dans le fichier `index.RMD` de `homepage``
+## Seulement la valeur de ID devrait être à changer pour suivre le guide d'une nouvelle année

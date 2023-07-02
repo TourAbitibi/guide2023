@@ -11,6 +11,8 @@ output:
     highlight: textmate
     df_print: kable
     self_contained: false
+    includes:
+      in_header: matamo-analytics.html
 params:
   annee: 2023
   ville: "Amos"

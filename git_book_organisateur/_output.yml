@@ -1,6 +1,8 @@
 bookdown::gitbook:
   toc_depth: 2
   css: style.css
+  includes:
+    in_header: matamo-analytics.html
   config:
     toc:
       before: |
