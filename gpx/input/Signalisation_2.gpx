@@ -73,10 +73,17 @@
     <sym>Dot</sym>
     <type>Dot</type>
   </wpt>
-  <wpt lon="-78.98510798795658" lat="48.66104648505847">
+  <wpt lon="-78.9851093290611" lat="48.66120150261826">
     <name>sign_09</name>
     <cmt>gestion SQ route provinciale</cmt>
     <desc>gestion SQ route provinciale</desc>
+    <sym>Dot</sym>
+    <type>Dot</type>
+  </wpt>
+  <wpt lon="-78.98510982905628" lat="48.66128581168025">
+    <name>sign_10</name>
+    <cmt>Virage à droite sur 390</cmt>
+    <desc>Virage à droite sur 390</desc>
     <sym>Dot</sym>
     <type>Dot</type>
   </wpt>
@@ -1584,7 +1591,7 @@
         <ele>297.8</ele>
       </trkpt>
       <trkpt lat="48.40302" lon="-79.03741">
-        <ele>295.9399731</ele>
+        <ele>295.939973</ele>
       </trkpt>
       <trkpt lat="48.40335" lon="-79.03761">
         <ele>295.415445</ele>
@@ -4310,6 +4317,9 @@
       <trkpt lat="48.6613" lon="-78.98511">
         <ele>290.0</ele>
       </trkpt>
+      <trkpt lat="48.6613" lon="-78.985085">
+        <ele>290.1</ele>
+      </trkpt>
       <trkpt lat="48.6613" lon="-78.98429">
         <ele>290.1</ele>
       </trkpt>
@@ -5499,7 +5509,7 @@
         <ele>304.5562277</ele>
       </trkpt>
       <trkpt lat="48.66136" lon="-78.75467">
-        <ele>304.7288058</ele>
+        <ele>304.7288057</ele>
       </trkpt>
       <trkpt lat="48.66136" lon="-78.75434">
         <ele>305.0</ele>
@@ -5649,7 +5659,7 @@
         <ele>306.5385426</ele>
       </trkpt>
       <trkpt lat="48.66135" lon="-78.7193099">
-        <ele>306.4720968</ele>
+        <ele>306.4720967</ele>
       </trkpt>
       <trkpt lat="48.66135" lon="-78.71903">
         <ele>306.1</ele>

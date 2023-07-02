@@ -58,6 +58,7 @@ point-dintérêt---e2_sign_02
 point-dintérêt---e2_sign_03
 point-dintérêt---e2_sign_08
 point-dintérêt---e2_sign_09
+point-dintérêt---e2_sign_10
 point-dintérêt---e2_sign_12
 point-dintérêt---e2_sign_13
 point-dintérêt---e2_sign_14
