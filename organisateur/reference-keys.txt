@@ -116,7 +116,7 @@ point-dintérêt---e4_sign_13
 point-dintérêt---e4_sign_14
 point-dintérêt---e4_sign_15
 matériel-pour-signalisation-flèchage-3
-étape-5-amos---rh---preissac---amos
+étape-5-amos---preissac---rh---amos
 sommaire-4
 parcours-4
 carte-interactive-4
@@ -149,7 +149,7 @@ point-dintérêt---e5_sign_15
 point-dintérêt---e5_sign_16
 point-dintérêt---e5_sign_17
 matériel-pour-signalisation-flèchage-4
-étape-6-amos---preissac---rh---amos
+étape-6-amos---rh---preissac---amos
 sommaire-5
 parcours-5
 carte-interactive-5

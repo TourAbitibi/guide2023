@@ -43,7 +43,7 @@ start-details-3
 finish-details-3
 topographic-profile-3
 detailed-description-3
-stage-5-amos---rh---preissac---amos
+stage-5-amos---preissac---rh---amos
 summary-4
 course-4
 interactive-map-4
@@ -52,7 +52,7 @@ start-details-4
 finish-details-4
 topographic-profile-4
 detailed-description-4
-stage-6-amos---preissac---rh---amos
+stage-6-amos---rh---preissac---amos
 summary-5
 course-5
 interactive-map-5

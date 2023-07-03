@@ -1022,7 +1022,7 @@ Article 8 – Assistance technique neutre
 
 :   Le service d’assistance technique neutre est assuré par l’organisation du Tour cycliste de l’Abitibi (à l’exception de l’étape 3 – CLMI). Le service est assuré au moyen de 2 véhicules automobiles et 1 moto identifiés à cet effet. 
 
-    Toutes les roues arrière du dépannage neutre seront équipées de cassettes 11 vitesses. Pour les équipes ayant des besoins particuliers (par exemple, freins à disque), veuillez nous avertir à la réunion des directeurs sportifs.
+    Toutes les roues arrière du dépannage neutre seront équipées de cassettes 11 & 12 vitesses, avec freins traditionels sur jantes et freins à disques. Pour les équipes ayant des besoins particuliers, veuillez nous avertir à la réunion des directeurs sportifs.
 
 
 Article 9 – Délais d’arrivée
@@ -1637,9 +1637,9 @@ here("excel", "ardoise_info_neutre.xlsx") %>%
 #### Notes {-}
 
 - S'assurer d'être à `r params$ville` - `r site_rdv`, 30-45 min avant le départ de la navette.
-- Si vous vous rendez directement à Malartic ou Senneterre, merci d'aviser <a href="mailto:tour@brunogauthier.net?subject=Tour Abitibi - Dépannage Neutre">Bruno Gauthier</a> à l'avance.
-- Pour l'étape 6, être à la ligne départ/arrivée 1h minimum avant le départ.
-- Vous irez de `r params$ville` vers la ville de départ en voiture, retour dans une voiture de dépannage neutre. 
+- Si vous vous rendez directement à Malartic, merci d'aviser <a href="mailto:tour@brunogauthier.net?subject=Tour Abitibi - Dépannage Neutre">Bruno Gauthier</a> à l'avance.
+- Pour les étapes 5 et 6, être à la ligne départ/arrivée 1h minimum avant le départ.
+- Vous irez de `r params$ville` vers la ville de départ en voiture, retour dans une voiture ou moto de dépannage neutre. 
 - S’assurer de récupérer et rendre le matériel à chaque journée, sauf entente préalable. 
 
 
@@ -1663,7 +1663,7 @@ here("excel", "ardoise_info_neutre.xlsx") %>%
 
 #### Rôle : Dépannage neutre {-}
 
-- Back-up aux équipes
+- Les équipes ont priorité. Le dépannage neutre est un *back-up* aux équipes
 - Radio-tour peut indiquer d'assurer le service pour une équipe en particulier
 - Chute majeure - toujours s'arrêter et s'assurer que tout le monde est dépanné par les équipes avant de repartir
 - Prendre en note le numéro du coureur ayant reçu une roue ou un vélo

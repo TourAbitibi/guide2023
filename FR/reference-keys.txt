@@ -43,7 +43,7 @@ détail-du-départ-3
 détail-de-larrivée-3
 élévation-3
 description-détaillée-3
-étape-5-amos---rh---preissac---amos
+étape-5-amos---preissac---rh---amos
 sommaire-4
 parcours-4
 carte-interactive-4
@@ -52,7 +52,7 @@ détail-du-départ-4
 détail-de-larrivée-4
 élévation-4
 description-détaillée-4
-étape-6-amos---preissac---rh---amos
+étape-6-amos---rh---preissac---amos
 sommaire-5
 parcours-5
 carte-interactive-5
