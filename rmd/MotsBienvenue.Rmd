@@ -113,6 +113,11 @@ knitr::include_graphics(here("img", "logo", "VilleAmos.png"))
 
 \linebreak
 
+```{r photo_ministre_gauche, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:left; padding:10px"'}
+
+knitr::include_graphics("https://coalitionavenirquebec.org/wp-content/uploads/2018/08/photo-profil-charest-isabelle-brome-missisquoi.png")
+
+```
 
 ```{r photo_ministre_droite, echo=TRUE, echo=FALSE, out.width= "35%", out.extra='style="float:right; padding:10px"'}
 
@@ -120,14 +125,25 @@ knitr::include_graphics("https://coalitionavenirquebec.org/wp-content/uploads/20
 
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum posuere urna nec tincidunt praesent semper. Id donec ultrices tincidunt arcu non sodales neque sodales. Tristique senectus et netus et malesuada fames ac turpis. Id ornare arcu odio ut. Turpis cursus in hac habitasse platea. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. A pellentesque sit amet porttitor. Aliquet nibh praesent tristique magna sit amet purus gravida. Aliquam faucibus purus in massa tempor nec feugiat nisl pretium. Sed odio morbi quis commodo odio. Integer quis auctor elit sed vulputate mi. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Tempor nec feugiat nisl pretium fusce. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Non arcu risus quis varius quam quisque id diam vel. Mauris cursus mattis molestie a iaculis. Turpis egestas sed tempus urna et pharetra pharetra massa. Cursus euismod quis viverra nibh. Tristique risus nec feugiat in.
+**Les organisateurs promettent une 53e édition enlevante**
 
-Aliquet porttitor lacus luctus accumsan tortor posuere. Felis bibendum ut tristique et egestas quis ipsum. Mattis enim ut tellus elementum sagittis vitae. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Magna sit amet purus gravida. Nulla malesuada pellentesque elit eget gravida cum sociis. In pellentesque massa placerat duis. Amet aliquam id diam maecenas ultricies mi. Id velit ut tortor pretium viverra suspendisse potenti. Sed sed risus pretium quam vulputate dignissim. Id porta nibh venenatis cras sed felis eget velit. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar. Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae. In metus vulputate eu scelerisque. Auctor eu augue ut lectus arcu bibendum at varius. Nec ultrices dui sapien eget mi proin. Faucibus nisl tincidunt eget nullam non nisi est. Integer quis auctor elit sed vulputate. Dui vivamus arcu felis bibendum ut tristique et egestas quis. Ac turpis egestas sed tempus urna et.
+Les festivals et événements sont une vitrine incontournable pour notre industrie touristique. C’est pourquoi votre gouvernement est fier de s’associer au Tour de l’Abitibi, qui met en valeur le travail et le talent de nos cyclistes de la relève et fait du Québec une destination sportive de choix.
+
+Pendant sept jours, près d’une vingtaine d’équipes venues des quatre coins du monde rivaliseront de talents au grand bonheur des amoureux du cyclisme. Cet événement fait partie des plus grandes compétions cyclistes en Amérique du Nord et contribue depuis 53 ans à former la nouvelle génération. Bravo aux organisateurs pour leur persévérance! Avec cette compétition d’envergure internationale, la seule en Amérique du Nord au programme de la Coupe des nations junior de l’Union cycliste internationale, c’est le talent de notre industrie événementielle qui est mis en lumière.
+
+Nous vous invitons à venir nombreux en famille ou entre amis encourager vos athlètes favoris et vous laisser inspirer par les performances exceptionnelles auxquelles vous assisterez. Profitez de votre séjour dans les environs pour visiter les attraits touristiques de l’Abitibi-Témiscamingue. Nous souhaitons également une bonne course à tous les cyclistes qui rivaliseront et qui se dépasseront pour l’atteinte de leur rêve!
 
 <br/>
 
+**Isabelle Charest**    
+Ministre responsable du Sport, du Loisir et du Plein air
+
+<br/>
+
+
 **Caroline Proulx**   
 Ministre du Tourisme
+Ministre responsable de la région de Lanaudière
 
 ```{r, echo=FALSE,out.width="75%",fig.show='hold',fig.align='center'}
 knitr::include_graphics(here("img", "logo", "gouv_quebec_large.png"))
