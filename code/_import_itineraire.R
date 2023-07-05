@@ -187,8 +187,11 @@ tableau_Descrip_Etape_Sommet <- function(Etape = 1, language = "FR"){
 ################################################################################
 
 # Fonction - calcul de l'heure de passage à un km donné (pour POIs)
-calcul_h_passage <- function(km){
+calcul_h_passage <- function(km, Etape = 1){
   
+  vit_moy_etape <- iti_etape$Details[(Etape),] %>% select(Vit_moy) %>% pull()
+  dep_etape_time <- iti_etape$Details[(Etape),] %>% select(dttm_depart) %>% pull()
+  vit_moy_etape <- iti_etape$Details[(Etape),] %>% select(Vit_moy) %>% pull()
   duree <- dhours(km /vit_moy_etape)
   time_passage_moy = dep_etape_time + duree
   time_passage_moy_h_m = format(time_passage_moy, format= "%H:%M" )
@@ -207,7 +210,7 @@ POIs_signalisation <- function(Etape = 1){
     filter(etape == Etape) %>% 
     as_tibble() %>% 
     arrange(KM_reel, sign_id) %>% 
-    mutate(time = calcul_h_passage(KM_reel),
+    mutate(time = calcul_h_passage(KM_reel, Etape),
            KM_course = KM_reel - neutre_etape) %>% 
     select(KM_reel, 
            KM_course,
