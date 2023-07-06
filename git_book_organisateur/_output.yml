@@ -3,6 +3,7 @@ bookdown::gitbook:
   css: style.css
   includes:
     in_header: matamo-analytics.html
+    before_body: ../img/logo/header_lien_webdiffusion_FR.html
   config:
     toc:
       before: |
