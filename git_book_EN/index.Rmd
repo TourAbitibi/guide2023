@@ -111,3 +111,9 @@ You can also download a condensed version of the technical guide, containing onl
 ```{r lien_pdf, out.width="40%",fig.align='center',  echo = FALSE, eval = TRUE}
 knitr::include_graphics(here("img", "support", "lien_pdf.png"))
 ```
+
+
+
+----
+
+*Si vous cherchez la version française du guide : [Guide Technique](../FR/)*

@@ -112,3 +112,6 @@ knitr::include_graphics(here("img", "support", "lien_pdf.png"))
 ```
 
 
+----
+
+*If you're looking for the english version of the guide : [Technical Guide](../EN/)*
