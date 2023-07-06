@@ -74,6 +74,7 @@ vignettes/*.pdf
 .snakemake
 # Fichiers temporaire de Excel quand ouvert
 excel/~$*
+export/~$
 # Cache pour cartes OpenStreetMap
 rosm.cache
 # Fichiers temporaires Cartes
