@@ -271,6 +271,28 @@ glue('<table>
 <!--chapter:end:../rmd/Programmation.Rmd-->
 
 
+<!-- Partenaires.Rmd  : document bilingue -->
+
+```{r , eval=(lang != "FR"), results='asis', echo= FALSE}
+
+glue("# Sponsors")
+```
+
+```{r , eval=(lang == "FR"), results='asis', echo= FALSE }
+
+glue("# Partenaires")
+```
+
+
+```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
+
+knitr::include_graphics(here("img", "logo", "Tableau_Partenaires.png"))
+
+```
+
+<!--chapter:end:../rmd/Partenaires.Rmd-->
+
+
 <!-- CO : document biligue  -->
 
 ```{r CO_title_en, eval=(lang != "FR"), results='asis', echo= FALSE}

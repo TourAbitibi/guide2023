@@ -29,7 +29,7 @@ Certains processus manuels sont aussi inclus :
 
 - `code/DocCourse.R`pour suivre les vitesses moyennes et maj des prévisions d'heures de passage en temps réel
 - `code/_importResults.R`pour importer les résultats en provenance du logiciel de suivi de RSS Timing
-- `code/_exportLignes_Jaune_JauneMoto.R`# produire un fichier excel contenant :
+- `code/_exportLignes_Jaune_JauneMoto.R` produire un fichier excel contenant :
   - Les lignes à tracer sur la route
   - Les signaleurs drapeaux jaunes 
   - Les motos drapeaux jaunes 

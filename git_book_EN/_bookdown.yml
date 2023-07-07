@@ -10,6 +10,7 @@ language:
 rmd_files:
   - "index.Rmd"
   - "../rmd/MotsBienvenue_EN.Rmd"
+  - "../rmd/Partenaires.Rmd"
   - "../rmd/Programmation_EN.Rmd"
   - "../rmd/CO.Rmd"
   - "../rmd/FeuillesRoute_EN.Rmd"

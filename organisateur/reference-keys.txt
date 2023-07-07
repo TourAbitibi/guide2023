@@ -1,8 +1,9 @@
-fig:unnamed-chunk-94
-fig:unnamed-chunk-95
-fig:unnamed-chunk-96
+fig:unnamed-chunk-97
+fig:unnamed-chunk-98
+fig:unnamed-chunk-99
 présentation
 programmation
+partenaires
 comité-organisateur
 feuilles-de-route-quotidiennes
 étape-1-val-dor---amos

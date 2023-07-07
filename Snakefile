@@ -28,6 +28,7 @@ rule Z_targets:
         "git_book_organisateur/index.Rmd",
         "rmd/MotsBienvenue.Rmd",
         "rmd/MotsBienvenue_EN.Rmd",
+        "rmd/Partenaires.Rmd",
         "rmd/Programmation.Rmd",
         "rmd/Programmation_EN.Rmd",
         "code/programmation.R",
@@ -317,6 +318,7 @@ rule R50_render_book_EN:
         "git_book_EN/index.Rmd",
 
         "rmd/MotsBienvenue_EN.Rmd",
+        "rmd/Partenaires.Rmd",
         "rmd/Programmation_EN.Rmd",
         "rmd/CO.Rmd",
         "rmd/FeuillesRoute_EN.Rmd",
@@ -371,6 +373,7 @@ rule R51_render_book:
         "git_book/index.Rmd",
 
         "rmd/MotsBienvenue.Rmd",
+        "rmd/Partenaires.Rmd",
         "rmd/Programmation.Rmd",
         "rmd/CO.Rmd",
         "rmd/FeuillesRoute.Rmd",
@@ -465,6 +468,7 @@ rule R54_render_book_organisateur:
         "git_book_organisateur/index.Rmd",
         
         "rmd/MotsBienvenue.Rmd",
+        "rmd/Partenaires.Rmd",
         "rmd/Programmation.Rmd",
         "rmd/CO.Rmd",
         "rmd/FeuillesRoute.Rmd",
