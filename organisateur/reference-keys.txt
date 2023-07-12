@@ -5,6 +5,7 @@ présentation
 programmation
 partenaires
 comité-organisateur
+liste-des-partants
 feuilles-de-route-quotidiennes
 étape-1-val-dor---amos
 sommaire
@@ -15,6 +16,7 @@ détail-du-départ
 détail-de-larrivée
 élévation
 description-détaillée
+résultats
 signalisation---carte
 signalisation---tableau
 signalisation---détails
@@ -50,6 +52,7 @@ parcours-complet-1
 détail-du-départ-1
 détail-de-larrivée-1
 élévation-1
+porteurs-des-maillots-pour-létape
 description-détaillée-1
 signalisation---carte-1
 signalisation---tableau-1

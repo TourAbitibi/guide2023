@@ -22,6 +22,8 @@ rule Z_targets:
         "organisateur/index.html",
         "FR/index.html",
         "EN/index.html",
+        "results/Liste_Coureurs.csv",
+        "results/Maillots_Porteurs.csv",
 
         "git_book/index.Rmd",
         "git_book_EN/index.Rmd",
@@ -298,6 +300,9 @@ rule R50_render_book_EN:
 
         "gpx/output/parcours.shp",
 
+        "results/Liste_Coureurs.csv",
+        "results/Maillots_Porteurs.csv",
+
         "img/cartes/input/Etape1_Full.png",
 
         "elevParcours/elev_parcours.csv",
@@ -354,6 +359,9 @@ rule R51_render_book:
         "gpx/output/parcours.shp",
 
         "img/cartes/input/Etape1_Full.png",
+
+        "results/Liste_Coureurs.csv",
+        "results/Maillots_Porteurs.csv",
 
         "elevParcours/elev_parcours.csv",
         "img/elev/Etape1_Full_FR.png",
@@ -462,6 +470,9 @@ rule R54_render_book_organisateur:
         "excel/ardoise_info_neutre.xlsx",
 
         "script/render_book.R",
+
+        "results/Liste_Coureurs.csv",
+        "results/Maillots_Porteurs.csv",
 
         "git_book_organisateur/_bookdown.yml",
         "git_book_organisateur/_output.yml",

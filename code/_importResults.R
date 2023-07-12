@@ -22,7 +22,7 @@ details <- iti_etape$Details %>% rename(etape = Etape)
 
 # Unrar du fichiers `StageRace.rar` provenant du logiciel de RSS
 
-system(glue('unrar e {here("results","rar", "StageRace.rar")} {here("results","unrar")} -o+'))
+# system(glue('unrar e {here("results","rar", "StageRace.rar")} {here("results","unrar")} -o+'))
 
 ################################################################################ 
 
@@ -511,3 +511,4 @@ etapes_effectives_resultats_Etapes$etapes_relles %>%
   map(\(etapes) .f = map_results_EquipeEtape(etapes, "Equipe")) %>% 
   list_rbind() %>% 
   write_csv(here("results", "Equipes_Etapes_results.csv"))
+

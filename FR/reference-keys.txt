@@ -7,6 +7,7 @@ mots-de-bienvenue
 partenaires
 programmation
 comité-organisateur
+liste-des-partants
 feuilles-de-route-quotidiennes
 étape-1-val-dor---amos
 sommaire
@@ -17,6 +18,7 @@ détail-du-départ
 détail-de-larrivée
 élévation
 description-détaillée
+résultats
 étape-2-rouyn-noranda---amos
 sommaire-1
 parcours-1
@@ -25,6 +27,7 @@ parcours-complet-1
 détail-du-départ-1
 détail-de-larrivée-1
 élévation-1
+porteurs-des-maillots-pour-létape
 description-détaillée-1
 étape-3-amos---clmi
 sommaire-2
