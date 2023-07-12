@@ -135,7 +135,7 @@ maillots_porteurs_tableau_FR(Etape)
 ```{r echo=FALSE, message=FALSE, warning=FALSE, quiet=TRUE}
 
 
-tableau_Descrip_Etape(Etape, lang)
+tableau_Descrip_Etape_Demi(Etape, lang)
 
 ```
 

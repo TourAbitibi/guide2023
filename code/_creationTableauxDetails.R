@@ -20,7 +20,8 @@ source(here::here("code","/_import_itineraire.R"))
 ################################################################################
 
 # Définir les étapes selon STD, CLMI ou SOMMET
-etapesStd <- c(1,2,4,5,6,7)
+etapesStd <- c(1,2,5,6,7)
+etapeRouteDemi <- 4
 etapeCLMI <- 3
 # etapeSOMMET <- c()
   
@@ -51,9 +52,19 @@ ecrire_tableau_CLMI <- function(Etape, lang){
 ecrire_tableau_CLMI(etapeCLMI, "FR")
 ecrire_tableau_CLMI(etapeCLMI, "EN")
 
+# Produire le tableau pour la demi-étape - FR et EN
+
+ecrire_tableau_DemiEtape <- function(Etape, lang){
+  
+  tableau_Descrip_Etape_Demi(Etape, lang) %>% save_kable(here(glue("guide_{lang}_PDF"), "details"  , glue("tableau_{Etape}.pdf")))
+  
+}
+
+ecrire_tableau_DemiEtape(etapeRouteDemi, "FR")
+ecrire_tableau_DemiEtape(etapeRouteDemi, "EN")
 
 
-# Écraser le tableau pour l'arrivée au sommet - FR et EN
+# Produire le tableau pour l'arrivée au sommet - FR et EN
 
 ecrire_tableau_SOMMET <- function(Etape, lang){
   
