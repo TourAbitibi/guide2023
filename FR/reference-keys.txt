@@ -29,6 +29,7 @@ détail-de-larrivée-1
 élévation-1
 porteurs-des-maillots-pour-létape
 description-détaillée-1
+résultats-1
 étape-3-amos---clmi
 sommaire-2
 parcours-2

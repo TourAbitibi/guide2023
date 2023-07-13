@@ -54,6 +54,7 @@ détail-de-larrivée-1
 élévation-1
 porteurs-des-maillots-pour-létape
 description-détaillée-1
+résultats-1
 signalisation---carte-1
 signalisation---tableau-1
 signalisation---détails-1

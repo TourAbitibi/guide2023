@@ -15,15 +15,15 @@ ui_info("L'heure est {ui_value(now())}")
 #
 # Donnée étape à renseigner une fois
 
-Etape <- 1
+Etape <- 4
 
 HEURE_DEP_REEL <- heure_dep_fx(
   heure = 16,  
-  min = 50,
-  sec = 00)
+  min = 24,
+  sec = 20)
 
 # Données à MAJ en cours d'étape
-KM_ACTUEL <- 80.6
+KM_ACTUEL <- 1
 
 ################################################################################ 
 
