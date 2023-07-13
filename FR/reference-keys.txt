@@ -39,6 +39,7 @@ détail-du-départ-2
 détail-de-larrivée-2
 élévation-2
 description-détaillée-2
+résultats-2
 étape-4-malartic---malartic
 sommaire-3
 parcours-3
@@ -47,6 +48,7 @@ parcours-complet-3
 détail-du-départ-3
 détail-de-larrivée-3
 élévation-3
+porteurs-des-maillots-pour-létape-1
 description-détaillée-3
 étape-5-amos---preissac---rh---amos
 sommaire-4

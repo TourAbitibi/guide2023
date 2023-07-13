@@ -39,6 +39,7 @@ start-details-2
 finish-details-2
 topographic-profile-2
 detailed-description-2
+results-2
 stage-4-malartic---malartic
 summary-3
 course-3
@@ -47,6 +48,7 @@ full-course-3
 start-details-3
 finish-details-3
 topographic-profile-3
+jersey-wearers-for-the-stage-1
 detailed-description-3
 stage-5-amos---preissac---rh---amos
 summary-4

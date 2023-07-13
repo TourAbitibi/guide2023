@@ -80,6 +80,7 @@ détail-du-départ-2
 détail-de-larrivée-2
 élévation-2
 description-détaillée-2
+résultats-2
 signalisation---carte-2
 signalisation---tableau-2
 signalisation---détails-2
@@ -101,6 +102,7 @@ parcours-complet-3
 détail-du-départ-3
 détail-de-larrivée-3
 élévation-3
+porteurs-des-maillots-pour-létape-1
 description-détaillée-3
 signalisation---carte-3
 signalisation---tableau-3

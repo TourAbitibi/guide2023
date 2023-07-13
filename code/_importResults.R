@@ -42,11 +42,16 @@ df_files <- do.call(rbind.data.frame, as.list(csv_files)) %>%
          stage = case_when(
            stageRSS == 1 ~ 1,
            stageRSS == 2 ~ 2,
-           stageRSS == "3-1" ~ 3,
-           stageRSS == "3-2" ~ 4,
-           stageRSS == 4 ~ 5,
-           stageRSS == 5 ~ 6,
-           stageRSS == 6 ~ 7),
+           stageRSS == 3 ~ 3,
+           stageRSS == 4 ~ 4,
+           stageRSS == 5 ~ 5,
+           stageRSS == 6 ~ 6,
+           stageRSS == 7 ~ 7,
+           #stageRSS == "3-1" ~ 3,
+           #stageRSS == "3-2" ~ 4,
+           #stageRSS == 4 ~ 5,
+           #stageRSS == 5 ~ 6,
+           #stageRSS == 6 ~ 7),
          
          Etape = str_detect(file_path, "Etape") & 
            str_detect(file_path, "Jeune", negate = TRUE),
