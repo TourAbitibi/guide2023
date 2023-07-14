@@ -46,7 +46,7 @@ df_files <- do.call(rbind.data.frame, as.list(csv_files)) %>%
            stageRSS == 4 ~ 4,
            stageRSS == 5 ~ 5,
            stageRSS == 6 ~ 6,
-           stageRSS == 7 ~ 7,
+           stageRSS == 7 ~ 7),
            #stageRSS == "3-1" ~ 3,
            #stageRSS == "3-2" ~ 4,
            #stageRSS == 4 ~ 5,
@@ -91,6 +91,8 @@ df_files <- do.call(rbind.data.frame, as.list(csv_files)) %>%
 # Liste des étapes présentes en csv
 etapes_distinctes_csv <- distinct(df_files, stage) %>% drop_na() %>% arrange(stage)
 derniere_etape_terminee <- etapes_distinctes_csv %>% max()
+
+ui_done("La dernière étape terminée est : {ui_value(derniere_etape_terminee)}")
 
 ################################################################################
 ################################################################################ 
@@ -210,6 +212,8 @@ start_list_coureurs <- read.csv(path_liste_coureurs,
 
 start_list_coureurs %>% write_csv(here("results", "Liste_Coureurs.csv"))
 
+ui_done("Écriture de la start list de coureurs vers {ui_code('Liste_Coureurs.csv')}")
+
 ################################################################################ 
 
 # Création de la liste des équipes
@@ -221,6 +225,8 @@ start_list_equipes <- start_list_coureurs %>%
 # Écriture de la start list d'équipes vers un .csv
 start_list_equipes %>% write_csv(here("results", "Liste_Equipes.csv"))
   
+ui_done("Écriture de la start list d'équipes vers {ui_code('Liste_Equipes.csv')}")
+
 ################################################################################ 
 ################################################################################ 
 
@@ -271,7 +277,9 @@ etapes_effectives_resulstats_KOM$etapes_relles %>%
   map(\(etapes) .f = map_results_KOM(etapes)) %>% 
   list_rbind() %>% 
   write_csv(here("results", "KOM_General_results.csv"))
-  
+ 
+ui_done("Écriture des KOM vers {ui_code('KOM_General_results.csv')}")
+
 ################################################################################ 
 ################################################################################ 
 
@@ -323,6 +331,7 @@ etapes_effectives_resulstats_Points$etapes_relles %>%
   list_rbind() %>%
   write_csv(here("results", "Points_General_results.csv"))
 
+ui_done("Écriture du classement au Points vers {ui_code('Points_General_results.csv')}")
 
 
 ################################################################################ 
@@ -373,12 +382,16 @@ etapes_effectives_resultats_Etapes$etapes_relles %>%
   list_rbind() %>% 
   write_csv(here("results", "Etapes_results.csv"))
 
+ui_done("Écriture des résultats d'étapes vers {ui_code('Etapes_results.csv')}")
+
+
 # Écriture vers un fichier CSV de résultats des Etapes Jeunes
 etapes_effectives_resultats_Etapes$etapes_relles %>% 
   map(\(etapes) .f = map_results_Etapes(etapes, "EtapeJeune")) %>% 
   list_rbind() %>% 
   write_csv(here("results", "Jeunes_Etapes_results.csv"))
 
+ui_done("Écriture des résultats d'étapes jeunes vers {ui_code('Jeunes_Etapes_results.csv')}")
 
 ################################################################################ 
 ################################################################################ 
@@ -423,11 +436,15 @@ etapes_effectives_resultats_Etapes$etapes_relles %>%
   list_rbind() %>% 
   write_csv(here("results", "General_results.csv"))
 
+ui_done("Écriture du général vers {ui_code('General_results.csv')}")
+
 # Écriture vers un fichier CSV de résultats des Général Jeunes
 etapes_effectives_resultats_Etapes$etapes_relles %>% 
   map(\(etapes) .f = map_results_General(etapes, "GeneralJeune")) %>% 
   list_rbind() %>% 
   write_csv(here("results", "Jeune_General_results.csv"))
+
+ui_done("Écriture du général jeune vers {ui_code('Jeune_General_results.csv')}")
 
 ################################################################################ 
 ################################################################################ 
@@ -473,6 +490,7 @@ etapes_effectives_resultats_Etapes$etapes_relles %>%
   list_rbind() %>% 
   write_csv(here("results", "Equipe_General_results.csv"))
 
+ui_done("Écriture du général quipe vers {ui_code('Equipe_General_results.csv')}")
 
 
 #### Fonction Résultats Général Équipe 
@@ -516,4 +534,6 @@ etapes_effectives_resultats_Etapes$etapes_relles %>%
   map(\(etapes) .f = map_results_EquipeEtape(etapes, "Equipe")) %>% 
   list_rbind() %>% 
   write_csv(here("results", "Equipes_Etapes_results.csv"))
+
+ui_done("Écriture du résultats équipes par étapes vers {ui_code('Equipes_Etapes_results.csv')}")
 

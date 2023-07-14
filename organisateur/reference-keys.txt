@@ -104,6 +104,7 @@ détail-de-larrivée-3
 élévation-3
 porteurs-des-maillots-pour-létape-1
 description-détaillée-3
+résultats-3
 signalisation---carte-3
 signalisation---tableau-3
 signalisation---détails-3
@@ -131,6 +132,7 @@ parcours-complet-4
 détail-du-départ-4
 détail-de-larrivée-4
 élévation-4
+porteurs-des-maillots-pour-létape-2
 description-détaillée-4
 signalisation---carte-4
 signalisation---tableau-4
