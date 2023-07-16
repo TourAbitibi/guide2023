@@ -72,6 +72,7 @@ détail-de-larrivée-5
 élévation-5
 porteurs-des-maillots-pour-létape-3
 description-détaillée-5
+résultats-5
 étape-7-la-sarre---amos
 sommaire-6
 parcours-6
@@ -80,6 +81,7 @@ parcours-complet-6
 détail-du-départ-6
 détail-de-larrivée-6
 élévation-6
+porteurs-des-maillots-pour-létape-4
 description-détaillée-6
 règlements-particuliers
 circulation-en-course
