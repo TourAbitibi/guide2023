@@ -83,6 +83,7 @@ finish-details-6
 topographic-profile-6
 jersey-wearers-for-the-stage-4
 detailed-description-6
+results-6
 specific-rules
 race-circulation
 accommodation-rules

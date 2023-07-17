@@ -83,6 +83,7 @@ détail-de-larrivée-6
 élévation-6
 porteurs-des-maillots-pour-létape-4
 description-détaillée-6
+résultats-6
 règlements-particuliers
 circulation-en-course
 règlements-de-séjour
