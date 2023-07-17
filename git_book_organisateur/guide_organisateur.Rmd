@@ -2074,6 +2074,10 @@ Pour assurer le bon fonctionnement :
 - Presser sur **start** avant la course et **stop** après.
 - Fermer l’application entre les courses pour éviter de drainer la batterie de votre cellulaire.
 
+### Login token {-}
+
+L'accès au compte est aussi possible grâce au *<a href="https://www.followmee.com/FAQ.aspx?r=1&t=logintoken" target="_blank">login token</a>*.
+
 
 ### Visualisation de la carte {-}
 
