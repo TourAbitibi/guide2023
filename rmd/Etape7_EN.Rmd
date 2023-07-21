@@ -181,3 +181,9 @@ glue("### Distinctive jerseys after the final stage {-}", .open = "[")
 maillots_apres_etape_tableau_EN(Etape)
 
 ```
+
+```{r, eval=(verif_resultats_complets(Stage = Etape)), results='asis', echo= FALSE }
+
+glue('<a href="https://tourabitibi.com/wp-content/uploads/2023/07/TourAbitibi2023-Etape729.pdf" target="_blank">Link to full results</a>')
+
+```
