@@ -2,7 +2,7 @@
 
 ## Structure dossier
 
-- Changer la structure du site web pour qu'il soit entièrement dans un fichier `guide2024`plutôt qu'à root. Par la suite, on peut bâtir la page à partir de ce dossier directement.
+- Changer la structure du site web pour qu'il soit entièrement dans un fichier `guide2024`plutôt qu'à `root`. Par la suite, on peut bâtir la page à partir de ce dossier directement.
 - Cela facilitera le rsync local et conservera tout ce qui est site web au même endroit.
 - Facilitera le déploiement github-pages ? Pas besoin d'essayer de compiler tout ?
 
