@@ -42,3 +42,8 @@ tableau_en_course(Etape, km_actuel = KM_ACTUEL , vit_actuelle = VITESSE_MOY_ACTU
 ui_done("L'{ui_field('heure du départ réel')} pour l'étape est {ui_value(HEURE_DEP_REEL)}")
 ui_done("Après {ui_value(hour(TEMPS_COURSE_ACTUEL))} h {ui_value(minute(TEMPS_COURSE_ACTUEL))} min et {ui_value(second(TEMPS_COURSE_ACTUEL) %>% round(digits = 0))} sec la {ui_field('vitesse moyenne de course')} est de {ui_value(VITESSE_MOY_ACTUEL %>% round(digits =2))} km/h ")
 
+
+################################################################################ 
+# Prévisions du hors délai
+
+# TODO
