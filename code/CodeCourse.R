@@ -68,3 +68,25 @@ heure_dep_fx <- function(heure, min, sec){
 }
 
 ################################################################################ 
+
+# Fonction pour prévision hors délai en fonction de la vitesse actuelle
+
+prevision_horsdelai <- function(Etape = 1, km_actuel = 10, vit_actuelle = 44, heure_dep,  language = "FR"){
+
+  calcul_iti_etape(Etape , "FR")%>% 
+    as_tibble() %>% 
+    mutate(
+      dur_h_reel = dhours(KM_fait / vit_actuelle),
+      dur_h_horsdelai = dur_h_reel * 1.2,
+      diff_hors_delai = dur_h_horsdelai - dur_h_reel,
+      time_arr_reel = heure_dep + dur_h_reel, # en fx heure départ réel
+      time_arr_reel = format(time_arr_reel, format= "%H:%M:%S" ),
+      time_hors_delai = heure_dep + dur_h_horsdelai,
+      time_hors_delai = format(time_hors_delai, format= "%H:%M:%S" )
+    ) %>% tail(1) %>% 
+    select(
+      "Délai 20%" = diff_hors_delai,
+      "Heure arrivée prévue" = time_arr_reel,
+      "Heure hors-délai prévue" = time_hors_delai)
+  
+}

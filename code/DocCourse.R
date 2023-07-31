@@ -46,4 +46,7 @@ ui_done("Après {ui_value(hour(TEMPS_COURSE_ACTUEL))} h {ui_value(minute(TEMPS_C
 ################################################################################ 
 # Prévisions du hors délai
 
-# TODO
+prevision_horsdelai(Etape, km_actuel = KM_ACTUEL , vit_actuelle = VITESSE_MOY_ACTUEL, 
+                  heure_dep = HEURE_DEP_REEL, "FR")
+
+
