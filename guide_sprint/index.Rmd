@@ -56,12 +56,22 @@ opts_chunk$set( tidy = FALSE, comment = NA,
 
 ```
 
-```{r logo_tour_sponsor, echo=TRUE, echo=FALSE, out.width= "45%", align="center"}
-knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
-```
 
+:::: {style="display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 40px;"}
 
-La `r edition_ChallengeSprint`^e^ édition du **Challenge Sprint Abitibi** est organisée en marge du **Tour de l'Abitibi `r params$sponsor`** suite à la présentation des équipes. TODO : compléter intro.
+::: {}
+La `r edition_ChallengeSprint`^e^ édition du **Challenge Sprint Abitibi** est organisée en marge du **Tour de l'Abitibi `r params$sponsor`** suite à la présentation des équipes. TODO : compléter intro. 
+:::
+
+:::{}
+The `r edition_ChallengeSprint`^th^ edition of the **Challenge Sprint Abitibi**... TODO
+:::
+::::
+<aside>
+  <a href="https://tourabitibi.com" target="_blank" >
+  <img src="../img/logo/TA_Glencore.png" alt="Logo Tour de l'Abitibi Glencore" width="100%">
+  </a>
+</aside>
 
 TODO : logo des sanctions CC et FQSC
 
@@ -79,6 +89,7 @@ The **Challenge Sprint Abitibi** consists of a series of sprints between three o
 
 ::::
 
+
 # Parcours / Course
 
 ```{r sprint_parcours, echo=TRUE, echo=FALSE, out.width= "95%", align="center"}
@@ -93,7 +104,13 @@ knitr::include_graphics(here("img", "sprint", "Sprint_Deniv.png"))
 
 
 # Note
+:::: {style="display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 40px;"}
 
-Le guide technique complet du Tour de l'Abitibi `r params$sponsor` ainsi que la feuille de route complète est disponible au : <a href="../FR/index.html" target="_blank">https://tourabitibi.github.io/guide2023/FR/</a> 
+::: {}
+Le guide technique complet du **Tour de l'Abitibi `r params$sponsor`** ainsi que la feuille de route complète est disponible au : <a href="../FR/index.html" target="_blank">https://tourabitibi.github.io/guide2023/FR/</a> 
+:::
 
+:::{}
 TODO En anglais dans une 2e colonnes.
+:::
+::::
