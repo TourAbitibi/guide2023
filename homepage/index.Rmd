@@ -11,6 +11,8 @@ links:
 output:
   postcards::jolla
 ---
+<!-- Modification couleur background -->
+<body style="background-color:rgba(0, 62, 76, 0.25);">
 
 <!-- Matomo -->
 <script>
@@ -36,6 +38,10 @@ output:
 <br/>
 
 [Programmation préliminaire](prog/)
+
+<br/>
+
+[Guide Technique - Challenge Sprint Abitibi](sprint/)
 
 <br/>
 
