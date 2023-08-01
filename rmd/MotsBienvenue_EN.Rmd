@@ -1,4 +1,4 @@
-# Welcoming words
+# Welcoming words {#welcome}
 
 ### A word from the chairwoman of the board {-}
 

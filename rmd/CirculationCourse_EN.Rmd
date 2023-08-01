@@ -1,7 +1,7 @@
 
 <!-- CirculationCourse_EN.Rmd  : version anglaise -->
 
-# Race circulation
+# Race circulation {#circulation}
 
 ###  Road race {-}
 

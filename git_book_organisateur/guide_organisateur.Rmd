@@ -7,6 +7,7 @@ date: "Dernière mise à jour : `r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 toc-title: "Table des Matières"
+favicon: "../img/favicon.jpg"
 #papersize: letter
 #fontsize: 12pt
 # url: your book url like https://bookdown.org/yihui/bookdown
@@ -104,7 +105,7 @@ Ce site est un complément du **Guide Technique** complet pour les membres de l'
 
 <br/>
 
-> **Mise à jour du 1^er^ juillet 2023** : étant donné les incendies de forêts importants sévissant au Québec et plus particulièrement en Abitibi-Témiscamingue, il a été décidé de remplacer l'étape 5 de Senneterre par une étape plus près de la ville hôtesse d'Amos. Afin de permettre ce changement, le parcours de l'étape 6 a été repris, mais en sens inverse. Voir les détails dans l'onglet [étape 5][Étape 5 : Amos - RH - Preissac - Amos].
+> **Mise à jour du 1^er^ juillet 2023** : étant donné les incendies de forêts importants sévissant au Québec et plus particulièrement en Abitibi-Témiscamingue, il a été décidé de remplacer l'étape 5 de Senneterre par une étape plus près de la ville hôtesse d'Amos. Afin de permettre ce changement, le parcours de l'étape 6 a été repris, mais en sens inverse. Voir les détails dans l'onglet [étape 5][Étape 5 : Amos - Preissac - RH - Amos].
 
 <br/>
 
@@ -296,11 +297,11 @@ knitr::include_graphics(here("img", "logo", "Tableau_Partenaires.png"))
 <!-- CO : document biligue  -->
 
 ```{r CO_title_en, eval=(lang != "FR"), results='asis', echo= FALSE}
-glue("# Organizing committee")
+glue("# Organizing committee {#co}", .open = "[")
 ```
 
 ```{r CO_titre_fr, eval=(lang == "FR"), results='asis', echo= FALSE }
-glue("# Comité organisateur")
+glue("# Comité organisateur {#co}", .open = "[")
 ```
 
 
@@ -374,13 +375,13 @@ read_excel(staff_xlsx, sheet = "COMM") %>%
 
 ```{r start_list_FR, eval=(lang == "FR" & STARTLIST_existe), results='asis', echo= FALSE }
 
-glue("# Liste des partants")
+glue("# Liste des partants {#partants}", .open = "[")
 
 ```
 
 ```{r start_list_EN, eval=(lang == "EN" & STARTLIST_existe), results='asis', echo= FALSE }
 
-glue("# Start list")
+glue("# Start list {#startlist}", .open = "[")
 
 ```
 
@@ -406,7 +407,7 @@ startlist_tableau_EN()
 editor_options: 
   chunk_output_type: console
 ---
-# Feuilles de route quotidiennes
+# Feuilles de route quotidiennes {#feuilleroute}
 
 ```{r feuille_route_function_FR, echo=FALSE}
 
@@ -556,7 +557,7 @@ for (i in c(1:7)){
 
 <!-- Sites.Rmd  : info/photo pour sites de départs arrivées -->
 
-# Sites Départ Arrivée
+# Sites Départ Arrivée {#sites}
 
 Présentation de différentes photos concernant les lieux de départs et arrivées.
 
@@ -763,7 +764,7 @@ knitr::include_graphics("https://i.ibb.co/fGG9qQz/site-52.jpg")
 
 <!-- Croquis.Rmd  : croquis d'installation pour équipe logistiques -->
 
-# Croquis Installation
+# Croquis Installation {#croquis}
 
 Présentation des différents site de compétition et des installations logistiques qui y sont requises.
 
@@ -821,7 +822,7 @@ knitr::include_graphics("https://i.ibb.co/8Dn5fyj/croquis-dep-lasarre.png")
 
 <!-- CLMI_notes.Rmd  : info/photo pour rampe du CLMI -->
 
-# Installation - CLMI
+# Installation - CLMI {#clmi}
 
 Présentation de différentes vues sur le secteur du départ/arrivée du CLMI et de sa rampe de départ.
 
@@ -972,7 +973,7 @@ knitr::include_graphics(here("img", "sign", "E3", "sign_91.png"))
 
 <!--chapter:end:../rmd/CLMI_notes.Rmd-->
 
-# Règlements particuliers
+# Règlements particuliers {#reglements}
 
 <!-- Liens vers PDF règlements UCI sont définis dans _LibsVars.R-->
 
@@ -1591,7 +1592,7 @@ editor_options:
 
 <!-- dep_neutre.Rmd  : info pour horaire et coordonnées moto-info et ardoisier -->
 
-# Dépannage neutre
+# Dépannage neutre {#depneutre}
 
 Instructions et horaires pour l'équipe de dépannage neutre.
 
@@ -1727,7 +1728,7 @@ editor_options:
 
 <!-- ardoise.Rmd  : info pour horaire et coordonnées moto-info et ardoisier -->
 
-# Moto-Info et Ardoisier
+# Moto-Info et Ardoisier {#info_ardoise}
 
 Instructions et horaires pour les opérateurs de moto-info et ardoisiers.
 
@@ -1899,7 +1900,7 @@ editor_options:
 
 <!-- tv  : info pour moto tv -->
 
-# Motos-Caméras
+# Motos-Caméras {#moto-tv}
 
 La médiatisation de son épreuve est particulièrement importante pour l’organisateur. Elle lui permet d’assurer, en amont, la promotion de son épreuve ; elle permet au public de suivre la course en direct. 
 
@@ -1992,7 +1993,7 @@ Quelques exemples en vidéos.
 
 <!-- CirculationCourse.Rmd : version française -->
 
-# Circulation en course
+# Circulation en course {#circulation}
 
 ###  Course sur route {-}
 
@@ -2034,7 +2035,7 @@ knitr::include_graphics(here("img/support/circulation_CLMI.png"))
 
 <!-- FollowMee  : info pour connexion site FollowMee -->
 
-# Application GPS FollowMee
+# Application GPS FollowMee {#followmee}
 
 Nous utilisons le site <a href="https://www.followmee.com" target="_blank">FollowMee</a> afin de pouvoir localiser:
 
@@ -2096,12 +2097,12 @@ knitr::include_graphics(here("img", "support", "followmee", "plan.png"))
 
 ```{r locaux_title_en, eval=(lang != "FR"), results='asis', echo= FALSE}
 
-glue("# List of rooms")
+glue("# List of rooms {#rooms}", .open = "[")
 ```
 
 ```{r locaux_titre_fr, eval=(lang == "FR"), results='asis', echo= FALSE }
 
-glue("# Liste des locaux")
+glue("# Liste des locaux {#locaux}", .open = "[")
 ```
 
 

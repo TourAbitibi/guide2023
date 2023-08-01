@@ -1,4 +1,4 @@
-# Specific rules
+# Specific rules {#rules}
 
 <!-- Liens vers PDF règlements UCI sont définis dans _LibsVars.R-->
 

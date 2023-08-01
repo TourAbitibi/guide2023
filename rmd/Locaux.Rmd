@@ -3,12 +3,12 @@
 
 ```{r locaux_title_en, eval=(lang != "FR"), results='asis', echo= FALSE}
 
-glue("# List of rooms")
+glue("# List of rooms {#rooms}", .open = "[")
 ```
 
 ```{r locaux_titre_fr, eval=(lang == "FR"), results='asis', echo= FALSE }
 
-glue("# Liste des locaux")
+glue("# Liste des locaux {#locaux}", .open = "[")
 ```
 
 

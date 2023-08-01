@@ -6,6 +6,7 @@ date: "Last update : `r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 toc-title: "Contents"
+favicon: "../img/favicon.jpg"
 #papersize: letter
 #fontsize: 12pt
 # url: your book url like https://bookdown.org/yihui/bookdown
@@ -87,7 +88,7 @@ In this online technical guide, you will find all the details about the event, a
 
 <br/>
 
-> **Update from 2023, July 1^st^** : in view of the major forest fires in Quebec, particularly in Abitibi-Temiscamingue, it was decided to replace stage 5 from Senneterre with a stage closer to the host town of Amos. To accommodate this change, the route of stage 6 was used again, but in the opposite direction. See details in the [stage 5][Stage 5 : Amos - RH - Preissac - Amos] tab.
+> **Update from 2023, July 1^st^** : in view of the major forest fires in Quebec, particularly in Abitibi-Temiscamingue, it was decided to replace stage 5 from Senneterre with a stage closer to the host town of Amos. To accommodate this change, the route of stage 6 was used again, but in the opposite direction. See details in the [stage 5][Stage 5 : Amos - Preissac - RH - Amos] tab.
 
 
 <br/>

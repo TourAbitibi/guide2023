@@ -1,7 +1,7 @@
 
 <!-- CirculationCourse.Rmd : version française -->
 
-# Circulation en course
+# Circulation en course {#circulation}
 
 ###  Course sur route {-}
 

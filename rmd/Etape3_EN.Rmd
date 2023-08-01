@@ -3,7 +3,7 @@
 
 <!-- CLMI   -->
 
-# Stage 3 : `r params$ville` - ITT
+# Stage 3 : `r params$ville` - ITT {#stage3}
 
 ```{r, echo=FALSE}
 Etape <-3

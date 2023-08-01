@@ -7,6 +7,7 @@ date: "Dernière mise à jour : `r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 toc-title: "Table des Matières"
+favicon: "../img/favicon.jpg"
 #papersize: letter
 #fontsize: 12pt
 # url: your book url like https://bookdown.org/yihui/bookdown
@@ -104,7 +105,7 @@ Ce site est un complément du **Guide Technique** complet pour les membres de l'
 
 <br/>
 
-> **Mise à jour du 1^er^ juillet 2023** : étant donné les incendies de forêts importants sévissant au Québec et plus particulièrement en Abitibi-Témiscamingue, il a été décidé de remplacer l'étape 5 de Senneterre par une étape plus près de la ville hôtesse d'Amos. Afin de permettre ce changement, le parcours de l'étape 6 a été repris, mais en sens inverse. Voir les détails dans l'onglet [étape 5][Étape 5 : Amos - RH - Preissac - Amos].
+> **Mise à jour du 1^er^ juillet 2023** : étant donné les incendies de forêts importants sévissant au Québec et plus particulièrement en Abitibi-Témiscamingue, il a été décidé de remplacer l'étape 5 de Senneterre par une étape plus près de la ville hôtesse d'Amos. Afin de permettre ce changement, le parcours de l'étape 6 a été repris, mais en sens inverse. Voir les détails dans l'onglet [étape 5][Étape 5 : Amos - Preissac - RH - Amos].
 
 <br/>
 

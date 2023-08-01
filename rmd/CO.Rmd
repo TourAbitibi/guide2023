@@ -2,11 +2,11 @@
 <!-- CO : document biligue  -->
 
 ```{r CO_title_en, eval=(lang != "FR"), results='asis', echo= FALSE}
-glue("# Organizing committee")
+glue("# Organizing committee {#co}", .open = "[")
 ```
 
 ```{r CO_titre_fr, eval=(lang == "FR"), results='asis', echo= FALSE }
-glue("# Comité organisateur")
+glue("# Comité organisateur {#co}", .open = "[")
 ```
 
 
@@ -80,13 +80,13 @@ read_excel(staff_xlsx, sheet = "COMM") %>%
 
 ```{r start_list_FR, eval=(lang == "FR" & STARTLIST_existe), results='asis', echo= FALSE }
 
-glue("# Liste des partants")
+glue("# Liste des partants {#partants}", .open = "[")
 
 ```
 
 ```{r start_list_EN, eval=(lang == "EN" & STARTLIST_existe), results='asis', echo= FALSE }
 
-glue("# Start list")
+glue("# Start list {#startlist}", .open = "[")
 
 ```
 

@@ -3,7 +3,7 @@
 
 <!-- Version FR - AVEC circuit d'arrivée -->
 
-# Étape 1 : `r iti_etape$Details$Descr_Villes[1]`
+# Étape 1 : `r iti_etape$Details$Descr_Villes[1]` {#etape1}
 
 ```{r, echo=FALSE}
 Etape <-1

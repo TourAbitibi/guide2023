@@ -6,7 +6,7 @@ editor_options:
 <!-- MedMasso.Rmd -->
 
 
-# Soins médicaux
+# Soins médicaux {#medical}
 
 Chaque coureur étranger doit avoir une assurance médicale. 
 
