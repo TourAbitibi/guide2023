@@ -7,6 +7,13 @@ output:
     toc: true
     toc_depth: 2
     toc_float: true
+params:
+  annee: 2023
+  dates_compl: "11 au 16 juillet 2023"
+  ville: "Amos"
+  langue: "FR"  # FR ou EN
+  sponsor: "Glencore"
+  nb_coureurs_sprint: 16
 ---
 
 <!-- Analytics Matomo dans le fichier _footer.html -->
@@ -36,28 +43,30 @@ The Challenge Sprint Abitibi, a property of **Le Tour cycliste de l’Abitibi in
 ::::
 
 
-## Article 2 - Format de l’épreuve / Race format
-
-:::: {style="display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 40px;"}
-::: {}
-Sur invitation de l’organisateur, un maximum de 16 coureurs participera à cette épreuve;
-:::
-::: {}
-At the invitation of the organizer, a maximum of 16 riders will be invited to take part in this event;
-:::
-::::
+## Article 2 - Invitations / Invites
 
 
 :::: {style="display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 40px;"}
 
 ::: {}
-Chaque équipe participant au Tour de l’Abitibi devra compléter le bulletin d’engagement pour le Challenge Sprint Abitibi en inscrivant le nom du coureur qui participera au Challenge, en plus d’un remplaçant.
+Chaque équipe participant au **Tour de l’Abitibi** devra compléter le bulletin d’engagement pour le **Challenge Sprint Abitibi** en inscrivant le nom du coureur qui participera au Challenge, en plus d’un remplaçant.
 :::
 
 :::{}
-Each team participating in the Tour de l’Abitibi will have to complete the registration form from the Challenge Sprint Abitibi, including the name of the rider who will compete, as well as a substitute.
+Each team participating in the **Tour de l’Abitibi** will have to complete the registration form for the **Challenge Sprint Abitibi**, including the name of the rider who will compete, as well as a substitute.
 :::
 ::::
+
+:::: {style="display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 40px;"}
+::: {}
+Un maximum de **`r params$nb_coureurs_sprint`** coureurs participera à cette épreuve. Dans le cas où moins d'équipes sont présentent au **Tour de l'Abitibi** que le nombre de coureurs requis au **Challenge Sprint Abitibi**, une tirage au sort sera effectué pour engager un 2^e^ coureur par équipe parmis celle le désirant. 
+:::
+::: {}
+A maximum of **`r params$nb_coureurs_sprint`** riders will be invited to take part in this event. In the event that fewer teams are present at the **Tour de l'Abitibi** than the number of riders required for the **Challenge Sprint Abitibi**, a draw will be made to enter a 2^nd^ rider per team among those wishing to do so. 
+:::
+::::
+
+## Article 3 - Format de l’épreuve / Race format
 
 :::: {style="display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 40px;"}
 
@@ -90,4 +99,4 @@ The U-turn will be done counter-clockwise.
 :::
 ::::
 
-## Article 3 ...
+## Article 4 ...

@@ -8,7 +8,8 @@ params:
   dates_compl: "11 au 16 juillet 2023"
   ville: "Amos"
   langue: "FR"  # FR ou EN
-  sponsor : "Glencore"
+  sponsor: "Glencore"
+  nb_coureurs_sprint: 16
 ---
 <!-- Références Distill : https://rstudio.github.io/distill/  -->
 
@@ -91,6 +92,8 @@ The **Challenge Sprint Abitibi** consists of a series of sprints between three o
 
 
 # Parcours / Course
+
+TODO : détails emplacement
 
 ```{r sprint_parcours, echo=TRUE, echo=FALSE, out.width= "95%", align="center"}
 knitr::include_graphics(here("img", "sprint", "Sprint_Parcours.png"))
