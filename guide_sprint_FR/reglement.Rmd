@@ -1,0 +1,81 @@
+---
+title: "Challenge Sprint Abitibi 2023"
+description: "Règlements Spécifiques / Specifics Rules"
+date: "Dernière mise à jour : `r Sys.Date()`"
+site: distill::distill_website
+---
+
+<!-- Analytics Matomo dans le fichier _footer.html -->
+
+<!-- Références 2 colomnes : https://bookdown.org/yihui/rmarkdown-cookbook/multi-column.html-->
+
+<!-- Pour render : rmarkdown::render_site('guide_sprint_FR') -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Gestion avec here
+here::i_am("guide2023.Rproj")
+
+```
+
+# Règlements spécifiques / Specifics rules
+
+
+### Article 1 – Organisation / Organization
+
+:::: {style="display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 40px;"}
+
+::: {}
+Le Challenge Sprint Abitibi, propriété de **Le Tour cycliste de l’Abitibi inc.**, est organisé le lundi 10 juillet 2023 sous les règlements de Cyclisme Canada sur une distance totale de 600 mètres.
+:::
+
+::: {}
+The Challenge Sprint Abitibi, a property of **Le Tour cycliste de l’Abitibi inc.**, is organized on Monday, July 10th 2023, under Cycling Canada’s regulations, on a total distance of 600 meters.
+:::
+
+::::
+
+
+### Article 2 - Format de l’épreuve / Race format
+
+:::: {style="display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 40px;"}
+
+::: {}
+Sur invitation de l’organisateur, un maximum de 16 coureurs participera à cette épreuve;
+
+Chaque équipe participant au Tour de l’Abitibi devra compléter le bulletin d’engagement pour le Challenge Sprint Abitibi en inscrivant le nom du coureur qui participera au Challenge, en plus d’un remplaçant.
+
+Les quarts de finale seront constituées de 4 vagues. S’ensuivront les demi-finales, la finale consolation et la grande finale, pour un total de 8 épreuves. Toutes les épreuves seront composées de 4 coureurs, sauf abandon ou non-départ.
+
+La composition des séries de qualification sera déterminée selon un tirage au sort effectué durant la réunion des directeurs sportifs (N1 @ N16). Voir le tableau à la dernière page du guide;
+À chaque vague de quart de finale, les deux premiers coureurs de chaque série avanceront à la ronde suivante alors que les 2 derniers seront éliminés;
+Lors des demi-finales, les 2 premiers coureurs passeront en finale et les 2 derniers en finale consolation;
+Un classement final du Challenge Sprint Abitibi sera complété, attribuant une place de 1 à 8 pour les coureurs ayant participé aux 2 finales;
+
+Les sprints seront disputés et jugés selon la règlementation du Titre II- Épreuves sur Route de l’Union cycliste internationale, plus spécifiquement en tenant compte de l’article 2.3.036 ;
+Les départs seront effectués à partir d’un point fixe, avec présence de teneurs, comme s’il s’agissait d’une épreuve contre-la-montre ;
+Le surplace est interdit ;
+Le virage en demi-tour se fera obligatoirement avec la corde à gauche.
+:::
+
+::: {}
+A maximum of 16 cyclists will be invited to take part in this event;
+
+Each team participating in the Tour de l’Abitibi will have to complete the registration form from the Challenge Sprint Abitibi, including the name of the rider who will compete, as well as a substitute.
+
+The quarter-final will consist of 4 heats. The the semi-final, the little final and the grand final will follow. All heats will be contested by 4 participants, to the exception of an abandon or DNS.
+
+The heat composition will be determined by a draw conducted during the team managers' meeting (N1 @ N16). See table at the last page of the guide;
+For each quarter-final, the two first riders of each heat will advance to the next round, while others riders will be eliminated;
+The first two riders of each semi- final will access to the grand final while the last 2 will access to the little final;
+The final classification of the Challenge Sprint Abitibi will include positions 1 to 8 for the riders competing in the two finals;
+
+Sprints will take place and be judged under Part II - Road Races regulations of the International Cycling Union, more specifically taking into account article 2.3.036;
+The start will take place from a fixed position, with holders, as in a time trial;
+Standstill is forbidden;
+The U-turn will be done counter-clockwise.
+
+:::
+
+::::

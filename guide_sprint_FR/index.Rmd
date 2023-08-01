@@ -1,6 +1,6 @@
 ---
 title: "Challenge Sprint Abitibi 2023"
-description: "Guide Technique"
+description: "Guide Technique / Technical Guide"
 date: "Dernière mise à jour : `r Sys.Date()`"
 site: distill::distill_website
 params:
@@ -66,15 +66,25 @@ TODO : logo des sanctions CC et FQSC
 
 # Description
 
-Le **Challenge Sprint Abitibi** consiste en une série de sprints disputés entre trois et quatre coureurs, avec un processus d’élimination simple afin de couronner le meilleur sprinter. Les sprints seront disputés sur une distance de 600 mètres, soit un aller-retour de 300 m intégrant un virage autour d’une série de cônes.
+:::: {style="display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 40px;"}
 
-# Parcours
+::: {}
+Le **Challenge Sprint Abitibi** consiste en une série de sprints disputés entre trois et quatre coureurs, avec un processus d’élimination simple afin de couronner le meilleur sprinter. Les sprints seront disputés sur une distance de 600 mètres, soit un aller-retour de 300 m intégrant un virage autour d’une série de cônes.
+:::
+
+::: {}
+The **Challenge Sprint Abitibi** consists of a series of sprints between three or four cyclists, with a simple elimination process, in order to determine the best sprinter. Sprints will take place over a 600-meter distance, in a 300 meters round-trip around a series of cones.
+:::
+
+::::
+
+# Parcours / Course
 
 ```{r sprint_parcours, echo=TRUE, echo=FALSE, out.width= "95%", align="center"}
 knitr::include_graphics(here("img", "sprint", "Sprint_Parcours.png"))
 ```
 
-# Dénivelé
+# Dénivelé / Altitude
 
 ```{r sprint_deniv, echo=TRUE, echo=FALSE, out.width= "95%", align="center"}
 knitr::include_graphics(here("img", "sprint", "Sprint_Deniv.png"))
@@ -85,4 +95,4 @@ knitr::include_graphics(here("img", "sprint", "Sprint_Deniv.png"))
 
 Le guide technique complet du Tour de l'Abitibi `r params$sponsor` ainsi que la feuille de route complète est disponible au : <a href="../FR/index.html" target="_blank">https://tourabitibi.github.io/guide2023/FR/</a> 
 
-*The english version of this guide is available <a href="../sprint_EN/index.html" target="_blank">here</a>* 
+TODO En anglais dans une 2e colonnes.
