@@ -1,7 +1,7 @@
 ---
 title: "Challenge Sprint Abitibi 2023"
 description: "Guide Technique / Technical Guide"
-date: "Dernière mise à jour : `r Sys.Date()`"
+date: July 31, 2023
 site: distill::distill_website
 params:
   annee: 2023
@@ -10,6 +10,7 @@ params:
   langue: "FR"  # FR ou EN
   sponsor : "Glencore"
 ---
+<!-- Références Distill : https://rstudio.github.io/distill/  -->
 
 <!-- Analytics Matomo dans le fichier _footer.html -->
 
