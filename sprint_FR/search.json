@@ -1,0 +1,14 @@
+{
+  "articles": [
+    {
+      "path": "index.html",
+      "title": "Challenge Sprint Abitibi 2023",
+      "description": "Guide Technique",
+      "author": [],
+      "date": "Dernière mise à jour : `r Sys.Date()`",
+      "contents": "\n\n\n\n\n\nLa 10e édition du Challenge Sprint Abitibi est organisée en marge du Tour de l’Abitibi Glencore suite à la présentation des équipes. TODO : compléter intro.\nTODO : logo des sanctions CC et FQSC\nDescription\nLe Challenge Sprint Abitibi consiste en une série de sprints disputés entre trois et quatre coureurs, avec un processus d’élimination simple afin de couronner le meilleur sprinter. Les sprints seront disputés sur une distance de 600 mètres, soit un aller-retour de 300 m intégrant un virage autour d’une série de cônes.\nParcours\n\n\n\nDénivelé\n\n\n\nNote\nLe guide technique complet du Tour de l’Abitibi Glencore ainsi que la feuille de route complète est disponible au : https://tourabitibi.github.io/guide2023/FR/\nThe english version of this guide is available here\n\n\n\n",
+      "last_modified": "2023-07-31T22:52:53-04:00"
+    }
+  ],
+  "collections": []
+}

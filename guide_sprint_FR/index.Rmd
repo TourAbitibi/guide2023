@@ -1,0 +1,88 @@
+---
+title: "Challenge Sprint Abitibi 2023"
+description: "Guide Technique"
+date: "Dernière mise à jour : `r Sys.Date()`"
+site: distill::distill_website
+params:
+  annee: 2023
+  dates_compl: "11 au 16 juillet 2023"
+  ville: "Amos"
+  langue: "FR"  # FR ou EN
+  sponsor : "Glencore"
+---
+
+<!-- Analytics Matomo dans le fichier _footer.html -->
+
+<!-- Pour render : rmarkdown::render_site('guide_sprint_FR') -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Gestion avec here
+here::i_am("guide2023.Rproj")
+
+```
+
+```{r call_Libs_Vars, include=FALSE}
+# Appel des librairies et variables partagées
+source(here::here("code","_LibsVars.R"))
+
+# Dates
+source(here("code", "_Dates.R"))
+
+# Langue
+lang <- params$langue
+
+# Edition  (52e en 2022)
+edition <-params$annee - 2022 + 52
+
+# Edition Sprint (10e en 2023)
+edition_ChallengeSprint <-params$annee - 2023 + 10
+
+# Locale
+## https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/locales
+{if (lang == "FR") Sys.setlocale("LC_TIME", locale = "fr_CA.UTF-8") 
+  else Sys.setlocale("LC_TIME", locale = "en_US.UTF-8") }
+
+opts_chunk$set( tidy = FALSE, comment = NA,
+                fig.align = "center",
+                fig.width = 7.5, fig.height = 7.5,
+                fig.retina = 2, cache = FALSE,
+                class.output = "codeout",
+                warning = FALSE,
+                message = FALSE,
+                quiet=TRUE)
+
+```
+
+```{r logo_tour_sponsor, echo=TRUE, echo=FALSE, out.width= "45%", align="center"}
+knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
+```
+
+
+La `r edition_ChallengeSprint`^e^ édition du **Challenge Sprint Abitibi** est organisée en marge du **Tour de l'Abitibi `r params$sponsor`** suite à la présentation des équipes. TODO : compléter intro.
+
+TODO : logo des sanctions CC et FQSC
+
+# Description
+
+Le **Challenge Sprint Abitibi** consiste en une série de sprints disputés entre trois et quatre coureurs, avec un processus d’élimination simple afin de couronner le meilleur sprinter. Les sprints seront disputés sur une distance de 600 mètres, soit un aller-retour de 300 m intégrant un virage autour d’une série de cônes.
+
+# Parcours
+
+```{r sprint_parcours, echo=TRUE, echo=FALSE, out.width= "95%", align="center"}
+knitr::include_graphics(here("img", "sprint", "Sprint_Parcours.png"))
+```
+
+# Dénivelé
+
+```{r sprint_deniv, echo=TRUE, echo=FALSE, out.width= "95%", align="center"}
+knitr::include_graphics(here("img", "sprint", "Sprint_Deniv.png"))
+```
+
+
+# Note
+
+Le guide technique complet du Tour de l'Abitibi `r params$sponsor` ainsi que la feuille de route complète est disponible au : <a href="../FR/index.html" target="_blank">https://tourabitibi.github.io/guide2023/FR/</a> 
+
+*The english version of this guide is available <a href="../sprint_EN/index.html" target="_blank">here</a>* 
