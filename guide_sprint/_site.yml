@@ -1,9 +1,9 @@
-name: "guide_sprint_FR"
+name: "guide_sprint"
 title: "Challenge Sprint Abitibi 2023"
 description: |
   Challenge Sprint Abitibi 2023
-output_dir: "../sprint_FR"
-base_url: "https://tourabitibi.github.io/guide2023/sprint_FR/"
+output_dir: "../sprint"
+base_url: "https://tourabitibi.github.io/guide2023/sprint/"
 favicon: "../img/favicon.jpg"
 navbar:
   logo:
@@ -14,5 +14,5 @@ navbar:
       href: index.html
     - text: "Règlements spécifiques"
       href: reglement.html
-theme: "../guide_sprint.css"
+theme: "guide_sprint.css"
 output: distill::distill_article

@@ -13,7 +13,7 @@ params:
 
 <!-- Analytics Matomo dans le fichier _footer.html -->
 
-<!-- Pour render : rmarkdown::render_site('guide_sprint_FR') -->
+<!-- Pour render : rmarkdown::render_site('guide_sprint') -->
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
