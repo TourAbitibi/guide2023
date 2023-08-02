@@ -13,5 +13,7 @@ navbar:
       href: index.html
     - text: "Règlements / Rules"
       href: reglement.html
+    - text: "Résultats / Results"
+      href: "https://tourabitibi.com/wp-content/uploads/2023/07/ChalengeSprint2023-Resultats.pdf"
 theme: "guide_sprint.css"
 output: distill::distill_article

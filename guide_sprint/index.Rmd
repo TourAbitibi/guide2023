@@ -95,11 +95,21 @@ The **Challenge Sprint Abitibi** consists of a series of sprints between three o
 
 TODO : détails emplacement
 
+:::: {style="display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 40px;"}
+::: {}
+
+:::
+
+:::{}
+
+:::
+:::: 
+
 ```{r sprint_parcours, echo=TRUE, echo=FALSE, out.width= "95%", align="center"}
 knitr::include_graphics(here("img", "sprint", "Sprint_Parcours.png"))
 ```
 
-# Dénivelé / Altitude
+# Dénivelé / Elevation
 
 ```{r sprint_deniv, echo=TRUE, echo=FALSE, out.width= "95%", align="center"}
 knitr::include_graphics(here("img", "sprint", "Sprint_Deniv.png"))
