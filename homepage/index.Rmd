@@ -1,5 +1,6 @@
 ---
 title: "Tour de l'Abitibi Glencore 2023"
+favicon: "../img/favicon.jpg"
 image: "../img/favicon.jpg"
 links:
   - label: Facebook
