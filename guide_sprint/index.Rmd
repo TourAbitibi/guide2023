@@ -114,6 +114,6 @@ Le guide technique complet du **Tour de l'Abitibi `r params$sponsor`** ainsi que
 :::
 
 :::{}
-TODO En anglais dans une 2e colonnes.
+The complete **Tour de l'Abitibi `r params$sponsor`** technical guide and the complete schedule is available at : <a href="../EN/index.html" target="_blank">https://tourabitibi.github.io/guide2023/EN/</a> 
 :::
 ::::
