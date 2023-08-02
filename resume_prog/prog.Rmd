@@ -12,7 +12,11 @@ output:
     df_print: kable
     self_contained: false
     includes:
-      in_header: matamo-analytics.html 
+      in_header: 
+        - header.html
+        - matamo-analytics.html 
+      after_body: 
+        - footer.html
 params:
   annee: 2023
   ville: "Amos"
