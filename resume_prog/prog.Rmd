@@ -17,10 +17,6 @@ output:
         - matamo-analytics.html 
       after_body: 
         - footer.html
-params:
-  annee: 2023
-  ville: "Amos"
-  sponsor: "Glencore"
 editor_options: 
   chunk_output_type: console
 ---
@@ -49,9 +45,6 @@ parcours <- st_read(here("gpx","output","parcours.shp"))
 
 # Langue
 lang <- "FR"
-
-# Edition  (52e en 2022)
-edition <-params$annee - 2022 + 52
 
 ```
 
@@ -100,7 +93,7 @@ lien_iframe <- function(etape){
 
 # Tour de l'Abitibi `r params$sponsor`
 
-Voici un aperçu préliminaire de la `r edition`e édition du Tour de l'Abitibi `r params$sponsor` qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)` à `r params$ville`. 
+Voici un aperçu préliminaire de la `r params$edition`e édition du Tour de l'Abitibi `r params$sponsor` qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)` à `r params$ville`. 
 
 
 <br/>

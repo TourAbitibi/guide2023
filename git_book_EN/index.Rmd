@@ -15,14 +15,6 @@ description: |
     Technical guide for the 2023 Tour de l'Abitibi, a stage of the UCI Nations Cup.
     Presentation of the program, courses and regulations for the event.
 suppress-bibliography: yes
-params:
-  annee: 2023
-  dates_compl: "July 11 to 16, 2023"
-  ville: "Amos"
-  langue: "EN"  # FR ou EN
-  sponsor: "Glencore"
-  input_output : "output"  #Quel dossier pour afficher les cartes des tracés : Full, Dep, Arr.
-
 #link-citations: yes
 #github-repo: rstudio/bookdown-demo
 ---
@@ -56,9 +48,6 @@ points <- st_read(here("gpx","output","points_parcours.shp"))
 # Langue
 lang <- "EN"
 
-# Edition  (52e en 2022)
-edition <-params$annee - 2022 + 52
-
 # Locale
 ## https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/locales
 {if (lang == "FR") Sys.setlocale("LC_TIME", locale = "fr_CA.UTF-8") 
@@ -82,7 +71,7 @@ knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
 
 <br/>
 
-Welcome to the `r edition`^th^ edition of the **`r params$annee` Tour de l'Abitibi `r params$sponsor`**, which will be held from `r dates_EN %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` to `r dates_EN %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)` in `r params$ville`.
+Welcome to the `r params$edition`^th^ edition of the **`r params$annee` Tour de l'Abitibi `r params$sponsor`**, which will be held from `r dates_EN %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` to `r dates_EN %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)` in `r params$ville`.
 
 In this online technical guide, you will find all the details about the event, as well as details about your stay in Abitibi-Témiscamingue. 
 

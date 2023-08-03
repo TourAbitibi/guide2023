@@ -5,7 +5,7 @@ site: distill::distill_website
 editor_options: 
   chunk_output_type: console
 ---
-<!-- Références Distill : https://rstudio.github.io/distill/  -->
+<!-- Références Distill : https://rstudio.github.io/distill/ -->
 
 <!-- Analytics Matomo dans le fichier _footer.html -->
 

@@ -15,13 +15,6 @@ favicon: "../img/favicon.jpg"
 description: |
     Guide technique du Tour de l'Abitibi 2023, version de l'organisateur.
 suppress-bibliography: yes
-params:
-  annee: 2023
-  dates_compl: "11 au 16 juillet 2023"
-  ville: "Amos"
-  langue: "FR"
-  sponsor: "Glencore"
-  input_output : "output"  #Quel dossier pour afficher les cartes des tracés : Full, Dep, Arr.
 #github-repo: rstudio/bookdown-demo
 ---
 
@@ -51,10 +44,7 @@ points <- st_read(here("gpx","output","points_parcours.shp"))
 points_signalisation <- st_read(here("gpx","output","points_signalisation.shp"))
 
 # Langue
-lang <- params$langue
-
-# Edition  (52e en 2022)
-edition <-params$annee - 2022 + 52
+lang <- "FR"
 
 # Locale
 ## https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/locales
@@ -82,7 +72,7 @@ knitr::include_graphics(here("img", "logo", "TA_Glencore.png"))
 
 Bonjour et bienvenue au **Tour de l'Abitibi `r params$sponsor` `r params$annee`** !
 
-Voici un aperçu de la **`r edition`^e^ édition** du Tour de l'Abitibi `r params$sponsor` qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an) %>% tolower()` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an) %>% tolower()`.
+Voici un aperçu de la **`r params$edition`^e^ édition** du Tour de l'Abitibi `r params$sponsor` qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an) %>% tolower()` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an) %>% tolower()`.
 
 Ce guide de l'organisateur contient toutes les informations essentielles pour préparer les différentes étapes du Tour de l'Abitibi `r params$sponsor` et ainsi assurer la sécurité des coureurs, des participants et de la population générale. 
 
@@ -136,7 +126,7 @@ source(here("code","programmation.R"))
 ```
 
 
-###  Tour de l'Abitibi `r params$sponsor` `r params$annee` - `r edition`e édition {-}
+###  Tour de l'Abitibi `r params$sponsor` `r params$annee` - `r params$edition`e édition {-}
 
 
 ```{r echo=FALSE, results='asis'}
