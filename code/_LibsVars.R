@@ -49,6 +49,7 @@ conflict_prefer("filter", "dplyr", quiet = TRUE)
 params <- tibble(
     annee = 2023,
     dates_compl =  "11 au 16 juillet 2023",
+    dates_compl_EN = "July 11th to 16, 2023",
     lienWeb = "https://tourabitibi.github.io/guide2023/",  # Lien web de base
     ville = "Amos",
     position_ligne_arrivee = "Parc de la Cathédrale",

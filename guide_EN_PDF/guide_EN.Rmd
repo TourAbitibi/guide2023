@@ -35,17 +35,6 @@ header-includes:
   \usepackage{tikz,lipsum,lmodern}    
   \usepackage[most]{tcolorbox}
   \usepackage{tcolorbox}
-  
-
-params:
-  annee: 2023
-  dates_compl: "July 11th to 16, 2023"
-  sponsor: "Glencore"
-  ville: "Amos"
-  langue: "EN"
-  lienWeb: "https://tourabitibi.github.io/guide2023/EN"
-  input_output : "output"  #Quel dossier pour afficher les cartes des tracés : Full, Dep, Arr.
-
 ---
 
 ```{r setup, include=FALSE}
@@ -63,10 +52,10 @@ source(here("code", "_Dates.R"))
 source(here("code","programmation.R"))
 
 # Langue
-lang <- params$langue
+lang <- "EN"
 
-# Edition  (52e en 2022)
-edition <-params$annee - 2022 + 52
+# Lien Guide web
+lienWeb <- glue('{params$lienWeb}{lang}')
 
 # Locale
 ## https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/locales
@@ -104,9 +93,9 @@ opts_chunk$set( warning = FALSE,
 \vspace*{0.75cm}
 \emph{\Large{\textbf{COURSES DETAILS}}\\}
 \vspace*{0.75cm}
-\Large{\textbf{`r edition`$^{th}$ edition}}\\
+\Large{\textbf{`r params$edition`$^{th}$ edition}}\\
 \vspace*{0.75cm}
-\Large{\textbf{`r params$dates_compl`}}\\
+\Large{\textbf{`r params$dates_compl_EN`}}\\
 \vspace*{0.5cm}
 \line(1,0){350}\\[2mm]
 
@@ -129,7 +118,7 @@ Version :  `r Sys.Date()` \\
 
 In order to avoid wasting paper and to facilitate updates to the document, only the details of the courses will be available in paper format.
 
-Please refer to the website : \url{`r params$lienWeb`} for complete technical guide information.
+Please refer to the website : \url{`r lienWeb`} for complete technical guide information.
 
 
 
