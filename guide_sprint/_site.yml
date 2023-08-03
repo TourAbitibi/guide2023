@@ -9,10 +9,14 @@ navbar:
     image: "../img/favicon.jpg"
     href: https://www.tourabitibi.com
   right:
-    - text: "Introduction"
+    - text: "Presentation"
       href: index.html
+    - text: "Comité / Staff"
+      href: comite.html
     - text: "Règlements / Rules"
       href: reglement.html
+    - text: "Partants / Startlist"
+      href: partants.html
     - text: "Résultats / Results"
       href: "https://tourabitibi.com/wp-content/uploads/2023/07/ChalengeSprint2023-Resultats.pdf"
 theme: "guide_sprint.css"

@@ -19,7 +19,7 @@
 - Créer un site simple pour le guide Sprint, un peu comme la page de programmation (one-pager).
 
 
-## Noms des fichiers html
+## Noms des fichiers html - OK août 2023
 
 > For chapter and section, the HTML filenames will be determined by the header identifiers, e.g., the filename for the first chapter with a chapter title # Introduction will be introduction.html by default. For chapter+number and section+number, the chapter/section numbers will be prepended to the HTML filenames, e.g., 1-introduction.html and 2-1-literature.html. The header identifier is automatically generated from the header text by default,9 and you can manually specify an identifier using the syntax {#your-custom-id} after the header text, e.g.,
 > # An Introduction {#introduction}

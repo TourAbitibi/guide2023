@@ -1,0 +1,46 @@
+---
+title: "Challenge Sprint Abitibi 2023"
+description: "Liste des partants / Startlist"
+output:
+  distill::distill_article
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- Pour render : rmarkdown::render_site('guide_sprint') -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Gestion avec here
+here::i_am("guide2023.Rproj")
+
+```
+
+```{r call_Libs_Vars, include=FALSE}
+# Appel des librairies et variables partagées
+source(here::here("code","_LibsVars.R"))
+
+# Langue
+lang <- "FR"
+
+# Locale
+## https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/locales
+{if (lang == "FR") Sys.setlocale("LC_TIME", locale = "fr_CA.UTF-8") 
+  else Sys.setlocale("LC_TIME", locale = "en_US.UTF-8") }
+
+opts_chunk$set( tidy = FALSE, comment = NA,
+                fig.align = "center",
+                fig.width = 7.5, fig.height = 7.5,
+                fig.retina = 2, cache = FALSE,
+                class.output = "codeout",
+                warning = FALSE,
+                message = FALSE,
+                quiet=TRUE)
+
+```
+
+
+## Liste des partants / Startlist
+
+> TODO

@@ -54,7 +54,7 @@ parcours <- st_read(here("gpx","output","parcours.shp"))%>%
 points <- st_read(here("gpx","output","points_parcours.shp"))
 
 # Langue
-lang <- params$langue
+lang <- "EN"
 
 # Edition  (52e en 2022)
 edition <-params$annee - 2022 + 52
