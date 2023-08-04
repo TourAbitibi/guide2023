@@ -1,7 +1,7 @@
 
 <!-- Sites.Rmd  : info/photo pour sites de départs arrivées -->
 
-# Sites Départ Arrivée
+# Sites Départ Arrivée {#sites}
 
 Présentation de différentes photos concernant les lieux de départs et arrivées.
 

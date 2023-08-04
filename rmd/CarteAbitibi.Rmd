@@ -3,12 +3,12 @@
 
 ```{r carte_title_en, eval=(lang != "FR"), results='asis', echo= FALSE}
 
-glue("# General map of Abitibi-Témiscamingue")
+glue("# General map of Abitibi-Témiscamingue {#carteabitibi}", .open = "[")
 ```
 
 ```{r carte_titre_fr, eval=(lang == "FR"), results='asis', echo= FALSE }
 
-glue("# Carte générale de l'Abitibi-Témiscamingue")
+glue("# Carte générale de l'Abitibi-Témiscamingue {#mapabitibi}", .open = "[")
 ```
 
 ```{r echo = FALSE, fig.align = 'center', out.width = "100%", fig.cap = "Source - [L'Observatoire de l'Abitibi-Témiscamingue](https://www.observat.qc.ca/atlas)"}

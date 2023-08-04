@@ -2,7 +2,7 @@
 
 <!-- Version FR - SANS circuit d'arrivée -->
 
-# Étape 6 : `r iti_etape$Details$Descr_Villes[6]`
+# Étape 6 : `r iti_etape$Details$Descr_Villes[6]` {#etape6}
 
 
 

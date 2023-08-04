@@ -1,7 +1,7 @@
 
 <!-- CLMI_notes.Rmd  : info/photo pour rampe du CLMI -->
 
-# Installation - CLMI
+# Installation - CLMI {#clmi}
 
 Présentation de différentes vues sur le secteur du départ/arrivée du CLMI et de sa rampe de départ.
 

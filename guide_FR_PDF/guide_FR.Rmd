@@ -35,17 +35,6 @@ header-includes:
   \usepackage{tikz,lipsum,lmodern}    
   \usepackage[most]{tcolorbox}
   \usepackage{tcolorbox}
-  
-
-params:
-  annee: 2023
-  dates_compl: "11 au 16 juillet 2023"
-  sponsor: "Glencore"
-  ville: "Amos"
-  langue: "FR"
-  lienWeb: "https://tourabitibi.github.io/guide2023/FR"
-  input_output : "output"  #Quel dossier pour afficher les cartes des tracés : Full, Dep, Arr.
-
 ---
 
 ```{r setup, include=FALSE}
@@ -63,10 +52,10 @@ source(here("code", "_Dates.R"))
 source(here("code","programmation.R"))
 
 # Langue
-lang <- params$langue
+lang <- "FR"
 
-# Edition  (52e en 2022)
-edition <-params$annee - 2022 + 52
+# Lien Guide web
+lienWeb <- glue('{params$lienWeb}{lang}')
 
 # Locale
 ## https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/locales
@@ -104,7 +93,7 @@ opts_chunk$set( warning = FALSE,
 \vspace*{0.75cm}
 \emph{\Large{\textbf{DÉTAILS DES PARCOURS}}\\}
 \vspace*{0.75cm}
-\Large{\textbf{`r edition`$^e$ édition}}\\
+\Large{\textbf{`r params$edition`$^e$ édition}}\\
 \vspace*{0.75cm}
 \Large{\textbf{Du `r params$dates_compl`}}\\
 \vspace*{0.5cm}
@@ -129,7 +118,7 @@ Version :  `r Sys.Date()` \\
 
 Dans le but d'éviter le gaspillage de papier et de faciliter les mises à jour du document, seuls les détails des parcours seront disponibles en format papier.
 
-Veuillez vous référer au site : \url{`r params$lienWeb`} pour l'information complète du guide technique.
+Veuillez vous référer au site : \url{`r lienWeb`} pour l'information complète du guide technique.
 
 
 \newpage

@@ -6,7 +6,7 @@ editor_options:
 
 <!-- ardoise.Rmd  : info pour horaire et coordonnées moto-info et ardoisier -->
 
-# Moto-Info et Ardoisier
+# Moto-Info et Ardoisier {#info_ardoise}
 
 Instructions et horaires pour les opérateurs de moto-info et ardoisiers.
 

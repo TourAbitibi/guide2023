@@ -1,6 +1,7 @@
 ---
 title: "Tour de l'Abitibi Glencore 2023"
-image: "https://tourabitibi.com/wp-content/uploads/2022/04/favicon-tour-abitibi-velo-course-route-cyclisme.jpg"
+favicon: "../img/favicon.jpg"
+image: "../img/favicon.jpg"
 links:
   - label: Facebook
     url: "https://www.facebook.com/tourdelabitibi/"
@@ -11,6 +12,41 @@ links:
 output:
   postcards::jolla
 ---
+
+<!-- CSS Custom -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600;1,800;1,900&display=swap');
+
+* {
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+body {
+  background-color:#00414F;
+}
+
+h1 {
+  color: white;
+  padding: 25px;
+}
+
+a {
+  color: #eac11d;
+  background-color: transparent;
+  font-size: 1.4em;
+}
+
+a:hover {
+  color: #eac11d;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.btn-outline-dark {
+    color: white;
+    border-color: white;
+
+</style>
 
 <!-- Matomo -->
 <script>
@@ -33,9 +69,12 @@ output:
 <!-- End Matomo Code -->
 
 
-<br/>
 
 [Programmation préliminaire](prog/)
+
+<br/>
+
+[Guide Technique - Challenge Sprint Abitibi](sprint/)
 
 <br/>
 

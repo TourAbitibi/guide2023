@@ -6,7 +6,7 @@ editor_options:
 
 <!-- tv  : info pour moto tv -->
 
-# Motos-Caméras
+# Motos-Caméras {#moto-tv}
 
 La médiatisation de son épreuve est particulièrement importante pour l’organisateur. Elle lui permet d’assurer, en amont, la promotion de son épreuve ; elle permet au public de suivre la course en direct. 
 

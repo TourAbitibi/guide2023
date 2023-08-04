@@ -3,12 +3,12 @@
 
 ```{r , eval=(lang != "FR"), results='asis', echo= FALSE}
 
-glue("# Meals of the week")
+glue("# Meals of the week {#meals}", .open = "[") 
 ```
 
 ```{r , eval=(lang == "FR"), results='asis', echo= FALSE }
 
-glue("# Repas de la semaine")
+glue("# Repas de la semaine {#repas}", .open = "[")
 ```
 
 

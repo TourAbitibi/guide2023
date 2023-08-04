@@ -2,7 +2,7 @@
 
 <!-- CLMI -->
 
-# Étape 3 : `r iti_etape$Details$Descr_Villes[3]`
+# Étape 3 : `r iti_etape$Details$Descr_Villes[3]` {#etape3}
 
 
 ```{r, echo=FALSE}

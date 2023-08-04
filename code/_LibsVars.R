@@ -44,6 +44,39 @@ conflict_prefer("filter", "dplyr", quiet = TRUE)
 
 #------------------------------------------------------------------------------#
 
+# Liste des paramètres (en remplacement des différents params pour chacun des projets)
+
+params <- tibble(
+    annee = 2023,
+    dates_compl =  "11 au 16 juillet 2023",
+    dates_compl_EN = "July 11th to 16, 2023",
+    lienWeb = "https://tourabitibi.github.io/guide2023/",  # Lien web de base
+    ville = "Amos",
+    position_ligne_arrivee = "Parc de la Cathédrale",
+    rue_ligne_arrivee = "rue Principale Nord",
+    nom_centrale = "Polyvalente La Forêt",
+    adresse_centrale = "850 1re Rue E, Amos, QC J9T 2H8",
+    langue = "FR",  # FR ou EN, FR par défaut
+    input_output = "output",  #Quel dossier pour afficher les cartes des tracés : Full, Dep, Arr.
+    sponsor = "Glencore",
+    nb_etapes = 7,
+    nb_equipes = 13,
+    nb_coureurs_sprint = 16, # 16 ou 24
+)
+
+# Paramètres calculés 
+
+# Edition  (52e en 2022)
+params$edition <-params$annee - 2022 + 52
+
+# Edition Sprint (10e en 2023)
+params$edition_ChallengeSprint <-params$annee - 2023 + 10
+
+# Nombre de coureurs @ 6/équipe
+params$nb_coureurs <- 6 * params$nb_equipes
+
+#------------------------------------------------------------------------------#
+
 # Liste des couleurs
 
 couleurs <- list(

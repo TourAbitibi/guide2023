@@ -1,7 +1,7 @@
 
 <!-- FollowMee  : info pour connexion site FollowMee -->
 
-# Application GPS FollowMee
+# Application GPS FollowMee {#followmee}
 
 Nous utilisons le site <a href="https://www.followmee.com" target="_blank">FollowMee</a> afin de pouvoir localiser:
 

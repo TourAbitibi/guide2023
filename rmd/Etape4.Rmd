@@ -2,7 +2,7 @@
 
 <!-- Version FR - SANS circuit d'arrivée   -->
 
-# Étape 4 : `r iti_etape$Details$Descr_Villes[4]`
+# Étape 4 : `r iti_etape$Details$Descr_Villes[4]` {#etape4}
 
 
 ```{r, echo=FALSE}

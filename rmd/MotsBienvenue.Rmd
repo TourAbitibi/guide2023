@@ -1,4 +1,4 @@
-# Mots de bienvenue
+# Mots de bienvenue {#bienvenue}
 
 ### Mot de la présidente {-}
 
@@ -9,9 +9,9 @@ knitr::include_graphics(here("img", "photos", "pres.png"))
 ```
 
 
-C’est au nom de tous les membres du conseil d’administration, du comité organisateur, que j’aimerais vous souhaiter la bienvenue au `r edition`e Tour de l’Abitibi `r params$sponsor`. Nous sommes très fiers de notre événement cycliste, le seul dans sa catégorie en Amérique du Nord! Sa longévité est attribuable à la passion, l’engouement et l’engagement inconditionnel des Témiscabitibiens!
+C’est au nom de tous les membres du conseil d’administration, du comité organisateur, que j’aimerais vous souhaiter la bienvenue au `r params$edition`e Tour de l’Abitibi `r params$sponsor`. Nous sommes très fiers de notre événement cycliste, le seul dans sa catégorie en Amérique du Nord! Sa longévité est attribuable à la passion, l’engouement et l’engagement inconditionnel des Témiscabitibiens!
 
-Pour sa `r edition`e édition, le Tour accueillera des jeunes cyclistes provenant d’un peu partout à travers le monde. Cette année, nous assisterons au plus long Tour de l’Abitibi Glencore, soit un Tour totalisant 686,2 km de course. Comme les années dernières, les partisans des équipes pourront suivre les courses en direct sur notre site web en se rendant au <a href="https://www.tourabitibi.com" target="blank">www.tourabitibi.com</a>.
+Pour sa `r params$edition`e édition, le Tour accueillera des jeunes cyclistes provenant d’un peu partout à travers le monde. Cette année, nous assisterons au plus long Tour de l’Abitibi Glencore, soit un Tour totalisant 686,2 km de course. Comme les années dernières, les partisans des équipes pourront suivre les courses en direct sur notre site web en se rendant au <a href="https://www.tourabitibi.com" target="blank">www.tourabitibi.com</a>.
 
 Je tiens à souligner le travail indispensable de nos nombreux bénévoles et de notre équipe permanente, qui tout au long de l’année, ont travaillé pour vous offrir un événement des plus mémorable lors de la semaine du Tour à Amos. De plus, j’aimerais faire une mention toute spéciale à nos fidèles et généreux partenaires, sans qui l’événement n’aurait pas lieu, sans oublier notre partenaire en titre ; Glencore.
 

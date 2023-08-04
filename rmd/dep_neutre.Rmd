@@ -6,7 +6,7 @@ editor_options:
 
 <!-- dep_neutre.Rmd  : info pour horaire et coordonnées moto-info et ardoisier -->
 
-# Dépannage neutre
+# Dépannage neutre {#depneutre}
 
 Instructions et horaires pour l'équipe de dépannage neutre.
 

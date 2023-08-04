@@ -5,7 +5,7 @@
 
 <!-- Notes spéciale pour dernière étape -->
 
-# Étape 7 : `r iti_etape$Details$Descr_Villes[7]`
+# Étape 7 : `r iti_etape$Details$Descr_Villes[7]` {#etape7}
 
 ```{r, echo=FALSE}
 Etape <-7

@@ -20,10 +20,6 @@ source(here("code","_import_itineraire.R"))
 
 df <- iti_etape$Details
 
-# Edition  (52e en 2022)
-edition <- (df$Date[1] %>% year()) - 2022 + 52
-
-
 dates_prog <- str_replace(dates_FR$jsem_jour_mois, ", ", "<br>")
 
 

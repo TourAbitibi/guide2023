@@ -10,6 +10,8 @@
 
 rule Z_targets:
     input:
+        "code/_LibsVars.R",
+
         "git_book/_book/index.html",
         "git_book_EN/_book/index.html",
         "git_book_organisateur/_book/index.html",
@@ -24,6 +26,15 @@ rule Z_targets:
         "EN/index.html",
         "results/Liste_Coureurs.csv",
         "results/Maillots_Porteurs.csv",
+
+        "guide_sprint/index.Rmd",
+        "guide_sprint/comite.Rmd",
+        "guide_sprint/partants.Rmd",
+        "guide_sprint/reglement.Rmd",
+        "guide_sprint/guide_sprint.css",
+        "guide_sprint/_footer.html",
+        "guide_sprint/_site.yml",
+        "sprint/index.html",
 
         "git_book/index.Rmd",
         "git_book_EN/index.Rmd",
@@ -108,6 +119,7 @@ rule Z_targets:
         rsync -avhP img/* bruno@192.168.101.150:/home/bruno/guide_web/guide/img/ --delete-after &
         rsync -avhP FR/* bruno@192.168.101.150:/home/bruno/guide_web/guide/FR/ --delete-after &
         rsync -avhP EN/* bruno@192.168.101.150:/home/bruno/guide_web/guide/EN/ --delete-after &
+        rsync -avhP sprint/* bruno@192.168.101.150:/home/bruno/guide_web/guide/sprint/ --delete-after &
         rsync -avhP prog/* bruno@192.168.101.150:/home/bruno/guide_web/guide/prog/ --delete-after &
         rsync -avhP organisateur/* bruno@192.168.101.150:/home/bruno/guide_web/guide/organisateur/ --delete-after &
         rsync -avhP index.html bruno@192.168.101.150:/home/bruno/guide_web/guide/index.html
@@ -288,6 +300,7 @@ rule R31_importExportGPX_Signalisation:
 rule R50_render_book_EN:
     input:
         "code/programmation.R",
+        "code/_LibsVars.R",
 
         "gpx/output/parcours.shp",
 
@@ -346,6 +359,7 @@ rule R50_render_book_EN:
 rule R51_render_book:
     input:
         "code/programmation.R",
+        "code/_LibsVars.R",
 
         "gpx/output/parcours.shp",
 
@@ -423,6 +437,7 @@ rule R52_render_homepage:
 rule R53_render_prog_prelim:
     input:
         "excel/Itineraires.xlsx",
+        "code/_LibsVars.R",
         "gpx/output/parcours.shp",
         "resume_prog/prog.Rmd",
         "elevParcours/elev_parcours.csv"
@@ -445,6 +460,7 @@ rule R53_render_prog_prelim:
 rule R54_render_book_organisateur:
     input:
         "code/programmation.R",
+        "code/_LibsVars.R",
 
         "gpx/output/parcours.shp",
         "gpx/output/points_signalisation.shp", "gpx/output/points_signalisation.dbf", "gpx/output/points_signalisation.prj", "gpx/output/points_signalisation.shx",
@@ -503,4 +519,25 @@ rule R54_render_book_organisateur:
         cp -R {params.guide_path}/_book/* organisateur
 
         echo "\nGuide d'organisateur disponible au : /Users/brunogauthier/Documents/guide2023/organisateur/index.html\n"
+        """
+
+rule R55_render_sprint:
+    input:
+        "code/_LibsVars.R",
+        "excel/staff.xlsx",
+        "rmd/CO.Rmd",
+        "guide_sprint/index.Rmd",
+        "guide_sprint/comite.Rmd",
+        "guide_sprint/partants.Rmd",
+        "guide_sprint/reglement.Rmd",
+        "guide_sprint/guide_sprint.css",
+        "guide_sprint/_footer.html",
+        "guide_sprint/_site.yml"
+    output:
+        "sprint/index.html"
+    params:
+        "guide_sprint"
+    shell:
+        """
+        Rscript -e "rmarkdown::render_site('{params}')"
         """
