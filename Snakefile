@@ -17,8 +17,6 @@ rule Z_targets:
         "git_book_organisateur/_book/index.html",
         "homepage/index.html",
         "homepage/index.Rmd",
-        "resume_prog/prog.Rmd",
-        "resume_prog/prog.html",
         "index.html",
         "prog/index.html",
         "organisateur/index.html",
@@ -26,15 +24,21 @@ rule Z_targets:
         "EN/index.html",
         "results/Liste_Coureurs.csv",
         "results/Maillots_Porteurs.csv",
+        
+        "distill.css",
 
         "guide_sprint/index.Rmd",
         "guide_sprint/comite.Rmd",
         "guide_sprint/partants.Rmd",
         "guide_sprint/reglement.Rmd",
-        "guide_sprint/guide_sprint.css",
         "guide_sprint/_footer.html",
         "guide_sprint/_site.yml",
         "sprint/index.html",
+
+        "prog_prelim/index.Rmd",
+        "prog_prelim/releve.Rmd",
+        "prog_prelim/_footer.html",
+        "prog_prelim/_site.yml",
 
         "git_book/index.Rmd",
         "git_book_EN/index.Rmd",
@@ -438,22 +442,19 @@ rule R53_render_prog_prelim:
     input:
         "excel/Itineraires.xlsx",
         "code/_LibsVars.R",
+        "distill.css",
         "gpx/output/parcours.shp",
-        "resume_prog/prog.Rmd",
-        "elevParcours/elev_parcours.csv"
+        "prog_prelim/index.Rmd",
+        "prog_prelim/releve.Rmd",
+        "prog_prelim/_footer.html",
+        "prog_prelim/_site.yml"
     output:
-        local = "resume_prog/prog.html",
-        web = "prog/index.html"
+        "prog/index.html"
     params:
-        "resume_prog/prog.Rmd"
+        "prog_prelim"
     shell:
         """
-        Rscript -e "rmarkdown::render('{params}')"
-
-        echo "\n  ~~ Copie programmation préliminaire vers dossier web local ~~ \n"
-
-        cp -R {output.local} {output.web}
-        cp -R resume_prog/prog_files prog/
+        Rscript -e "rmarkdown::render_site('{params}')"
         """
 
 
@@ -526,11 +527,11 @@ rule R55_render_sprint:
         "code/_LibsVars.R",
         "excel/staff.xlsx",
         "rmd/CO.Rmd",
+        "distill.css",
         "guide_sprint/index.Rmd",
         "guide_sprint/comite.Rmd",
         "guide_sprint/partants.Rmd",
         "guide_sprint/reglement.Rmd",
-        "guide_sprint/guide_sprint.css",
         "guide_sprint/_footer.html",
         "guide_sprint/_site.yml"
     output:
