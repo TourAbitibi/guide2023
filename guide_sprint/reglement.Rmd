@@ -60,6 +60,11 @@ The **Challenge Sprint Abitibi**, a property of **Le Tour cycliste de l’Abitib
 :::
 ::::
 
+<aside>
+  <a href="https://tourabitibi.com" target="_blank" >
+  <img src="../img/logo/TA_Glencore.png" alt="Logo Tour de l'Abitibi Glencore" width="100%">
+  </a>
+</aside>
 
 ## Article 2 - Permanence / Headquarters 
 
