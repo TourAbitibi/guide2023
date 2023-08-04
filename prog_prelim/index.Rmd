@@ -99,7 +99,7 @@ lien_iframe <- function(etape){
 ```
 
 
-Voici un aperçu préliminaire de la `r params$edition`^e^ édition du **Tour de l'Abitibi `r params$sponsor`** qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an)` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an)` à `r params$ville`. 
+Voici un aperçu préliminaire de la `r params$edition`^e^ édition du **Tour de l'Abitibi `r params$sponsor`** qui se tiendra du `r dates_FR %>% filter(code=="Mar") %>% pull(jsem_jour_mois_an) %>% tolower()` au `r dates_FR %>% filter(code=="Dim") %>% pull(jsem_jour_mois_an) %>% tolower()` à `r params$ville`. 
 
 
 ```{r map_globale, echo = FALSE, eval = TRUE}
@@ -314,8 +314,6 @@ Arrivée finale      `r data$heure_arr_finale[etape]`
 `r lien_iframe(etape)`
 
 <br/>
-<br/>
-
 
 
 ## Résumé de l'épreuve - Tour de l'Abitibi `r params$sponsor` `r params$annee`
