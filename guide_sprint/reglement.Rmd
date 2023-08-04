@@ -125,11 +125,11 @@ A maximum of **`r params$nb_coureurs_sprint`** riders will be invited to take pa
 
 :::: {style="display: grid; grid-template-columns: 1fr 1fr; grid-column-gap: 40px;"}
 ::: {}
-La composition des séries de qualification sera déterminée selon un tirage au sort effectué durant la réunion des directeurs sportifs (N1 @ N16). Voir la liste des partants après la rencontre des directeurs sportifs.
+La composition des séries de qualification sera déterminée selon un tirage au sort effectué durant la réunion des directeurs sportifs (N1 @ N16). Voir la liste des [partants](partants.html) après la rencontre des directeurs sportifs.
 :::
 
 :::{}
-The heat composition will be determined by a draw conducted during the team managers' meeting (N1 @ N16). See the start list available after the team directors meeting.
+The heat composition will be determined by a draw conducted during the team managers' meeting (N1 @ N16). See the [start list](partants.html) available after the team directors meeting.
 :::
 :::: 
 
