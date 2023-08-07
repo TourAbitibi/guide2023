@@ -14,13 +14,13 @@ knitr::include_graphics(here("img", "cartes", "sign", "E3_sign_01.png"))
 ### Vues générales
 
 ```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics("https://i.ibb.co/SwWN0FW/rampe-07.jpg")
+knitr::include_graphics("https://i.ibb.co/zHt2XxP/CLMI-Ligne-Droite.jpg")
 ```
 
 <br/>
 
 ```{r, out.width="100%",fig.align='center',  echo = FALSE, eval = TRUE}
-knitr::include_graphics("https://i.ibb.co/SngmTGW/rampe-09.jpg")
+knitr::include_graphics("https://i.ibb.co/W6RGPzn/CLMI-Enlignement-Cones-Departs.jpg")
 ```
 
 <br/>
