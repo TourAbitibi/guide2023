@@ -12,6 +12,8 @@ source(here::here("code","/_LibsVars.R"))
 
 source(here("code","_import_itineraire.R"))
 
+source(here("results", "CalculsBourses", "_importGrillesBourses.R"))
+
 # df des détails
 details <- iti_etape$Details
 ################################################################################
@@ -61,3 +63,8 @@ write_csv(boursesMairesCumulCoureur,
 write_csv(boursesMairesCumulEquipe, 
           file = here("results", "CalculsBourses", "Maires_CumulEquipes.csv"),
           append = FALSE)
+
+################################################################################ 
+################################################################################ 
+
+
