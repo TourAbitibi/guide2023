@@ -11,9 +11,11 @@ source(here::here("code","/_LibsVars.R"))
 
 prix_path <- here("excel","prix.xlsx")
 
+################################################################################ 
+
 # Importer les valeurs de bourses
 
-boursesEtapes <- read_xlsx(prix_path,
+GrilleBoursesEtapes <- read_xlsx(prix_path,
                            sheet = "Verif_UCI",
                            col_types = "numeric",
 ) %>% 
@@ -23,7 +25,9 @@ boursesEtapes <- read_xlsx(prix_path,
     E1,E2,E3,E4,E5,E6,E7
   )
 
-boursesGeneral <- read_xlsx(prix_path,
+################################################################################ 
+
+GrilleBoursesGeneral <- read_xlsx(prix_path,
                             sheet = "GenTemps",
                             col_types = "numeric",
 ) %>% 
@@ -33,7 +37,9 @@ boursesGeneral <- read_xlsx(prix_path,
     Bourse = montant
   )
 
-boursesPoints <- read_xlsx(prix_path,
+################################################################################ 
+
+GrilleBoursesPoints <- read_xlsx(prix_path,
                            sheet = "GenPoints",
                            col_types = "numeric",
 ) %>% 
@@ -43,7 +49,9 @@ boursesPoints <- read_xlsx(prix_path,
     Bourse = montant
   )
 
-boursesJeune <- read_xlsx(prix_path,
+################################################################################ 
+
+GrilleBoursesJeune <- read_xlsx(prix_path,
                           sheet = "GenJeune",
                           col_types = "numeric",
 ) %>% 
@@ -53,7 +61,9 @@ boursesJeune <- read_xlsx(prix_path,
     Bourse = montant
   )
 
-boursesKOM <- read_xlsx(prix_path,
+################################################################################ 
+
+GrilleBoursesKOM <- read_xlsx(prix_path,
                         sheet = "GenKOM",
                         col_types = "numeric",
 ) %>% 
@@ -63,7 +73,9 @@ boursesKOM <- read_xlsx(prix_path,
     Bourse = montant
   )
 
-boursesEquipe <- read_xlsx(prix_path,
+################################################################################ 
+
+GrilleBoursesEquipe <- read_xlsx(prix_path,
                            sheet = "GenEquipe",
                            col_types = "numeric",
 ) %>% 
@@ -73,7 +85,9 @@ boursesEquipe <- read_xlsx(prix_path,
     Bourse = montant
   )
 
-boursesAbitibi <- read_xlsx(prix_path,
+################################################################################ 
+
+GrilleBoursesAbitibi <- read_xlsx(prix_path,
                             sheet = "Abitibien",
                             col_types = "numeric",
 ) %>% 
