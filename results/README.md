@@ -9,3 +9,11 @@ Pour éviter que :
 soient affichés avant la course, il faut **déplacer le fichier `results/Liste_Coureurs.csv`** hors du fichier `results/`.
 
 Cela empêche l'affichage des tableaux dans les pages d'étapes lors de l'utilisation de `code/_importResults.R`
+
+
+## Résultats
+
+Pour être capable de rouler le calculs des bourses, il faut remplir manuellement :
+
+- ListeAbitibiens.csv : tous les Abitibiens inscrits au Tour de l'Abitibi 
+- Maires.csv : résultats des Sprint de Maire
