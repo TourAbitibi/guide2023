@@ -218,6 +218,7 @@ boursesTotalCumulEquipe <- boursesMairesCumulEquipe %>%
   full_join(boursesEquipe %>% select(Equipe, BourseEquipe), by = "Equipe") %>% 
   replace(is.na(.), 0) %>% 
   mutate(Total = rowSums(select(.,c(BourseMaire, BoursesIndiv, BourseEquipe)))) %>% 
+  mutate(TotalSansMaire = rowSums(select(.,c(BoursesIndiv, BourseEquipe)))) %>% 
   arrange(-Total,-BourseEquipe, -BoursesIndiv)
 
 write_csv(boursesTotalCumulEquipe, 
