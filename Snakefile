@@ -31,6 +31,7 @@ rule Z_targets:
         "guide_sprint/comite.Rmd",
         "guide_sprint/partants.Rmd",
         "guide_sprint/reglement.Rmd",
+        "guide_sprint/results.Rmd",
         "guide_sprint/_footer.html",
         "guide_sprint/_site.yml",
         "sprint/index.html",
@@ -532,6 +533,7 @@ rule R55_render_sprint:
         "guide_sprint/comite.Rmd",
         "guide_sprint/partants.Rmd",
         "guide_sprint/reglement.Rmd",
+        "guide_sprint/results.Rmd",
         "guide_sprint/_footer.html",
         "guide_sprint/_site.yml"
     output:

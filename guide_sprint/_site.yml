@@ -18,6 +18,6 @@ navbar:
     - text: "Partants / Startlist"
       href: partants.html
     - text: "Résultats / Results"
-      href: "https://tourabitibi.com/wp-content/uploads/2023/07/ChalengeSprint2023-Resultats.pdf"
+      href: results.html
 theme: "../distill.css"
 output: distill::distill_article
