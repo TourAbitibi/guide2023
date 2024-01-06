@@ -121,13 +121,13 @@ rule Z_targets:
 
         echo "\n  ~~ Rsync vers Portainer 250 ~~ \n"
 
-        rsync -avhP img/* bruno@192.168.101.250:/home/bruno/guide_web/guide/img/ --delete-after &
-        rsync -avhP FR/* bruno@192.168.101.250:/home/bruno/guide_web/guide/FR/ --delete-after &
-        rsync -avhP EN/* bruno@192.168.101.250:/home/bruno/guide_web/guide/EN/ --delete-after &
-        rsync -avhP sprint/* bruno@192.168.101.250:/home/bruno/guide_web/guide/sprint/ --delete-after &
-        rsync -avhP prog/* bruno@192.168.101.250:/home/bruno/guide_web/guide/prog/ --delete-after &
-        rsync -avhP organisateur/* bruno@192.168.101.250:/home/bruno/guide_web/guide/organisateur/ --delete-after &
-        rsync -avhP index.html bruno@192.168.101.250:/home/bruno/guide_web/guide/index.html
+        rsync -avhP img/* bruno@192.168.101.250:/home/bruno/guide_web/2023/img/ --delete-after &
+        rsync -avhP FR/* bruno@192.168.101.250:/home/bruno/guide_web/2023/FR/ --delete-after &
+        rsync -avhP EN/* bruno@192.168.101.250:/home/bruno/guide_web/2023/EN/ --delete-after &
+        rsync -avhP sprint/* bruno@192.168.101.250:/home/bruno/guide_web/2023/sprint/ --delete-after &
+        rsync -avhP prog/* bruno@192.168.101.250:/home/bruno/guide_web/2023/prog/ --delete-after &
+        rsync -avhP organisateur/* bruno@192.168.101.250:/home/bruno/guide_web/2023/organisateur/ --delete-after &
+        rsync -avhP index.html bruno@192.168.101.250:/home/bruno/guide_web/2023/index.html
 
 	    echo "\n  ~~ Fin de la synchronisation ~~ \n"
 
